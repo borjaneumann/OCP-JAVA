@@ -4,12 +4,16 @@ package RunTimeExceptionClasses;
 
 public class ClassCastException {
     public static void main(String[] args) {
-        String type = "Moose";
-        Integer number = (Integer) type;
+//        String type = "Moose";
+//        Integer number = (Integer) type;
 
             //correctly done
 //        int c = 22;
 //        short letter = (short) c;
+
+        String str = "cat";
+        Object obj = str;
+        Integer number2 = (Integer) obj;
     }
 
 }
