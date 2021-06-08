@@ -11,5 +11,9 @@ public class Concatenation {
         System.out.println("a" + "b" + 2);
         System.out.println(1 + 2 + "c");
         System.out.println("c" + 1 + 2);
+
+        int three = 3;
+        String four = "4";
+        System.out.println(1 + 2 + three + four); // It becomes a string
     }
 }
