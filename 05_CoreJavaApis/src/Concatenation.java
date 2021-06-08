@@ -15,5 +15,10 @@ public class Concatenation {
         int three = 3;
         String four = "4";
         System.out.println(1 + 2 + three + four); // It becomes a string
+
+        String s = "1";
+        s += 2;
+        s += 3;
+        System.out.println("concatenation with += : " + s);
     }
 }
