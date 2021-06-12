@@ -27,6 +27,14 @@ public class StringMethods {
         //EqualsIgnoreCase
         System.out.println("EqualsIgnoreCase (ANIMALS) :" + word.equalsIgnoreCase("ANIMALS"));
 
+        //startsWith() and endsWith()
+        System.out.println("startsWith a: " + word.startsWith("a"));
+        System.out.println("endsWith a: " + word.endsWith("a"));
+
+        //replace()
+        System.out.println("replace: " + word.replace('a','c'));
+        System.out.println(word );
+
 
     }
 }
