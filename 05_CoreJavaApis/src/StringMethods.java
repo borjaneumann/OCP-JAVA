@@ -35,6 +35,25 @@ public class StringMethods {
         System.out.println("replace: " + word.replace('a','c'));
         System.out.println(word );
 
+        //contains (boolean)
+        System.out.println("Contains ani: " + word.contains("ani"));
+
+        //trim, strip, stripLeading, StripTrailing
+        String text = " abc\t ";
+        System.out.println("Length :" + text.length());
+        System.out.println(text.strip().length());
+        System.out.println(text.strip());
+        System.out.println(text.trim().length());
+        System.out.println(text.trim());
+        System.out.println(text.stripLeading().length());
+        System.out.println(text.stripLeading());
+        System.out.println(text.stripTrailing().length());
+        System.out.println(text.stripTrailing());
+
+        String spaces = "   ";
+        System.out.println("Empty spaces: " + spaces.length());
+
+
 
     }
 }
