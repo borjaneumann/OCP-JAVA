@@ -3,10 +3,13 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/01_Welcome_to_Java/01_Welcome_to_Java.iml" filepath="$PROJECT_DIR$/01_Welcome_to_Java/01_Welcome_to_Java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/03.Operators/03.Operators.iml" filepath="$PROJECT_DIR$/03.Operators/03.Operators.iml" />
       <module fileurl="file://$PROJECT_DIR$/04.Making_decisions/04.Making_decisions.iml" filepath="$PROJECT_DIR$/04.Making_decisions/04.Making_decisions.iml" />
+      <module fileurl="file://$PROJECT_DIR$/05_CoreJavaApis/05_CoreJavaApis.iml" filepath="$PROJECT_DIR$/05_CoreJavaApis/05_CoreJavaApis.iml" />
       <module fileurl="file://$PROJECT_DIR$/10.Exceptions/10.Exceptions.iml" filepath="$PROJECT_DIR$/10.Exceptions/10.Exceptions.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/OCP-JAVA.iml" filepath="$PROJECT_DIR$/.idea/OCP-JAVA.iml" />
       <module fileurl="file://$PROJECT_DIR$/10.Exceptions/RunTimeExceptionClasses.iml" filepath="$PROJECT_DIR$/10.Exceptions/RunTimeExceptionClasses.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Tests/Tests.iml" filepath="$PROJECT_DIR$/Tests/Tests.iml" />
     </modules>
   </component>
 </project>
