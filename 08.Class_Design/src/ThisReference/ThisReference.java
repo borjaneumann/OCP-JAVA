@@ -5,6 +5,7 @@ public class ThisReference {
     public void setReference(String reference){
         reference = reference; // it can be solved with the magic word "this"
         //this.reference = reference;
+        //reference = this.reference // this doesn't work
     }
 
     public static void main(String[] args) {
