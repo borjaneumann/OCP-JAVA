@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/03.Operators/03.Operators.iml" filepath="$PROJECT_DIR$/03.Operators/03.Operators.iml" />
       <module fileurl="file://$PROJECT_DIR$/04.Making_decisions/04.Making_decisions.iml" filepath="$PROJECT_DIR$/04.Making_decisions/04.Making_decisions.iml" />
       <module fileurl="file://$PROJECT_DIR$/05_CoreJavaApis/05_CoreJavaApis.iml" filepath="$PROJECT_DIR$/05_CoreJavaApis/05_CoreJavaApis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/06.Lambdas and Functional interfaces/06.Lambdas and Functional interfaces.iml" filepath="$PROJECT_DIR$/06.Lambdas and Functional interfaces/06.Lambdas and Functional interfaces.iml" />
       <module fileurl="file://$PROJECT_DIR$/08.Class_Design/08.Class_Design.iml" filepath="$PROJECT_DIR$/08.Class_Design/08.Class_Design.iml" />
       <module fileurl="file://$PROJECT_DIR$/10.Exceptions/10.Exceptions.iml" filepath="$PROJECT_DIR$/10.Exceptions/10.Exceptions.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/OCP-JAVA.iml" filepath="$PROJECT_DIR$/.idea/OCP-JAVA.iml" />
