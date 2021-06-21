@@ -15,6 +15,10 @@ public class TraditionalSearch {
 
         //pass class that does check
         print(animals, new CheckIfHopper());
+        //Now we come with the Lambda
+        print(animals,a->a.canHop());
+        print(animals,a->a.canSwim());
+        print(animals,a->!a.canSwim());
     }
     private static void print(List<Animal> animals, CheckTrait checker){
         for (Animal animal: animals){
