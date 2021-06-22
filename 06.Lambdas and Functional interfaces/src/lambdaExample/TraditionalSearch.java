@@ -19,6 +19,10 @@ public class TraditionalSearch {
         print(animals,a->a.canHop());
         print(animals,a->a.canSwim());
         print(animals,a->!a.canSwim());
+
+        //Lambda syntax. The two methods below do the same thing.
+        //a -> a.canHop();
+        //(Animal a) ->{return a.canHop;}
     }
     private static void print(List<Animal> animals, CheckTrait checker){
         for (Animal animal: animals){
