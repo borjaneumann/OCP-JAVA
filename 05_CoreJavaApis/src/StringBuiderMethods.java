@@ -22,6 +22,17 @@ public class StringBuiderMethods {
         sb3.insert(4,"-");
         System.out.println("sb3: " + sb3);
 
+        //delete and deleteChartAt()
+        StringBuilder sb4 = new StringBuilder("abcdefgh");
+        sb4.delete(2,3);
+        sb4.deleteCharAt(4);
+        System.out.println("sb4: " + sb4);
+
+        StringBuilder sb5 = new StringBuilder("abcdefgh");
+        sb5.delete(3,100);
+        System.out.println("sb5: " + sb5);
+
+
 
 
 
