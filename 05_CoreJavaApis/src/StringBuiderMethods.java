@@ -32,6 +32,15 @@ public class StringBuiderMethods {
         sb5.delete(3,100);
         System.out.println("sb5: " + sb5);
 
+        //replace()
+        StringBuilder sb6 = new StringBuilder("pigeon dirty");
+        sb6.replace(3,6,"sty");
+        System.out.println("sb6: " + sb6);
+        sb6.replace(3,100,"");
+        System.out.println("sb6: " + sb6);
+
+
+
 
 
 
