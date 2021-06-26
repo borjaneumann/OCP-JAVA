@@ -44,6 +44,11 @@ public class StringBuiderMethods {
         sb7.reverse();
         System.out.println("Reverse(): " + sb7);
 
+        //toString()
+        StringBuilder sb8 = new StringBuilder("The next java class");
+        sb8.toString();
+        System.out.println("sb8.toString(): " + sb8);
+
 
 
 
