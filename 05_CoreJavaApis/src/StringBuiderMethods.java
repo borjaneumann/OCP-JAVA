@@ -35,13 +35,14 @@ public class StringBuiderMethods {
         //replace()
         StringBuilder sb6 = new StringBuilder("pigeon dirty");
         sb6.replace(3,6,"sty");
-        System.out.println("sb6: " + sb6);
+        System.out.println("Replace(): " + sb6);
         sb6.replace(3,100,"");
-        System.out.println("sb6: " + sb6);
+        System.out.println("Replace(): " + sb6);
 
-
-
-
+        //reverse()
+        StringBuilder sb7 = new StringBuilder("The next java class");
+        sb7.reverse();
+        System.out.println("Reverse(): " + sb7);
 
 
 
