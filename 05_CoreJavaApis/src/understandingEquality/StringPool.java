@@ -13,6 +13,19 @@ public class StringPool {
         String singleString = "Hello World";
         String concat = "Hello ";
         concat += "world";
-        System.out.println(singleString == concat);//false, two different objects
+        System.out.println(singleString == concat);//false, two different objects. Concatenation is like cslling a
+        // method and results in a new String.
+
+        String c = "Hello World";
+        String d = new String("Hello World");
+        System.out.println( "New string: " + (c == d));
+
+        //intern()
+        String e = "Hello World";
+        String f = new String("Hello World").intern();//it will add it to the string pool
+        System.out.println( "Intern(): " + (e == f));
+
+
+
     }
 }
