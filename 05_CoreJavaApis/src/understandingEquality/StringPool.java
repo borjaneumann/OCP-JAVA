@@ -18,14 +18,20 @@ public class StringPool {
 
         String c = "Hello World";
         String d = new String("Hello World");
-        System.out.println( "New string: " + (c == d));
+        System.out.println( "New string: " + (c == d));//false, it created an object inneficiently
 
         //intern()
         String e = "Hello World";
         String f = new String("Hello World").intern();//it will add it to the string pool
         System.out.println( "Intern(): " + (e == f));
 
-
+        String first = "rat" + 1;
+        String second = "r" + "a" + "t" + "1";
+        String third = "r" + "a" + "t" + new String("1");
+        System.out.println("first == second: " + (first == second) );
+        System.out.println("first == second.intern(): " + (first == second.intern()) );
+        System.out.println("first == third: " + (first == third) );
+        System.out.println("first == third.intern(): " + (first == third.intern()) );
 
     }
 }
