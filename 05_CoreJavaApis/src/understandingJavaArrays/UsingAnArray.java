@@ -13,5 +13,11 @@ public class UsingAnArray {
         String[] birds = new String[6];
         System.out.println("Length of birds: " + birds.length);
 
+        int[] numbers = new int[10];
+        for (int i = 0; i < numbers.length;i++){
+            numbers[i]=i+5;
+            System.out.println(numbers);
+        }
+
     }
 }
