@@ -7,17 +7,16 @@ public class ArraysVarargs {
 
     //Onlu when passed in a method
     int result;
-    public void twoTimes (String x, int...nums){
-        System.out.println("The varargs are: " + x);
-        for(int s:nums){
-            System.out.println(s);
 
+    static void display(int x, String... words) {
+        System.out.println("The number is: " + x);
+        for (String word : words) {
+            System.out.println(word);
         }
-
-    public static void main(String[] args) {
-        ArraysVarargs arraysVarargs = new ArraysVarargs();
-        System.out.println(arraysVarargs.twoTimes("hola",1,2,3,4..));
     }
 
-
+    public static void main(String[] args) {
+        display(500,"hello");
+        display(25,"Hello", "there");
+    }
 }
