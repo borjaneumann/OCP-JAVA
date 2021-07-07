@@ -1,6 +1,6 @@
 package understandingJavaArrays;
 
-public class ArraysMultidimensional {
+public class ArraysMultidimensional2D {
     public static void main(String[] args) {
         int[][] vars1; //2D Array
         int vars2 [][]; //2D Array
@@ -18,7 +18,6 @@ public class ArraysMultidimensional {
         for (int i = 0; i < rectangle.length; i++){
             for (int j = 0; j < rectangle[i].length; j++) {
                 System.out.print(rectangle[i][j]);
-
             }
         }
 
