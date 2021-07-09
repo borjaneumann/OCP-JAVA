@@ -15,6 +15,13 @@ public class UsingAnArrayList {
         list.add("hawk");
         list.add(Boolean.TRUE);
         System.out.println(list);
+
+        ArrayList<String> list2 = new ArrayList<>();
+        list2.add("sparrow");
+        //list2.add(Boolean.TRUE); doesnt compile
+        System.out.println(list2);
+
+
     }
 
 
