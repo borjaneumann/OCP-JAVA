@@ -1,6 +1,7 @@
 package UnderstandingArrayList;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ArrayListCreation {
     public static void main(String[] args) {
@@ -19,5 +20,9 @@ public class ArrayListCreation {
         //generics
         ArrayList<String> list4 = new ArrayList<String>();
         ArrayList<String> list5 = new ArrayList<>();//diamond operator empty, also ok
+
+        //List
+        List<String> list6 = new ArrayList<>();
+        //ArrayList <String> list7 = new List<String>();//cannot be instantiated.ArrayList cannot contain a list
     }
 }
