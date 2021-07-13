@@ -19,7 +19,6 @@ public class ConvertingBetweenArrayAndList {
 
         //Array to a List
         //Option 1. Create a List that is linked to the original Array.
-
         String[] array = { "hawk", "robin"};
         List<String> list1 = Arrays.asList(array);
         System.out.println(list1.size());  //2
@@ -27,6 +26,15 @@ public class ConvertingBetweenArrayAndList {
         array[0] = "new";
         System.out.println("Arrays: " + Arrays.toString(array));
         System.out.println("list1: " + list1);
-//        list.remove(1); throws exception
+//        list.remove(1); throws exception we are not allowed to change te size
+
+        //Option 2. Create an immutable list. YOu cannot change values or the size of the list.
+        String[] array1 = {"hawk", "robin"};
+        List<String> list2 = List.of(array1); //returns immutable list
+        System.out.println(list2.size()); //2
+        array1[0] = "new";
+        System.out.println(Arrays.toString(array)); // [new, robin]
+        System.out.println(list2); //[hawk, robin]
+        list2.set(1,"test"); //not allowed in an immutable list
     }
 }
