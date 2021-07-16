@@ -7,6 +7,7 @@ public class IntroducingSets {
     public static void main(String[] args) {
         //collection of objects that cannot contain duplicates
         //set isnt ordered so Set uses all Arraylist methods except for the ones with index
+        //2 classes implement sets: hashset and hashtree when sorting is important.
 
         Set<Integer> set = new HashSet<>();
         System.out.println(set.add(66));//true
