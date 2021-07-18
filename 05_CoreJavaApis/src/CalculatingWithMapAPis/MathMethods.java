@@ -7,5 +7,15 @@ public class MathMethods {
         int second = Math.max(7,9); //9
         System.out.println("Min: " + first);
         System.out.println("Max: " + second);
+
+        //round()
+        long low = Math.round(123.45); //123
+        long high = Math.round(123.50); //124
+        int fromFloat = Math.round(123.45f); //123
+        System.out.println("Low: " + low);
+        System.out.println("High: " + high);
+        System.out.println("FromFloat: " + fromFloat);
+
+
     }
 }
