@@ -20,5 +20,10 @@ public class MathMethods {
         double squared = Math.pow(5,2);//25
         System.out.println("Square power: " + squared);
 
+        //random
+        double num = Math.random();
+        System.out.println(num);
+        System.out.println(Math.round((num * 8) +1));
+
     }
 }
