@@ -16,6 +16,9 @@ public class MathMethods {
         System.out.println("High: " + high);
         System.out.println("FromFloat: " + fromFloat);
 
+        //pow
+        double squared = Math.pow(5,2);//25
+        System.out.println("Square power: " + squared);
 
     }
 }
