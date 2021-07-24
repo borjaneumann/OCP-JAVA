@@ -10,7 +10,13 @@ public class AccessModifiers {
     void farewell (){
         System.out.println("Farewell!!");
     }
-
+    //protected
+    protected String greeting  (){
+        return null;
+    }
+    public int number (){
+        return 0;
+    }
     public static void main(String[] args) {
 
     }
