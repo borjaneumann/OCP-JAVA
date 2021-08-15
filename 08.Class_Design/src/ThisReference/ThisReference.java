@@ -10,7 +10,7 @@ public class ThisReference {
 
     public static void main(String[] args) {
         ThisReference tR = new ThisReference();
-        tR.setReference("PInk");
+        tR.setReference("Pink");
         System.out.println(tR.reference);
     }
 
