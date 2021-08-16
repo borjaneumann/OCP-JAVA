@@ -10,6 +10,7 @@
       <module fileurl="file://$PROJECT_DIR$/07.MethodsAndEncapsulation/07.MethodsAndEncapsulation.iml" filepath="$PROJECT_DIR$/07.MethodsAndEncapsulation/07.MethodsAndEncapsulation.iml" />
       <module fileurl="file://$PROJECT_DIR$/08.Class_Design/08.Class_Design.iml" filepath="$PROJECT_DIR$/08.Class_Design/08.Class_Design.iml" />
       <module fileurl="file://$PROJECT_DIR$/10.Exceptions/10.Exceptions.iml" filepath="$PROJECT_DIR$/10.Exceptions/10.Exceptions.iml" />
+      <module fileurl="file://$PROJECT_DIR$/12.Java_Fundamentals/12.Java_Fundamentals.iml" filepath="$PROJECT_DIR$/12.Java_Fundamentals/12.Java_Fundamentals.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/OCP-JAVA.iml" filepath="$PROJECT_DIR$/.idea/OCP-JAVA.iml" />
       <module fileurl="file://$PROJECT_DIR$/10.Exceptions/RunTimeExceptionClasses.iml" filepath="$PROJECT_DIR$/10.Exceptions/RunTimeExceptionClasses.iml" />
       <module fileurl="file://$PROJECT_DIR$/Tests/Tests.iml" filepath="$PROJECT_DIR$/Tests/Tests.iml" />
