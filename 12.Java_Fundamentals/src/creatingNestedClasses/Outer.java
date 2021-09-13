@@ -1,4 +1,4 @@
-package CreatingNestedClasses.DeclaringInnerClass;
+package creatingNestedClasses;
 
 public class Outer {
     private String greeting = "Hi";

@@ -1,4 +1,4 @@
-package CreatingNestedClasses.DeclaringInnerClass;
+package creatingNestedClasses;
 
 //This is something you might see on the exam
 //but ideally not in the real world. Please never do this in
