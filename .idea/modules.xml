@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/01_Welcome_to_Java/01_Welcome_to_Java.iml" filepath="$PROJECT_DIR$/01_Welcome_to_Java/01_Welcome_to_Java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/02.JavaBuildingBlocks/02.JavaBuildingBlocks.iml" filepath="$PROJECT_DIR$/02.JavaBuildingBlocks/02.JavaBuildingBlocks.iml" />
       <module fileurl="file://$PROJECT_DIR$/03.Operators/03.Operators.iml" filepath="$PROJECT_DIR$/03.Operators/03.Operators.iml" />
       <module fileurl="file://$PROJECT_DIR$/04.Making_decisions/04.Making_decisions.iml" filepath="$PROJECT_DIR$/04.Making_decisions/04.Making_decisions.iml" />
       <module fileurl="file://$PROJECT_DIR$/05_CoreJavaApis/05_CoreJavaApis.iml" filepath="$PROJECT_DIR$/05_CoreJavaApis/05_CoreJavaApis.iml" />
