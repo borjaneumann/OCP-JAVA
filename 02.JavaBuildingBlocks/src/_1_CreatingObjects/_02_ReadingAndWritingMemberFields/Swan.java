@@ -1,4 +1,4 @@
-package _02_ReadingAndWritingMemberFields;
+package _1_CreatingObjects._02_ReadingAndWritingMemberFields;
 
 public class Swan {
     int numberEggs; //instance variable
