@@ -1,4 +1,4 @@
-package purposeOfAnnotations.ZooSchedule;
+package _1_IntroducingAnnotations.ZooSchedule;
 
 public class Lion {
 //    @ZooSchedule(hours={"9am", "5pm", "10pm"}) void feedLions() {
