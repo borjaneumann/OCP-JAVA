@@ -1,6 +1,6 @@
 package _3_SelectingAnElementType;
 
-import ProvidingAnOptionalElement.Exercise3;
+import _2_CreatingCustomAnnotations.ProvidingAnOptionalElement.Exercise3;
 
 public @interface Panda {
 //    Integer height();  Wrapper classes are not supported
