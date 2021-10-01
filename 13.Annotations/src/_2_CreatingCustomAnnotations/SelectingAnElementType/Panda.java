@@ -1,4 +1,4 @@
-package _3_SelectingAnElementType;
+package _2_CreatingCustomAnnotations.SelectingAnElementType;
 
 import _2_CreatingCustomAnnotations.ProvidingAnOptionalElement.Exercise3;
 
