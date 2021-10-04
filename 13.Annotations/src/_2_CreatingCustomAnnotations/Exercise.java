@@ -1,4 +1,4 @@
 package _2_CreatingCustomAnnotations;
 
-public interface Exercise {
+public @interface Exercise {
 }
