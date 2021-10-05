@@ -12,7 +12,7 @@ public class RealUsageOfThisConstructorCall {
     }
 
     RealUsageOfThisConstructorCall(int rollNo, String name, String course, float fee){
-        this(rollNo,name,course); //
+        this(rollNo,name,course); ////Rule: Call to this() must be the first statement in constructor.
         this.fee = fee;
     }
 }
