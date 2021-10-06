@@ -15,4 +15,14 @@ public class RealUsageOfThisConstructorCall {
         this(rollNo,name,course); ////Rule: Call to this() must be the first statement in constructor.
         this.fee = fee;
     }
+    void display(){
+        System.out.println(rollNo + " " + name + " " + course + " " + fee);
+    }
+
+    public static void main(String[] args) {
+        RealUsageOfThisConstructorCall student1 = new RealUsageOfThisConstructorCall(111,"Joseph", "Java");
+        RealUsageOfThisConstructorCall student2 = new RealUsageOfThisConstructorCall(112,"Peter", "Java", 6000f);
+        student1.display();
+        student2.display();
+    }
 }
