@@ -9,9 +9,13 @@ public class ToReturnCurrentClassInstance {
     }
     void msg(){
         System.out.println("Hello Java");
+        System.out.println("This reference: " + this);
     }
 
     public static void main(String[] args) {
         new ToReturnCurrentClassInstance().getToReturnCurrentClassInstance().msg();
+        ToReturnCurrentClassInstance obj = new ToReturnCurrentClassInstance();
+        System.out.println("Main: " + obj);
+        obj.msg();
     }
 }
