@@ -1,4 +1,4 @@
-package LimitingUsageWithTarget.TypeUseValue;
+package _4_DeclaringAnnotation_SpecificAnnotation.LimitingUsageWithTarget.typeUseValue;
 
 public class NetworkRepair {
     class OutSrc extends @Technical NetworkRepair {}
