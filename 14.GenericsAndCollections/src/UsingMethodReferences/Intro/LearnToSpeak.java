@@ -1,4 +1,4 @@
-package UsingMethodReferences;
+package UsingMethodReferences.Intro;
 
 @FunctionalInterface
 public interface LearnToSpeak {
