@@ -11,8 +11,8 @@ public class Example {
     Predicate<String> methodRef = String::isEmpty;
     Predicate<String> lambda = s -> s.isEmpty();
 
-    BiPredicate<String, String> methodRef = String::startsWith;
-    BiPredicate<String, String> lambda = (s, p) -> s.startsWith(p);
+    BiPredicate<String, String> methodRef1 = String::startsWith;
+    BiPredicate<String, String> lambda1 = (s, p) -> s.startsWith(p);
 
 
 
