@@ -18,6 +18,14 @@ public class _03_UsingDiamondOperator {
         Map<String,Integer> map1 = new HashMap<>();
         Map<Long,List<Integer>> mapOfLists1 = new HashMap<>();
 
+        //Does not compile
+        List<> list2 = new ArrayList<Integer>(); // DOES NOT COMPILE
+        Map<> map2 = new HashMap<String, Integer>(); // DOES NOT COMPILE
+        class InvalidUse {
+//            void use(List<> data) {} // DOES NOT COMPILE
+        }
+
+
 
 
     }
