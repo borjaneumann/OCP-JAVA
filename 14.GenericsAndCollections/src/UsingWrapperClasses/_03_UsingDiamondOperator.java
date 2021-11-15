@@ -19,11 +19,15 @@ public class _03_UsingDiamondOperator {
         Map<Long,List<Integer>> mapOfLists1 = new HashMap<>();
 
         //Does not compile
-        List<> list2 = new ArrayList<Integer>(); // DOES NOT COMPILE
-        Map<> map2 = new HashMap<String, Integer>(); // DOES NOT COMPILE
+//        List<> list2 = new ArrayList<Integer>(); // DOES NOT COMPILE
+//        Map<> map2 = new HashMap<String, Integer>(); // DOES NOT COMPILE
         class InvalidUse {
 //            void use(List<> data) {} // DOES NOT COMPILE
         }
+
+        //Diamond opertators and var
+        var list3 = new ArrayList<Integer>(); //creates a ArrayLIst of Integer
+        var list4 = new ArrayList<>(); //creates a ArrayLIst of Object
 
 
 
