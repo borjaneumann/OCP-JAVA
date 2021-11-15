@@ -1,6 +1,6 @@
 package UsingWrapperClasses;
 
-public class AutoboxingAndUnboxing {
+public class _01_AutoboxingAndUnboxing {
 
     //Spot autoboxing and unboxing
     Integer pounds = 120;
