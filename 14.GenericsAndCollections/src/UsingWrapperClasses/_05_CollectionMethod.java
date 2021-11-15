@@ -30,6 +30,18 @@ public class _05_CollectionMethod {
         System.out.println("Remove: " + birds.remove("hawk")); // true
         System.out.println("Remove: " + birds); // [hawk]
 
+        //Java does not allow removing elements from a list while using the
+        //enhanced for loop.
+        Collection<String> birds1 = new ArrayList<>();
+        birds.add("hawk");
+        birds.add("hawk");
+        birds.add("hawk");
+        for (String bird : birds1) { // ConcurrentModificationException
+            birds.remove(bird);
+        }
+        System.out.println("removing from Loops: " + birds1);
+
+
 
 
 
