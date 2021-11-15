@@ -16,11 +16,9 @@ public class _04_UsingListsSetsMapsQueues {
 
     //Map: A map is a collection that maps keys to values, with no duplicate keys allowed. The elements in a map are key/value pairs.
 
-
     //Some examples below
     Collection<String> list = new ArrayList<>();
     Collection<String> set = new HashSet<>();
     Collection<String> queue = new LinkedList<>();
-
 
 }
