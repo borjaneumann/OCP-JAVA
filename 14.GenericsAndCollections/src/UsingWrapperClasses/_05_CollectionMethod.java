@@ -71,6 +71,15 @@ public class _05_CollectionMethod {
         System.out.println("Contains: " + birds5.contains("hawk")); // true
         System.out.println("Contains: " + birds5.contains("robin")); // false
 
+        //removeIf()
+        //boolean removeIf(Predicate<? super E> filter)
+
+        Collection<String> list = new ArrayList<>();
+        list.add("Magician");
+        list.add("Assistant");
+        System.out.println(list); // [Magician, Assistant]
+        list.removeIf(s -> s.startsWith("A"));
+        System.out.println(list); // [Magician]
 
     }
 }
