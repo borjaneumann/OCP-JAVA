@@ -81,5 +81,13 @@ public class _05_CollectionMethod {
         list.removeIf(s -> s.startsWith("A"));
         System.out.println(list); // [Magician]
 
+        //Using Method reference
+        Collection<String> set = new HashSet<>();
+        set.add("Wand");
+        set.add("");
+        set.removeIf(String::isEmpty); // s -> s.isEmpty()
+        System.out.println(set); // [Wand]
+
+
     }
 }
