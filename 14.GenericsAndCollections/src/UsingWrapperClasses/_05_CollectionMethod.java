@@ -64,7 +64,12 @@ public class _05_CollectionMethod {
         System.out.println("after Clear //IsEmpty: " + birds4.isEmpty()); // true
         System.out.println("after Clear //size: " + birds4.size()); // 0
 
-
+        //contains()
+        //boolean contains(Object object)
+        Collection<String> birds5 = new ArrayList<>();
+        birds5.add("hawk"); // [hawk]
+        System.out.println("Contains: " + birds5.contains("hawk")); // true
+        System.out.println("Contains: " + birds5.contains("robin")); // false
 
 
     }
