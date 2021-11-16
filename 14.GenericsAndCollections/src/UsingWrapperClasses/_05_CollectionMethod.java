@@ -41,6 +41,15 @@ public class _05_CollectionMethod {
         }
         System.out.println("removing from Loops: " + birds1);
 
+        //usEmpty() and size()
+
+        Collection<String> birds3 = new ArrayList<>();
+        System.out.println("IsEmpty: " + birds3.isEmpty()); // true
+        System.out.println("size: " + birds3.size()); // 0
+        birds3.add("hawk"); // [hawk]
+        birds3.add("hawk"); // [hawk, hawk]
+        System.out.println("IsEmpty: " + birds3.isEmpty()); // false
+        System.out.println("size: " + birds3.size()); // 2
 
 
 
