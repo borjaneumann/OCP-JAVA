@@ -1,6 +1,7 @@
 package UsingWrapperClasses;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
 
@@ -74,20 +75,26 @@ public class _05_CollectionMethod {
         //removeIf()
         //boolean removeIf(Predicate<? super E> filter)
 
-        Collection<String> list = new ArrayList<>();
-        list.add("Magician");
-        list.add("Assistant");
-        System.out.println(list); // [Magician, Assistant]
-        list.removeIf(s -> s.startsWith("A"));
-        System.out.println(list); // [Magician]
+        Collection<String> list2 = new ArrayList<>();
+        list2.add("Magician");
+        list2.add("Assistant");
+        System.out.println(list2); // [Magician, Assistant]
+        list2.removeIf(s -> s.startsWith("A"));
+        System.out.println(list2); // [Magician]
 
         //Using Method reference
-        Collection<String> set = new HashSet<>();
-        set.add("Wand");
-        set.add("");
-        set.removeIf(String::isEmpty); // s -> s.isEmpty()
-        System.out.println(set); // [Wand]
+        Collection<String> set1 = new HashSet<>();
+        set1.add("Wand");
+        set1.add("");
+        set1.removeIf(String::isEmpty); // s -> s.isEmpty()
+        System.out.println(set1); // [Wand]
 
+        //forEach()
+        //void forEach(Consumer<? super T> action)
+
+        Collection<String> cats = Arrays.asList("Annie", "Ripley");
+        cats.forEach(System.out::println); //method reference
+        cats.forEach(c -> System.out.println("forEach method: " + c)); //streams
 
     }
 }
