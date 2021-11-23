@@ -2,6 +2,7 @@ package UsingWrapperClasses;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 public class _12_UsingTheMapInterface {
     public static void main(String[] args) {
@@ -60,8 +61,18 @@ public class _12_UsingTheMapInterface {
         for (String key : map2.keySet()){
             System.out.println(key + ","); //koala, giraffa, lion
         }
+        for (String value : map2.values()){
+            System.out.println(value + ","); //Bamboo, leaf, meat
+        }
 
         //Treemap
+        Map<String, String> map4 = new TreeMap<>();
+        map4.put("koala", "bamboo");
+        map4.put("lion", "meat");
+        map4.put("giraffe", "leaf");
+        String food4 = map.get("koala"); // bamboo
+        for (String key: map4.keySet())
+            System.out.print(key + ","); // giraffe,koala,lion, the keys are sorted (in alphabetical order)
 
 
     }
