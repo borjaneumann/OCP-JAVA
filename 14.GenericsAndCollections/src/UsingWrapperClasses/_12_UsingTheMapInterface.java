@@ -71,9 +71,17 @@ public class _12_UsingTheMapInterface {
         map4.put("lion", "meat");
         map4.put("giraffe", "leaf");
         String food4 = map.get("koala"); // bamboo
-        for (String key: map4.keySet())
+        for (String key: map4.keySet()) {
             System.out.print(key + ","); // giraffe,koala,lion, the keys are sorted (in alphabetical order)
 
+        }
+//        System.out.println(map.contains("lion")); // DOES NOT COMPILE
+        System.out.println(map2.containsKey("lion")); // true
+        System.out.println(map2.containsValue("lion")); // false
+        System.out.println(map2.size()); // 3
+        map2.clear();
+        System.out.println(map2.size()); // 0
+        System.out.println(map2.isEmpty()); // true
 
     }
 
