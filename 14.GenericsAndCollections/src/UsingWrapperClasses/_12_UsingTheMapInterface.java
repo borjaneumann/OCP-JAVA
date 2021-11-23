@@ -1,5 +1,6 @@
 package UsingWrapperClasses;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class _12_UsingTheMapInterface {
@@ -48,6 +49,20 @@ public class _12_UsingTheMapInterface {
         // int size() --> Returns the number of entries (key/value pairs) in the map.
 
         // Collection<V>values() --> Returns Collection of all values.
+
+        //Hashmap
+
+        Map<String, String> map2 = new HashMap<>();
+        map2.put("Koala", "Bamboo");
+        map2.put("lion", "meat");
+        map2.put("giraffe", "leaf");
+        String food = map2.get("Koala"); //bamboo
+        for (String key : map2.keySet()){
+            System.out.println(key + ","); //koala, giraffa, lion
+        }
+
+        //Treemap
+
 
     }
 
