@@ -83,6 +83,17 @@ public class _12_UsingTheMapInterface {
         System.out.println(map2.size()); // 0
         System.out.println(map2.isEmpty()); // true
 
+        //ForEach() and entrySet()
+        //ForEach() the lambda used by the forEach()
+        //method has two parameters; the key and the value.
+
+        Map<Integer, Character> map5 = new HashMap<>();
+        map5.put(1,'a');
+        map5.put(2,'b');
+        map5.put(3,'c');
+        map5.forEach((k,v) ->System.out.println(v));
+
+
     }
 
 }
