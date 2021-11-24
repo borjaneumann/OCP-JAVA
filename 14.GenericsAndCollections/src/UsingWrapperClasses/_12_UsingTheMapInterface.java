@@ -93,6 +93,17 @@ public class _12_UsingTheMapInterface {
         map5.put(3,'c');
         map5.forEach((k,v) ->System.out.println(v));
 
+        //if you don't care about the key, this particular code could
+        //have been written with the values() method and a method reference
+        //instead
+
+        map5.values().forEach(System.out::println);
+
+        //Another way of going through all the data in a map is to get the key/value
+        //pairs in a Set. Java has a static interface inside Map called Entry. It
+        //provides methods to get the key and value of each pair.
+
+        map5.entrySet().forEach(e -> System.out.println(e.getKey() + e.getValue()));
 
     }
 
