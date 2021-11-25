@@ -14,17 +14,17 @@ public class _12_UsingTheMapInterface {
                 Map.entry(2, "value2")
         );
 
-        //Map Methods
+        // Map Methods
 
-        //void clear() --> Removes all keys and values from the map.
+        // void clear() --> Removes all keys and values from the map.
 
-        //boolean containsKey(Object key) --> Returns whether key is in map.
+        // boolean containsKey(Object key) --> Returns whether key is in map.
 
-        //boolean containsValue(Object value) --> Returns whether value is in map.
+        // boolean containsValue(Object value) --> Returns whether value is in map.
 
-        //Set<Map.Entry<K,V>> entrySet() --> Returns a Set of key/value pairs.
+        // Set<Map.Entry<K,V>> entrySet() --> Returns a Set of key/value pairs.
 
-        //void forEach(BiConsumer(K key, V value)) --> Loop through each key/value pair.
+        // void forEach(BiConsumer(K key, V value)) --> Loop through each key/value pair.
 
         // V get(Object key) --> Returns the value mapped by key or null if none is mapped.
 
@@ -37,9 +37,9 @@ public class _12_UsingTheMapInterface {
         // V merge(K key, V value, Function(<V, V, V> func)) --> Sets value if key not set. Runs the function if the key is set to determine the new value.
         // Removes if null.
 
-        //V put(K key, V value) Adds or replaces key/value pair. Returns previous value or null.
+        // V put(K key, V value) Adds or replaces key/value pair. Returns previous value or null.
 
-        //V putIfAbsent(K key, V value) --> Adds value if key not present and returns null. Otherwise, returns existing value.
+        // V putIfAbsent(K key, V value) --> Adds value if key not present and returns null. Otherwise, returns existing value.
 
         // V remove(Object key) --> Removes and returns value mapped to key. Returns null if none.
 
@@ -104,6 +104,20 @@ public class _12_UsingTheMapInterface {
         //provides methods to get the key and value of each pair.
 
         map5.entrySet().forEach(e -> System.out.println(e.getKey() + e.getValue()));
+
+        //GetOrDefault()
+        //The get() method returns null if the requested key is not in map.
+        //Sometimes you prefer to have a different value returned. Luckily, the
+        //getOrDefault() method makes this easy. Let's compare the two methods.
+
+        Map<Character, String> map6 = new HashMap<>();
+        map6.put('x',"spot");
+        System.out.println("x marks the " + map6.get('x'));
+        System.out.println("x marks the " + map6.getOrDefault('x',""));
+        System.out.println("y marks the " + map6.get('y'));
+        System.out.println("y marks the " + map6.getOrDefault('y',""));
+
+
 
     }
 
