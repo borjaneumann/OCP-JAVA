@@ -125,10 +125,25 @@ public class _12_UsingTheMapInterface {
         map7.put(2,4);
         Integer original = map7.replace(2,10);  //4
         System.out.println(map7);  // {1=2  2=10}
-        map7.replaceAll((k,v) -> k + v);
+        map7.replaceAll((k,v) -> k + v); // { 1=3 , 2=12 }
+        System.out.println(map7);
+
+        //putIfAbsent()
+        //The putIfAbsent() method sets a value in the map but skips it if the value
+        //is already set to a non‐ null value.
+
+        Map<String, String> favorites = new HashMap<>();
+        favorites.put("Jenny", "Bus tour");
+        favorites.put("Tom", null);
+        favorites.putIfAbsent("Jenny", "tram");
+        favorites.putIfAbsent("Sam", "tram");
+        favorites.putIfAbsent("Tom", "tram");
+        System.out.println(favorites); //  {Tom=Tram, Jenny=Bus Tour, Sam=Tram}
 
 
 
-    }
+
+
+}
 
 }
