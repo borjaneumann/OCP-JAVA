@@ -117,6 +117,16 @@ public class _12_UsingTheMapInterface {
         System.out.println("y marks the " + map6.get('y'));
         System.out.println("y marks the " + map6.getOrDefault('y',""));
 
+        // replace() and replaceAll()
+        //These methods are similar to the Collection version except a key is involved.
+
+        Map<Integer, Integer> map7 = new HashMap<>();
+        map7.put(1,2);
+        map7.put(2,4);
+        Integer original = map7.replace(2,10);  //4
+        System.out.println(map7);  // {1=2  2=10}
+        map7.replaceAll((k,v) -> k + v);
+
 
 
     }
