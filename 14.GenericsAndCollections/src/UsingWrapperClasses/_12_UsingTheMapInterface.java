@@ -157,10 +157,18 @@ public class _12_UsingTheMapInterface {
         System.out.println(jenny); // Bus Tour
         System.out.println(tom); // Skyride
 
+        /*The merge() method also has logic for what happens if null values or
+        missing keys are involved. In this case, it doesn't call the BiFunction at
+        all, and it simply uses the new value.*/
+        BiFunction<String, String, String> mapper1 = (v1, v2) -> v1.length()>v2.length() ? v1 : v2;
+        Map<String, String> favorites2 = new HashMap<>();
+        favorites2.put("Sam", null);
+        favorites2.merge("Tom", "Skyride", mapper1);
+        favorites2.merge("Sam", "Skyride", mapper1);
+        System.out.println(favorites2);//{Tom = Skyride, Sam = Skyride}
 
 
 
-
-}
+    }
 
 }
