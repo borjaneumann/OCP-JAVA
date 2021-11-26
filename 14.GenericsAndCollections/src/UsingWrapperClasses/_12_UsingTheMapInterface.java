@@ -167,8 +167,21 @@ public class _12_UsingTheMapInterface {
         favorites2.merge("Sam", "Skyride", mapper1);
         System.out.println(favorites2);//{Tom = Skyride, Sam = Skyride}
 
+        //The final thing to know about merge() is what happens when the mapping
+        //function is called and returns null. The key is removed from the map
+        //when this happens:
+
+        BiFunction<String, String, String> mapper2 = (v1, v2) -> null;
+        Map<String, String> favorites3 = new HashMap<>();
+        favorites3.put("Jenny", "Bus Tour");
+        favorites3.put("Tom", "Bus Tour");
+        favorites3.merge("Jenny", "Skyride", mapper2);
+        favorites3.merge("Sam", "Skyride", mapper2);
+        System.out.println(favorites3); // {Tom=Bus Tour,Sam=Skyride}
 
 
-    }
+
+
+}
 
 }
