@@ -3,6 +3,7 @@ package UsingWrapperClasses;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
+import java.util.function.BiFunction;
 
 public class _12_UsingTheMapInterface {
     public static void main(String[] args) {
@@ -139,6 +140,22 @@ public class _12_UsingTheMapInterface {
         favorites.putIfAbsent("Sam", "tram");
         favorites.putIfAbsent("Tom", "tram");
         System.out.println(favorites); //  {Tom=Tram, Jenny=Bus Tour, Sam=Tram}
+
+        //merge()
+        //The merge() method adds logic of what to choose. Suppose we want to
+        //choose the ride with the longest name. We can write code to express this
+        //by passing a mapping function to the merge() method.
+
+        BiFunction<String, String, String> mapper = (v1,v2) -> v1.length() > v2.length() ? v1 : v2;
+
+        Map<String, String> favorites1 = new HashMap<>();
+        favorites1.put("Jenny", "Bus Tour");
+        favorites1.put("Tom", "Tram");
+        String jenny = favorites1.merge("Jenny", "Skyride", mapper);
+        String tom = favorites1.merge("Tom", "Skyride", mapper);
+        System.out.println("After merge: " + favorites1); // {Tom=Skyride, Jenny=Bus Tour}
+        System.out.println(jenny); // Bus Tour
+        System.out.println(tom); // Skyride
 
 
 
