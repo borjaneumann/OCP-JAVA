@@ -1,4 +1,4 @@
-package UsingMethodReferences._02_CallingInstanceMethodsOnAParticularObj;
+package _1_UsingMethodReferences._02_CallingInstanceMethodsOnAParticularObj;
 
 import java.util.Random;
 import java.util.function.Predicate;

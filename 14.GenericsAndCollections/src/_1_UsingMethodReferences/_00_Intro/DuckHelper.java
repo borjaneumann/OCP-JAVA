@@ -1,4 +1,4 @@
-package UsingMethodReferences._00_Intro;
+package _1_UsingMethodReferences._00_Intro;
 
 public class DuckHelper {
     public static void teacher(String name, LearnToSpeak trainer) {

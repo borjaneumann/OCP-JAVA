@@ -1,4 +1,4 @@
-package UsingWrapperClasses;
+package _2_UsingWrapperClasses;
 
 import java.util.LinkedList;
 import java.util.Queue;

@@ -1,4 +1,4 @@
-package UsingMethodReferences._01_CallingStaticMethods;
+package _1_UsingMethodReferences._01_CallingStaticMethods;
 
 import java.util.Collections;
 import java.util.List;

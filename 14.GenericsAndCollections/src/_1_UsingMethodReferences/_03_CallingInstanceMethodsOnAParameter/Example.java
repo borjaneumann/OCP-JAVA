@@ -1,4 +1,4 @@
-package UsingMethodReferences._03_CallingInstanceMethodsOnAParameter;
+package _1_UsingMethodReferences._03_CallingInstanceMethodsOnAParameter;
 
 
 import java.util.function.BiPredicate;

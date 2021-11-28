@@ -1,4 +1,4 @@
-package UsingMethodReferences._04_CallingConstructors;
+package _1_UsingMethodReferences._04_CallingConstructors;
 
 import java.util.ArrayList;
 import java.util.List;

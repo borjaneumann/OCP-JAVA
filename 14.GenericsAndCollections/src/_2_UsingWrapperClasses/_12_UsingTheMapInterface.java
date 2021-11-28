@@ -1,4 +1,4 @@
-package UsingWrapperClasses;
+package _2_UsingWrapperClasses;
 
 import java.util.HashMap;
 import java.util.Map;
