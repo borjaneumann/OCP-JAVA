@@ -6,12 +6,12 @@
       <module fileurl="file://$PROJECT_DIR$/02.JavaBuildingBlocks/02.JavaBuildingBlocks.iml" filepath="$PROJECT_DIR$/02.JavaBuildingBlocks/02.JavaBuildingBlocks.iml" />
       <module fileurl="file://$PROJECT_DIR$/03.Operators/03.Operators.iml" filepath="$PROJECT_DIR$/03.Operators/03.Operators.iml" />
       <module fileurl="file://$PROJECT_DIR$/04.Making_decisions/04.Making_decisions.iml" filepath="$PROJECT_DIR$/04.Making_decisions/04.Making_decisions.iml" />
-      <module fileurl="file://$PROJECT_DIR$/05_CoreJavaApis/05_CoreJavaApis.iml" filepath="$PROJECT_DIR$/05_CoreJavaApis/05_CoreJavaApis.iml" />
-      <module fileurl="file://$PROJECT_DIR$/06.Lambdas and Functional interfaces/06.Lambdas and Functional interfaces.iml" filepath="$PROJECT_DIR$/06.Lambdas and Functional interfaces/06.Lambdas and Functional interfaces.iml" />
+      <module fileurl="file://$PROJECT_DIR$/05.CoreJavaApis/05.CoreJavaApis.iml" filepath="$PROJECT_DIR$/05.CoreJavaApis/05.CoreJavaApis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/06.LambdasAndFunctionalInterfaces/06.LambdasAndFunctionalInterfaces.iml" filepath="$PROJECT_DIR$/06.LambdasAndFunctionalInterfaces/06.LambdasAndFunctionalInterfaces.iml" />
       <module fileurl="file://$PROJECT_DIR$/07.MethodsAndEncapsulation/07.MethodsAndEncapsulation.iml" filepath="$PROJECT_DIR$/07.MethodsAndEncapsulation/07.MethodsAndEncapsulation.iml" />
-      <module fileurl="file://$PROJECT_DIR$/08.Class_Design/08.Class_Design.iml" filepath="$PROJECT_DIR$/08.Class_Design/08.Class_Design.iml" />
+      <module fileurl="file://$PROJECT_DIR$/08.ClassDesign/08.ClassDesign.iml" filepath="$PROJECT_DIR$/08.ClassDesign/08.ClassDesign.iml" />
       <module fileurl="file://$PROJECT_DIR$/10.Exceptions/10.Exceptions.iml" filepath="$PROJECT_DIR$/10.Exceptions/10.Exceptions.iml" />
-      <module fileurl="file://$PROJECT_DIR$/12.Java_Fundamentals/12.Java_Fundamentals.iml" filepath="$PROJECT_DIR$/12.Java_Fundamentals/12.Java_Fundamentals.iml" />
+      <module fileurl="file://$PROJECT_DIR$/12.JavaFundamentals/12.JavaFundamentals.iml" filepath="$PROJECT_DIR$/12.JavaFundamentals/12.JavaFundamentals.iml" />
       <module fileurl="file://$PROJECT_DIR$/13.Annotations/13.Annotations.iml" filepath="$PROJECT_DIR$/13.Annotations/13.Annotations.iml" />
       <module fileurl="file://$PROJECT_DIR$/14.GenericsAndCollections/14.GenericsAndCollections.iml" filepath="$PROJECT_DIR$/14.GenericsAndCollections/14.GenericsAndCollections.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/OCP-JAVA.iml" filepath="$PROJECT_DIR$/.idea/OCP-JAVA.iml" />
