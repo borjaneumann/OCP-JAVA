@@ -54,6 +54,17 @@ public class ComparingDataWithComparator implements  Comparable<ComparingDataWit
         Collections.sort(ducks, byWeight);
         System.out.println(ducks); //[Quack, Puddles]
 
+        //Comparator is a functional interface since there is only one abstract
+        //method to implement. This means that we can rewrite the comparator on
+        //lines 43‐48 using a lambda expression, as shown here:
+        //Comparator<Duck> byWeight = (d1, d2) -> d1.getWeight()-
+        //d2.getWeight();
+
+        //Alternatively, we can use a method reference and a helper method to
+        //specify we want to sort by weight.
+        //Comparator<Duck> byWeight =
+        //Comparator.comparing(Duck::getWeight);
+
 
     }
 }
