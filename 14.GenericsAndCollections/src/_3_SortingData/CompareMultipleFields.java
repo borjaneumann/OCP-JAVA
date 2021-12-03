@@ -40,6 +40,11 @@ public class CompareMultipleFields {
         //they don't match, we are finished sorting. If they do match, it looks at the
         //next field. This isn't that easy to read, though. It is also easy to get wrong.
         //Changing != to == breaks the sort completely.
+
+        //Alternatively, we can use method references and build the comparator.
+        //This code represents logic for the same comparison.
+        Comparator<Squirrel> c = Comparator.comparing(Squirrel::getSpecies)
+                        .thenComparingInt(Squirrel::getWeight);
     }
 
 }
