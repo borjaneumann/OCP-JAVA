@@ -19,5 +19,11 @@ public class ReviewingBinarySearch {
         Comparator<String> c = Comparator.reverseOrder();
         var index = Collections.binarySearch(names, "Hoppy", c);
         System.out.println(index);
+        //The correct answer is ‐1. Before you panic, you don't need to know that
+        //the answer is ‐1. You do need to know that the answer is not defined. Line
+        //3 creates a list, [Fluffy, Hoppy]. This list happens to be sorted in
+        //ascending order. Line 4 creates a Comparator that reverses the natural
+        //order. Line 5 requests a binary search in descending order. Since the list is
+        //in ascending order, we don't meet the precondition for doing a search.
      }
 }
