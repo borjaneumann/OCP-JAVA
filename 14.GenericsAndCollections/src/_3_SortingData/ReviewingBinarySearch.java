@@ -2,6 +2,7 @@ package _3_SortingData;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class ReviewingBinarySearch {
@@ -13,5 +14,10 @@ public class ReviewingBinarySearch {
         //. The number 3 would need to be inserted at index 1 (after the number 1 but
         //before the number 6). Negating that gives us −1, and subtracting 1 gives
         //us −2.
+
+        var names = Arrays.asList("Fluffy", "Hoppy");
+        Comparator<String> c = Comparator.reverseOrder();
+        var index = Collections.binarySearch(names, "Hoppy", c);
+        System.out.println(index);
      }
 }
