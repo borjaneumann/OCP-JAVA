@@ -11,8 +11,12 @@ public class _1_IntroGenerics {
         }
     }
     public static void main(String[] args) {
-        List names = new ArrayList();
-        names.add(new StringBuilder("Webby"));
-        printNames(names); // names is casted as String but we are using StringBuilder --> Class exception
+//        List names = new ArrayList();
+//        names.add(new StringBuilder("Webby"));
+//        printNames(names); // names is casted as String but we are using StringBuilder --> Class exception
+
+        //Now with Generics
+        List<String> names = new ArrayList<String>();
+        names.add(new StringBuffer("Webby")); //Does not compile now only Strings are allowed
     }
 }
