@@ -8,4 +8,10 @@ public class SizeLimitedCrate<T, U> {
         this.contents = contents;
         SizeLimit = sizeLimit;
     }
+    //T represents the type that we are putting in the crate. U represents the unit
+    //that we are using to measure the maximum size for the crate.
+
+    Elephant elephant = new Elephant();
+    Integer numPounds = 15_000;
+    SizeLimitedCrate<Elephant,Integer> c1 = new SizeLimitedCrate<>(elephant, numPounds);
 }
