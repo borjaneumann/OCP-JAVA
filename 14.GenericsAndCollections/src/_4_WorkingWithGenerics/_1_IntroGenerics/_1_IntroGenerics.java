@@ -1,4 +1,4 @@
-package _4_WorkingWithGenerics;
+package _4_WorkingWithGenerics._1_IntroGenerics;
 
 import java.util.ArrayList;
 import java.util.List;
