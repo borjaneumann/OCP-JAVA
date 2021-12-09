@@ -1,5 +1,6 @@
 package _4_WorkingWithGenerics._2_GenericClasses;
 
+
 //You can introduce generics into your own classes. The syntax for
 //introducing a generic is to declare a formal type parameter in angle
 //brackets. For example, the following class named Crate has a generic type
@@ -19,6 +20,14 @@ public class Crate<T> {
         Crate<Elephant> crateForElephant = new Crate<>();
         crateForElephant.packCrate(elephant);
         Elephant inNewHome = crateForElephant.emptyCrate();
+
+        Crate<Zebra> crateForZebra = new Crate<Zebra>();
+
+        Robot joeBot = new Robot();
+        Crate<Robot> robotCrate = new Crate<>();
+        robotCrate.packCrate(joeBot);
+
+        Robot atDestination = robotCrate.emptyCrate();
     }
 
     // Naming conventions for generics
