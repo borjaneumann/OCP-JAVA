@@ -28,5 +28,9 @@ public class TypeErasure {
         public void packCrate(Object contents) {
             this.contents = contents;
         }
+
+        // Robot r = crate.emptyCrate();
+        // The compiler turns it into following:
+        // Robot r = (Robot) crate.emptyCrate();
     }
 }
