@@ -30,6 +30,7 @@ public class TypeErasure {
         }
 
         // Robot r = crate.emptyCrate();
+        // q
         // The compiler turns it into following:
         // Robot r = (Robot) crate.emptyCrate();
     }
