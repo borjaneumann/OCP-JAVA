@@ -1,5 +1,5 @@
 package _5_genericInterfaces;
 
-public interface Shippable <T>{
+public interface _1_Shippable<T>{
     void ship (T t);
 }
