@@ -10,11 +10,11 @@ public class _2_Crate <T>{
         return t;
     }
 
-    public static String createName() {
-        _2_Crate <_3_Robot> crate = new _2_Crate<>() {
-            return crate.tricky("bot");
-        };
-    }
+//    public static String createName() {
+//        _2_Crate <_3_Robot> crate = new _2_Crate<>() {
+//            return crate.tricky("bot");
+//        };
+//    }
     //Clearly, “T is for tricky.” Let's see what is happening. On line 1, T is
     //Robot because that is what gets referenced when constructing a Crate. On
     //line 2, T is String because that is what is passed to the method. When you
