@@ -16,10 +16,10 @@ public class _1_Handler {
 //    Unless a method is obtaining the generic formal type parameter from the
 //    class/interface, it is specified immediately before the return type of the
 //    method. This can lead to some interesting‐looking code!
-public class More {
+ class More {
     public static <T> void sink(T t) { }
     public static <T> T identity(T t) { return t; }
-    public static T noGood(T t) { return t; } // DOES NOT COMPILE
+//    public static T noGood(T t) { return t; } // DOES NOT COMPILE
 
     //OPTIONAL SYNTAX FOR INVOKING A GENERIC METHOD
     /*You can call a generic method normally, and the compiler will try to

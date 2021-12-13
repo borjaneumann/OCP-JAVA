@@ -29,9 +29,9 @@ public class TypeErasure {
             this.contents = contents;
         }
 
-        // Robot r = crate.emptyCrate();
+        // _3_Robot r = crate.emptyCrate();
         // q
         // The compiler turns it into following:
-        // Robot r = (Robot) crate.emptyCrate();
+        // _3_Robot r = (_3_Robot) crate.emptyCrate();
     }
 }
