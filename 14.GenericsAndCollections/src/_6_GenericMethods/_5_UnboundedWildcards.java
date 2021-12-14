@@ -9,6 +9,12 @@ public class _5_UnboundedWildcards {
         for (Object x: list)
             System.out.println(x);
     }
+    public static void printList1(List<?> list1) {//This one will work!!
+        for (Object x : list1)
+            System.out.println(x);
+    }
+
+
     public static void main(String[] args) {
         List<String> keywords = new ArrayList<>();
         keywords.add("java");
@@ -23,5 +29,9 @@ public class _5_UnboundedWildcards {
 //        List<Object> objects = numbers; //Does not compile
 //        objects.add("forty-two");
         System.out.println(numbers.get(1));
+
+        List<String> keywords1 = new ArrayList<>();
+        keywords1.add("java");
+        printList1(keywords1); //This one will work!!
     }
 }
