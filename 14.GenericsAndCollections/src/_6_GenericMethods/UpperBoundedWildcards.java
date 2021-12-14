@@ -22,4 +22,13 @@ public class UpperBoundedWildcards {
         return count;
     }
 
+    //type erasure total method
+//    public static long total(List list) {
+//        long count = 0;
+//        for (Object obj: list) {
+//            Number number = (Number) obj;
+//            count += number.longValue();
+//        }
+//        return count;
+//    }
 }
