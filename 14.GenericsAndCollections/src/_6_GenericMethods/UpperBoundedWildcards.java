@@ -31,4 +31,17 @@ public class UpperBoundedWildcards {
 //        }
 //        return count;
 //    }
+
+    //Something interesting happens when we work with upper bounds or
+    //unbounded wildcards. The list becomes logically immutable and therefore
+    //cannot be modified. Technically, you can remove elements from the list,
+    //but the exam won't ask about this.
+
+    static class Sparrow extends Bird { }
+    static class Bird { }
+    public static void main(String[] args) {
+       List<? extends Bird> birds = new ArrayList<Bird>();
+//       birds.add(new Sparrow()); // DOES NOT COMPILE we cannot add elements it is immutable
+//        birds.add(new Bird()); // DOES NOT COMPILE we cannot add elements it is immutable
+    }
 }
