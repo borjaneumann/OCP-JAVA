@@ -15,4 +15,11 @@ public class UpperBoundedWildcards {
     //The upper‐bounded wildcard says that any class that extends Number or
     //Number itself can be used as the formal parameter type:
 
+    public static long total (List<? extends Number> list) {
+        long count = 0;
+        for (Number number: list)
+            count +=number.longValue();
+        return count;
+    }
+
 }
