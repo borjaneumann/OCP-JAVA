@@ -3,7 +3,7 @@ package _6_GenericMethods;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UpperBoundedWildcards {
+public class _6_UpperBoundedWildcards {
 
     // Let's try to write a method that adds up the total of a list of numbers.
     // ArrayList<Number> list = new ArrayList<Integer>();// DOES NOT COMPILE
