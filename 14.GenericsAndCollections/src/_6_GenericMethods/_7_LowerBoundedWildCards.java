@@ -19,7 +19,11 @@ public class _7_LowerBoundedWildCards {
         //The problem is that we want to pass a List<String> and a List<Object>
         //to the same method.
 
-        //To solve this problem, we need to use a lower bound.
+        //To solve this problem, we need to use a lower bound. See addSound method
+
+        //With a lower bound, we are telling Java that the list will be a list of String
+        //objects or a list of some objects that are a superclass of String. Either
+        //way, it is safe to add a String to that list.
 
 
     }
