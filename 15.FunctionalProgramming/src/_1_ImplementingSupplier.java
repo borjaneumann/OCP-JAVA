@@ -32,6 +32,14 @@ public class _1_ImplementingSupplier {
         words, a generic that contains another generic. It's not hard to understand,
         so just look at the code carefully when this type of thing comes up.*/
 
+        //what do we print here out?
+        System.out.println(s5);
+        //_1_ImplementingSupplier$$Lambda$20/0x00000008000a8440@68837a77
+        //That's the result of calling toString() on a lambda. Yuck. This actually
+        //does mean something. Our test class is named BuiltIns, and it is in a
+        //package that we created named functionalinterface. Then comes $$,
+        //which means that the class doesn't exist in a class file on the file system. It
+        //exists only in memory. You don't need to worry about the rest.
     }
 
 
