@@ -1,3 +1,4 @@
+import java.util.function.BiPredicate;
 import java.util.function.Predicate;
 
 public class ImplementingPredicateAndBiPredicate {
@@ -10,8 +11,14 @@ public class ImplementingPredicateAndBiPredicate {
         Predicate<String> p1 = String::isEmpty;
         Predicate<String> p2 = x -> x.isEmpty();
 
-        System.out.println(p1.test("")); //true
+        System.out.println(p1.test("Hi")); //true
         System.out.println(p2.test("")); //true
+
+        //BiPredicate
+        BiPredicate<String, String> b3 = String::startsWith;
+        BiPredicate<String, String> b4 = (string, prefix) -> string.startsWith(prefix);
+        System.out.println(b3.test("chicken", "chick")); //true
+        System.out.println(b4.test("chicken", "chick")); //true
 
 
 
