@@ -28,5 +28,11 @@ public class _2_Implementing_Consumer_And_BiConsumer {
 
         System.out.println(map);
 
+        //Another example
+        var map1 = new HashMap<String, String>();
+        BiConsumer<String, String> b3 = map1::put;
+        BiConsumer<String, String> b4 = (k,v) -> map1.put(k,v);
+        System.out.println(map1);
+
     }
 }
