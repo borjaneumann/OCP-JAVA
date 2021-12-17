@@ -35,6 +35,5 @@ public class _2_Implementing_Consumer_And_BiConsumer {
         b3.accept("chicken","cluck");
         b3.accept("chick","tweep");
         System.out.println(map1);
-
     }
 }
