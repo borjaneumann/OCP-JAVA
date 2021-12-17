@@ -1,3 +1,5 @@
+import java.util.HashMap;
+import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
 public class _2_Implementing_Consumer_And_BiConsumer {
@@ -13,6 +15,18 @@ public class _2_Implementing_Consumer_And_BiConsumer {
         c1.accept("Annie");
         c2.accept("Annie");
 
+        /*This example prints Annie twice. BiConsumer is called with two
+        parameters. They don't have to be the same type. For example, we can put
+        a key and a value in a map using this interface:*/
+
+        var map = new HashMap<String, Integer>();
+        BiConsumer<String, Integer> b1 = map::put;
+        BiConsumer<String, Integer> b2 = (k,v) -> map.put(k,v);
+
+        b1.accept("chicken", 7);
+        b2.accept("chick",1);
+
+        System.out.println(map);
 
     }
 }
