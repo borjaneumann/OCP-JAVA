@@ -32,6 +32,8 @@ public class _2_Implementing_Consumer_And_BiConsumer {
         var map1 = new HashMap<String, String>();
         BiConsumer<String, String> b3 = map1::put;
         BiConsumer<String, String> b4 = (k,v) -> map1.put(k,v);
+        b3.accept("chicken","cluck");
+        b3.accept("chick","tweep");
         System.out.println(map1);
 
     }
