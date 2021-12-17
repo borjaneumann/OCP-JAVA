@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.function.Supplier;
 
 public class _1_ImplementingSupplier {
@@ -20,6 +21,17 @@ public class _1_ImplementingSupplier {
 
         System.out.println(s3.get());
         System.out.println(s4.get());
+
+        Supplier<ArrayList<String>> s5 = ArrayList<String>::new;
+        ArrayList<String> a1 = s5.get();
+        System.out.println(a1);
+
+        /*We have a Supplier of a certain type. That type happens to be
+        ArrayList<String>. Then calling get() creates a new instance of
+        ArrayList<String>, which is the generic type of the Supplier—in other
+        words, a generic that contains another generic. It's not hard to understand,
+        so just look at the code carefully when this type of thing comes up.*/
+
     }
 
 
