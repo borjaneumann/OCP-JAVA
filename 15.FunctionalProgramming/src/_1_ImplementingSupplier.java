@@ -12,6 +12,14 @@ public class _1_ImplementingSupplier {
 
         System.out.println(d1);
         System.out.println(d2);
+
+        //A Supplier is often used when constructing new objects. For
+        //example, we can print two empty StringBuilder objects.
+        Supplier<StringBuilder> s3 = StringBuilder::new;
+        Supplier<StringBuilder> s4 =() -> new StringBuilder();
+
+        System.out.println(s3.get());
+        System.out.println(s4.get());
     }
 
 
