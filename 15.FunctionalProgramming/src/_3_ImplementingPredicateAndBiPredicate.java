@@ -1,7 +1,7 @@
 import java.util.function.BiPredicate;
 import java.util.function.Predicate;
 
-public class ImplementingPredicateAndBiPredicate {
+public class _3_ImplementingPredicateAndBiPredicate {
 
     //Predicate is often used when filtering or matching. Both are common operations.
     // A BiPredicate is just like a Predicate except that it takes two parameters
