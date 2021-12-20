@@ -17,8 +17,13 @@ public class _6_ConvenienceMethodsOnFunctionalInterfaces {
         of eggs. We could write this by hand, as shown here:*/
 
         Predicate<String> brownEggs = s -> s.contains("egg") && s.contains("brown");
-        Predicate<String> otherEggs = s -> s.contains("egg") && ! s.contains("brown");
+        Predicate<String> otherEggsColors = s -> s.contains("egg") && ! s.contains("brown");
 
         //It's a bit long to read
+        //A better way to deal with this situation is to use two of the default
+        //methods on Predicate.
+
+        Predicate<String> brownEggs1 = egg.and(brown);
+        Predicate<String> otherEggsColors1 = egg.and(brown.negate());
     }
 }
