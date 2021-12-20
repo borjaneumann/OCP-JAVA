@@ -1,4 +1,4 @@
-package functionalInterface.consumer;
+package _3_functionalInterface.consumer;
 
 public class Main {
     public static void main(String[] args) {

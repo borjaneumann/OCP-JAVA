@@ -1,4 +1,4 @@
-package lambdaExample;
+package _1_lambdaExample;
 
 public class CheckIfHopper implements CheckTrait{
     @Override

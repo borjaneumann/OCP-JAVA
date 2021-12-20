@@ -1,4 +1,4 @@
-package functionalInterface.comparator;
+package _3_functionalInterface.comparator;
 
 import java.util.Comparator;
 

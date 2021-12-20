@@ -1,6 +1,5 @@
-package lambdaExample;
+package _1_lambdaExample;
 
-import java.util.AbstractList;
 import java.util.ArrayList;
 import java.util.List;
 
