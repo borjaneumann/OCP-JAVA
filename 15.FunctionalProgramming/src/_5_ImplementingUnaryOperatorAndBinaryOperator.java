@@ -22,8 +22,15 @@ public static void main(String[] args) {
     //generics because UnaryOperator requires it to be the same as the
     //parameter
 
-}
+    BinaryOperator<String> b1 = String::concat;
+    BinaryOperator<String> b2 = (string, toConcat) -> string.concat(toConcat);
+    System.out.println(b1.apply("Mollie ", "Smith")); // baby chick
+    System.out.println(b2.apply("baby ", "pig")); // baby chick
 
+    //Notice that this does the same thing as the BiFunction example. The code
+    //is more succinct, which shows the importance of using the correct
+    //functional interface. It's nice to have one generic type specified instead of
+    //three.
 
-
+    }
 }
