@@ -1,4 +1,5 @@
 import java.util.function.Consumer;
+import java.util.function.Function;
 import java.util.function.Predicate;
 
 public class _6_ConvenienceMethodsOnFunctionalInterfaces {
@@ -30,9 +31,15 @@ public class _6_ConvenienceMethodsOnFunctionalInterfaces {
 
         //CONSUMER
         Consumer<String> c1 = x -> System.out.print("1: " + x);
-        Consumer<String> c2 = x -> System.out.print(",2: " + x);
+        Consumer<String> c2 = x -> System.out.println(",2: " + x);
         Consumer<String> combined = c1.andThen(c2);
         combined.accept("Annie"); // 1: Annie,2: Annie
 
+        //FUNCTION
+        Function<Integer, Integer> before = x -> x + 1;
+        Function<Integer, Integer> after = x -> x * 2;
+        Function<Integer, Integer> combined1 = after.compose(before); //3 + 1 = 4 -> 4 * 2 = 8;
+        System.out.print("Function(compose): ");
+        System.out.print(combined1.apply(3)); // 8
     }
 }
