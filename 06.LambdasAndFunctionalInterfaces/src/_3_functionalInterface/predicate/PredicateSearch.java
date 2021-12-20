@@ -1,6 +1,9 @@
 package _3_functionalInterface.predicate;
 
+import _1_lambdaExample.Animal;
+
 import java.util.*;
+import java.util.function.Predicate;
 
 public class PredicateSearch {
     public static void main(String[] args) {

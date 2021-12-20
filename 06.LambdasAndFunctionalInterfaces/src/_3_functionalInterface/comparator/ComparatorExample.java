@@ -2,7 +2,7 @@ package _3_functionalInterface.comparator;
 
 import java.util.Comparator;
 
-public class Main {
+public class ComparatorExample {
     public static void main(String[] args) {
         String nameA = "Anthony";
         String nameB = "Robert";

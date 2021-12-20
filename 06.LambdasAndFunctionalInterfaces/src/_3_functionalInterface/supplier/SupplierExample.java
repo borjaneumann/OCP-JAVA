@@ -3,7 +3,7 @@ package _3_functionalInterface.supplier;
 import java.util.Random;
 import java.util.function.Supplier;
 
-public class Main {
+public class SupplierExample {
     public static void main(String[] args) {
         Supplier<Integer> number = () -> 42;
         Supplier<Integer> random = () -> new Random().nextInt();
