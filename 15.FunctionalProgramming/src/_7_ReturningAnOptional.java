@@ -52,5 +52,15 @@ public class _7_ReturningAnOptional {
 
         //ifPresent(Consumer c), isPresent(), orElse(T other), orElseGet(Supplier s), orElseThrow(), orElseThrow(Supplier s)
 
+        //Instead of using an if statement, which we used when checking the average earlier, we can
+        //specify a Consumer to be run when there is a value inside the Optional. When there isn't, the method simply skips running the Consumer
+
+        Optional<Double> opt2 = average(90,100,70);
+        opt2.ifPresent(System.out::println);
+
+        //Using ifPresent() better expresses our intent. We want something done
+        //if a value is present. You can think of it as an if statement with no else.
+
+
     }
 }
