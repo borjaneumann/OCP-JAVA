@@ -25,7 +25,13 @@ public class _7_ReturningAnOptional {
         //EXAMPLE 2
         Optional<Double> opt = average(90,100);
         if (opt.isPresent()){
-            System.out.println("Example 2: " + opt.get());//95.0
+            System.out.println("Example 2: " + opt.get());//95.0 //it prints it out.
         }
+
+        //EXAMPLE 3
+        //What if we didn't do the check and the Optional was empty?
+        Optional<Double> optNotChecking = average();
+        System.out.println(opt.get()); //java.util.NoSuchElementException: No value present
+
     }
 }
