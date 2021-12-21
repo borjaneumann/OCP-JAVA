@@ -27,6 +27,9 @@ public class _8_DealingWithAnEmptyOptional {
         Optional<Double> opt3 = average();
         System.out.println(opt3.orElseThrow(() -> new IllegalStateException())); //Supplier creates an exception that should be thrown.
         //We dont use the word throw, orElseThrow takes care of it.
+
+        //Does it compile?
+//        System.out.println(opt.orElseGet(() -> new IllegalStateException()));//nope it is expecting to return Double
     }
 
 }
