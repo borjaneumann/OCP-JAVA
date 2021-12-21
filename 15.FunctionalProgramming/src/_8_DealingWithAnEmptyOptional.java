@@ -17,6 +17,10 @@ public class _8_DealingWithAnEmptyOptional {
         Optional<Double> opt = average(); //The value is not present then the code below is executed.
         System.out.println(opt.orElse(Double.NaN));
         System.out.println(opt.orElseGet(()->Math.random()));
+
+        //Alternatively, we can have the code throw an exception if the Optional is empty.
+        Optional<Double> opt1 = average();
+        System.out.println(opt1.orElseThrow()); //Throws NoSuchElementException
     }
 
 }
