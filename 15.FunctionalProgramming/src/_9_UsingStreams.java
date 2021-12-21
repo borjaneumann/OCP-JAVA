@@ -1,3 +1,4 @@
+import java.util.List;
 import java.util.stream.Stream;
 
 public class _9_UsingStreams {
@@ -14,6 +15,10 @@ public class _9_UsingStreams {
         Stream<Integer> singleElement = Stream.of(1);//count = 1
         Stream<Integer> fromArray = Stream.of(1,2,3);//count = 3 The method signature uses varargs, which let you specify an
         //array or individual elements.
+
+        //Java also provides a convenient way of converting a Collection to a stream
+        var list = List.of("a","b","c");
+        Stream<String> fromList = list.stream();
     }
 
 }
