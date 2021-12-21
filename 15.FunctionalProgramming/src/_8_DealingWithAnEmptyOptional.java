@@ -29,7 +29,14 @@ public class _8_DealingWithAnEmptyOptional {
         //We dont use the word throw, orElseThrow takes care of it.
 
         //Does it compile?
-//        System.out.println(opt.orElseGet(() -> new IllegalStateException()));//nope it is expecting to return Double
+        //System.out.println(opt.orElseGet(() -> new IllegalStateException()));//nope it is expecting to return Double
+
+        //Does it compile?
+        Optional<Double> opt4 = average(90,70);
+        System.out.println(opt4.orElse(Double.NaN)); //80
+        System.out.println(opt4.orElseGet(()->Math.random()));//80
+        System.out.println(opt4.orElseThrow());//80
+
     }
 
 }
