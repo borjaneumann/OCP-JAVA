@@ -39,5 +39,10 @@ public class _7_ReturningAnOptional {
         operator.*/
         String value = "anyValue";
         Optional o = (value == null) ? Optional.empty(): Optional.of(value);
+
+        //If value is null, o is assigned the empty Optional. Otherwise, we wrap
+        //the value. Since this is such a common pattern, Java provides a factory
+        //method to do the same thing
+        Optional factory = Optional.ofNullable(value);
     }
 }
