@@ -26,6 +26,14 @@ public class _9_UsingStreams {
         //streams is like setting up multiple tables of workers who are able to do the same task.
 
 
+        //CREATE INFINITE STREAMS
+        Stream<Double> randoms = Stream.generate(Math::random);
+        Stream<Integer> oddNumbers = Stream.iterate(1, n -> n + 2);
+        System.out.println(randoms);
+        //If you call randoms.forEach(System.out::println), the program will print random
+        //numbers until you kill it. Later in the chapter, you'll learn about operations
+        //like limit() to turn the infinite stream into a finite stream
+
 
 
 
