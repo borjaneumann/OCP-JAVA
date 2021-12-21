@@ -21,6 +21,12 @@ public class _8_DealingWithAnEmptyOptional {
         //Alternatively, we can have the code throw an exception if the Optional is empty.
         Optional<Double> opt1 = average();
         System.out.println(opt1.orElseThrow()); //Throws NoSuchElementException
+
+        //Alternatively, we can have the code throw an exception if the Optional is
+        //empty.
+        Optional<Double> opt3 = average();
+        System.out.println(opt3.orElseThrow(() -> new IllegalStateException())); //Supplier creates an exception that should be thrown.
+        //We dont use the word throw, orElseThrow takes care of it.
     }
 
 }
