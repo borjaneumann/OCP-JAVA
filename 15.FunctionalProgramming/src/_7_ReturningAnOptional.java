@@ -1,3 +1,4 @@
+import java.util.Calendar;
 import java.util.Optional;
 
 public class _7_ReturningAnOptional {
@@ -44,5 +45,12 @@ public class _7_ReturningAnOptional {
         //the value. Since this is such a common pattern, Java provides a factory
         //method to do the same thing
         Optional factory = Optional.ofNullable(value);
+        //Calendar c = Calendar.getInstance(); factory method example
+
+        //get() and ifPresent() need an if statement
+        //The following lines can be written in one single line.
+
+        //ifPresent(Consumer c), isPresent(), orElse(T other), orElseGet(Supplier s), orElseThrow(), orElseThrow(Supplier s)
+
     }
 }
