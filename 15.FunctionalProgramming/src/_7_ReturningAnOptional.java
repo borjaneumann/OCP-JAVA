@@ -33,5 +33,11 @@ public class _7_ReturningAnOptional {
         Optional<Double> optNotChecking = average();
         System.out.println(opt.get()); //java.util.NoSuchElementException: No value present
 
+        //EXAMPLE 4
+        /*When creating an Optional, it is common to want to use empty() when
+        the value is null. You can do this with an if statement or ternary
+        operator.*/
+        String value = "anyValue";
+        Optional o = (value == null) ? Optional.empty(): Optional.of(value);
     }
 }
