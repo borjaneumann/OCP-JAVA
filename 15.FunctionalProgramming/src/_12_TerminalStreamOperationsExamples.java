@@ -1,5 +1,6 @@
 import java.util.List;
 import java.util.Optional;
+import java.util.function.BinaryOperator;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
@@ -87,6 +88,69 @@ public class _12_TerminalStreamOperationsExamples {
         //While forEach() sounds like a loop, it is really a terminal operator for
         //streams. Streams cannot be used as the source in a for‐each loop to run
         //because they don't implement the Iterable interface.
+
+        //reduce()
+        /*The reduce() method combines a stream into a single object. It is a
+        reduction, which means it processes all elements. The three method signatures are these:
+        T reduce(T identity, BinaryOperator<T> accumulator)
+        Optional<T> reduce(BinaryOperator<T> accumulator)
+        <U> U reduce(U identity,
+                BiFunction<U,? super T,U> accumulator,
+                BinaryOperator<U> combiner)*/
+        //The most common way of doing a reduction is to start with an initial value
+        // and keep merging it with the next value.
+        //concatenate an array of String objects into a single String without functional programming
+        System.out.println();
+        var array = new String[] { "w", "o", "l", "f" };
+        var result = "";//identity
+        for (var sArray: array) {
+            result = result + sArray;
+        }
+        System.out.println(result); // wolf
+
+        Stream<String> stream = Stream.of("w", "o", "l", "f");
+        String word = stream.reduce("", (l, c) -> l + c);
+        System.out.println(word); // wolf
+
+        //Method reference
+        Stream<String> stream1 = Stream.of("w", "o", "l", "f");
+        String word1 = stream1.reduce("", String::concat);
+        System.out.println(word1); // wolf
+
+        //Let's try another one. Can you write a reduction to multiply all of the
+        //Integer objects in a stream?
+        Stream<Integer> stream2 = Stream.of(3, 5, 6);
+        System.out.println(stream2.reduce(1, (c, b) -> c*b)); // 90
+        //When you don't specify an identity, an Optional is returned because there might not
+        //be any data.
+        BinaryOperator<Integer> op = (k, b) -> k * b;
+        Stream<Integer> empty = Stream.empty();
+        Stream<Integer> oneElement = Stream.of(3);
+        Stream<Integer> threeElements = Stream.of(3, 5, 6);
+        empty.reduce(op).ifPresent(System.out::println); // no output
+        oneElement.reduce(op).ifPresent(System.out::println); // 3
+        threeElements.reduce(op).ifPresent(System.out::println); // 90
+        //counts number of characters
+        Stream<String> numberOfCharacters = Stream.of("w", "o", "l", "f!");
+        int length = numberOfCharacters.reduce(0, (i, sw) -> i+sw.length(), (q, b) -> q+b);
+        System.out.println(length); // 5
+        /*The first parameter ( 0) is the value for the initializer. If we had an empty
+        stream, this would be the answer. The second parameter is the
+        accumulator. Unlike the accumulators you saw previously, this one
+        handles mixed data types. In this example, the first argument, i, is an
+        Integer, while the second argument, s, is a String. It adds the length of
+        the current String to our running total. The third parameter is called the
+        combiner, which combines any intermediate totals. In this case, a and b
+        are both Integer values.
+        The three‐argument reduce() operation is useful when working with
+        parallel streams because it allows the stream to be decomposed and
+        reassembled by separate threads. For example, if we needed to count the
+        length of four 100‐character strings, the first two values and the last two
+        values could be computed independently. The intermediate result (200 +
+        200) would then be combined into the final value.*/
+
+
+
 
     }
 }
