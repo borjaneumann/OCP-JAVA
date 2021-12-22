@@ -70,11 +70,23 @@ public class _12_TerminalStreamOperationsExamples {
         System.out.println(list.stream().allMatch(pred)); // false
         System.out.println(list.stream().noneMatch(pred)); // false
         System.out.println(infinite2.anyMatch(pred)); // true //If we called allMatch(), it would run until we killed the program.
-
         //Remember that allMatch(), anyMatch(), and noneMatch() return a
         //boolean. By contrast, the find methods return an Optional because
         //they return an element of the stream.
 
+        //forEach()
+        //Like in the Java Collections Framework, it is common to iterate over the
+        //elements of a stream. As expected, calling forEach() on an infinite stream
+        //does not terminate. Since there is no return value, it is not a reduction.
+        //void forEach(Consumer<? super T> action)
+        Stream<String> a = Stream.of("Monkey", "Gorilla", "Bonobo");
+        a.forEach(System.out::print); // MonkeyGorillaBonobo
+        //Notice that you can't use a traditional for loop on a stream.
+        Stream<Integer> loop = Stream.of(1);
+        //for (Integer i : loop) {} // DOES NOT COMPILE
+        //While forEach() sounds like a loop, it is really a terminal operator for
+        //streams. Streams cannot be used as the source in a for‐each loop to run
+        //because they don't implement the Iterable interface.
 
     }
 }
