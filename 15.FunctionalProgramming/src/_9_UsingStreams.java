@@ -34,6 +34,16 @@ public class _9_UsingStreams {
         //numbers until you kill it. Later in the chapter, you'll learn about operations
         //like limit() to turn the infinite stream into a finite stream
 
+        /*What if you wanted just odd numbers less than 100? Java 9 introduced an
+        overloaded version of iterate() that helps with just that.*/
+        Stream<Integer> oddNumberUnder100 = Stream.iterate(1, // seed
+                n -> n < 100, // Predicate to specify when done
+                n -> n + 2); // UnaryOperator to get next value
+
+        //This method takes three parameters. Notice how they are separated by
+        //commas ( ,) just like all other methods. The exam may try to trick you by
+        //using semicolons since it is similar to a for loop.
+
 
 
 
