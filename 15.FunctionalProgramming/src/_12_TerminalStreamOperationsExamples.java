@@ -34,6 +34,22 @@ public class _12_TerminalStreamOperationsExamples {
         methods. Remember, a stream can have only one terminal operation.
         Once a terminal operation has been run, the stream cannot be used again.*/
 
+        //findAny() and findFirst()
+        //The findAny() and findFirst() methods return an element of the stream
+        //unless the stream is empty. If the stream is empty, they return an empty
+        //Optional. This is the first method you've seen that can terminate with an
+        //infinite stream.
+        /*These methods are terminal operations but not reductions. The reason is
+        that they sometimes return without processing all of the elements. This
+        means that they return a value based on the stream but do not reduce the
+        entire stream into one value.*/
+        //Optional<T> findAny()
+        //Optional<T> findFirst()
+        Stream<String> u = Stream.of("monkey", "gorilla", "bonobo");
+        Stream<String> infinite = Stream.generate(() -> "chimp");
+        u.findAny().ifPresent(System.out::println); // monkey(usually)
+        infinite.findAny().ifPresent(System.out::println); // chimp
+
 
     }
 }
