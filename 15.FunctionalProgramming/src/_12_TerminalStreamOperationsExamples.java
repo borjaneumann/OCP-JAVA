@@ -149,6 +149,36 @@ public class _12_TerminalStreamOperationsExamples {
         values could be computed independently. The intermediate result (200 +
         200) would then be combined into the final value.*/
 
+        //collect()
+        /*The collect() method is a special type of reduction called a mutable
+        reduction. It is more efficient than a regular reduction because we use the
+        same mutable object while accumulating. Common mutable objects
+        include StringBuilder and ArrayList. This is a really useful method,
+        because it lets us get data out of streams and into another form.*/
+//        <R> R collect(Supplier<R> supplier,
+//                BiConsumer<R, ? super T> accumulator,
+//                BiConsumer<R, R> combiner)
+//        <R,A> R collect(Collector<? super T, A,R> collector)
+        Stream<String> streamCollect = Stream.of("c", "o", "l", "l","e", "c","t");
+        StringBuilder word3 = streamCollect.collect(
+                StringBuilder::new, //supplier
+                StringBuilder::append, //accumulator (BiConsumer)
+                StringBuilder::append); //combinator (BiConsumer)
+        System.out.println(word3); // collect
+        //The first parameter is the supplier, which creates the object that will store
+        //the results as we collect data. Remember that a Supplier doesn't take any
+        //parameters and returns a value. In this case, it constructs a new
+        //StringBuilder.
+        //The second parameter is the accumulator, which is a BiConsumer that
+        //takes two parameters and doesn't return anything. It is responsible for
+        //adding one more element to the data collection. In this example, it appends
+        //the next String to the StringBuilder.
+        //The final parameter is the combiner, which is another BiConsumer. It is
+        //responsible for taking two data collections and merging them. This is
+        //useful when we are processing in parallel. Two smaller collections are
+        //formed and then merged into one. This would work with StringBuilder
+        //only if we didn't care about the order of the letters. In this case, the
+        //accumulator and combiner have similar logic.
 
 
 
