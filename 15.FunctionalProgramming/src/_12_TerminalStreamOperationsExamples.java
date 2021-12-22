@@ -1,4 +1,6 @@
+import java.util.List;
 import java.util.Optional;
+import java.util.function.Predicate;
 import java.util.stream.Stream;
 
 public class _12_TerminalStreamOperationsExamples {
@@ -49,6 +51,29 @@ public class _12_TerminalStreamOperationsExamples {
         Stream<String> infinite = Stream.generate(() -> "chimp");
         u.findAny().ifPresent(System.out::println); // monkey(usually)
         infinite.findAny().ifPresent(System.out::println); // chimp
+
+        //allMatch(), anyMatch(), and noneMatch()
+        /*The allMatch(), anyMatch(), and noneMatch() methods search a stream
+        and return information about how the stream pertains to the predicate.
+        These may or may not terminate for infinite streams. It depends on the
+        data. Like the find methods, they are not reductions because they do not
+        necessarily look at all of the elements.*/
+        //boolean anyMatch(Predicate <? super T> predicate)
+        //boolean allMatch(Predicate <? super T> predicate)
+        //boolean noneMatch(Predicate <? super T> predicate)
+
+        //This example checks whether animal names begin with letters:
+        var list = List.of("monkey", "2", "chimp");
+        Stream<String> infinite2 = Stream.generate(() -> "chimp");
+        Predicate<String> pred = x -> Character.isLetter(x.charAt(0));
+        System.out.println(list.stream().anyMatch(pred)); // true
+        System.out.println(list.stream().allMatch(pred)); // false
+        System.out.println(list.stream().noneMatch(pred)); // false
+        System.out.println(infinite2.anyMatch(pred)); // true //If we called allMatch(), it would run until we killed the program.
+
+        //Remember that allMatch(), anyMatch(), and noneMatch() return a
+        //boolean. By contrast, the find methods return an Optional because
+        //they return an element of the stream.
 
 
     }
