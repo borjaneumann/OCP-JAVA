@@ -1,3 +1,4 @@
+import java.util.List;
 import java.util.stream.Stream;
 
 public class _13_UsingCommonIntermediateOperations {
@@ -58,6 +59,30 @@ public class _13_UsingCommonIntermediateOperations {
         Stream<String> s3 = Stream.of("monkey", "gorilla", "bonobo");
         s3.map(String::length)
                 .forEach(System.out::print); // 676
+
+        System.out.println();
+        /*flatMap()
+        The flatMap() method takes each element in the stream and makes any
+        elements it contains top‐level elements in a single stream. This is helpful
+        when you want to remove empty elements from a stream or you want to
+        combine a stream of lists. We are showing you the method signature for
+        consistency with the other methods, just so you don't think we are hiding
+        anything. You aren't expected to be able to read this:
+                <R> Stream<R> flatMap(
+                Function<? super T, ? extends Stream<? extends R>> mapper)
+        This gibberish basically says that it returns a Stream of the type that the
+        function contains at a lower level. Don't worry about the signature. It's a
+        headache.*/
+        List<String> zero = List.of();
+        var one = List.of("Bonobo");
+        var two = List.of("Mama Gorilla", "Baby Gorilla");
+        Stream<List<String>> animals = Stream.of(zero, one, two);
+        animals.flatMap(m -> m.stream())
+                .forEach(System.out::println);
+        //Bonobo
+        //Mama Gorilla
+        //Baby Gorilla
+
 
     }
 }
