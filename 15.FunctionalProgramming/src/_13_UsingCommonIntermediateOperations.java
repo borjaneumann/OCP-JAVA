@@ -27,5 +27,21 @@ public class _13_UsingCommonIntermediateOperations {
         s1.distinct()
                 .forEach(System.out::print); // duckgoose
 
+        /*limit() and skip()
+        The limit() and skip() methods can make a Stream smaller, or they
+        could make a finite stream out of an infinite stream. The method
+        signatures are shown here:
+        Stream<T> limit(long maxSize)
+        Stream<T> skip(long n)
+        The following code creates an infinite stream of numbers counting from 1.
+        The skip() operation returns an infinite stream starting with the numbers
+        counting from 6, since it skips the first five elements. The limit() call
+        takes the first two of those. Now we have a finite stream with two
+        elements, which we can then print with the forEach() method.*/
+        Stream<Integer> s2 = Stream.iterate(1, n -> n + 1);
+        s2.skip(5)
+                .limit(2)
+                .forEach(System.out::print); // 67
+
     }
 }
