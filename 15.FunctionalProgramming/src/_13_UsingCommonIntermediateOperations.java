@@ -1,6 +1,9 @@
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Stream;
+
+import jdk.swing.interop.SwingInterOpUtils;
 
 public class _13_UsingCommonIntermediateOperations {
     //Unlike a terminal operation, an intermediate operation produces a stream
@@ -102,7 +105,7 @@ public class _13_UsingCommonIntermediateOperations {
         // grizzly-brown bear
         // Here we passed a Comparator to specify that we want to sort in the reverse of natural sort order.
         // Ready for a tricky one? Do you see why this doesn't compile?
-//        s5.sorted(Comparator::reverseOrder); // DOES NOT COMPILE
+        //s5.sorted(Comparator::reverseOrder); // DOES NOT COMPILE
         System.out.println();
 
         /*peek()
@@ -124,5 +127,24 @@ public class _13_UsingCommonIntermediateOperations {
         /*In a stream, peek() looks at each element that goes
         through that part of the stream pipeline. It's like having a worker take
         notes on how a particular step of the process is doing.*/
+
+        //CHANGING STATE WITH PEEK()
+        //Here's a straightforward stream pipeline that doesn't use peek():
+        var numbers = new ArrayList<>();
+        var letters = new ArrayList<>();
+        numbers.add(1);
+        letters.add('a');
+        Stream<List<?>> stream1 = Stream.of(numbers, letters);
+        stream1.map(List::size).forEach(System.out::print); //11
+
+        /*Now we add a peek() call and note that Java doesn't prevent us
+        from writing bad peek code.*/
+        Stream<List<?>> bad = Stream.of(numbers, letters);
+        bad.peek(x -> x.remove(0))
+                .map(List::size)
+                .forEach(System.out::print); // 00
+        /*This example is bad because peek() is modifying the data structure
+        that is used in the stream, which causes the result of the stream
+        pipeline to be different than if the peek wasn't present.*/
     }
 }
