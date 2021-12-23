@@ -15,7 +15,7 @@ public class _13_UsingCommonIntermediateOperations {
         letter m:*/
         Stream<String> s = Stream.of("monkey", "gorilla", "bonobo");
         s.filter(x -> x.startsWith("m"))
-                .forEach(System.out::print); // monkey
+                .forEach(System.out::println); // monkey
 
         /*distinct()
         The distinct() method returns a stream with duplicate values removed.
@@ -26,7 +26,7 @@ public class _13_UsingCommonIntermediateOperations {
         Stream<String> s1 = Stream.of("duck", "duck", "duck", "goose");
         s1.distinct()
                 .forEach(System.out::print); // duckgoose
-
+        System.out.println();
         /*limit() and skip()
         The limit() and skip() methods can make a Stream smaller, or they
         could make a finite stream out of an infinite stream. The method
@@ -42,6 +42,22 @@ public class _13_UsingCommonIntermediateOperations {
         s2.skip(5)
                 .limit(2)
                 .forEach(System.out::print); // 67
+
+        System.out.println();
+        /*map()
+        The map() method creates a one‐to‐one mapping from the elements in the
+        stream to the elements of the next step in the stream.
+        <R> Stream<R> map(Function<? super T, ? extends R> mapper)
+        This one looks more complicated than the others you have seen. It uses the
+        lambda expression to figure out the type passed to that function and the
+        one returned. The return type is the stream that gets returned.
+        The map() method on streams is for transforming data. Don't
+        confuse it with the Map interface, which maps keys to values.
+        As an example, this code converts a list of String objects to a list of
+        Integer objects representing their lengths.*/
+        Stream<String> s3 = Stream.of("monkey", "gorilla", "bonobo");
+        s3.map(String::length)
+                .forEach(System.out::print); // 676
 
     }
 }
