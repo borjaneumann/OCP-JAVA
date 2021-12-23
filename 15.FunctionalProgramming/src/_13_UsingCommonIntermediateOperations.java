@@ -17,5 +17,15 @@ public class _13_UsingCommonIntermediateOperations {
         s.filter(x -> x.startsWith("m"))
                 .forEach(System.out::print); // monkey
 
+        /*distinct()
+        The distinct() method returns a stream with duplicate values removed.
+        The duplicates do not need to be adjacent to be removed. As you might
+        imagine, Java calls equals() to determine whether the objects are the
+        same.*/
+        //Stream<T> distinct()
+        Stream<String> s1 = Stream.of("duck", "duck", "duck", "goose");
+        s1.distinct()
+                .forEach(System.out::print); // duckgoose
+
     }
 }
