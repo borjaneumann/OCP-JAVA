@@ -103,5 +103,26 @@ public class _13_UsingCommonIntermediateOperations {
         // Here we passed a Comparator to specify that we want to sort in the reverse of natural sort order.
         // Ready for a tricky one? Do you see why this doesn't compile?
 //        s5.sorted(Comparator::reverseOrder); // DOES NOT COMPILE
+        System.out.println();
+
+        /*peek()
+        It is useful for debugging because it allows us to perform a stream operation without
+        actually changing the stream.
+        Stream<T> peek(Consumer<? super T> action)
+        You might notice the intermediate peek() operation takes the same
+        argument as the terminal forEach() operation Think of peek() as an
+        intermediate version of forEach() that returns the original stream back to you.
+        The most common use for peek() is to output the contents of the stream as
+        it goes by.
+        Suppose that we made a typo and counted bears beginning with
+        the letter g instead of b. We are puzzled why the count is 1 instead of 2.
+        We can add a peek() method to find out why.*/
+        var stream = Stream.of("black bear", "brown bear", "grizzly");
+        long count = stream.filter(s6 -> s6.startsWith("g"))
+                .peek(System.out::println).count(); // grizzly
+        System.out.println(count); // 1
+        /*In a stream, peek() looks at each element that goes
+        through that part of the stream pipeline. It's like having a worker take
+        notes on how a particular step of the process is doing.*/
     }
 }
