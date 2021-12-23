@@ -3,6 +3,7 @@ import java.util.Optional;
 import java.util.TreeSet;
 import java.util.function.BinaryOperator;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class _12_TerminalStreamOperationsExamples {
@@ -188,8 +189,10 @@ public class _12_TerminalStreamOperationsExamples {
                 TreeSet::new, //creates an empry TreeSet
                 TreeSet::add,
                 TreeSet::addAll);
+        System.out.println("Collect example 2: " + set);
 
-        System.out.println("Collect example 2: " + set); // [e, r, s, t]
-
-    }
+        //For example, we could rewrite the previous example as follows:
+        Stream<String> stream5 = Stream.of("m","o","o","n");
+        TreeSet<String> set2 = stream5.collect(Collectors.toCollection(TreeSet::new));
+        System.out.println("Collect example 3: " + set2);    }
 }
