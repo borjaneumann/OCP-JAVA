@@ -1,5 +1,6 @@
 import java.util.List;
 import java.util.Optional;
+import java.util.TreeSet;
 import java.util.function.BinaryOperator;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
@@ -164,7 +165,7 @@ public class _12_TerminalStreamOperationsExamples {
                 StringBuilder::new, //supplier
                 StringBuilder::append, //accumulator (BiConsumer)
                 StringBuilder::append); //combinator (BiConsumer)
-        System.out.println(word3); // collect
+        System.out.println("Collect example 1: " + word3); // collect
         //The first parameter is the supplier, which creates the object that will store
         //the results as we collect data. Remember that a Supplier doesn't take any
         //parameters and returns a value. In this case, it constructs a new
@@ -180,7 +181,15 @@ public class _12_TerminalStreamOperationsExamples {
         //only if we didn't care about the order of the letters. In this case, the
         //accumulator and combiner have similar logic.
 
+        //Now let's look at an example where the logic is different in the
+        //accumulator and combiner.
+        Stream<String> stream4 = Stream.of("t","r","e","e","s","e","t");
+        TreeSet<String> set = stream4.collect(
+                TreeSet::new, //creates an empry TreeSet
+                TreeSet::add,
+                TreeSet::addAll);
 
+        System.out.println("Collect example 2: " + set); // [e, r, s, t]
 
     }
 }
