@@ -1,5 +1,6 @@
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 import java.util.TreeSet;
 import java.util.function.BinaryOperator;
 import java.util.function.Predicate;
@@ -194,5 +195,15 @@ public class _12_TerminalStreamOperationsExamples {
         //For example, we could rewrite the previous example as follows:
         Stream<String> stream5 = Stream.of("m","o","o","n");
         TreeSet<String> set2 = stream5.collect(Collectors.toCollection(TreeSet::new));
-        System.out.println("Collect example 3: " + set2);    }
+        System.out.println("Collect example 3: " + set2);
+
+        //If we didn't need the set to be sorted, we could make the code even shorter:
+        Stream<String> stream6 = Stream.of("w", "o", "l", "f");
+        Set<String> set3 = stream6.collect(Collectors.toSet());
+        System.out.println("Collect example 4: " + set3); // [f, w, l, o]
+        //You might get different output for this last one since toSet() makes no
+        //guarantees as to which implementation of Set you'll get. It is likely to be a
+        //HashSet, but you shouldn't expect or rely on that.
+
+    }
 }
