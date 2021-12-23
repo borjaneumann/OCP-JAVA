@@ -1,3 +1,4 @@
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -83,6 +84,24 @@ public class _13_UsingCommonIntermediateOperations {
         //Mama Gorilla
         //Baby Gorilla
 
-
+        /*sorted()
+        The sorted() method returns a stream with the elements sorted. Just like
+        sorting arrays, Java uses natural ordering unless we specify a comparator.
+        Stream<T> sorted()
+        Stream<T> sorted(Comparator<? super T> comparator)
+        Calling the first signature uses the default sort order.*/
+        Stream<String> s4 = Stream.of("brown-", "bear-");
+        s4.sorted()
+                .forEach(System.out::print); // bear-brown
+        System.out.println();
+        // We can optionally use a Comparator implementation via a method or a lambda.
+        // In this example, we are using a method:
+        Stream<String> s5 = Stream.of("brown bear-", "grizzly-");
+        s5.sorted(Comparator.reverseOrder())
+                .forEach(System.out::print);
+        // grizzly-brown bear
+        // Here we passed a Comparator to specify that we want to sort in the reverse of natural sort order.
+        // Ready for a tricky one? Do you see why this doesn't compile?
+//        s5.sorted(Comparator::reverseOrder); // DOES NOT COMPILE
     }
 }
