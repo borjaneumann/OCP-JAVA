@@ -23,6 +23,19 @@ public class _14_PuttingTogetherThePipeline {
         System.out.println("Without streams: " + filtered);
 
         //With Streams
+        //With streams, the equivalent code is as follows:
+        var list2 = List.of("Toby", "Anna", "Leroy", "Alex");
+        list2.stream().filter(n -> n.length() == 4).sorted()
+                .limit(2).forEach(System.out::println);
+
+        System.out.println("With Streams: ");
+        //Before you say that it is harder to read, we can format it.
+        var list3 = List.of("Toby", "Anna", "Leroy", "Alex");
+        list3.stream()
+                .filter(n -> n.length() == 4)
+                .sorted()
+                .limit(2)
+                .forEach(System.out::println);
 
 
     }
