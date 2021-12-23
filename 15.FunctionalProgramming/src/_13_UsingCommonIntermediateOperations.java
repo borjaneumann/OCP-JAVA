@@ -136,6 +136,7 @@ public class _13_UsingCommonIntermediateOperations {
         letters.add('a');
         Stream<List<?>> stream1 = Stream.of(numbers, letters);
         stream1.map(List::size).forEach(System.out::print); //11
+        System.out.println();
 
         /*Now we add a peek() call and note that Java doesn't prevent us
         from writing bad peek code.*/
