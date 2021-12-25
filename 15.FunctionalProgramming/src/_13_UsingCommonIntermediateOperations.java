@@ -3,7 +3,6 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Stream;
 
-import jdk.swing.interop.SwingInterOpUtils;
 
 public class _13_UsingCommonIntermediateOperations {
     //Unlike a terminal operation, an intermediate operation produces a stream
