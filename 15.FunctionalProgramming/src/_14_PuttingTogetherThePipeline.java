@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class _14_PuttingTogetherThePipeline {
     //Streams allow you to use chaining and express what you want to
@@ -36,6 +37,18 @@ public class _14_PuttingTogetherThePipeline {
                 .sorted()
                 .limit(2)
                 .forEach(System.out::println);
+
+        //Make sense? Let's try a few more examples to make sure that you
+        //understand this well. What do you think the following does?
+        Stream.generate(() -> "Elsa")
+        .filter(n -> n.length() == 4)
+        .sorted()
+        .limit(2)
+        .forEach(System.out::println);
+        //It actually hangs until you kill the program or it throws an exception after
+        //running out of memory. The foreman has instructed sorted() to wait until
+        //everything to sort is present. That never happens because there is an
+        //infinite stream. What about this example?
 
 
     }
