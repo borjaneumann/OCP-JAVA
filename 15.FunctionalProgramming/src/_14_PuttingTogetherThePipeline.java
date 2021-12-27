@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class _14_PuttingTogetherThePipeline {
@@ -63,6 +64,18 @@ public class _14_PuttingTogetherThePipeline {
                 .sorted()
                 .forEach((System.out::println));
         //The filter doesn't allow anything through, so limit() never sees two elements
+
+        //You can even chain two pipelines together.
+        long count = Stream.of("goldfish", "finch")
+                .filter(s->s.length()>5)
+                .collect(Collectors.toList())
+                .stream()
+                .count();
+        System.out.println(count); //1
+        //Lines 30–32 are one pipeline, and lines 33 and 34 are another. For the first
+        //pipeline, line 30 is the source, and line 32 is the terminal operation. For
+        //the second pipeline, line 33 is the source, and line 34 is the terminal
+        //operation. Now that's a complicated way of outputting the number 1!
 
 
     }
