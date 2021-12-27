@@ -34,27 +34,27 @@ public class _14_PuttingTogetherThePipeline {
         //Before you say that it is harder to read, we can format it.
         var list3 = List.of("Toby", "Anna", "Leroy", "Alex");
         list3.stream()
-            .filter(n -> n.length() == 4)
-            .sorted()
-            .limit(2)
-            .forEach(System.out::println);
+                .filter(n -> n.length() == 4)
+                .sorted()
+                .limit(2)
+                .forEach(System.out::println);
 
         //Make sense? Let's try a few more examples to make sure that you
         //understand this well. What do you think the following does?
         Stream.generate(() -> "Elsa") //Elsa is repeated infinitely.
-            .filter(n -> n.length() == 4)
-            .sorted()
-            .limit(2)
-            .forEach(System.out::println);
+                .filter(n -> n.length() == 4)
+                .sorted()
+                .limit(2)
+                .forEach(System.out::println);
         //It actually hangs until you kill the program or it throws an exception after
         //running out of memory. The foreman has instructed sorted() to wait until
         //everything to sort is present. That never happens because there is an
         //infinite stream. What about this example?
         Stream.generate(() -> "Elsa")
-            .filter(n -> n.length() == 4)
-            .limit(2) //sorted() needs a finite list to sort
-            .sorted()
-            .forEach(System.out::println);
+                .filter(n -> n.length() == 4)
+                .limit(2) //sorted() needs a finite list to sort
+                .sorted()
+                .forEach(System.out::println);
         //This one prints Elsa twice.
 
         //what do you think this does?
@@ -76,6 +76,14 @@ public class _14_PuttingTogetherThePipeline {
         //pipeline, line 30 is the source, and line 32 is the terminal operation. For
         //the second pipeline, line 33 is the source, and line 34 is the terminal
         //operation. Now that's a complicated way of outputting the number 1!
+
+        //You can even rewrite the code in your head to have a variable in between so it isn't
+        //as long and complicated. Our prior example can be written as follows:
+        List<String> helper = Stream.of("goldfish","finch")
+                .filter(s-> s.length()>5)
+                .collect(Collectors.toList());
+        long count1 = helper.stream().count();
+        System.out.println(count1);
 
 
     }
