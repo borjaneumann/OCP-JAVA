@@ -19,6 +19,14 @@ public class _15_PeakingBehindTheScenes {
                 .filter(x -> x % 2 == 1)
                 .forEach(System.out::print); //11233455
 
+        //Reversing the order of the intermediate operations changes the result.
+        System.out.println();
+            var infinite3 = Stream.iterate(1, x -> x + 1);
+            infinite3.filter(x -> x % 2 == 1)
+                .limit(5)
+                .forEach(System.out::print); // 13579
+
+
 
 
 
