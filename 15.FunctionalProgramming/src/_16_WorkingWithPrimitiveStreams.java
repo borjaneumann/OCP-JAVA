@@ -1,3 +1,5 @@
+import java.util.OptionalDouble;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class _16_WorkingWithPrimitiveStreams {
@@ -19,6 +21,11 @@ public class _16_WorkingWithPrimitiveStreams {
         //same intermediate and terminal methods as a Stream but includes
         //specialized methods for working with numeric data. The primitive streams
         //know how to perform certain common operations automatically.
+
+        //Calculating averages
+        IntStream intStream = IntStream.of(1,2,3,4,5);
+        OptionalDouble avg = intStream.average();
+        System.out.println(avg.getAsDouble()); // 2.0
 
     }
 
