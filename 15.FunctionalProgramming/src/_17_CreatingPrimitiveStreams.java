@@ -1,5 +1,6 @@
 import java.util.Random;
 import java.util.stream.DoubleStream;
+import java.util.stream.IntStream;
 
 public class _17_CreatingPrimitiveStreams {
 
@@ -59,6 +60,19 @@ public class _17_CreatingPrimitiveStreams {
 
         //Random class provides a method to get primitives streams of random numbers directly
         new Random().ints(5).forEach(System.out::println);
+
+        //Suppose that we wanted a stream with the numbers from 1 through 5. We could write this
+        //using what we've explained so far:
+        IntStream count = IntStream.iterate(1, n -> n+1).limit(5);
+        count.forEach(System.out::print); //1,2,3,4,5
+
+        //Java provides a method that can generate a range of numbers. The same below.
+        System.out.println();
+        IntStream range = IntStream.range(1, 6);
+        range.forEach(System.out::print);
+        System.out.println();
+        IntStream rangeClosed = IntStream.rangeClosed(1, 5);
+        rangeClosed.forEach(System.out::print);
 
     }
 
