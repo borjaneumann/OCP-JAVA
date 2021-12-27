@@ -1,4 +1,6 @@
-public class CreatingPrimitiveStreams {
+import java.util.stream.DoubleStream;
+
+public class _17_CreatingPrimitiveStreams {
 
     /*Here are three types of primitive streams.
     IntStream: Used for the primitive types int, short, byte, and char
@@ -38,6 +40,14 @@ public class CreatingPrimitiveStreams {
     - LongSummaryStatistics summaryStatistics()     LongStream  stream statistics such as the average,
     - DoubleSummaryStatistics summaryStatistics()   DoubleStream min, max, etc.
         */
+
+        DoubleStream empty = DoubleStream.empty();
+
+        DoubleStream oneValue = DoubleStream.of(3.14);
+        oneValue.forEach(System.out::println);
+
+        DoubleStream varargs = DoubleStream.of(1.0, 1.1,1.2);
+        varargs.forEach(System.out::println);
     }
 
 }
