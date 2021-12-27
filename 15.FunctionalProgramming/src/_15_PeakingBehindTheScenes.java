@@ -26,6 +26,14 @@ public class _15_PeakingBehindTheScenes {
                 .limit(5)
                 .forEach(System.out::print); // 13579
 
+        //Finally, what do you think this prints?
+        System.out.println();
+        var infinite4 = Stream.iterate(1, x-> x + 1);
+        infinite4.filter(x -> x % 2 == 1)
+                .peek(System.out::print)
+                .limit(5)
+                .forEach(System.out::print);// 1133557799.
+
 
 
 
