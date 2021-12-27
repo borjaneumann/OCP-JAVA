@@ -56,6 +56,14 @@ public class _14_PuttingTogetherThePipeline {
             .forEach(System.out::println);
         //This one prints Elsa twice.
 
+        //what do you think this does?
+        Stream.generate(()->"Olaf Lazisson")
+                .filter(n -> n.length() == 4)
+                .limit(2)
+                .sorted()
+                .forEach((System.out::println));
+        //The filter doesn't allow anything through, so limit() never sees two elements
+
 
     }
 }
