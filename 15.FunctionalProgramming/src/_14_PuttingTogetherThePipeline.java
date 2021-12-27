@@ -27,28 +27,34 @@ public class _14_PuttingTogetherThePipeline {
         //With streams, the equivalent code is as follows:
         var list2 = List.of("Toby", "Anna", "Leroy", "Alex");
         list2.stream().filter(n -> n.length() == 4).sorted()
-                .limit(2).forEach(System.out::println);
+            .limit(2).forEach(System.out::println);
 
         System.out.println("With Streams: ");
         //Before you say that it is harder to read, we can format it.
         var list3 = List.of("Toby", "Anna", "Leroy", "Alex");
         list3.stream()
-                .filter(n -> n.length() == 4)
-                .sorted()
-                .limit(2)
-                .forEach(System.out::println);
+            .filter(n -> n.length() == 4)
+            .sorted()
+            .limit(2)
+            .forEach(System.out::println);
 
         //Make sense? Let's try a few more examples to make sure that you
         //understand this well. What do you think the following does?
-        Stream.generate(() -> "Elsa")
-        .filter(n -> n.length() == 4)
-        .sorted()
-        .limit(2)
-        .forEach(System.out::println);
+        Stream.generate(() -> "Elsa") //Elsa is repeated infinitely.
+            .filter(n -> n.length() == 4)
+            .sorted()
+            .limit(2)
+            .forEach(System.out::println);
         //It actually hangs until you kill the program or it throws an exception after
         //running out of memory. The foreman has instructed sorted() to wait until
         //everything to sort is present. That never happens because there is an
         //infinite stream. What about this example?
+        Stream.generate(() -> "Elsa")
+            .filter(n -> n.length() == 4)
+            .limit(2) //sorted() needs a finite list to sort
+            .sorted()
+            .forEach(System.out::println);
+        //This one prints Elsa twice.
 
 
     }
