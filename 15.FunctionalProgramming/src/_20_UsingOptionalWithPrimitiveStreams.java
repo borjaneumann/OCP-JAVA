@@ -18,5 +18,15 @@ public class _20_UsingOptionalWithPrimitiveStreams {
         System.out.println(optional.orElseGet(() -> Double.NaN)); //5.5
 
     }
+    // Optional types for primitives
+    /*
+                                        OptionalDouble      OptionalInt     OptionalLong
+    - Getting as a primitive            getAsDouble()       getAsInt()      getAsLong()
+    - orElseGet() parameter type        DoubleSupplier      IntSupplier     LongSupplier
+    - Return type of max() and min()    OptionalDouble      OptionalInt     OptionalLong
+    - Return type of sum()              double              int             long
+    - Return type of average()          OptionalDouble      OptionalDouble  OptionalDouble
+     */
+
 
 }
