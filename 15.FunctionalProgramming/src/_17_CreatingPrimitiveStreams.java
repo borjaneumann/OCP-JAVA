@@ -57,6 +57,8 @@ public class _17_CreatingPrimitiveStreams {
         random.limit(3).forEach(System.out::println);
         fractions.limit(3).forEach(System.out::println);
 
+        //Random class provides a method to get primitives streams of random numbers directly
+        new Random().ints(5).forEach(System.out::println);
 
     }
 
