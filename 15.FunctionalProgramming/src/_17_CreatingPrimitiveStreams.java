@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.stream.DoubleStream;
 
 public class _17_CreatingPrimitiveStreams {
@@ -48,6 +49,15 @@ public class _17_CreatingPrimitiveStreams {
 
         DoubleStream varargs = DoubleStream.of(1.0, 1.1,1.2);
         varargs.forEach(System.out::println);
+
+        //You can also use the two methods for creating infinite streams, just like
+        //we did with Stream.
+        var random = DoubleStream.generate(Math::random);
+        var fractions = DoubleStream.iterate(.5,d -> d/2);
+        random.limit(3).forEach(System.out::println);
+        fractions.limit(3).forEach(System.out::println);
+
+
     }
 
 }
