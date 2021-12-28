@@ -11,6 +11,9 @@ public class _22_LearningTheFunctionalInterfacesForPrimitives {
         System.out.println(b2.getAsBoolean()); //false, prints out true or false, depending on the random value
         //generated.
 
+        //Functional Interfaces for double, int, and long
+        //See tables
+
 
     }
 
