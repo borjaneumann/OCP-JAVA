@@ -1,5 +1,9 @@
 import java.util.OptionalDouble;
+import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
+import java.util.stream.LongStream;
+
+import javax.crypto.spec.PSource;
 
 public class _20_UsingOptionalWithPrimitiveStreams {
 
@@ -17,16 +21,25 @@ public class _20_UsingOptionalWithPrimitiveStreams {
         System.out.println(optional.getAsDouble()); //5.5
         System.out.println(optional.orElseGet(() -> Double.NaN)); //5.5
 
+        // Optional types for primitives
+        /*
+                                            OptionalDouble      OptionalInt     OptionalLong
+        - Getting as a primitive            getAsDouble()       getAsInt()      getAsLong()
+        - orElseGet() parameter type        DoubleSupplier      IntSupplier     LongSupplier
+        - Return type of max() and min()    OptionalDouble      OptionalInt     OptionalLong
+        - Return type of sum()              double              int             long
+        - Return type of average()          OptionalDouble      OptionalDouble  OptionalDouble
+         */
+        LongStream longs = LongStream.of(5, 10);
+        long sum = longs.sum();
+        System.out.println("longs.sum: " + sum);
+        DoubleStream doubles = DoubleStream.generate(() -> Math.PI);
+        OptionalDouble min = doubles.min(); // runs infinitely. This also can appear in the exam.
+
     }
-    // Optional types for primitives
-    /*
-                                        OptionalDouble      OptionalInt     OptionalLong
-    - Getting as a primitive            getAsDouble()       getAsInt()      getAsLong()
-    - orElseGet() parameter type        DoubleSupplier      IntSupplier     LongSupplier
-    - Return type of max() and min()    OptionalDouble      OptionalInt     OptionalLong
-    - Return type of sum()              double              int             long
-    - Return type of average()          OptionalDouble      OptionalDouble  OptionalDouble
-     */
+
+
+
 
 
 }
