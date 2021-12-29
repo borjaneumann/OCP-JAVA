@@ -51,6 +51,11 @@ public class _9_ConstructingTryWithCatchResourcesManagement {
         } finally {
 //           s.nextInt(); // DOES NOT COMPILE
         }
+        /*
+        The problem is that Scanner has gone out of scope at the end of the try
+        clause. Lines 50 and 52 do not have access to it. This is actually a nice
+        feature. You can't accidentally use an object that has been closed.
+         */
 
     }
     public static class MyFileReader implements AutoCloseable {
