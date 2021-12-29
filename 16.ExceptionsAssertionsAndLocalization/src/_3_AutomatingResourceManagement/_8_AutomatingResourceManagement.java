@@ -1,4 +1,4 @@
-package _2_CreatingCustomExceptions;
+package _3_AutomatingResourceManagement;
 
 public class _8_AutomatingResourceManagement {
     /*
