@@ -10,7 +10,7 @@ public class _5_DeclaringExceptionClasses {
     RuntimeException (for unchecked).
     Can you figure out whether the exceptions are checked or unchecked in this example?*/
 
-    class CannotSwimException extends Exception {}
+    static class CannotSwimException extends Exception {}
     class DangerInTheWater extends RuntimeException {}
     class SharkInTheWaterException extends DangerInTheWater {}
     class Dolphin {
