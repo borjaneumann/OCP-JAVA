@@ -34,4 +34,20 @@ public class _3_ExaminingExceptionCategories {
     considered a poor practice to catch it
      */
 
+    //Uncheched exceptions
+    /*ArithmeticException       ArrayIndexOutOfBoundsException
+    ----------------------      -------------------------------
+    ArrayStoreException         ClassCastException
+    IllegalArgumentException    IllegalStateException
+    MissingResourceException    NullPointerException
+    NumberFormatException       UnsupportedOperationException
+     */
+
+    //Cheched exceptions
+    /*FileNotFoundException     IOException
+    -----------------------     -----------
+    NotSerializableException    ParseException
+    SQLException
+    */
+
 }
