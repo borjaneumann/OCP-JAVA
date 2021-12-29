@@ -1,3 +1,7 @@
+import static java.util.stream.Collectors.groupingBy;
+import static java.util.stream.Collectors.mapping;
+import static java.util.stream.Collectors.minBy;
+
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -40,7 +44,7 @@ public class _28_CollectingUsingPartitioning {
         //matter which Map type we use? we can do sth else instead
         var ohMy3 = Stream.of("lions", "tigers", "bears");
         Map<Integer, Long> map3 = ohMy3.collect(
-                Collectors.groupingBy(
+                groupingBy(
                         String::length,
                         Collectors.counting()));
         System.out.println(map3); // {5=2, 6=1}
@@ -50,15 +54,31 @@ public class _28_CollectingUsingPartitioning {
         //animal alphabetically of each length.
         var ohMy4 = Stream.of("lions", "tigers", "bears");
         Map<Integer, Optional<Character>> map4 = ohMy4.collect(
-                Collectors.groupingBy(
+                groupingBy(
                         String::length,
-                        Collectors.mapping(
+                        mapping(
                                 s -> s.charAt(0),
-                                Collectors.minBy((a, b) -> a - b))
+                                minBy((a, b) -> a - b))
                 )
         );
         System.out.println(map4);//{5=Optional[b], 6=Optional[t]}
 
         //We will tell you that it is the most complicated thing you need to understand for the exam.
+       /* You might see collectors used with a static import to make the code
+        shorter. The exam might even use var for the return value and less
+        indentation than we used. This means that you might see something like
+        this:*/
+        var ohMy5 = Stream.of("lions", "tigers", "bears");
+        var map5 = ohMy5.collect(groupingBy(String::length, //var map5 no key value indicattion
+                mapping(s -> s.charAt(0), minBy((a, b) -> a -b))));
+        System.out.println(map5); // {5=Optional[b], 6=Optional[t]}
+
+        /*it is important to recognize the collector names because you might not
+        have the Collectors class name to call your attention to it.
+        There is one more collector called reducing(). You don't need to
+        know it for the exam. It is a general reduction in case all of the
+        previous collectors don't meet your needs.
+         */
+
     }
 }
