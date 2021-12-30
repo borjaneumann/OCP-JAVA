@@ -16,11 +16,11 @@ public class _12_IntroAssertions {
     //fatal and end the program!
     public static void main(String[] args) {
         int age = 2;
-        int height = 1clear;
+        int height = 1;
         int length = 2;
         String name = "Cecilia";
 
-        assert 2 == age;
+        assert 1 == age;
         assert (2 == height);
         assert 100.0 == length : "Problem with length";
         assert ("Ceceia".equals(name)) : "Failed to verify user data";
