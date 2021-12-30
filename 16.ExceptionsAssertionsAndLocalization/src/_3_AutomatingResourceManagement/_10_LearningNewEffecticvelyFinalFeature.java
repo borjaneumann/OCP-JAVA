@@ -31,7 +31,7 @@ public class _10_LearningNewEffecticvelyFinalFeature {
         /*The other place the exam might try to trick you is accessing a resource
     after it has been closed. Consider the following:*/
 //        var writer = Files.newBufferedWriter(path);
-//        writer.append("This write is permitted but a really bad idea!");
+//        writer.append("This write is permitted but a really bad idea!"); what if there is an exception?
 //        try(writer) {
 //            writer.append("Welcome to the zoo!");
 //        }
@@ -39,6 +39,11 @@ public class _10_LearningNewEffecticvelyFinalFeature {
     /*This code compiles but throws an exception on line 46 with the message
     Stream closed. While it was possible to write to the resource before the
     try‐with‐resources statement, it is not afterward.*/
+
+        //dont do this
+        //var reader = Files.newBufferedReader(path1);
+        //var writer = Files.newBufferedWriter(path2); //Don’t do this! what if there is an exception?
+        //try (reader; writer) {}
     }
 
 
