@@ -26,6 +26,14 @@ public class _13_EnablingAssertions {
     assertions for the TestColors class:
     java -ea:com.demos… -da:com.demos.TestColors my.programs.Main
 
+    BAD USE OF ASSERTIONS
+    int x = 10;
+    assert ++x> 10; // Not a good design!
+
+    When assertions are turned on, x is incremented to 11; but when assertions
+    are turned off, the value of x is 10. This is not a good use of assertions
+    because the outcome of the code will be different depending on whether
+    assertions are turned on.
      */
 
 }
