@@ -25,11 +25,22 @@ public class _3_StandardDateTimeSymbols {
         System.out.println(dt.format(formatter1)); //   10/20/2020 06:15:30
         var formatter2 = DateTimeFormatter.ofPattern("MM_yyyy_-_dd");
         System.out.println(dt.format(formatter2)); //   10_2020_-_20
-        var formatter3 = DateTimeFormatter.ofPattern("h:mm z");
-        System.out.println(dt.format(formatter3)); // 6:15 EST //Exception in thread "main" java.time.DateTimeException:
+//        var formatter3 = DateTimeFormatter.ofPattern("h:mm z");
+//        System.out.println(dt.format(formatter3)); // 6:15 EST //Exception in thread "main" java.time.DateTimeException:
         //Unable to extract ZoneId from temporal 2020-10-20T06:15:30
 
         /*As you saw in the previous example, you need to make sure the format
         String is compatible with the underlying date/time type.*/
+
+        /*Selecting a format() Method
+        The date/time classes contain a format() method that will take a
+        formatter, while the formatter classes contain a format() method that will
+        take a date/time value. The result is that either of the following is
+        acceptable:*/
+        var dateTime = LocalDateTime.of(2020, Month.OCTOBER, 20, 6,
+                15, 30);
+        var formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy hh:mm:ss");
+        System.out.println(dateTime.format(formatter)); // 10/20/2020 06:15:30
+        System.out.println(formatter.format(dateTime)); // 10/20/2020 06:15:30
     }
 }
