@@ -1,10 +1,13 @@
 package _5_WorkingWithDatesAndTimes;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.Month;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 public class _2_FotmattingDatesAndTimes {
     public static void main(String[] args) {
@@ -32,6 +35,16 @@ public class _2_FotmattingDatesAndTimes {
         //custom format using a date format String.
         var f = DateTimeFormatter.ofPattern("MMMM dd, yyyy 'at' hh:mm");
         System.out.println(dt.format(f)); // October 20, 2020 at 11:12
+        //? The number often dictates the format
+        //of the date/time part. Using M by itself outputs the minimum number of
+        //characters for a month, such as 1 for January, while using MM always
+        //outputs two digits, such as 01. Furthermore, using MMM prints the three‐
+        //letter abbreviation, such as Jul for July, while MMMM prints the full month
+        //name.
 
+        DateFormat s = new SimpleDateFormat("MMMM dd, yyyy 'at' hh:mm");
+        System.out.println(s.format(new Date())); // December 30, 2021 at 01:07
+
+        //the exam will test you only on how to format the date and time.
     }
 }
