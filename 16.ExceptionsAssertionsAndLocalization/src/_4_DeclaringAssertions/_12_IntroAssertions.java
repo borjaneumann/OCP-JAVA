@@ -16,11 +16,11 @@ public class _12_IntroAssertions {
     //fatal and end the program!
     public static void main(String[] args) {
         int age = 2;
-        int height = 2;
+        int height = 1clear;
         int length = 2;
         String name = "Cecilia";
 
-        assert 1 == age;
+        assert 2 == age;
         assert (2 == height);
         assert 100.0 == length : "Problem with length";
         assert ("Ceceia".equals(name)) : "Failed to verify user data";
@@ -39,6 +39,11 @@ public class _12_IntroAssertions {
     if (!boolean_expression) throw new AssertionError(error_message)
      */
 
-
-
+    static class Party {
+        public static void main(String[] args) {
+            int numGuests = -5;
+            assert numGuests > 0;
+            System.out.println(numGuests);
+        }
+    }
 }
