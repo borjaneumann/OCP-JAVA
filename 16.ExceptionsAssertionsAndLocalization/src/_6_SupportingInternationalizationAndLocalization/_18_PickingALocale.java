@@ -55,5 +55,10 @@ public class _18_PickingALocale {
         Locale.setDefault(locale2); // change the default
         System.out.println("CHANGING DEFAULT: " + Locale.getDefault()); // fr
 
+        /*Try it, and don't worry—the Locale changes for only that one Java
+        program. It does not change any settings on your computer. It does not
+        even change future executions of the same program.
+         */
+
     }
 }
