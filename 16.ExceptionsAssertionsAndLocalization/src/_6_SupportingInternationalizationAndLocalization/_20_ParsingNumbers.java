@@ -28,10 +28,27 @@ public class _20_ParsingNumbers {
         }
         var fr = NumberFormat.getInstance(Locale.FRANCE);
         try {
-            System.out.println(fr.parse(s));
+            System.out.println(fr.parse(s)); // 40
         }catch (ParseException e) {
             e.printStackTrace();
         }
+
+        //The parse() method is also used for parsing currency.
+        // For example, we can read in the zoo's monthly income from ticket sales.
+        String income = "$92,807.99";
+        var cf = NumberFormat.getCurrencyInstance();
+        double value = 0;
+        try {
+            value = (Double) cf.parse(income);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        System.out.println(value); // 92807.99
+        //The return value of parse is a Number object. Number is the parent
+        //class of all the java.lang wrapper classes, so the return value can be cast
+        //to its appropriate data type. The Number is cast to a Double and then
+        //automatically unboxed into a double.
+
 
     }
 }
