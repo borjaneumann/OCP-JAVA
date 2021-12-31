@@ -10,7 +10,7 @@ import java.util.Locale;
 public class _22_LocalizingDates {
     public static void main(String[] args) {
         //Like numbers, date formats can vary by locale.
-        /*
+        /* (FACTORY METHODS)
         Description                             Using default Locale
         -------------------------------------------------------------------------------------
         For formatting dates                    DateTimeFormatter.ofLocalizedDate(dateStyle)
