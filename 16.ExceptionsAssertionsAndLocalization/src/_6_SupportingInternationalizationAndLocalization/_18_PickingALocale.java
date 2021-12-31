@@ -49,7 +49,11 @@ public class _18_PickingALocale {
                 .setLanguage("en")
                 .build();
 
-
+        //When testing a program, you might need to use a Locale other than the default of your computer.
+        System.out.println(Locale.getDefault()); // en_US
+        Locale locale2 = new Locale("fr");
+        Locale.setDefault(locale2); // change the default
+        System.out.println("CHANGING DEFAULT: " + Locale.getDefault()); // fr
 
     }
 }
