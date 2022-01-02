@@ -35,6 +35,18 @@ public class _25_PickingAResourceBundle {
         3. Use the default resource bundle if no matching locale can be found.
 
          */
+        /*
+        What is the maximum number of files that Java would need to consider
+        to find the appropriate resource bundle with the following code? */
+        Locale.setDefault(new Locale("hi"));
+        ResourceBundle rb = ResourceBundle.getBundle("Zoo", new Locale("en"));
+        // 1. Zoo_en.properties
+        // 2. Zoo_hi.properties
+        // 3. Zoo.properties
+        //The requested locale is en, so we start with that. Since the en locale does
+        //not contain a country, we move on to the default locale, hi. Again, there's
+        //no country, so we end with the default bundle.
+
 
     }
 }
