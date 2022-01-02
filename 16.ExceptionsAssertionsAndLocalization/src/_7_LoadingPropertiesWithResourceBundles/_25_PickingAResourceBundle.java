@@ -29,6 +29,11 @@ public class _25_PickingAResourceBundle {
         5               Zoo.properties          No locale at all—the default bundle
         6               If still not found,     No locale or default bundle available
                         throw MissingResourceException.
+        1. Look for the resource bundle for the requested locale, followed by the one
+        for the default locale.
+        2. For each locale, check language/country, followed by just the language.
+        3. Use the default resource bundle if no matching locale can be found.
+
          */
 
     }
