@@ -20,6 +20,13 @@ public class _24_CreatingAResourceBundle {
         printWelcomeMessage(us);
         printWelcomeMessage(france);
 
+        //The ResourceBundle class provides a keySet() method to get a set of all keys.
+        ResourceBundle rb = ResourceBundle.getBundle("Zoo", us);
+        rb.keySet().stream()
+                .map(k -> k + ": " + rb.getString(k))
+                .forEach(System.out::println);
+
+
     }
     public static void printWelcomeMessage (Locale locale) {
         var rb = ResourceBundle.getBundle("Zoo", locale);
