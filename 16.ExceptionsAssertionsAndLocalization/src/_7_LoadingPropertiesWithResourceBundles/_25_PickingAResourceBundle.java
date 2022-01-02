@@ -18,5 +18,18 @@ public class _25_PickingAResourceBundle {
         //Java handles the logic of picking the best available resource bundle for a
         //given key. It tries to find the most specific value.
 
+        /*
+         Picking a resource bundle for French/France with default locale English/US
+        Step            Looks for               file Reason
+        -------------------------------------------------------------------------------
+        1               Zoo_fr_FR.properties    The requested locale
+        2               Zoo_fr.properties       The language we requested with no country
+        3               Zoo_en_US.properties    The default locale
+        4               Zoo_en.properties       The default locale's language with no country
+        5               Zoo.properties          No locale at all—the default bundle
+        6               If still not found,     No locale or default bundle available
+                        throw MissingResourceException.
+         */
+
     }
 }
