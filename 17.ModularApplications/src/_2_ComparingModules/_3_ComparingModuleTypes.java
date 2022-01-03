@@ -1,3 +1,5 @@
+package _2_ComparingModules;
+
 public class _3_ComparingModuleTypes {
 
     //A key point to remember is that:

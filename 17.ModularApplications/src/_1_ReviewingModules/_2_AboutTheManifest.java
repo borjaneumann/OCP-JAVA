@@ -1,3 +1,5 @@
+package _1_ReviewingModules;
+
 public class _2_AboutTheManifest {
     /*A JAR file is a zip file with a special directory named META‐INF.
     This directory contains one or more files. The MANIFEST.MF file is
