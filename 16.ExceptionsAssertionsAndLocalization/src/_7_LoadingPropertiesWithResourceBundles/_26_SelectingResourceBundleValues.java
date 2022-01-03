@@ -24,6 +24,18 @@ public class _26_SelectingResourceBundleValues {
         same experience as line 12, using Zoo_en.properties. Finally, line 18 has
         an easier job of it and finds a matching key in Zoo_en_CA.properties.*/
 
+        /* In this example, only three properties files were used:
+        Zoo_en_CA.properties, Zoo_en.properties, and Zoo.properties. Even
+        when the property wasn't found in en_CA or en resource bundles, the
+        program preferred using Zoo.properties (the default resource bundle)
+        rather than Zoo_en_US.properties (the default locale).*/
+
+        /* What if a property is not found in any resource bundle? Then, an
+        exception is thrown. For example, attempting to call
+        rb.getString("close") in the previous program results in a
+        MissingResourceException at runtime.*/
+
+
 
     }
 
