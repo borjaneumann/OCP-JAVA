@@ -2,6 +2,7 @@ package _6_SupportingInternationalizationAndLocalization;
 
 import java.text.NumberFormat;
 import java.util.Locale;
+import java.util.ResourceBundle;
 
 public class _23_SpecifyingALocaleCategory {
     /*
@@ -11,7 +12,6 @@ public class _23_SpecifyingALocaleCategory {
     formatting options into distinct categories, with the Locale.Category
     enum.
      */
-
     //you should be familiar with the two enum values
     /*
     Value                                   Description
@@ -19,11 +19,9 @@ public class _23_SpecifyingALocaleCategory {
     DISPLAY                                 Category used for displaying data about the locale
     FORMAT                                  Category used for formatting dates, numbers, or currencies
     */
-
     /*
     When you call Locale.setDefault() with a locale, both the DISPLAY and
     FORMAT are set together. Let's take a look at an example:
-
      */
     public static void printCurrency( Locale locale, double money) {
         System.out.println(NumberFormat.getCurrencyInstance().format(money)
