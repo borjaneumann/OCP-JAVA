@@ -30,6 +30,18 @@ public class _4_IndetifyingBuiltInModules {
     java.logging            Logging                                             Not on the exam beyond the module name
     java.sql                JDBC                                                Chapter 21, “JDBC”
     java.xml                Extensible Markup Language (XML)                    Not on the exam beyond the module name
+
+
+    Java modules prefixed with java
+    =================================================================================================================
+    java.base               java.naming                 java.smartcardio
+    java.compiler           java.net .http              java.sql
+    java.datatransfer       java.prefs                  java.sql.rowset
+    java.desktop            java.rmi                    java.transaction.xa
+    java.instrument         java.scripting              java.xml
+    java.logging            java.se                     java.xml.crypto
+    java.management         java.security.jgs
+    java.management.rmi     java.security.sasl
      */
 
 }
