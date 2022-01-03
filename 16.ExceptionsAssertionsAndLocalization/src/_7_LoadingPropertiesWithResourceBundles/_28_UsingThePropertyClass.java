@@ -15,8 +15,8 @@ public class _28_UsingThePropertyClass {
         props.setProperty("open", "10am");
 
         //The Properties class is commonly used in handling values that may not exist.
-        System.out.println(props.getProperty("camel")); // null
-        System.out.println(props.getProperty("camel", "Bob")); // Bob
+        System.out.println("Props: "+ props.getProperty("camel")); // null
+        System.out.println("Props: "+ props.getProperty("camel", "Bob")); // Bob
 
         /*If a key were passed that actually existed, both statements would have
         printed it. This is commonly referred to as providing a default, or backup
@@ -30,6 +30,20 @@ public class _28_UsingThePropertyClass {
         props.get("open"); // 10am  takes only one parameter
         //props.get("open", "The zoo will be open soon"); // DOES NOT COMPILE
 
+        //USING THE PROPERTY METHODS
 
+        /* A Properties object isn't just similar to a Map; it actually inherits
+        Map<Object,Object>. Despite this, you should use the getProperty() and setProperty() methods
+        when working with a Properties object, rather than the get()/ put() methods.
+        Besides supporting default values, it also ensures you don't add data to the
+        Properties object that cannot be read.*/
+
+        var props1 = new Properties();
+        props1.put("tigerAge", "4");
+        props1.put("lionAge", 5);
+        System.out.println("Props1: "+ props1.getProperty("tigerAge")); // 4
+        System.out.println("Props1: "+ props1.getProperty("lionAge"));  // null // only Strings!!
+
+        //The point is to avoid using the get/put() methods when working with Properties objects.
     }
 }
