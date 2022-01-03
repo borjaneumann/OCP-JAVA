@@ -44,4 +44,25 @@ public class _4_IndetifyingBuiltInModules {
     java.management.rmi     java.security.sasl
      */
 
+    /*
+    We recommend reviewing this right before the exam to increase the chances of them
+    sounding familiar. You don't have to memorize them, but you should be able to pick
+    them out of a lineup.
+
+    Java modules prefixed with jdk
+    =================================================================================================================
+    jdk.accessiblity        jdk.jconsole                jdk.naming.dns
+    jdk.attach              jdk.jdeps                   jdk.naming.rmi
+    jdk.charsets            jdk.jdi                     jdk.net
+    jdk.compiler            jdk.jdwp.agent              jdk.pack
+    jdk.crypto.cryptoki     jdk.jfr                     jdk.rmic
+    jdk.crypto.ec           jdk.jlink                   jdk.scripting.nashorn
+    jdk.dynalink            jdk.jshell                  jdk.sctp
+    jdk.editpad             jdk.jsobject                jdk.security.auth
+    jdk.hotspot.agent       jdk.jstatd                  jdk.security.jgss
+    jdk.httpserver          jdk.localdata               jdk.xml.dom
+    jdk.jartool             jdk.management              jdk.zipfs
+    jdk.javadoc             jdk.management.agent
+    jdk.jcmd                jdk.management.jfr
+     */
 }
