@@ -54,8 +54,19 @@ determining the name of an automatic module.
     * Replace any remaining characters other than letters and numbers with dots.
     * Replace any sequences of dots with a single dot.
     * Remove the dot if it is the first or last character of the result.
+     */
 
-
+    /* EXAMPLE:
+    # Description                   Example 1                                   Example 2
+    ------------------------------------------------------------------------------------------------------------
+    1 Beginning JAR name            commons2‐x‐1.0.0‐SNAPSHOT.jar               mod_$‐1.0.jar
+    2 Remove file extension         commons2‐x‐1.0.0‐SNAPSHOT                   mod_$‐1.0
+    3 Remove version information    commons2‐x                                  mod_$
+    4 Replace special characters    commons2.x                                  mod..
+    5 Replace sequence of dots      commons2.x                                  mod.
+    6 Remove leading/trailing dots  commons2.x                                  mod
+    (results in the automatic module
+    name)
      */
 
 
