@@ -1,4 +1,4 @@
-package _6_CreatingAService;
+package _6_CreatingAService.zoo.tours.api;
 
 //package zoo.tours.api;
 public class Souvenir {

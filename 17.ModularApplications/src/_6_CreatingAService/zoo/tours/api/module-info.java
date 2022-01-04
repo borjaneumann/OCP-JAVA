@@ -3,7 +3,7 @@
 //    exports zoo.tours.api;
 //}
 
-//Second
+//Second (using exports, requires, uses)
 //module zoo.tours.reservations {
 //    exports zoo.tours.reservations;
 //    requires zoo.tours.api;

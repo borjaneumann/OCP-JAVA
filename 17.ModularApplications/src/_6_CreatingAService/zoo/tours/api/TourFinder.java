@@ -1,4 +1,4 @@
-package _6_CreatingAService;
+package _6_CreatingAService.zoo.tours.api;
 
 
 import java.util.ArrayList;
