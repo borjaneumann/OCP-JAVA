@@ -27,4 +27,9 @@ public class Animatronic {
 
     //We are looking into what dependencies we will need when we do modularize this JAR.
     //javac 17.ModularApplications/src/_4_UsingJDEPS/zoo/dinos/*.java on the terminal
+    //jar -cvf zoo.dino.jar . --> jar cf jar-file input-file(s)
+
+    public static void main(String[] args) {
+        System.out.println("Hello Reader!");
+    }
 }
