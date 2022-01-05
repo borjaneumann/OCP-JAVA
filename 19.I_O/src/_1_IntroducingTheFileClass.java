@@ -25,14 +25,14 @@ public class _1_IntroducingTheFileClass {
         //it references exists within the file system:
         var zooFile1 = new File("/home/tiger/data/stripes.txt");
         System.out.println(zooFile1.exists()); // true if the file exists. In our case it shows false
-        File zooFile2 = new File("C:\\Users\\anyName\\Desktop\\Home\\", "stripes.txt");//Creates a File from a String path.
-        zooFile2.createNewFile();
+//        File zooFile2 = new File("C:\\Users\\anyName\\Desktop\\Home\\", "stripes.txt");//Creates a File from a String path.
+//        zooFile2.createNewFile();
 
-    }
+
     //Constructing files
-    File zooFile2 = new File("\\Home\\", "data\\stripes.txt");//Creates a File from a String path.
+    File zooFile3 = new File("\\Home\\", "data\\stripes.txt");//Creates a File from a String path.
     File parent = new File("/home/tiger"); //This one and the one below work together.
-    File zooFile3 = new File(parent, "data/stripes.txt");
+    File zooFile4 = new File(parent, "data/stripes.txt");
 
     /* File Methods
     Method Name                 Description
@@ -55,6 +55,19 @@ public class _1_IntroducingTheFileClass {
     boolean renameTo(File dest) Renames the file or directory denoted by this path to dest and returns true only if successful
 
      */
-
-
+        var file = new File("C:\\Users\\Borja Neumann\\Desktop\\Home\\prueba.txt");
+        System.out.println(("File Exists: " + file.exists()));
+        if (file.exists()) {
+            System.out.println("Absolute Path: " + file.getAbsolutePath());
+            System.out.println("Parent Path: " + file.getParent());
+            if (file.isFile()) {
+                System.out.println("Size: " + file.length());
+                System.out.println("Last Modified: " + file.lastModified());
+            } else {
+                for (File subfile: file.listFiles()) {
+                    System.out.println("   " + subfile.getName());
+                }
+            }
+        }
+    }
 }
