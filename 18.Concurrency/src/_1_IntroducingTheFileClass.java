@@ -19,5 +19,10 @@ public class _1_IntroducingTheFileClass {
     public static void main(String[] args) {
         System.out.println(System.getProperty("file.separator")); // \
         System.out.println(File.separator); // \
+
+        //The following code creates a File object and determines whether the path
+        //it references exists within the file system:
+        var zooFile1 = new File("/home/tiger/data/stripes.txt");
+        System.out.println(zooFile1.exists()); // true if the file exists. In our case it shows false
     }
 }
