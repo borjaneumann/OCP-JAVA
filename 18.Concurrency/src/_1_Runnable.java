@@ -15,6 +15,17 @@ public class _1_Runnable {
     Runnable snake = () -> {int i=10; i++;};
     Runnable beaver = () -> {return;};
     Runnable coyote = () -> {};
+
+    Notice that all of these lambda expressions start with a set of empty
+    parentheses, (). Also, none of the lambda expressions returns a value.
+
+    The following lambdas, while valid for other functional interfaces, are not
+    compatible with Runnable because they return a value.
+
+    Runnable capybara = () -> ""; // DOES NOT COMPILE
+    Runnable Hippopotamus = () -> 5; // DOES NOT COMPILE
+    Runnable emu = () -> {return new Object();}; // DOES NOT COMPILE
+
      */
 
 }
