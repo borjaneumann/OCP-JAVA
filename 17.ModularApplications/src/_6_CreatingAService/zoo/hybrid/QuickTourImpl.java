@@ -18,3 +18,15 @@ public class QuickTourImpl implements Tour {
     }
 }
 
+/*
+There are two methods in ServiceLoader that you need to
+know for the exam. The declaration is as follows, sans the full
+implementation:
+public final class ServiceLoader<S> implements Iterable<S> {
+public static <S> ServiceLoader<S> load(Class<S> service) {
+… }
+public Stream<Provider<S>> stream() { … }
+// Additional methods
+}
+ */
+
