@@ -28,5 +28,11 @@ public static <S> ServiceLoader<S> load(Class<S> service) {
 public Stream<Provider<S>> stream() { … }
 // Additional methods
 }
+Conveniently, if you call ServiceLoader.load(), it returns an object that
+you can loop through normally. However, requesting a Stream gives you a
+different type. The reason for this is that a Stream controls when elements
+are evaluated. Therefore, a ServiceLoader returns a Stream of Provider
+objects. You have to call get() to retrieve the value you wanted out of
+each Provider.
  */
 
