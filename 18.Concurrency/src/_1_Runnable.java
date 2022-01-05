@@ -9,4 +9,12 @@ public class _1_Runnable {
     thread will execute, separate from the main application thread.
      */
 
+    /*
+    The following lambda expressions each implement the Runnable interface:
+    Runnable sloth = () -> System.out.println("Hello World");
+    Runnable snake = () -> {int i=10; i++;};
+    Runnable beaver = () -> {return;};
+    Runnable coyote = () -> {};
+     */
+
 }
