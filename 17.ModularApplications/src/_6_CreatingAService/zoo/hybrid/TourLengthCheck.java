@@ -43,5 +43,15 @@ public class TourLengthCheck {
     interface from another module.
     */
 
+    /*
+    For the last time, let's compile, package, and run.
+    javac -p mods -d multiPurposeModule
+    multiPurposeModule/zoo/tours/hybrid/*.java
+    multiPurposeModule/module-info.java
+    jar -cvf mods/zoo.tours.hybrid.jar -C multiPurposeModule/ .
+    java -p mods -m
+    zoo.tours.hybrid/zoo.tours.hybrid.TourLengthCheck
+     */
+
 
 }
