@@ -27,5 +27,21 @@ public class TourLengthCheck {
         min.ifPresent(System.out::println);
     }
 
+    /*
+    Now comes the fun part. What directives do you think we need in module‐
+    info.java? It turns out we need three.
+
+    module zoo.tours.hybrid {
+    requires zoo.tours.api;
+    provides zoo.tours.api.Tour with zoo.tours.hybrid.QuickTourImpl;
+    uses zoo.tours.api.Tour;
+    }
+
+    We need requires because we depend on the service provider interface.
+    We still need provides so the ServiceLocator can look up the service.
+    Additionally, we still need uses since we are looking up the service
+    interface from another module.
+    */
+
 
 }
