@@ -77,6 +77,20 @@ public class _5_CommonIOStreamOperations {
 //    try (var fis = new FileInputStream("zoo-data.txt")) {
 //        System.out.print(fis.read());
 //    }
+    public void printData(InputStream is) throws IOException {
+        int b;
+        while ((b = is.read()) != -1) {
+            System.out.print(b);
+        }
+    }
+    public void readFile(String fileName) throws IOException {
+        try (var fis = new FileInputStream(fileName)) {
+            printData(fis);
+        }
+    }
+    // In this example, the stream is created and closed in the readFile() method,
+    // with the printData() processing the contents.
+
 
 
 
