@@ -1,7 +1,10 @@
+import java.io.BufferedOutputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.ObjectOutputStream;
 import java.io.OutputStream;
 import java.io.Reader;
 import java.io.Writer;
@@ -91,7 +94,21 @@ public class _5_CommonIOStreamOperations {
     // In this example, the stream is created and closed in the readFile() method,
     // with the printData() processing the contents.
 
+    /*closing wrapped streams
 
+    The following example is valid and will result in three
+    separate close() method calls but is unnecessary:*/
 
+//    try (var fis = new FileOutputStream("zoo-banner.txt"); // Unnecessary
+//    var bis = new BufferedOutputStream(fis);
+//    var ois = new ObjectOutputStream(bis) {
+//        ois.writeObject("Hello");
+//    };
+//    //The following will call only one close() method instead of three:
+//    try (var ois = new ObjectOutputStream(
+//            new BufferedOutputStream(
+//                    new FileOutputStream("zoo-banner.txt"))) {
+//        ois.writeObject("Hello");
+//    };
 
 }
