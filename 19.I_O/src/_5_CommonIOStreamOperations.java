@@ -15,13 +15,13 @@ public class _5_CommonIOStreamOperations {
 
     public static void main(String[] args) {
 
-        //READING AND WRITING DATA
+    /*READING AND WRITING DATA
+    ================================================
+    InputStream and Reader
+    public int read() throws IOException
+    OutputStream and Writer
+    public void write(int b) throws IOException*/
 
-        // InputStream and Reader
-        //public int read() throws IOException
-
-        // OutputStream and Writer
-        //public void write(int b) throws IOException
     }
     /*The following copyStream() methods show an example of reading all of
         the values of an InputStream and Reader and writing them to an
@@ -68,12 +68,12 @@ public class _5_CommonIOStreamOperations {
 
 
 
-    //CLOSING THE STREAM
-
-    // All I/O stream classes
-    // public void close() throws IOException;
-    //Since streams are considered resources, it is imperative that all I/O streams
-    //be closed after they are used lest they lead to resource leaks.
+    /*CLOSING THE STREAM
+    ========================
+    All I/O stream classes
+    public void close() throws IOException;
+    Since streams are considered resources, it is imperative that all I/O streams
+    be closed after they are used lest they lead to resource leaks.*/
 
     /*Since all I/O streams implement Closeable, the best way to do this is with a
     try‐with‐resources statemen*/
@@ -111,4 +111,12 @@ public class _5_CommonIOStreamOperations {
 //        ois.writeObject("Hello");
 //    };
 
+
+    /*MANIPULATING INPUT STREAMS
+    ============================
+    InputStream and Reader
+    public boolean markSupported()
+    public void void mark(int readLimit)
+    public void reset() throws IOException
+    public long skip(long n) throws IOException*/
 }
