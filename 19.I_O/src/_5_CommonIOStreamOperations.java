@@ -1,3 +1,5 @@
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -5,6 +7,9 @@ import java.io.Reader;
 import java.io.Writer;
 
 public class _5_CommonIOStreamOperations {
+    public _5_CommonIOStreamOperations() throws FileNotFoundException {
+    }
+
     public static void main(String[] args) {
 
         //READING AND WRITING DATA
@@ -52,11 +57,27 @@ public class _5_CommonIOStreamOperations {
     //char instead of byte.
 
     // Reader
-    public int read(char[] c) throws IOException
-    public int read(char[] c, int offset, int length) throws IOException
+    //public int read(char[] c) throws IOException
+    //public int read(char[] c, int offset, int length) throws IOException
     // Writer
-    public void write(char[] c) throws IOException
-    public void write(char[] c, int offset, int length) throws IOException
+    //public void write(char[] c) throws IOException
+    //public void write(char[] c, int offset, int length) throws IOException
+
+
+
+    //CLOSING THE STREAM
+
+    // All I/O stream classes
+    // public void close() throws IOException;
+    //Since streams are considered resources, it is imperative that all I/O streams
+    //be closed after they are used lest they lead to resource leaks.
+
+    /*Since all I/O streams implement Closeable, the best way to do this is with a
+    try‐with‐resources statemen*/
+//    try (var fis = new FileInputStream("zoo-data.txt")) {
+//        System.out.print(fis.read());
+//    }
+
 
 
 }
