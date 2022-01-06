@@ -23,6 +23,28 @@ public class _4_StreamClassesNameProperties {
         Reader                  Abstract class for all input character streams
         Writer                  Abstract class for all output character streams
 
+        The java.io concrete stream classes
+        Class Name              Low/High Level          Description
+        * ===================================================================================================================
+        FileInputStream         Low                     Reads file data as bytes
+        FileOutputStream        Low                     Writes file data as bytes
+        FileReader              Low                     Reads file data as characters
+        FileWriter              Low                     Writes file data as characters
+        BufferedInputStream     High                    Reads byte data from an existing InputStream in a buffered manner,
+                                                        which improves efficiency and performance
+        BufferedOutputStream    High                    Writes byte data to an existing OutputStream in a buffered manner,
+                                                        which improves efficiency and performance
+        BufferedReader          High                    Reads character data from an existing Reader in a buffered manner,
+                                                        which improves efficiency and performance
+        BufferedWriter          High                    Writes character data to an existing Writer in a buffered manner,
+                                                        which improves efficiency and performance
+        ObjectInputStream       High                    Deserializes primitive Java data types and graphs of Java objects
+                                                        from an existing InputStream
+        ObjectOutputStream      High                    Serializes primitive Java data types and graphs of Java objects to
+                                                        an existing OutputStream
+        PrintStream             High                    Writes formatted representations of Java objects to a binary stream
+        PrintWriter             High                    Writes formatted representations of Java objects to a character stream
+
          */
 
     }
