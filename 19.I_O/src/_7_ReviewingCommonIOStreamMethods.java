@@ -9,6 +9,7 @@ public class _7_ReviewingCommonIOStreamMethods {
 
     Common I/O stream methods
     Stream Class            Method Name                                 Description
+    =================================================================================================================================================
     All streams             void close()                                Closes stream and releases resources
     All input streams       int read()                                  Reads a single byte or returns ‐1 if no bytes were available
     Input Stream            int read(byte[] b)                          Reads values into a buffer. Returns number of bytes read
