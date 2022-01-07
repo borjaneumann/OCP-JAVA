@@ -145,7 +145,16 @@ public class _5_CommonIOStreamOperations {
     the stream ends up at the same position regardless of whether mark() is
     supported.*/
 
-
+    //skip()
+    public void skipData(InputStream is) throws IOException {
+        System.out.print ((char)is.read()); // T
+        is.skip(2); // Skips I and G --> The return value tells ou where you are in the stream. The closer to 0, the closer you are to the end of the stream.
+        is.read(); // Reads E but doesn't output it
+        System.out.print((char)is.read()); // R
+        System.out.print((char)is.read()); // S
+    /*This code prints TRS at runtime. We skipped two characters, I and G. We
+    also read E but didn't store it anywhere, so it behaved like calling skip(1).*/
+    }
 
 
 }
