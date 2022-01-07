@@ -34,4 +34,21 @@ public class _8_WorkingWithIOStreamClasses {
     //implementation will overwrite it, since the append flag was not sent. The
     //copy() method copies one byte at a time until it reads a value of ‐1.
 
+    /* BUFFERING BINARY DATA
+    While our copyFile() method is valid, it tends to perform poorly on large files.
+    We can easily enhance our implementation using BufferedInputStream and BufferedOutputStream.
+
+    As high‐level streams, these classes include constructors that take other streams as input.
+    public BufferedInputStream(InputStream in)
+    public BufferedOutputStream(OutputStream out)
+
+    why use the buffered classes?
+    Put simply, the Buffered classes contain a number of performance improvements
+    for managing data in memory. For example, the BufferedInputStream class is capable of
+    retrieving and storing in memory more data than you might request
+    with a single read(byte[]) call.
+
+
+     */
+
 }
