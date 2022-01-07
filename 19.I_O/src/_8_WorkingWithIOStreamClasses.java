@@ -61,4 +61,12 @@ public class _8_WorkingWithIOStreamClasses {
             }
         }
     }
+    /*
+    Instead of reading the data one byte at a time, we read and write up to
+    1024 bytes at a time. The return value lengthRead is critical for
+    determining whether we are at the end of the stream and knowing how
+    many bytes we should write into our output stream. We also added a
+    flush() command at the end of the loop to ensure data is written to disk
+    between each iteration.
+     */
 }
