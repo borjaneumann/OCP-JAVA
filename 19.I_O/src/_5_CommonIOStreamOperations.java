@@ -140,6 +140,11 @@ public class _5_CommonIOStreamOperations {
         System.out.print((char) is.read()); // O
         System.out.print((char) is.read()); // N
     }
+    /*The code snippet will output LIOION if mark() is supported, and LION
+    otherwise. It's a good practice to organize your read() operations so that
+    the stream ends up at the same position regardless of whether mark() is
+    supported.*/
+
 
 
 
