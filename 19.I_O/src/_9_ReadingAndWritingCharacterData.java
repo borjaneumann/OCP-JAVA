@@ -32,4 +32,15 @@ public class _9_ReadingAndWritingCharacterData {
     it is.
      */
 
+    /*
+    The FileReader class doesn't contain any new methods you haven't seen
+    before. The FileWriter inherits a method from the Writer class that
+    allows it to write String values.
+    // Writer
+    public void write(String str) throws IOException
+    For example, the following is supported in FileWriter but not
+    FileOutputStream:
+    writer.write("Hello World");
+     */
+
 }
