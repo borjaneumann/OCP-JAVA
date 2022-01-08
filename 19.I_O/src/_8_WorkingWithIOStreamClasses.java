@@ -69,4 +69,11 @@ public class _8_WorkingWithIOStreamClasses {
     flush() command at the end of the loop to ensure data is written to disk
     between each iteration.
      */
+
+    //CHOOSING A BUFFER SIZE
+    /*Given the way computers organize data, it is often appropriate to
+    choose a buffer size that is a power of 2, such as 1,024.
+    What buffer size should you use? Any buffer size that is a power of
+    2 from 1,024 to 65,536 is a good choice in practice.*/
+
 }
