@@ -38,7 +38,6 @@ public class _10_BufferingCharacterData {
     This is because readLine() strips out the line break character. Without the
     call to newLine(), the copied file would have all of its line breaks
     removed.
-
      */
 
 }
