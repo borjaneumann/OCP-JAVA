@@ -24,4 +24,22 @@ public class _11_SerializingData {
         // Constructors/Getters/Setters/toString() omitted
     }
 
+    //Any field
+    //that is marked transient will not be saved to a stream when the class is
+    //serialized.
+
+    /*
+    MAINTAINING A SERIALVERSIONUID
+    It's a good practice to declare a static serialVersionUID variable
+    in every class that implements Serializable. The version is stored
+    with each object as part of serialization. Then, every time the class
+    structure changes, this value is updated or incremented.
+
+    The serialVersionUID helps inform the JVM that the stored data
+    may not match the new class definition. If an older version of the
+    class is encountered during deserialization, a
+    java.io.InvalidClassException may be thrown. Alternatively,
+    some APIs support converting data between versions.
+     */
+
 }
