@@ -42,4 +42,20 @@ public class _11_SerializingData {
     some APIs support converting data between versions.
      */
 
+    /*
+    Marking Data transient
+    Oftentimes, the transient modifier is used for sensitive data of the class,
+    like a password.
+    There are other objects it does not make sense to serialize, like
+    the state of an in‐memory Thread. If the object is part of a serializable
+    object, we just mark it transient to ignore these select instance members.
+
+    What happens to data marked transient on deserialization? It reverts to
+    its default Java values, such as 0.0 for double, or null for an object.
+
+    Marking static fields transient has little effect on serialization.
+    Other than the serialVersionUID, only the instance members of a
+    class are serialized.
+
+     */
 }
