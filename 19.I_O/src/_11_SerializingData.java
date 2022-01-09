@@ -56,6 +56,5 @@ public class _11_SerializingData {
     Marking static fields transient has little effect on serialization.
     Other than the serialVersionUID, only the instance members of a
     class are serialized.
-
      */
 }
