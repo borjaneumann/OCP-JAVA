@@ -60,6 +60,27 @@ public class _15_PrintingData {
     System.getProperty("line.separator");
     System.lineSeparator();
 
+    FORMAT()
+    ========
+    // PrintStream
+    public PrintStream format(String format, Object args…)
+    public PrintStream format(Locale loc, String format, Object args…)
+
+    // PrintWriter
+    public PrintWriter format(String format, Object args…)
+    public PrintWriter format(Locale loc, String format, Object args…)
+
+    printf() ==  format()
+
+    As an example, the following two format() calls print the same text:
+
+    String name = "Lindsey";
+    int orderId = 5;
+
+    // Both print: Hello Lindsey, order 5 is ready
+    System.out.format("Hello "+name+", order "+orderId+" is ready");
+    System.out.format("Hello %s, order %d is ready", name, orderId);
+
 
      */
 
