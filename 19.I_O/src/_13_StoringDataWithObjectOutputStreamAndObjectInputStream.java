@@ -59,5 +59,26 @@ public class _13_StoringDataWithObjectOutputStreamAndObjectInputStream {
         }
         return gorillas;
     }
+    /*
+    When calling readObject(), null and ‐1 do not have any special meaning, as someone
+    might have serialized objects with those values. Unlike our earlier
+    techniques for reading methods from an input stream, we need to use an
+    infinite loop to process the data, which throws an EOFException when the
+    end of the stream is reached.
+
+    Since the return type of readObject() is Object, we need an explicit cast
+    to obtain access to our Gorilla properties. Notice that readObject()
+    declares a checked ClassNotFoundException since the class might not be
+    available on deserialization.
+    The following code snippet shows how to call the serialization methods:
+    
+    var gorillas = new ArrayList<Gorilla>();
+    gorillas.add(new Gorilla("Grodd", 5, false));
+    gorillas.add(new Gorilla("Ishmael", 8, true));
+    File dataFile = new File("gorilla.data");
+    saveToFile(gorillas, dataFile);
+    var gorillasFromDisk = readFromFile(dataFile);
+    System.out.print(gorillasFromDisk);
+     */
 
 }
