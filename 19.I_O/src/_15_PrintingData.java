@@ -81,6 +81,29 @@ public class _15_PrintingData {
     System.out.format("Hello "+name+", order "+orderId+" is ready");
     System.out.format("Hello %s, order %d is ready", name, orderId);
 
+    Common print stream format() symbols
+    =================================================================
+    Symbol      Description
+    %s          Applies to any type, commonly String values
+    %d          Applies to integer values like int and long
+    %f          Applies to floating‐point values like float and double
+    %n          Inserts a line break using the system‐dependent line separator
+
+    String name = "James";
+    double score = 90.25;
+    int total = 100;
+    System.out.format("%s:%n Score: %f out of %d", name, score, total);
+    This prints the following:
+    James:
+    Score: 90.250000 out of 100
+
+    Mixing data types may cause exceptions at runtime. For example, the
+    following throws an exception because a floating‐point number is used
+    when an integer value is expected:
+
+    System.out.format("Food: %d tons", 2.0); //
+    IllegalFormatConversionException
+
 
      */
 
