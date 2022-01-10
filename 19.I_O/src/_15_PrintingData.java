@@ -111,10 +111,12 @@ public class _15_PrintingData {
     The format() method relies on rounding, rather than truncating
     when shortening numbers. For example, 90.250000 will be
     displayed as 90.3 (not 90.2) when passed to format() with %.1f.
-    The format() method also supports two additional features. You
-    can specify the total length of output by using a number before the
+
+    The format() method also supports two additional features.
+    1) You can specify the total length of output by using a number before the
     decimal symbol. By default, the method will fill the empty space
-    with blank spaces. You can also fill the empty space with zeros, by
+    with blank spaces.
+    2) You can also fill the empty space with zeros, by
     placing a single zero before the decimal symbol. The following
     examples use brackets, [], to show the start/end of the formatted
     value:
