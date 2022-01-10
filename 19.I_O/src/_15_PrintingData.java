@@ -50,6 +50,17 @@ public class _15_PrintingData {
     out.print(a); // PrintWriter method
     }
 
+    PRINTLN()
+    =========
+    Virtually identical to the print() methods, except that they also print a line break
+    after the String value is written.
+    Like the file.separator property, the line.separatorvalue is available from two places,
+    as a Java system property and via a static method.
+
+    System.getProperty("line.separator");
+    System.lineSeparator();
+
+
      */
 
 }
