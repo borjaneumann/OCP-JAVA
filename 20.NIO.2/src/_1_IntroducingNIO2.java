@@ -1,3 +1,5 @@
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
@@ -65,7 +67,8 @@ public class _1_IntroducingNIO2 {
 
     }
 
-    /*Obtaining a Path with the Paths class
+    /* PATHS CLASS
+    Obtaining a Path with the Paths class
     The Path.of() method is actually new to Java 11. Another way to obtain
     a Path instance is from the java.nio.file.Paths factory class. Note the s
     at the end of the Paths class to distinguish it from the Path interface.
@@ -80,6 +83,41 @@ public class _1_IntroducingNIO2 {
     }
     //Since Paths.get() is older, the exam is likely to have both. We'll use both
     // Path.of() and Paths.get() interchangeably in this chapter.
+
+    /*Obtaining a Path with a URI Class
+    Another way to construct a Path using the Paths class is with a URI value.
+    A uniform resource identifier (URI) is a string of characters that identify a resource.
+    It begins with a schema that indicates the resource type, followed by a path value.
+    Examples of schema values include file:// forvlocal file systems,
+    and http://, https://,
+    and ftp:// for remote filevsystems.
+
+    The java.net .URI class is used to create URI values.
+
+    // URI Constructor
+    public URI(String str) throws URISyntaxException
+    Java includes multiple methods to convert between Path and URI objects.
+
+    // URI to Path, using Path factory method
+    public static Path of(URI uri)
+
+    // URI to Path, using Paths factory method
+    public static Path get(URI uri)
+
+    // Path to URI, using Path instance method
+    public URI toURI()
+    The following examples all reference the same file:*/
+    public void uri() throws URISyntaxException {
+        java.net.URI a = new URI("file://icecream.txt");
+        Path b = Path.of(a);
+        Path c = Paths.get(a);
+        URI d = b.toUri();
+    }
+
+    /*Some of these examples may actually throw an IllegalArgumentException at runtime,
+    as some systems require URIs to be absolute. The URI class does have an isAbsolute() method,
+    although this refers to whether the URI has a schema, not the file location.*/
+
 
 
 
