@@ -1,3 +1,5 @@
+import java.nio.file.Path;
+
 public class _1_IntroducingNIO2 {
 
     /*
@@ -35,4 +37,22 @@ public class _1_IntroducingNIO2 {
     /zoo/cats/lion/Cubs.java
     /zoo/favorite/Cubs.java
      */
+
+    /*
+    CREATING PATHS
+    Obtaining a Path with the Path Interface
+    The simplest and most straightforward way to obtain a Path object is to
+    use the static factory method defined within the Path interface.
+
+    // Path factory method
+    public static Path of (String first, String…more)
+    */
+    public void obtainingPaths() {
+        //It 's easy to create Path instances from String values, as shown here:
+        Path path1 = Path.of("pandas/cuddly.png"); //current directory
+        Path path2 = Path.of("c:\\zooinfo\\November\\employees.txt"); //windows
+        Path path3 = Path.of("/home/zoodirectory"); //linux
+    }
+
+
 }
