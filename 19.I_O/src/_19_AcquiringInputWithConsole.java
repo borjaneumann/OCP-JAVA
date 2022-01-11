@@ -1,4 +1,5 @@
 import java.io.Console;
+import java.util.Locale;
 
 public class _19_AcquiringInputWithConsole {
 
@@ -76,9 +77,35 @@ public class _19_AcquiringInputWithConsole {
         //Console relies on the system locale. Of course, you could always
         //use a specific Locale by retrieving the Writer object and passing
         //your own Locale instance, such as in the following example:
-        //Console console = System.console();
-        //console.writer().format(new Locale("fr", "CA"),
-        //"Hello World")
+
+//        Console console = System.console();
+//        console.writer().format(new Locale("fr", "CA"), "Hello World");
+
+        /*
+        readLine() and readPassword()
+
+        The Console class includes four methods for retrieving regular text data from the user.
+        public String readLine()
+        public String readLine(String fmt, Object… args)
+        public char[] readPassword()
+        public char[] readPassword(String fmt, Object… args)
+
+        Like using System.in with a BufferedReader, the Console readLine()
+        method reads input until the user presses the Enter key. The overloaded
+        version of readLine() displays a formatted message prompt prior to
+        requesting input.
+        The readPassword() methods are similar to the readLine() method with
+        two important differences.
+        The text the user types is not echoed back and displayed on the screen as
+        they are typing.
+        The data is returned as a char[] instead of a String.
+        The first feature improves security by not showing the password on the
+        screen if someone happens to be sitting next to you. The second feature
+        involves preventing passwords from entering the String pool and will be
+        discussed in Chapter 22.
+
+         */
+
 }
 
 
