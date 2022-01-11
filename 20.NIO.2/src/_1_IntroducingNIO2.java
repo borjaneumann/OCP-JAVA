@@ -118,6 +118,14 @@ public class _1_IntroducingNIO2 {
     as some systems require URIs to be absolute. The URI class does have an isAbsolute() method,
     although this refers to whether the URI has a schema, not the file location.*/
 
+    /*Other URI Connection Types
+    A URI can be used for a web page or FTP connection.
+    */
+    public void otherUriConnectionTypes() throws URISyntaxException {
+        Path path5 = Paths.get(new URI("http://www.wiley.com"));
+        Path path6 = Paths.get(new URI("ftp://username:secret@ftp.example.com"));
+    }
+
 
 
 
