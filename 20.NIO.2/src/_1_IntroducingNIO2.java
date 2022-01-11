@@ -1,4 +1,5 @@
 import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class _1_IntroducingNIO2 {
 
@@ -52,7 +53,34 @@ public class _1_IntroducingNIO2 {
         Path path1 = Path.of("pandas/cuddly.png"); //current directory
         Path path2 = Path.of("c:\\zooinfo\\November\\employees.txt"); //windows
         Path path3 = Path.of("/home/zoodirectory"); //linux
+
+        Path path4 = Path.of("pandas", "cuddly.png");
+        Path path5 = Path.of("c:", "zooinfo", "November", "employees.txt");
+        Path path6 = Path.of("/", "home", "zoodirectory");
+
+        /*These examples are just rewrites of our previous set of Path examples,
+        using the parameter list of String values instead of a single String value.
+        The advantage of the varargs is that it is more robust, as it inserts the
+        proper operating system path separator for you.*/
+
     }
+
+    /*Obtaining a Path with the Paths class
+    The Path.of() method is actually new to Java 11. Another way to obtain
+    a Path instance is from the java.nio.file.Paths factory class. Note the s
+    at the end of the Paths class to distinguish it from the Path interface.
+    Paths factory method
+    public static Path get(String first, String… more)
+    Rewriting our previous examples is easy.*/
+
+    public void getPaths() {
+        Path path1 = Paths.get("pandas/cuddly.png");
+        Path path2 = Paths.get("c:\\zooinfo\\November\\employees.txt");
+        Path path3 = Paths.get("/", "home", "zoodirectory");
+    }
+    //Since Paths.get() is older, the exam is likely to have both. We'll use both
+    // Path.of() and Paths.get() interchangeably in this chapter.
+
 
 
 }
