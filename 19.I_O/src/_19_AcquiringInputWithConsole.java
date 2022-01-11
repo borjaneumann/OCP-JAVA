@@ -1,4 +1,5 @@
 import java.io.Console;
+import java.util.Arrays;
 import java.util.Locale;
 
 public class _19_AcquiringInputWithConsole {
@@ -65,53 +66,80 @@ public class _19_AcquiringInputWithConsole {
                     391, 25);
             console.writer().println();
             console.printf("The zoo spans %5.1f acres", 128.91);
+        }
     }
-        //Welcome to Our Zoo!
-        //It has 391 animals and employs 25 people
-        //The zoo spans 128.9 acres.
+    //Welcome to Our Zoo!
+    //It has 391 animals and employs 25 people
+    //The zoo spans 128.9 acres.
 
 
-        //Using Console With A Locale
-        //*Unlike the print stream classes, Console does not include an
-        //overloaded format() method that takes a Locale instance. Instead,
-        //Console relies on the system locale. Of course, you could always
-        //use a specific Locale by retrieving the Writer object and passing
-        //your own Locale instance, such as in the following example:
+    //Using Console With A Locale
+    //*Unlike the print stream classes, Console does not include an
+    //overloaded format() method that takes a Locale instance. Instead,
+    //Console relies on the system locale. Of course, you could always
+    //use a specific Locale by retrieving the Writer object and passing
+    //your own Locale instance, such as in the following example:
 
 //        Console console = System.console();
 //        console.writer().format(new Locale("fr", "CA"), "Hello World");
 
-        /*
-        readLine() and readPassword()
+    /*
+    readLine() and readPassword()
 
-        The Console class includes four methods for retrieving regular text data from the user.
-        public String readLine()
-        public String readLine(String fmt, Object… args)
-        public char[] readPassword()
-        public char[] readPassword(String fmt, Object… args)
+    The Console class includes four methods for retrieving regular text data from the user.
+    public String readLine()
+    public String readLine(String fmt, Object… args)
+    public char[] readPassword()
+    public char[] readPassword(String fmt, Object… args)
 
-        Like using System.in with a BufferedReader, the Console readLine()
-        method reads input until the user presses the Enter key. The overloaded
-        version of readLine() displays a formatted message prompt prior to
-        requesting input.
-        The readPassword() methods are similar to the readLine() method with
-        two important differences.
-        The text the user types is not echoed back and displayed on the screen as
-        they are typing.
-        The data is returned as a char[] instead of a String.
-        The first feature improves security by not showing the password on the
-        screen if someone happens to be sitting next to you. The second feature
-        involves preventing passwords from entering the String pool and will be
-        discussed in Chapter 22.
+    Like using System.in with a BufferedReader, the Console readLine()
+    method reads input until the user presses the Enter key. The overloaded
+    version of readLine() displays a formatted message prompt prior to
+    requesting input.
+    The readPassword() methods are similar to the readLine() method with
+    two important differences.
+    The text the user types is not echoed back and displayed on the screen as
+    they are typing.
+    The data is returned as a char[] instead of a String.
+    The first feature improves security by not showing the password on the
+    screen if someone happens to be sitting next to you. The second feature
+    involves preventing passwords from entering the String pool and will be
+    discussed in Chapter 22.
+     */
 
+    /*
+    REVIEWING CONSOLE METHODS
+
+    The last code sample we present asks the user a series of questions and
+    prints results based on this information using many of various methods we
+    learned in this section:
+    */
+    public void reviewingMethods() {
+        Console console = System.console();
+        if (console == null) {
+            throw new RuntimeException("Console not available");
+        } else {
+            String name = console.readLine("Please enter your name: ");
+            console.writer().format("Hi %s", name);
+            console.writer().println();
+            console.format("What is your address? ");
+            String address = console.readLine();
+            char[] password = console.readPassword("Enter a password "
+                    + "between %d and %d characters: ", 5, 10);
+            char[] verify = console.readPassword("Enter the password again: ");
+            console.printf("Passwords "
+                            + (Arrays.equals(password, verify) ? "match" : "do not match"));
+        }
+    }
+    /*
+    Assuming a Console is available, the output should resemble the following:
+    Please enter your name: Max
+    Hi Max
+    What is your address? Spoonerville
+    Enter a password between 5 and 10 digits:
+    Enter the password again:
+    Passwords match
          */
 
 }
 
-
-
-
-
-
-
-}
