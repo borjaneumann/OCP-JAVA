@@ -1,3 +1,4 @@
+import java.io.File;
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
 
@@ -38,6 +39,22 @@ public class _3_ObtainingAPathFromTheFileSystemClass {
     improvement over the legacy java.io.File class.
      */
 
+    /* Last but not least, we can obtain Path instances using the legacy
+    java.io.File class. In fact, we can also obtain a java.io.File object from a Path instance.
 
+    // Path to File, using Path instance method
+    public default File toFile()
+
+    // File to Path, using java.io.File instance method
+    public Path toPath()
+
+    These methods are available for convenience and also to help facilitate
+    integration between older and newer APIs. The following shows examples of each:*/
+    File file = new File("husky.png");
+    Path path = file.toPath();
+    File backToFile = path.toFile();
+
+    /*When working with newer applications, though, you should rely on
+    NIO.2's Path interface as it contains a lot more features.*/
 
 }
