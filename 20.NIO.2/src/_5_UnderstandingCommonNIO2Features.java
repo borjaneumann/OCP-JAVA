@@ -75,5 +75,15 @@ public class _5_UnderstandingCommonNIO2Features {
     System.out.println(p); // whale
     */
 
+    /*
+    Many of the methods available in the Path interface transform the path
+    value in some way and return a new Path object, allowing the methods to
+    be chained. We demonstrate chaining in the following example, the details
+    of which we'll discuss in this section of the chapter:
+
+    Path.of("/zoo/../home").getParent().normalize().toAbsolutePath();
+
+     */
+
 
 }
