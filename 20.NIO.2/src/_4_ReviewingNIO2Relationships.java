@@ -23,6 +23,5 @@ public class _4_ReviewingNIO2Relationships {
         instances, not java.io.File instances. We know this is confusing,
         but they are from completely different APIs!
 
-
      */
 }
