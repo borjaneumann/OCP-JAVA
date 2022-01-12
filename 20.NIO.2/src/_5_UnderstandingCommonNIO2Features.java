@@ -37,4 +37,30 @@ public class _5_UnderstandingCommonNIO2Features {
     --------------------------------------------------------------------------------------------------------
     FileVisitOption     N/A                       FOLLOW_LINKS          Follow symbolic links.
      */
+
+    /*
+    With the exceptions of Files.copy() and Files.move() (which we'll cover later), we won't discuss these varargs parameters each time we
+    present a method.
+
+    Path path = Paths.get("schedule.xml");
+    boolean exists = Files.exists(path,
+    LinkOption.NOFOLLOW_LINKS);
+
+    The Files.exists() simply checks whether a file exists. If the parameter
+    is a symbolic link, though, then the method checks whether the target of
+    the symbolic link exists instead. Providing LinkOption.NOFOLLOW_LINKS
+    means the default behavior will be overridden, and the method will check
+    whether the symbolic link itself exists.
+
+    The Files.move() method takes a CopyOption vararg so it can take enums of
+    different types.
+
+    void copy(Path source, Path target) throws IOException {
+        Files.move(source, target,
+            LinkOption.NOFOLLOW_LINKS,
+            StandardCopyOption.ATOMIC_MOVE);
+    }
+
+
+     */
 }
