@@ -1,3 +1,9 @@
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.LinkOption;
+import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
+
 public class _5_UnderstandingCommonNIO2Features {
     /*APPLYING PATH SYMBOLS
     Absolute and relative paths can contain path symbols. A path symbol is a
@@ -54,13 +60,20 @@ public class _5_UnderstandingCommonNIO2Features {
 
     The Files.move() method takes a CopyOption vararg so it can take enums of
     different types.
-
+    */
     void copy(Path source, Path target) throws IOException {
         Files.move(source, target,
             LinkOption.NOFOLLOW_LINKS,
             StandardCopyOption.ATOMIC_MOVE);
     }
 
+    /*Just like String values, Path instances are immutable. In the following
+    example, the Path operation on the second line is lost since p is
+    immutable:
+    Path p = Path.of("whale");
+    p.resolve("krill"); // p is immutable!!
+    System.out.println(p); // whale
+    */
 
-     */
+
 }
