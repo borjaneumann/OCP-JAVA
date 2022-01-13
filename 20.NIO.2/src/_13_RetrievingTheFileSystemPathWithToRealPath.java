@@ -28,8 +28,4 @@ public class _13_RetrievingTheFileSystemPathWithToRealPath {
         System.out.println(Paths.get(".").toRealPath());
 
     }
-
-
-
-
 }
