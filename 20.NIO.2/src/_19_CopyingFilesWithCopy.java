@@ -63,6 +63,38 @@ public class _19_CopyingFilesWithCopy {
     a file directly to the System.out stream.
 
      */
+     /*
+     COPYING FILES INTO A DIRECTORY
+     it is important that you understand how the copy() method
+    operates on both files and directories. For example, let's say we have a file,
+    food.txt, and a directory, /enclosure. Both the file and directory exist.
+    What do you think is the result of executing the following process?
+
+    var file = Paths.get("food.txt");
+    var directory = Paths.get("/enclosure");
+    Files.copy(file, directory);
+
+    The command tries to create a new file, named /enclosure. Since the path /enclosure already exists, an
+    exception is thrown at runtime. On the other hand, if the directory did not exist, then it would create a new
+    file with the contents of food.txt, but it would be called /enclosure.
+    Remember, we said files may not need to have extensions, and in this
+    example, it matters.
+
+    This behavior applies to both the copy() and the move() methods, the
+    latter of which we will be covering next. In case you're curious, the correct
+    way to copy the file into the directory would be to do the following:
+
+    var file = Paths.get("food.txt");
+    var directory = Paths.get("/enclosure/food.txt");
+    Files.copy(file, directory);
+
+    You also define directory using the resolve() method we saw earlier,
+    which saves you from having to write the filename twice.
+
+    var directory =
+    Paths.get("/enclosure").resolve(file.getFileName());
+
+      */
 
 
     }
