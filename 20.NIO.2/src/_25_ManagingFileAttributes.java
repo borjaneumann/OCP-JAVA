@@ -39,9 +39,6 @@ public class _25_ManagingFileAttributes {
         // points to a regular file or alternatively a symbolic link that points to a regular file.
 
     }
-
-
-
-
-
+    //While most methods in the Files class declare IOException, these
+    //three methods do not. They return false if the path does not exist.
 }
