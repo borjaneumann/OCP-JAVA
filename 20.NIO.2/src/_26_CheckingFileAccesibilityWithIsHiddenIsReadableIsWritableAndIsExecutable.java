@@ -23,6 +23,13 @@ public class _26_CheckingFileAccesibilityWithIsHiddenIsReadableIsWritableAndIsEx
         System.out.print(Files.isExecutable(Paths.get("whale.png"))); // Finally, the last example prints true if the file is
         // able to be executed within the operating system.
     }
+    /*
+    Note that the file extension does not necessarily determine whether a file is
+    executable. For example, an image file that ends in .png could be marked
+    executable in some file systems.
+    With the exception of isHidden(), these methods do not declare any
+    checked exceptions and return false if the file does not exist.
+     */
 
 
 
