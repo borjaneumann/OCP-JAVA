@@ -27,6 +27,22 @@ public class _20_MovingOrRenamingPathsWithMove {
     it exists, else it will throw an exception. Also like copy(), move() will not
     put a file in a directory if the source is a file and the target is a directory.
     Instead, it will create a new file with the name of the directory.
+     */
+
+    /*
+    Performing an Atomic Move
+    Another enum value that you need to know for the exam when working
+    with the move() method is the StandardCopyOption value ATOMIC_MOVE.
+
+    Files.move(Path.of("mouse.txt"), Path.of("gerbil.txt"), StandardCopyOption.ATOMIC_MOVE);
+
+    An atomic move is one in which a file is moved within the file system as a single indivisible
+    operation. Put another way, any process monitoring the file system never
+    sees an incomplete or partially written file. If the file system does not
+    support this feature, an AtomicMoveNotSupportedException will be thrown.
+
+    Note that while ATOMIC_MOVE is available as a member of the StandardCopyOption type,
+    it will likely throw an exception if passed to a copy() method.
 
      */
 
