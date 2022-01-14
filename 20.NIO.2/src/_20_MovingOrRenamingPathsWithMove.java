@@ -14,12 +14,20 @@ public class _20_MovingOrRenamingPathsWithMove {
         Files.move(Path.of("c:\\zoo"), Path.of("c:\\zoo-new"));
         Files.move(Path.of("c:\\user\\addresses.txt"), Path.of("c:\\zoo-new\\addresses2.txt"));
     }
-
     /*
     The first example renames the zoo directory to a zoo‐new directory,
     keeping all of the original contents from the source directory. The second
     example moves the addresses.txt file from the directory user to the
     directory zoo‐new, and it renames it to addresses2.txt.
+     */
+
+    /*
+    Similarities between move() and copy()
+    Like copy(), move() requires REPLACE_EXISTING to overwrite the target if
+    it exists, else it will throw an exception. Also like copy(), move() will not
+    put a file in a directory if the source is a file and the target is a directory.
+    Instead, it will create a new file with the name of the directory.
+
      */
 
 }
