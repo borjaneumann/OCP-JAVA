@@ -8,6 +8,7 @@ public class _30_ApplyingFunctionalProgramming {
     operate on files, directories, and directory trees.
 
     LISTING DIRECTORY CONTENTS
+    ==========================
     The following Files method lists the contents of a directory:
 
     public static Stream<Path> list(Path dir) throws IOException
@@ -49,6 +50,7 @@ public class _30_ApplyingFunctionalProgramming {
 
     /*
     CLOSING THE STREAM
+    ==================
     Did you notice that in the last two code samples, we put our Stream
     objects inside a try‐with‐resources method? The NIO.2 stream‐based
     methods open a connection to the file system that must be properly
@@ -63,7 +65,17 @@ public class _30_ApplyingFunctionalProgramming {
     match the exam, we will sometimes skip closing NIO.2 resources in
     review and practice questions. Please, in your own code, always use
     try‐with‐resources statements with these NIO.2 methods.
+     */
 
+    /*
+    TRAVERSING A DIRECTORY TREE
+    ===========================
+    Traversing a directory, also referred to as walking a directory tree, is the
+    process by which you start with a parent directory and iterate over all of its
+    descendants until some condition is met or there are no more elements
+    over which to iterate. For example, if we're searching for a single file, we
+    can end the search when the file is found or when we've checked all files
+    and come up empty.
      */
 
 }
