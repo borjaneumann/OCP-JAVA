@@ -78,4 +78,6 @@ public class _30_ApplyingFunctionalProgramming {
     and come up empty.
      */
 
+    //DON'T USE DIRECTORYSTREAM AND FILEVISITOR (just don't do it!)
+
 }
