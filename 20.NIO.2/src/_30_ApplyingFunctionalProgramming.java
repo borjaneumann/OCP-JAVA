@@ -140,6 +140,13 @@ public class _30_ApplyingFunctionalProgramming {
             .sum();
         }
     }
+
+    var size = getPathSize(Path.of("/fox/data"));
+    System.out.format("Total Size: %.2f megabytes", (size/1000000.0));
+
+    Depending on the directory you run this on, it will print something like this:
+
+    Total Directory Tree Size: 15.30 megabytes
      */
 
 }
