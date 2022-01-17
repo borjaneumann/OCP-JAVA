@@ -80,4 +80,29 @@ public class _30_ApplyingFunctionalProgramming {
 
     //DON'T USE DIRECTORYSTREAM AND FILEVISITOR (just don't do it!)
 
+    /*
+    Selecting a Search Strategy
+    ===========================
+    There are two common strategies associated with walking a directory tree:
+
+    1) A depth‐first traverses the structure from the root to an arbitrary
+    leaf and then navigates back up toward the root, traversing
+    fully down any paths it skipped along the way. The search depth is the
+    distance from the root to current node.
+    To prevent endless searching, Java includes a search depth that is used to
+    limit how many levels (or hops) from the root the search is allowed to go.
+
+    2) A breadth‐first search starts at the root and processes all
+    elements of each particular depth, before proceeding to the next depth
+    level. The results are ordered by depth, with all nodes at depth 1 read
+    before all nodes at depth 2, and so on. While a breadth‐first tends to be
+    balanced and predictable, it also requires more memory since a list of
+    visited nodes must be maintained.
+
+    For the exam, you don't have to understand the details of each search
+    strategy that Java employs; you just need to be aware that the NIO.2
+    Streams API methods use depth‐first searching with a depth limit, which
+    can be optionally changed.
+     */
+
 }
