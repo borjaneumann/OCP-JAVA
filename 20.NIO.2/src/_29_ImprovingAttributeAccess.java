@@ -21,6 +21,15 @@ public class _29_ImprovingAttributeAccess {
     updatable view, we mean that we can both read and write attributes with
     the same object.
 
+    The attributes and view types
+
+    Attributes interface        View interface                  Description
+    ================================================================================================
+    BasicFileAttributes         BasicFileAttribute View         Basic set of attributes supported by all file systems
+    DosFile Attributes          DosFileAttribute View           Basic set of attributes along with those supported by
+                                                                DOS/Windows‐based systems
+    PosixFileAttributes         PosixFileAttribute View         Basic set of attributes along with those supported by POSIX systems,
+                                                                such as UNIX, Linux, Mac, etc.
 
      */
 
