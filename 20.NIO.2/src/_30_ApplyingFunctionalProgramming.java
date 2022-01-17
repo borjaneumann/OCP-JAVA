@@ -149,4 +149,17 @@ public class _30_ApplyingFunctionalProgramming {
     Total Directory Tree Size: 15.30 megabytes
      */
 
+    /*
+    Applying a Depth Limit
+    ======================
+    Let's say our directory tree was quite deep, so we apply a depth limit by
+    changing one line of code in our getPathSize() method.
+
+    try (var s = Files.walk(source, 5)) {
+    This new version checks for files only within 5 steps of the starting node.
+    A depth value of 0 indicates the current path itself. Since the method
+    calculates values only on files, you'd have to set a depth limit of at least 1
+    to get a nonzero result when this method is applied to a directory tree.
+     */
+
 }
