@@ -1,3 +1,8 @@
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.attribute.BasicFileAttributes;
+
 public class _29_ImprovingAttributeAccess {
 
     /*
@@ -30,6 +35,30 @@ public class _29_ImprovingAttributeAccess {
                                                                 DOS/Windows‐based systems
     PosixFileAttributes         PosixFileAttribute View         Basic set of attributes along with those supported by POSIX systems,
                                                                 such as UNIX, Linux, Mac, etc.
+
+    Retrieving Attributes with readAttributes()
+    =============================================
+    read‐only capacity:
+
+    public static <A extends BasicFileAttributes> A readAttributes( Path path, Class<A> type, LinkOption… options) throws IOException
+
+    Applying it requires specifying the Path and BasicFileAttributes.class parameters.
+
+    */
+    public void readAttributes() throws IOException {
+        var path = Paths.get("/turtles/sea.txt");
+        BasicFileAttributes data = Files.readAttributes(path, BasicFileAttributes.class);
+
+        System.out.println("Is a directory? " + data.isDirectory());
+        System.out.println("Is a regular file? " + data.isRegularFile());
+        System.out.println("Is a symbolic link? " + data.isSymbolicLink());
+        System.out.println("Size (in bytes): " + data.size());
+        System.out.println("Last modified: " + data.lastModifiedTime());
+    }
+    /*
+    The BasicFileAttributes class includes many values with the same
+    name as the attribute methods in the Files class. The advantage of using
+    this method, though, is that all of the attributes are retrieved at once.
 
      */
 
