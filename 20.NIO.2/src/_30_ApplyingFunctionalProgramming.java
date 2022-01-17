@@ -45,6 +45,24 @@ public class _30_ApplyingFunctionalProgramming {
     Don't worry, we'll address that topic in the next section. For now, you just
     need to know the JVM will not follow symbolic links when using this
     stream method.
+     */
+
+    /*
+    CLOSING THE STREAM
+    Did you notice that in the last two code samples, we put our Stream
+    objects inside a try‐with‐resources method? The NIO.2 stream‐based
+    methods open a connection to the file system that must be properly
+    closed, else a resource leak could ensue. A resource leak within the
+    file system means the path may be locked from modification long
+    after the process that used it completed.
+
+    Not all streams need to be closed, only those that open resources, like
+    the ones found in NIO.2.
+
+    Finally, the exam doesn't always properly close NIO.2 resources. To
+    match the exam, we will sometimes skip closing NIO.2 resources in
+    review and practice questions. Please, in your own code, always use
+    try‐with‐resources statements with these NIO.2 methods.
 
      */
 
