@@ -105,4 +105,41 @@ public class _30_ApplyingFunctionalProgramming {
     can be optionally changed.
      */
 
+    /*
+    Walking a Directory with walk()
+    ===============================
+    Two methods for walking the directory tree using a depth‐first search.
+
+    public static Stream<Path> walk(Path start, FileVisitOption… options) throws IOException
+    public static Stream<Path> walk(Path start, int maxDepth, FileVisitOption… options) throws IOException
+
+    Like our other stream methods, walk() uses lazy evaluation and evaluates
+    a Path only as it gets to it. This means that even if the directory tree
+    includes hundreds or thousands of files, the memory required to process a
+    directory tree is low. The first walk() method relies on a default maximum
+    depth of Integer.MAX_VALUE, while the overloaded version allows the
+    user to set a maximum depth.
+
+    Rather than just printing the contents of a directory tree, we can again do
+    something more interesting. The following getPathSize() method walks
+    a directory tree and returns the total size of all the files in the directory:
+
+    private long getSize(Path p) {
+        try {
+        return Files.size(p);
+        } catch (IOException e) {
+        // Handle exception
+        }
+        return 0L;
+        }
+        public long getPathSize(Path source) throws IOException {
+            try (var s = Files.walk(source)) {
+            return s.parallel()
+            .filter(p -> !Files.isDirectory(p))
+            .mapToLong(this::getSize)
+            .sum();
+        }
+    }
+     */
+
 }
