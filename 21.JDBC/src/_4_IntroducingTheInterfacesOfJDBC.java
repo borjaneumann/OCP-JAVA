@@ -14,5 +14,17 @@ public class _4_IntroducingTheInterfacesOfJDBC {
     Connection                                  FooConnection
     PreparedStatement  - CallableStatement      FooPreparedStatement  - FooCallableStatement
     ResultSet                                   FooResultSet
+
+    What do these five interfaces do? On a very high level, we have the following:
+
+    Driver: Establishes a connection to the database
+    Connection: Sends commands to a database
+    PreparedStatement: Executes a SQL query
+    CallableStatement: Executes commands stored in the database
+    ResultSet: Reads results of a query
+
+    All database interfaces are in the package java.sql, so we will often omit
+    the imports.
+
      */
 }
