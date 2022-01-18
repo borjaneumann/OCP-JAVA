@@ -7,5 +7,12 @@ public class _4_IntroducingTheInterfacesOfJDBC {
     This driver JAR contains an implementation of these key interfaces along
     with a number of other interfaces. The key is that the provided
     implementations know how to communicate with a database.
+
+    Interfaces in the JDK                       Implementation in the Driver
+    ==========================================================================
+    Driver                                      FooDriver
+    Connection                                  FooConnection
+    PreparedStatement  - CallableStatement      FooPreparedStatement  - FooCallableStatement
+    ResultSet                                   FooResultSet
      */
 }
