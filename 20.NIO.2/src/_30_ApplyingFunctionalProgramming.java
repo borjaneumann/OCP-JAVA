@@ -258,21 +258,23 @@ public class _30_ApplyingFunctionalProgramming {
             s.filter(f -> f.startsWith("WARN:"))
                     .map(f -> f.substring(5))
                     .forEach(System.out::println);
-    }
+        }
     /*
     This sample code searches a log for lines that start with WARN:, outputting
     the text that follows. Assuming that the input file sharks.log is as
     follows:
+
     INFO:Server starting
     DEBUG:Processes available = 10
     WARN:No database could be detected
     DEBUG:Processes available reset to 0
     WARN:Performing manual recovery
     INFO:Server successfully started
+
     Then, the sample output would be the following:
     No database could be detected
     Performing manual recovery
 
      */
-
+    }
 }
