@@ -1,3 +1,8 @@
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 public class _30_ApplyingFunctionalProgramming {
 
     /*
@@ -186,7 +191,40 @@ public class _30_ApplyingFunctionalProgramming {
     Be aware that when the FOLLOW_LINKS option is used, the walk() method
     will track all of the paths it has visited, throwing a
     FileSystemLoopException if a path is visited twice.
+     */
 
+    /*
+    Searching A Directory With Find()
+    public static Stream<Path> find(Path start,
+                    int maxDepth,
+                    BiPredicate<Path,BasicFileAttributes> matcher,
+                    FileVisitOption… options) throws IOException
+
+    The find() method behaves in a similar manner as the walk() method,
+    except that it takes a BiPredicate to filter the data. It also requires a depth
+    limit be set. Like walk(), find() also supports the FOLLOW_LINK option.
+    The two parameters of the BiPredicate are a Path object and a
+    BasicFileAttributes object,
+    */
+    public void findingFiles() throws IOException {
+        Path path = Paths.get("/bigcats");
+        long minSize = 1_000;
+        try (var s = Files.find(path, 10,
+                (p, a) -> a.isRegularFile()
+                        && p.toString().endsWith(".java")
+                        && a.size() > minSize)) {
+            s.forEach(System.out::println);
+        }
+    }
+
+    /*
+    This example searches a directory tree and prints all .java files with a size
+    of at least 1,000 bytes, using a depth limit of 10. While we could have
+    accomplished this using the walk() method along with a call to
+    readAttributes(), this implementation is a lot shorter and more
+    convenient than those would have been. We also don't have to worry about
+    any methods within the lambda expression declaring a checked exception,
+    as we saw in the getPathSize() example.
 
      */
 
