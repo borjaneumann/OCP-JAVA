@@ -162,4 +162,32 @@ public class _30_ApplyingFunctionalProgramming {
     to get a nonzero result when this method is applied to a directory tree.
      */
 
+    /*
+    Avoid Citcular Paths
+    =====================
+    Many of our earlier NIO.2 methods traverse symbolic links by default,
+    with a NOFOLLOW_LINKS used to disable this behavior. The walk() method
+    is different in that it does not follow symbolic links by default and requires
+    the FOLLOW_LINKS option to be enabled. We can alter our getPathSize()
+    method to enable following symbolic links by adding the FileVisitOption:
+
+    try (var s = Files.walk(source,
+    FileVisitOption.FOLLOW_LINKS)) {
+
+    When traversing a directory tree, your program needs to be careful of
+    symbolic links if enabled. For example, if our process comes across a
+    symbolic link that points to the root directory of the file system, then every
+    file in the system would be searched!
+
+    Worse yet, a symbolic link could lead to a cycle, in which a path is visited
+    repeatedly. A cycle is an infinite circular dependency in which an entry in
+    a directory tree points to one of its ancestor directories.
+
+    Be aware that when the FOLLOW_LINKS option is used, the walk() method
+    will track all of the paths it has visited, throwing a
+    FileSystemLoopException if a path is visited twice.
+
+
+     */
+
 }
