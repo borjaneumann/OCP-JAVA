@@ -227,5 +227,52 @@ public class _30_ApplyingFunctionalProgramming {
     as we saw in the getPathSize() example.
 
      */
+    /*
+    Reading A File WIth Lines()
+    ===========================
+    Earlier in the chapter, we presented Files.readAllLines() and
+    commented that using it to read a very large file could result in an
+    OutOfMemoryError problem. Luckily, NIO.2 solves this problem with a
+    Stream API method.
+
+    public static Stream<String> lines(Path path) throws IOException
+
+    The contents of the file are read and processed lazily, which means that
+    only a small portion of the file is stored in memory at any given time.
+    */
+    public void readingWitLines() {
+        Path path = Paths.get("/fish/sharks.log");
+        try (var s = Files.lines(path)) {
+            s.forEach(System.out::println);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /*
+    Taking things one step further, we can leverage other stream methods for a
+    more powerful example.*/
+    public void readingWitLines2() throws IOException {
+        Path path = Paths.get("/fish/sharks.log");
+        try (var s = Files.lines(path)) {
+            s.filter(f -> f.startsWith("WARN:"))
+                    .map(f -> f.substring(5))
+                    .forEach(System.out::println);
+    }
+    /*
+    This sample code searches a log for lines that start with WARN:, outputting
+    the text that follows. Assuming that the input file sharks.log is as
+    follows:
+    INFO:Server starting
+    DEBUG:Processes available = 10
+    WARN:No database could be detected
+    DEBUG:Processes available reset to 0
+    WARN:Performing manual recovery
+    INFO:Server successfully started
+    Then, the sample output would be the following:
+    No database could be detected
+    Performing manual recovery
+
+     */
 
 }
