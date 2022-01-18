@@ -1,13 +1,15 @@
 import java.sql.*;
 
+//Code used in console to obtain 5
+//java -cp "C:\db-derby-10.15.2.0-bin\db-derby-10.15.2.0-bin\lib\derby.jar" SetupDerbyDatabase.java
 public class SetupDerbyDatabase {
 
     public static void main(String[] args) throws Exception {
         String url = "jdbc:derby:zoo;create=true";
         try (Connection conn = DriverManager.getConnection(url)) {
 
-            // run(conn,"DROP TABLE names");
-            // run(conn,"DROP TABLE exhibits");
+//             run(conn,"DROP TABLE names");
+//             run(conn,"DROP TABLE exhibits");
 
             run(conn,"CREATE TABLE exhibits ("
                     + "id INTEGER PRIMARY KEY, "
