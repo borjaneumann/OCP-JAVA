@@ -31,6 +31,7 @@ public class _6_ConnectingToADatabase {
     Notice the three parts. It starts with jdbc and then comes the subprotocol
     derby, and it ends with the subname, which is the database name. The
     location is not required, because Derby is an in‐memory database.
+    A location can be localhost or an IP address or a domain name.
 
     Other examples of subname are shown here:
     jdbc:postgresql://localhost/zoo
