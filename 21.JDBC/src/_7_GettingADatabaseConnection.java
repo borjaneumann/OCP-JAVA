@@ -74,6 +74,10 @@ calling the method. The good news is that the method has an easy‐to‐
     creating a class for you. You don't need to know the name of the class that
     implements Connection, and you don't need to know how it is created.
     You are probably a bit curious, though.
+
+    DriverManager looks through any drivers it can find to see whether they
+    can handle the JDBC URL. If so, it creates a Connection using that
+    Driver. If not, it gives up and throws a SQLException.
      */
 
 
