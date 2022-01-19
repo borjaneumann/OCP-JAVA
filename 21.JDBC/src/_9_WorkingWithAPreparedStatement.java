@@ -27,5 +27,25 @@ public class _9_WorkingWithAPreparedStatement {
     editors of the code won't add a variable and have to remember to change to
     PreparedStatement then.
 
+    OBTAINING A PREPAREDSTATEMENT
+
+    To run SQL, you need to tell a PreparedStatement about it. Getting a
+    PreparedStatement from a Connection is easy.
+    try (PreparedStatement ps = conn.prepareStatement(
+    "SELECT * FROM exhibits")) {
+    // work with ps
+
+    An instance of a PreparedStatement represents a SQL statement that you
+    want to run using the Connection. It does not actually execute the query yet!
+
+    Passing a SQL statement when creating the object is mandatory. You
+    might see a trick on the exam.
+    try (var ps = conn.prepareStatement()) { // DOES NOT COMPILE
+    }
+    The previous example does not compile, because SQL is not supplied at
+    the time a PreparedStatement is requested. We also used var in this
+    example. We will write JDBC code both using var and the actual class
+    names to get you used to both approaches.
+    }
      */
 }
