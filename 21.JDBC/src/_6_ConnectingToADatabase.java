@@ -22,6 +22,23 @@ public class _6_ConnectingToADatabase {
 
     jdbc:postgres://localhost:5432/zoo
 
+    Protocol -> jdbc
+    Subprotocol -> postgres
+    Subname -> //localhost:5432/zoo (location and name)
+
+    jdbc:derby:zoo
+
+    Notice the three parts. It starts with jdbc and then comes the subprotocol
+    derby, and it ends with the subname, which is the database name. The
+    location is not required, because Derby is an in‐memory database.
+
+    Other examples of subname are shown here:
+    jdbc:postgresql://localhost/zoo
+    jdbc:oracle:thin:@123.123.123.123:1521:zoo
+    jdbc:mysql://localhost:3306
+    jdbc:mysql://localhost:3306/zoo?profileSQL=true
+
+
      */
 
 }
