@@ -51,6 +51,21 @@ public class _10_ExecutingAPreparedStatement {
     matching records to update. Since no records match, the result is 0.
     Line 35 creates the delete statement, and line 36 deletes the row created on line
     28. Again, one row is affected, so the result is 1.
+     */
+    /*
+    Next, let's look at a SQL statement that begins with SELECT. This time, we use the executeQuery() method.
+
+    var sql = "SELECT * FROM exhibits";
+    try (var ps = conn.prepareStatement(sql);
+    ResultSet rs = ps.executeQuery() ) {
+
+     // work with rs
+    }
+
+    On line 59, we create a PreparedStatement for our SELECT query. On line
+    60, we actually run it. Since we are running a query to get a result, the
+    return type is ResultSet. In the next section, we will show you how to
+    process the ResultSet.
 
      */
 
