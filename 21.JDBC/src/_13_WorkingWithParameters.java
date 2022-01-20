@@ -3,15 +3,15 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class _13_WorkingWithParameters {
-    /*Suppose our zoo acquires a new elephant and we want to register it in our names table.
+    //Suppose our zoo acquires a new elephant and we want to register it in our names table.
 
-    public static void register(Connection conn) throws
-            SQLException {
+    public static void register0 (Connection conn) throws SQLException {
         var sql = "INSERT INTO names VALUES(6, 1, 'Edith')";
         try (var ps = conn.prepareStatement(sql)) {
             ps.executeUpdate();
         }
     }
+    /*
     However, everything is hard‐coded. We want to be able to pass in the
     values as parameters. However, we don't want the caller of this method to
     need to write SQL or know the exact details of our database.
@@ -73,6 +73,23 @@ public class _13_WorkingWithParameters {
     setObject           Object                  Any type
     setString           String                  CHAR, VARCHAR
      */
+
+    /*
+    Notice the setObject() method works with any Java type. If you pass a primitive,
+    it will be autoboxed into a wrapper type. That means we can rewrite our example as follows:
+    */
+    public static void register4 (Connection conn, int key, int type, String name) throws SQLException {
+        String sql = "INSERT INTO names VALUES(?, ?, ?)";
+        try (PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setObject(1, key);
+            ps.setObject(2, type);
+            ps.setObject(3, name);
+            ps.executeUpdate();
+        }
+    }
+
+
+
 
 
 
