@@ -98,7 +98,27 @@ public class _13_WorkingWithParameters {
     The problem is that the last line passes a SQL statement.
     With a PreparedStatement, we pass the SQL in when creating the object.
 
-
+    Updating Multiple Times
+    =======================
+    Suppose we get two new elephants and want to add both. We can use the same PreparedStatement object.
+    */
+    public static void updatingMultipleTimes( Connection conn) throws SQLException {
+        var sql = "INSERT INTO names VALUES(?, ?, ?)";
+        try (var ps = conn.prepareStatement(sql)) {
+            ps.setInt(1, 20);
+            ps.setInt(2, 1);
+            ps.setString(3, "Ester");
+            ps.executeUpdate();
+            ps.setInt(1, 21);
+            ps.setString(3, "Elias");
+            ps.executeUpdate();
+        }
+    }
+    /*
+    Note that we set all three parameters when adding Ester, but only two for
+    Elias. The PreparedStatement is smart enough to remember the
+    parameters that were already set and retain them. You only have to set the
+    ones that are different.
      */
 
 
