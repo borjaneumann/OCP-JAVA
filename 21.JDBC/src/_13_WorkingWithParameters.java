@@ -52,5 +52,17 @@ public class _13_WorkingWithParameters {
         }
     }
 
+    //What about if you try to set more values than you have as bind variables?
+    public static void register3 (Connection conn, int key, int type, String name) throws SQLException {
+        var sql = "INSERT INTO names VALUES(?, ?)";
+        try (var ps = conn.prepareStatement(sql)) {
+            ps.setInt(1, key);
+            ps.setInt(2, type);
+            ps.setString(3, name);// The number of values assigned is not the same as the number of specified or implied columns.
+            ps.executeUpdate();
+        }
+    }
+
+
 
 }
