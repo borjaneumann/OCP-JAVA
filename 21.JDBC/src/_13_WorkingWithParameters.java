@@ -62,6 +62,17 @@ public class _13_WorkingWithParameters {
             ps.executeUpdate();
         }
     }
+    /*
+    PreparedStatement methods
+    Method name         Parameter type          Example database type
+    ======================================================================
+    setBoolean          Boolean                 BOOLEAN
+    setDouble           Double                  DOUBLE
+    setInt              Int                     INTEGER
+    setLong             Long                    BIGINT
+    setObject           Object                  Any type
+    setString           String                  CHAR, VARCHAR
+     */
 
 
 
