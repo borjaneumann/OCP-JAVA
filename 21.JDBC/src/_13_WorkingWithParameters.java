@@ -39,6 +39,18 @@ public class _13_WorkingWithParameters {
     Remember that JDBC starts counting columns with 1 rather than 0.
     A common exam (and interview) question tests that you know this!
 
-     */
+    The rule is only that they are each set before the query is
+    executed. Let's see what happens if you don't set all the bind variables.
+    */
+    public static void register2(Connection conn, int key, int type) throws SQLException {
+        var sql = "INSERT INTO names VALUES(?, ?, ?)";
+        try (var ps = conn.prepareStatement(sql)) {
+            ps.setInt(1, key);
+            ps.setInt(2, type);
+            // missing the set for parameter number 3
+            ps.executeUpdate();
+        }
+    }
+
 
 }
