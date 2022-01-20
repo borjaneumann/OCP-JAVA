@@ -87,6 +87,19 @@ public class _13_WorkingWithParameters {
             ps.executeUpdate();
         }
     }
+    /*
+    The following code is incorrect. Do you see why?
+
+    ps.setObject(1, key);
+    ps.setObject(2, type);
+    ps.setObject(3, name);
+    ps.executeUpdate(sql); // INCORRECT, WE ARE PASSING SQL HERE
+
+    The problem is that the last line passes a SQL statement.
+    With a PreparedStatement, we pass the SQL in when creating the object.
+
+
+     */
 
 
 
