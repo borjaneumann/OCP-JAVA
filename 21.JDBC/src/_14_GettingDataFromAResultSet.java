@@ -30,5 +30,11 @@ public class _14_GettingDataFromAResultSet {
     }
     /*
     It outputs this: {1=African Elephant, 2=Zebra}
+
+    We use the executeQuery() method on line 20, since we want to have a ResultSet returned.
+    On line 21, we loop through the results. Each time through the loop represents one
+    row in the ResultSet.
+    Lines 22 and 23 show you the best way to get the columns for a given row.
+
      */
 }
