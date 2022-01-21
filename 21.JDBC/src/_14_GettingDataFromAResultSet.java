@@ -95,4 +95,17 @@ public class _14_GettingDataFromAResultSet {
             throwables.printStackTrace();
         }
     }
+    //Alternatively, you can use the column name.
+    public static void rowByColumnName(Connection conn) throws SQLException {
+        var sql = "SELECT count(*) AS count FROM exhibits";
+        try (var ps = conn.prepareStatement(sql);
+             var rs = ps.executeQuery()) {
+            if (rs.next()) {
+                var count = rs.getInt("count");
+                System.out.println(count);
+            }
+        }
+    }
+
+
 }
