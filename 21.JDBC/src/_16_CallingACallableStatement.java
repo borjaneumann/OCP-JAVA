@@ -1,3 +1,8 @@
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 public class _16_CallingACallableStatement {
 
     /*
@@ -29,5 +34,23 @@ public class _16_CallingACallableStatement {
     double_number()         Num                 INOUT               Multiplies the parameter by two and returns that number
 
 
+    CALLING A PROCEDURE WITHOUT PARAMETERS
+    ======================================
+    read_e_names()
+
+    Our read_e_names() stored procedure doesn't take any parameters. It does return a ResultSet.
      */
+    public static void read_E_Name(Connection conn) throws SQLException {
+        String sql = "{call read_e_names()}"; // A stored procedure is called by putting the word call and the procedure name in braces ( {}).
+        try (CallableStatement cs = conn.prepareCall(sql); //creates a CallableStatement object. When we created a PreparedStatement, we used the
+             // prepareStatement() method. Here, we use the prepareCall() method instead.
+        ResultSet rs= cs.executeQuery()) {
+            while (rs.next()) {
+                System.out.println(rs.getString(3));
+            }
+        }
+    }
+    //This stored procedure returns the underlying table, so the columns are the same.
+
+
 }
