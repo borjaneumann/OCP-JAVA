@@ -75,7 +75,24 @@ public class _14_GettingDataFromAResultSet {
     }
 
     /*
-
+    Sometimes you want to get only one row from the table. Maybe you need
+    only one piece of data. Or maybe the SQL is just returning the number of
+    rows in the table. When you want only one row, you use an if statement
+    rather than a while loop.
 
      */
+    public static void onlyOneRow(Connection conn) {
+
+        String sql = "SELECT count(*) FROM exhibits";
+
+        try (var ps = conn.prepareStatement(sql);
+             var rs = ps.executeQuery()) {
+            if(rs.next()) {
+                int count =rs.getInt(1);
+                System.out.println(count);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
 }
