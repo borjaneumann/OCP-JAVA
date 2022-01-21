@@ -69,6 +69,4 @@ public class _15_GettingDataForAColumn {
         }
     }
 
-
-
 }
