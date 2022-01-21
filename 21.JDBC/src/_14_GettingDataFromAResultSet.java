@@ -123,6 +123,58 @@ public class _14_GettingDataFromAResultSet {
 
     //This throws a SQLException with a message like this: Column 'total' not found.
 
+    /*
+    Attempting to access a column name or index that does not exist throws a
+    SQLException, as does getting data from a ResultSet when it isn't
+    pointing at a valid row. You need to be able to recognize such code. Here
+    are a few examples to watch out for.
+
+    Do you see what is wrong here when no rows match?
+    var sql = "SELECT * FROM exhibits where name='Not in table'";
+    try (var ps = conn.prepareStatement(sql);
+    var rs = ps.executeQuery()) {
+        rs.next();
+        rs.getInt(1); // SQLException
+    }
+    Calling rs.next() works. It returns false. However, calling a getter
+    afterward does throw a SQLException because the result set cursor does
+    not point to a valid position. If there actually were a match returned, this
+    code would have worked.
+
+    Do you see what is wrong with the following?
+    var sql = "SELECT count(*) FROM exhibits";
+    try (var ps = conn.prepareStatement(sql);
+    var rs = ps.executeQuery()) {
+        rs.getInt(1); // SQLException
+    }
+    Not calling rs.next() at all is a problem. The result set cursor is still
+    pointing to a location before the first row, so the getter has nothing to point to.
+
+    How about this one?
+    var sql = "SELECT count(*) FROM exhibits";
+    try (var ps = conn.prepareStatement(sql);
+    var rs = ps.executeQuery()) {
+        if (rs.next())
+        rs.getInt(0); // SQLException
+    }
+    Since column indexes begin with 1, there is no column 0 to point to and a
+    SQLException is thrown. Let's try one more example.
+
+    What is wrong with this one?
+    var sql = "SELECT name FROM exhibits";
+    try (var ps = conn.prepareStatement(sql);
+    var rs = ps.executeQuery()) {
+    if (rs.next())
+        rs.getInt("badColumn"); // SQLException
+    }
+    Trying to get a column that isn't in the ResultSet is just as bad as an
+    invalid column index, and it also throws a SQLException.
+
+    To sum up this section, it is important to remember the following:
+    1) Always use an if statement or while loop when calling rs.next().
+    2) Column indexes begin with 1.
+     */
+
 
 
 }
