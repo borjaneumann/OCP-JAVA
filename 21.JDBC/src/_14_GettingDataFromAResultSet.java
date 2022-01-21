@@ -107,5 +107,22 @@ public class _14_GettingDataFromAResultSet {
         }
     }
 
+    //Let's try to read a column that does not exist.
+    public static void readingNonExistingColumn(Connection conn) {
+        var sql = "SELECT count(*) AS count FROM exhibits";
+        try (var ps = conn.prepareStatement(sql);
+             var rs = ps.executeQuery()) {
+            if (rs.next()) {
+                var count = rs.getInt("total");
+                System.out.println(count);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
+    //This throws a SQLException with a message like this: Column 'total' not found.
+
+
 
 }
