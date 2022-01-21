@@ -64,8 +64,8 @@ public class _14_GettingDataFromAResultSet {
         try (var ps = conn.prepareStatement(sql);
              ResultSet rs = ps.executeQuery()) {
             while (rs.next()) {
-                int id = rs.getInt("id");
-                String name = rs.getString("name");
+                int id = rs.getInt(1); // column positions, they always start from 1
+                String name = rs.getString(2); // column positions
                 idToNameMap.put(id, name);
             }
             System.out.println(idToNameMap);
