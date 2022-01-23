@@ -103,6 +103,18 @@ public class _16_CallingACallableStatement {
     cover next). We call execute() instead of executeQuery() since we are not
     returning a ResultSet from our stored procedure.
      */
+    /*
+    DataBase Specific Behaviour
+    ===========================
+    some databases allow you to omit the following:
+    - Braces ( {})
+    - Bind variable ( ?) if it is an OUT parameter
+    - Call to registerOutParameter()
+
+    For the exam, you need to answer according to the full requirements,
+    which are described in this book. For example, you should answer
+    exam questions as if braces are required.
+     */
 
 
 
