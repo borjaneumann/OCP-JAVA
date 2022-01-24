@@ -93,5 +93,33 @@ public class _01_DesigningASecureObject {
     that only the expected ComboLocks class can make an appearance.
      */
 
+    /*
+    CREATING IMMUTABLE OBJECTS
+    ==========================
+    An immutable object is one that cannot change state after it is created.
+    Immutable objects are helpful when writing secure code because you don't
+    have to worry about the values changing. They also simplify code when
+    dealing with concurrency.
+
+    We worked with some immutable objects in the book. The String class
+    used throughout the book is immutable. In Chapter 14, “Generics and
+    Collections,” you used List.of(), Set.of(), and Map.of(). All three of
+    these methods return immutable types.
+
+    Although there are a variety of techniques for writing an immutable class,
+    you should be familiar with a common strategy for making a class
+    immutable.
+
+    1. Mark the class as final. Prevents anyone from creating a mutable subclass.
+    2. Mark all the instance variables private. Provides good encapsulation.
+    3. Don't define any setter methods and make fields final. Ensures that callers and
+    the class itself don't make changes to the instance variables.
+    4. Don't allow referenced mutable objects to be modified. you shouldn't expose a getter
+    method for a mutable object.
+    5. Use a constructor to set all properties of the object, making a copy if needed.
+
+
+     */
+
 
 }
