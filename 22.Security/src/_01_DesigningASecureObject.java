@@ -143,7 +143,28 @@ public class _01_DesigningASecureObject {
         }
     }
     /*
+    We  followed the first three rules, but unfortunately, Hacker
+    Harry can modify our data by calling getFavoriteFoods().clear() or
+    add a food to the list that our animal doesn't like.
+    It's not an immutable object if we can change it contents!
+    If we don't have a getter for the favoriteFoods object, how do callers access it?
+    Simple, by using delegate methods to read the data, as shown in the following:
      */
+    public final class Animal1 {
+        private final ArrayList<String> favoriteFoods;
 
+        public Animal1() {
+            this.favoriteFoods = new ArrayList<String>();
+            this.favoriteFoods.add("Apples");
+        }
+        public int getFavoriteFoodsCount() {
+            return favoriteFoods.size();
+        }
+        public String getFavoriteFoodsElement(int index) {
+           return favoriteFoods.get(index);
+        }
+    }
+    //In this improved version, the data is still available. However, it is a true
+    //immutable object because the mutable variable cannot be modified by the caller.
 
 }
