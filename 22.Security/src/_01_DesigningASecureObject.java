@@ -37,5 +37,14 @@ public class _01_DesigningASecureObject {
     outside the ComboLocks class. For example, package‐private is better than
     public, and private is better than package‐private.
      */
+    /*
+    If your application is using modules, you can do even better by only exporting
+    the security packages to the specific modules that should have access. Here's an example:
+
+    exports animals.security to zoo.staff;
+    In this example, only the zoo.staff module can access the public classes
+    in the animals.security package.
+
+     */
 
 }
