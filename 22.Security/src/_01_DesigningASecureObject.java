@@ -1,6 +1,34 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 public class _01_DesigningASecureObject {
+
+    /*
+    RESTRICTING EXTENSIBILITY
+    =========================
+    Marking a sensitive class as final.
+    Suppose you are working on a class that uses ComboLocks.
+    */
+    public static class GrasshopperCage {
+        public static void openLock(ComboLocks comboLocks, String
+                combo) {
+            if (comboLocks.isComboValid("grasshopper", combo))
+                System.out.println("Open!");
+        }
+    }
+    /*
+    This is far better; we don't expose the combinations map to any classes
+    outside the ComboLocks class. For example, package‐private is better than
+    public, and private is better than package‐private.
+
+    If your application is using modules, you can do even better by only exporting
+    the security packages to the specific modules that should have access. Here's an example:
+
+    exports animals.security to zoo.staff;
+
+    In this example, only the zoo.staff module can access the public classes in the animals.security package.
+     */
 
     /*
     Java provides us with many tools to protect the objects that we create. In
@@ -34,33 +62,7 @@ public class _01_DesigningASecureObject {
             return combo.equals(correctCombo);
         }
     }
-    /*
-    This is far better; we don't expose the combinations map to any classes
-    outside the ComboLocks class. For example, package‐private is better than
-    public, and private is better than package‐private.
 
-    If your application is using modules, you can do even better by only exporting
-    the security packages to the specific modules that should have access. Here's an example:
-
-    exports animals.security to zoo.staff;
-
-    In this example, only the zoo.staff module can access the public classes in the animals.security package.
-     */
-
-
-    /*
-    RESTRICTING EXTENSIBILITY
-    =========================
-    Marking a sensitive class as final.
-    Suppose you are working on a class that uses ComboLocks.
-    */
-    public static class GrasshopperCage {
-        public static void openLock(ComboLocks comboLocks, String
-                combo) {
-            if (comboLocks.isComboValid("grasshopper", combo))
-                System.out.println("Open!");
-        }
-    }
     /*
     Ideally, the first variable passed to this method is an instance of the
     ComboLocks class. However, Hacker Harry is hard at work and has created
@@ -82,6 +84,7 @@ public class _01_DesigningASecureObject {
 
     public final class ComboLocksWithFinal {
         private Map<String, String> combos;
+
         // instantiate combos object
         public boolean isComboValid(String animal, String combo) {
             var correctCombo = combos.get(animal);
@@ -118,7 +121,28 @@ public class _01_DesigningASecureObject {
     method for a mutable object.
     5. Use a constructor to set all properties of the object, making a copy if needed.
 
+    4th Rule Case
+    =============
+    The fourth rule is subtler. Basically, it means you shouldn't expose a getter
+    method for a mutable object. For example, can you see why the following
+    is not an immutable object?
+    import java.util.*;
+     */
 
+
+    public final class Animal {
+        private final ArrayList<String> favoriteFoods;
+
+        public Animal() {
+            this.favoriteFoods = new ArrayList<String>();
+            this.favoriteFoods.add("Apples");
+        }
+
+        public List<String> getFavoriteFoods() {
+            return favoriteFoods;
+        }
+    }
+    /*
      */
 
 
