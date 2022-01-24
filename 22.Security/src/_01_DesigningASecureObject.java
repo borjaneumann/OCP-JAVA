@@ -1,3 +1,5 @@
+import java.util.Map;
+
 public class _01_DesigningASecureObject {
     /*
     Java provides us with many tools to protect the objects that we create. In
@@ -17,6 +19,23 @@ public class _01_DesigningASecureObject {
     poor encapsulation. A key security principle is to limit access as much as
     possible. Think of it as “need to know” for objects.
     This is called the principle of least privilege.
+
+    It would be better to make the combos object
+    private and write a method to provide the necessary functionality.
+
+    package animals.security;
+    */
+    public class ComboLocks {
+        private Map<String, String> combos;
+        public boolean isComboValid(String animal, String combo) {
+        var correctCombo = combos.get(animal);
+        return combo.equals(correctCombo);
+        }
+    }
+    /*
+    This is far better; we don't expose the combinations map to any classes
+    outside the ComboLocks class. For example, package‐private is better than
+    public, and private is better than package‐private.
      */
 
 }
