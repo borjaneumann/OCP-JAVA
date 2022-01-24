@@ -1,3 +1,4 @@
+import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
@@ -62,4 +63,49 @@ public class _17_ClosingDatabaseResources {
             // PreparedSatement and Connection objects.
         }
     }
+    /*
+    DEALING WITH EXCEPTIONS
+    ========================
+    In most of this chapter, we've lived in a perfect world. Sure, we
+    mentioned that a checked SQLException might be thrown by any
+    JDBC method—but we never actually caught it. We just declared it
+    and let the caller deal with it. Now let's catch the exception.
+    */
+    public void dealingWithExceptions() {
+        var sql = "SELECT not_a_column FROM names";
+        var url = "jdbc:derby:zoo";
+        try (var conn = DriverManager.getConnection(url);
+            var ps = conn.prepareStatement(sql);
+            var rs = ps.executeQuery()) {
+
+            while (rs.next())
+                System.out.println(rs.getString(1));
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            System.out.println(e.getSQLState());
+            System.out.println(e.getErrorCode());
+        }
+    }
+    //Console command: java -cp "C:\db-derby-10.15.2.0-bin\db-derby-10.15.2.0-bin\lib\derby.jar" _17_ClosingDatabaseResources.java
+    public static void main(String[] args) {
+        var sql = "SELECT not_a_column FROM names";
+        var url = "jdbc:derby:zoo";
+        try (var conn = DriverManager.getConnection(url);
+             var ps = conn.prepareStatement(sql);
+             var rs = ps.executeQuery()) {
+
+            while (rs.next())
+                System.out.println(rs.getString(1));
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            System.out.println(e.getSQLState());
+            System.out.println(e.getErrorCode());
+        }
+    }
+
+    /*
+    java -cp C:\db-derby-10.15.2.0-bin\db-derby-10.15.2.0-bin\lib\derby.jar" _17_ClosingDatabaseResources
+     */
 }
