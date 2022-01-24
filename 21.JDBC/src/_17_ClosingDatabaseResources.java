@@ -37,7 +37,29 @@ public class _17_ClosingDatabaseResources {
         }
     }
     /*
+    There's another way to close a ResultSet. JDBC automatically closes a
+    ResultSet when you run another SQL statement from the same
+    Statement. This could be a PreparedStatement or a CallableStatement.
+    How many resources are closed in this code?
+    */
+    public void closingResources() throws SQLException {
+        var url = "jdbc:derby:zoo";
+        var sql = "SELECT count(*) FROM names where id = ?";
+        try (var conn = DriverManager.getConnection(url);
+        var ps = conn.prepareStatement(sql)) {
+            ps.setInt(1,1);
+            var rs1 = ps.executeQuery();
+            while (rs1.next()) {
+                System.out.println("Count: " + rs1.getInt(1));
+            }
+            ps.setInt(1,2);
 
-
-     */
+            var rs2 = ps.executeQuery();// rs1 is closed because the same PreparedStatement runs another query.
+            while(rs2.next()) {
+                System.out.println("Count: " + rs2.getInt(1));
+            }
+            rs2.close(); //rs2 is closed in the method call. Then the try‐with‐resources statement runs and closes the
+            // PreparedSatement and Connection objects.
+        }
+    }
 }
