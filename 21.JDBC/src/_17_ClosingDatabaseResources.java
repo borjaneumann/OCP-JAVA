@@ -104,8 +104,12 @@ public class _17_ClosingDatabaseResources {
             System.out.println(e.getErrorCode());
         }
     }
-
     /*
     java -cp C:\db-derby-10.15.2.0-bin\db-derby-10.15.2.0-bin\lib\derby.jar" _17_ClosingDatabaseResources
+    Output:
+    getMessage() --> Column 'NOT_A_COLUMN' is either not in any table in the FROM list or appears within a join specification and is outside the scope of the
+    getSQLState() --> 42X04
+    getErrorCode() --> 30000
+
      */
 }
