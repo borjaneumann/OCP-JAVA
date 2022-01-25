@@ -244,6 +244,8 @@ public class _01_DesigningASecureObject {
     Java has a Cloneable interface that you can implement if you want classes
     to be able to call the clone() method on your object. This helps with
     making defensive copies.
+
+    //Shallow copy
     */
     public static final class Animal4 implements Cloneable{
         private final ArrayList<String> favoriteFoods;
@@ -276,5 +278,26 @@ public class _01_DesigningASecureObject {
     object contains a reference to an ArrayList, a shallow copy contains a
     reference to that same ArrayList. Changes to the ArrayList in one object
     will be visible in the other since it is the same object.
+     */
+
+    //Deep Copy
+    /*
+    you can write an implementation that does a deep copy and
+    clones the objects inside. A deep copy does make a new ArrayList object.
+    Changes to the cloned object do not affect the original.
+
+    public Animal clone() {
+        ArrayList<String> listClone = (ArrayList)
+        favoriteFoods.clone();
+        return new Animal(listClone);
+    }
+    Now the main() method prints false twice because the ArrayList is also
+    cloned.
+    You might have noticed that the clone() method is declared in the Object
+    class. The default implementation throws an exception that tells you the
+    Object didn't implement Cloneable. If the class implements Cloneable,
+    you can call clone(). Classes that implement Cloneable can also provide
+    a custom implementation of clone(), which is useful when the class
+    wants to make a deep copy.
      */
 }
