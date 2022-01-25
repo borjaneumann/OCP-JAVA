@@ -141,4 +141,21 @@ public class _2_IntroducingInjectionAndInputValidation {
     This time when Hacker Harry strikes, he doesn't see any output at all. His input did not match the whitelist.
      */
 
+    /*
+    WHITELIST VS. BLACKLIST
+    =======================
+    A blacklist is a list of things that aren't allowed.
+    In the previous example, we could have put the dot ( .) character on a blacklist.
+    The problem with a blacklist is that you have to be cleverer than the bad guys. There are a lot of ways to cause harm. For example, you can
+    encode characters.
+
+    By contrast, the whitelist is specifying what is allowed.
+    You can supply a list of valid characters.
+    Whitelisting is preferable to blacklisting for security because a whitelist doesn't need to foresee every possible problem.
+    That said, the whitelist solution could require more frequent updates.
+
+    In the previous example, we would have to update the code any time we added a new animal type. Security decisions are often about
+    trading convenience for lower risk.
+     */
+
 }
