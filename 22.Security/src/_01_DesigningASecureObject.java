@@ -167,4 +167,17 @@ public class _01_DesigningASecureObject {
     //In this improved version, the data is still available. However, it is a true
     //immutable object because the mutable variable cannot be modified by the caller.
 
+    /*
+    Another option is to create a copy of the favoriteFoods object and
+    return the copy anytime it is requested, so the original remains safe.
+
+    public ArrayList<String> getFavoriteFoods() {
+        return new ArrayList<String>(this.favoriteFoods);
+    }
+
+    Of course, changes in the copy won't be reflected in the original, but at
+    least the original is protected from external changes.
+
+     */
+
 }
