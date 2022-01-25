@@ -1,3 +1,6 @@
+import java.sql.Connection;
+import java.sql.SQLException;
+
 public class _2_IntroducingInjectionAndInputValidation {
     /*
     Concepts:
@@ -50,6 +53,52 @@ public class _2_IntroducingInjectionAndInputValidation {
     isn't null. Since none of the values in Figure 22.2 is null, this means all
     the rows are returned. Luckily, the database is kind enough to return the
     rows in the order they were inserted; our code reads the first row.
+     */
+
+    /*
+    Using PreparedStatement
+    Obviously, we have a problem with using Statement, Statement is insecure because it is vulnerable
+    to SQL injection. As Hacker Harry just showed us an attack.
+
+    We switch our code to use PreparedStatement.
+    */
+    public int getOpening2(Connection conn, String day) throws SQLException {
+        String sql = "SELECT opens FROM hours WHERE day = '" + day
+                + "'";
+        try (var ps = conn.prepareStatement(sql);
+             var rs = ps.executeQuery()) {
+            if (rs.next())
+                return rs.getInt("opens");
+        }
+        return -1;
+    }
+
+    /*
+    Hacker Harry runs his code, and the behavior hasn't changed. We haven't
+    fixed the problem! A PreparedStatement isn't magic. It gives you the
+    capability to be safe, but only if you use it properly.
+    We need to rewrite the SQL statement using bind variables.
+    */
+    public int getOpening3(Connection conn, String day) throws SQLException {
+        String sql = "SELECT opens FROM hours WHERE day = ?";
+        try (var ps = conn.prepareStatement(sql)) {
+            ps.setString(1, day);
+            try (var rs = ps.executeQuery()) {
+                if (rs.next())
+                    return rs.getInt("opens");
+            }
+        }
+        return -1;
+    }
+    /*
+    This time, Hacker Harry's code does behave differently.
+
+    int evil = attack.getOpening(conn, "monday' or day is not null or day = 'sunday"); // -1
+
+    The entire string is matched against the day column. Since there is no match, no rows are returned. This is far better!
+    If you remember only two things about SQL and security, remember to
+    use a PreparedStatement and bind variables. IMPORTANT!!
+
      */
 
 }
