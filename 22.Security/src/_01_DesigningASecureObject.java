@@ -212,5 +212,29 @@ public class _01_DesigningASecureObject {
     /*
     This method prints 1, followed by 0. Whoops! It seems like Animal is not
     immutable anymore, since its contents can change after it is created.
+
+    The solution is to use a copy constructor to make a copy of the list object
+    containing the same elements.
+     */
+    public final class Animal3 {
+        private final ArrayList<String> favoriteFoods;
+        public Animal3 (ArrayList<String> favoriteFoods) {
+            if(favoriteFoods == null)
+                throw new RuntimeException("Favorite food is required");
+            this.favoriteFoods = new ArrayList<String>(favoriteFoods);//The solution is to use a
+            // copy constructor to make a copy of the list object containing the same elements.
+        }
+        public int getFavoriteFoodsCount() {
+            return favoriteFoods.size();
+        }
+        public String getFavoriteFoodsElement (int index) {
+            return favoriteFoods.get(index);
+        }
+    }
+    /*
+    The copy operation is called a defensive copy because the copy is being
+    made in case other code does something unexpected. With this approach,
+    Hacker Harry is defeated. He can modify the original favoriteFoods all
+    he wants, but it doesn't change the Animal object's contents.
      */
 }
