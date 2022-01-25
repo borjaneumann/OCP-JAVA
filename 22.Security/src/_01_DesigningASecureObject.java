@@ -142,6 +142,7 @@ public class _01_DesigningASecureObject {
             return favoriteFoods;
         }
     }
+
     /*
     We  followed the first three rules, but unfortunately, Hacker
     Harry can modify our data by calling getFavoriteFoods().clear() or
@@ -157,11 +158,13 @@ public class _01_DesigningASecureObject {
             this.favoriteFoods = new ArrayList<String>();
             this.favoriteFoods.add("Apples");
         }
+
         public int getFavoriteFoodsCount() {
             return favoriteFoods.size();
         }
+
         public String getFavoriteFoodsElement(int index) {
-           return favoriteFoods.get(index);
+            return favoriteFoods.get(index);
         }
     }
     //In this improved version, the data is still available. However, it is a true
@@ -185,18 +188,22 @@ public class _01_DesigningASecureObject {
      */
     public final class Animal2 {
         private final ArrayList<String> favoriteFoods;
-        public Animal2 (ArrayList<String> favoriteFoods) {
-            if(favoriteFoods == null)
+
+        public Animal2(ArrayList<String> favoriteFoods) {
+            if (favoriteFoods == null)
                 throw new RuntimeException("Favorite food is required");
             this.favoriteFoods = favoriteFoods;
         }
+
         public int getFavoriteFoodsCount() {
             return favoriteFoods.size();
         }
-        public String getFavoriteFoodsElement (int index) {
+
+        public String getFavoriteFoodsElement(int index) {
             return favoriteFoods.get(index);
         }
     }
+
     /*
     Hacker Harry is tricky, though. He decides to send us a favoriteFood object but keep his own
     secret reference to it, which he can modify directly.
@@ -209,6 +216,7 @@ public class _01_DesigningASecureObject {
         favorites.clear();
         System.out.print(animal.getFavoriteFoodsCount()); //0
     }
+
     /*
     This method prints 1, followed by 0. Whoops! It seems like Animal is not
     immutable anymore, since its contents can change after it is created.
@@ -218,16 +226,19 @@ public class _01_DesigningASecureObject {
      */
     public final class Animal3 {
         private final ArrayList<String> favoriteFoods;
-        public Animal3 (ArrayList<String> favoriteFoods) {
-            if(favoriteFoods == null)
+
+        public Animal3(ArrayList<String> favoriteFoods) {
+            if (favoriteFoods == null)
                 throw new RuntimeException("Favorite food is required");
             this.favoriteFoods = new ArrayList<String>(favoriteFoods);//The solution is to use a
             // copy constructor to make a copy of the list object containing the same elements.
         }
+
         public int getFavoriteFoodsCount() {
             return favoriteFoods.size();
         }
-        public String getFavoriteFoodsElement (int index) {
+
+        public String getFavoriteFoodsElement(int index) {
             return favoriteFoods.get(index);
         }
     }
@@ -247,29 +258,32 @@ public class _01_DesigningASecureObject {
 
     //Shallow copy
     */
-    public static final class Animal4 implements Cloneable{
+    public static final class Animal4 {
         private final ArrayList<String> favoriteFoods;
-        public Animal4 (ArrayList<String> favoriteFoods) {
-            if(favoriteFoods == null)
+
+        public Animal4(ArrayList<String> favoriteFoods) {
+            if (favoriteFoods == null)
                 throw new RuntimeException("Favorite food is required");
             this.favoriteFoods = (ArrayList) favoriteFoods.clone();//TThe ArrayList class does just that,
             // which means there's another way to write the statement.
         }
+
         public int getFavoriteFoodsCount() {
             return favoriteFoods.size();
         }
-        public String getFavoriteFoodsElement (int index) {
+
+        public String getFavoriteFoodsElement(int index) {
             return favoriteFoods.get(index);
         }
     }
 
-    public static void main(String[] args) throws Exception{
+    public static void main(String[] args) throws Exception {
         ArrayList<String> food = new ArrayList<>();
         food.add("grass");
         Animal4 sheep = new Animal4(food);
-        Animal4 clone = (Animal4) sheep.clone();
-        System.out.println(sheep == clone); //false
-        System.out.println(sheep.favoriteFoods == clone.favoriteFoods);//true
+//        Animal4 clone = (Animal4) sheep.clone();
+//        System.out.println(sheep == clone); //false
+//        System.out.println(sheep.favoriteFoods == clone.favoriteFoods);//true
     }
     /*
     By default, the clone() method makes a shallow copy of the data, which
@@ -307,5 +321,6 @@ public class _01_DesigningASecureObject {
     example, it may be a shallow copy limited to three levels.
 
      */
+
 
 }
