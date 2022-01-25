@@ -177,7 +177,40 @@ public class _01_DesigningASecureObject {
 
     Of course, changes in the copy won't be reflected in the original, but at
     least the original is protected from external changes.
-
      */
 
+    /*
+    Fifth rule.
+    Let's say we want to allow the user to provide the favoriteFoods data, so we implement the following:
+     */
+    public final class Animal2 {
+        private final ArrayList<String> favoriteFoods;
+        public Animal2 (ArrayList<String> favoriteFoods) {
+            if(favoriteFoods == null)
+                throw new RuntimeException("Favorite food is required");
+            this.favoriteFoods = favoriteFoods;
+        }
+        public int getFavoriteFoodsCount() {
+            return favoriteFoods.size();
+        }
+        public String getFavoriteFoodsElement (int index) {
+            return favoriteFoods.get(index);
+        }
+    }
+    /*
+    Hacker Harry is tricky, though. He decides to send us a favoriteFood object but keep his own
+    secret reference to it, which he can modify directly.
+     */
+    void modifyNotSoImmutableObject() {
+        var favorites = new ArrayList<String>();
+        favorites.add("Apples");
+        var animal = new Animal2(favorites);
+        System.out.print(animal.getFavoriteFoodsCount()); //1
+        favorites.clear();
+        System.out.print(animal.getFavoriteFoodsCount()); //0
+    }
+    /*
+    This method prints 1, followed by 0. Whoops! It seems like Animal is not
+    immutable anymore, since its contents can change after it is created.
+     */
 }
