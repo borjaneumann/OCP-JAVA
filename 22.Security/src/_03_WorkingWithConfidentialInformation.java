@@ -12,6 +12,14 @@ public class _03_WorkingWithConfidentialInformation {
                                         Security questions/answers
     ------------------------------------------------------------------------------------
 
-
+    GUARDING SENSITIVE DATA FROM OUTPUT
+    ===================================
+    - The first step she takes is to avoid putting confidential information in a toString() method.
+    - What methods are called in these sensitive contexts to ensure confidential information doesn't escape.
+        Such sensitive contexts include the following:
+            - Writing to a log file
+            - Printing an exception or stack trace
+            - System.out and System.err messages
+            - Writing to data files
      */
 }
