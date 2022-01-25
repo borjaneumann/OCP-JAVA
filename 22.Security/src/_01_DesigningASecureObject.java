@@ -299,5 +299,13 @@ public class _01_DesigningASecureObject {
     you can call clone(). Classes that implement Cloneable can also provide
     a custom implementation of clone(), which is useful when the class
     wants to make a deep copy.
+
+    Cloneable logic
+    In the last block, implementation‐dependent means you should probably
+    check the Javadoc of the overridden clone() method before using it. It
+    may provide a shallow copy, a deep copy, or something else entirely. For
+    example, it may be a shallow copy limited to three levels.
+
      */
+
 }
