@@ -1,7 +1,7 @@
 import java.sql.Connection;
 import java.sql.SQLException;
 
-public class _2_IntroducingInjectionAndInputValidation {
+public class _02_IntroducingInjectionAndInputValidation {
     /*
     Concepts:
     ========
