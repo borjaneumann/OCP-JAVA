@@ -121,7 +121,24 @@ public class _2_IntroducingInjectionAndInputValidation {
     We tested it by typing in mammals and got the expected output.
     c:/data/diets/mammals/Platypus.txt
 
+    Then Hacker Harry came along and typed .. as the directory name.
+    c:/data/diets/../secrets/giraffeDueDate.txt
+    c:/data/diets/../diets/mammals/Platypus.txt
+    c:/data/diets/../diets/birds/turkey.txt
 
+    Oh, no! Hacker Harry knows we are expecting a baby giraffe just from the filenames.
+    We will use a whitelist that allows us to specify which values are allowed.
+
+    Console console = System.console();
+    String dirName = console.readLine();
+    if (dirName.equals("mammal") || dirName.equals("birds")) { //Whitelist
+        Path path = Paths.get("c:/data/diets/" + dirName);
+        try (Stream<Path> stream = Files.walk(path)) {
+            stream.filter(p -> p.toString().endsWith(".txt"))
+            .forEach(System.out::println);
+        }
+    }
+    This time when Hacker Harry strikes, he doesn't see any output at all. His input did not match the whitelist.
      */
 
 }
