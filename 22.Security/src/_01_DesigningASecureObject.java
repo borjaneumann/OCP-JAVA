@@ -237,4 +237,44 @@ public class _01_DesigningASecureObject {
     Hacker Harry is defeated. He can modify the original favoriteFoods all
     he wants, but it doesn't change the Animal object's contents.
      */
+
+    /*
+    CLONING OBJECTS
+    ===============
+    Java has a Cloneable interface that you can implement if you want classes
+    to be able to call the clone() method on your object. This helps with
+    making defensive copies.
+    */
+    public static final class Animal4 implements Cloneable{
+        private final ArrayList<String> favoriteFoods;
+        public Animal4 (ArrayList<String> favoriteFoods) {
+            if(favoriteFoods == null)
+                throw new RuntimeException("Favorite food is required");
+            this.favoriteFoods = (ArrayList) favoriteFoods.clone();//TThe ArrayList class does just that,
+            // which means there's another way to write the statement.
+        }
+        public int getFavoriteFoodsCount() {
+            return favoriteFoods.size();
+        }
+        public String getFavoriteFoodsElement (int index) {
+            return favoriteFoods.get(index);
+        }
+    }
+
+    public static void main(String[] args) throws Exception{
+        ArrayList<String> food = new ArrayList<>();
+        food.add("grass");
+        Animal4 sheep = new Animal4(food);
+        Animal4 clone = (Animal4) sheep.clone();
+        System.out.println(sheep == clone); //false
+        System.out.println(sheep.favoriteFoods == clone.favoriteFoods);//true
+    }
+    /*
+    By default, the clone() method makes a shallow copy of the data, which
+    means only the top‐level object references and primitives are copied. No
+    new objects from within the cloned object are created. For example, if the
+    object contains a reference to an ArrayList, a shallow copy contains a
+    reference to that same ArrayList. Changes to the ArrayList in one object
+    will be visible in the other since it is the same object.
+     */
 }
