@@ -98,6 +98,29 @@ public class _2_IntroducingInjectionAndInputValidation {
     The entire string is matched against the day column. Since there is no match, no rows are returned. This is far better!
     If you remember only two things about SQL and security, remember to
     use a PreparedStatement and bind variables. IMPORTANT!!
+     */
+
+    /*
+    INVALIDATING INVALID INPUT WITH VALIDATION
+    ==========================================
+    SQL injection isn't the only type of injection. Command injection is
+    another type that uses operating system commands to do something unexpected.
+    In our example, we will use the Console class.
+
+    The following code attempts to read the name of a subdirectory of diets
+    and print out the names of all the .txt files in that directory:
+
+    Console console = System.console();
+    String dirName = console.readLine();
+    Path path = Paths.get("c:/data/diets/" + dirName);
+    try (Stream<Path> stream = Files.walk(path)) {
+        stream.filter(p -> p.toString().endsWith(".txt"))
+        .forEach(System.out::println);
+    }
+
+    We tested it by typing in mammals and got the expected output.
+    c:/data/diets/mammals/Platypus.txt
+
 
      */
 
