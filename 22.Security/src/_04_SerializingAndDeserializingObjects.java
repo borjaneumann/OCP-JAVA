@@ -103,5 +103,26 @@ public class _04_SerializingAndDeserializingObjects {
     This shows the serialPersistentFields variable is really being used.
     Java is preventing us from referencing fields that were not declared to be serializable.
 
+    WORKING WITH PASSWORDS
+    ======================
+    In this example, we encrypted and then decrypted the Social
+    Security number to show how to perform custom serialization for
+    security reasons.
+    Some fields are too sensitive even for that. In particular,
+    you should never be able to decrypt a password.
+    When a password is set for a user, it should be converted to a
+    String value using a salt (initial random value) and one‐way
+    hashing algorithm. Then, when a user logs in, convert the value they
+    type in using the same algorithm and compare it with the stored
+    value. This allows you to authenticate a user without having to
+    expose their password.
+
+    Databases of stored passwords can (and very often do) get stolen.
+    Having them properly encrypted means the attacker can't do much
+    with them, like decrypt them and use them to log in to the system.
+    They also can't use them to log in to other systems in which the user
+    used the same password more than once.
      */
+
+
 }
