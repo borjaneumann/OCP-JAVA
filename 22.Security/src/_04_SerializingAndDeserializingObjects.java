@@ -2,6 +2,8 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.ObjectStreamField;
 import java.io.Serializable;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class _04_SerializingAndDeserializingObjects {
     /*
@@ -58,33 +60,36 @@ public class _04_SerializingAndDeserializingObjects {
     For brevity, we'll use ssn to stand for Social Security number.
     */
     public static class Employee implements Serializable {
-        private String name;
-        private String ssn;
-        private int age;
-
-        //constructors/getters/setter
-
         private static final ObjectStreamField[] serialPersistentFields =
                 {new ObjectStreamField("name", String.class),
-                new ObjectStreamField("ssn", String.class)};
-        private static String encrypt (String input) {
+                        new ObjectStreamField("ssn", String.class)};
+        private String name;
+        private String ssn;
+
+        //constructors/getters/setter
+        private int age;
+
+        private static String encrypt(String input) {
             //implementation omitted
             return "";
         }
-        private static String decrypt (String input) {
+
+        private static String decrypt(String input) {
             //implementation omitted
             return "";
         }
-        private void writeObject (ObjectOutputStream s) throws Exception {
+
+        private void writeObject(ObjectOutputStream s) throws Exception {
             ObjectOutputStream.PutField fields = s.putFields();
             fields.put("name", name);
             fields.put("ssn", encrypt(ssn));
             s.writeFields();
         }
-        private void readObject (ObjectInputStream s) throws Exception {
+
+        private void readObject(ObjectInputStream s) throws Exception {
             ObjectInputStream.GetField fields = s.readFields();
-            this.name = (String)fields.get("name", null);
-            this.ssn = decrypt((String)fields.get("ssn", null));
+            this.name = (String) fields.get("name", null);
+            this.ssn = decrypt((String) fields.get("ssn", null));
         }
     }
     /*
@@ -122,6 +127,38 @@ public class _04_SerializingAndDeserializingObjects {
     with them, like decrypt them and use them to log in to the system.
     They also can't use them to log in to other systems in which the user
     used the same password more than once.
+     */
+
+    /*
+    PRE/POST‐SERIALIZATION PROCESSING
+    =================================
+    Suppose our zoo employee application is having a problem with duplicate
+    records being created for each employee. They decide that they want to
+    maintain a list of all employees in memory and only create users as
+    needed. Furthermore, each employee's name is guaranteed to be unique.
+    Unlikely in practice we know, but this is a special zoo!
+    From what you learned about concurrent collections in Chapter 18,
+    “Concurrency,” and factory methods, we can accomplish this with a
+    private constructor and factory method.
+    */
+    public static class Employee1 implements Serializable {
+    //…
+        private String name;
+        private static Map<String, Employee1> pool = new ConcurrentHashMap<>();
+        private Employee1() {}
+
+        public synchronized static Employee1 getEmployee1(String name) {
+            if (pool.get(name) == null) {
+                var e = new Employee1();
+                e.name = name;
+                pool.put(name, e);
+            }
+            return pool.get(name);
+        }
+    }
+    /*
+    This method creates a new Employee if one does not exist. Otherwise, it
+    returns the one stored in the memory pool.
      */
 
 
