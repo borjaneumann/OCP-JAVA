@@ -20,5 +20,25 @@ public class _04_SerializingAndDeserializingObjects {
         private int age;
         // Constructors/getters/setters
     }
+
+    SPECIFYING WHICH FIELDS TO SERIALIZE
+    ====================================
+    Our zoo has decided that employee age information is sensitive and
+    shouldn't be written to disk. You should already know how to do this.
+
+    Marking a field as transient prevents it from being serialized.
+
+    private transient int age;//blacklist
+
+    Alternatively, you can specify fields to be serialized in an array.
+
+    private static final ObjectStreamField[] serialPersistentFields = { new ObjectStreamField("name", String.class) };//whitelist
+
+    You can think of serialPersistentFields as the opposite of transient.
+    The former is a whitelist of fields that should be serialized, while the latter
+    is a blacklist of fields that should not.
+    If you go with the array approach, make sure you remember to use
+    the private, static, and final modifiers. Otherwise, the field will be ignored.
+
      */
 }
