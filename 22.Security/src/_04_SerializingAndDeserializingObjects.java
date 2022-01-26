@@ -1,3 +1,8 @@
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.ObjectStreamField;
+import java.io.Serializable;
+
 public class _04_SerializingAndDeserializingObjects {
     /*
     INTRO
@@ -39,6 +44,64 @@ public class _04_SerializingAndDeserializingObjects {
     is a blacklist of fields that should not.
     If you go with the array approach, make sure you remember to use
     the private, static, and final modifiers. Otherwise, the field will be ignored.
+
+    CUSTOMIZING THE SERIALIZATION PROCESS
+    =====================================
+    Security may demand custom serialization. Ee got a new
+    requirement to add the Social Security number to our object.
+    Unlike age, we do need to serialize this information. However, we don't want to
+    store the Social Security number in plain text, so we need to write some
+    custom code.
+
+    Take a look at the following implementation that uses writeObject() and
+    readObject() for serialization, which you learned about in Chapter 19.
+    For brevity, we'll use ssn to stand for Social Security number.
+    */
+    public static class Employee implements Serializable {
+        private String name;
+        private String ssn;
+        private int age;
+
+        //constructors/getters/setter
+
+        private static final ObjectStreamField[] serialPersistentFields =
+                {new ObjectStreamField("name", String.class),
+                new ObjectStreamField("ssn", String.class)};
+        private static String encrypt (String input) {
+            //implementation omitted
+            return "";
+        }
+        private static String decrypt (String input) {
+            //implementation omitted
+            return "";
+        }
+        private void writeObject (ObjectOutputStream s) throws Exception {
+            ObjectOutputStream.PutField fields = s.putFields();
+            fields.put("name", name);
+            fields.put("ssn", encrypt(ssn));
+            s.writeFields();
+        }
+        private void readObject (ObjectInputStream s) throws Exception {
+            ObjectInputStream.GetField fields = s.readFields();
+            this.name = (String)fields.get("name", null);
+            this.ssn = decrypt((String)fields.get("ssn", null));
+        }
+    }
+    /*
+    This version skips the age variable as before, although this time without
+    using the transient modifier. It also uses custom read and write methods
+    to securely encrypt/decrypt the Social Security number. Notice the
+    PutField and GetField classes are used in order to write and read the
+    fields easily.
+
+    Suppose we were to update our writeObject() method with the age variable.
+
+    fields.put("age", age);
+
+    When using serialization, the code would result in an exception.
+    java.lang.IllegalArgumentException: no such field age with type int
+    This shows the serialPersistentFields variable is really being used.
+    Java is preventing us from referencing fields that were not declared to be serializable.
 
      */
 }
