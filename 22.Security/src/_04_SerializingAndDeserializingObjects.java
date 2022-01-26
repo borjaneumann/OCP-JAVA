@@ -222,7 +222,6 @@ public class _04_SerializingAndDeserializingObjects {
             return e != null ? e : this;
         }
     }
-
     This implementation checks whether the object is found in the pool. If it is
     found in the pool, that version is sent for serialization; otherwise, the
     current instance is used. We could also update this example to add it to the
@@ -233,7 +232,18 @@ public class _04_SerializingAndDeserializingObjects {
     implementing these advanced serialization methods in detail is way
     beyond the scope of the exam. Besides, transient will probably
     meet your needs for customizing what gets serialized.
+     */
 
+    /*
+    REVIEWING SERIALIZATION METHODS
+    ===============================
+    Methods for serialization and deserialization
+    Return type     Method              Parameters          Description
+    ========================================================================================================
+    Object          writeReplace()      None                Allows replacement of object before serialization
+    void            writeObject()       ObjectInputStream   Serializes optionally using PutField
+    void            readObject()        ObjectOutputStream  Deserializes optionally using GetField
+    Object          readResolve()       None                Allows replacement of object after deserialization
      */
 
 
