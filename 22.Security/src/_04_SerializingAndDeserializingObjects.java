@@ -1,5 +1,6 @@
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.ObjectStreamException;
 import java.io.ObjectStreamField;
 import java.io.Serializable;
 import java.util.Map;
@@ -142,10 +143,12 @@ public class _04_SerializingAndDeserializingObjects {
     private constructor and factory method.
     */
     public static class Employee1 implements Serializable {
-    //…
-        private String name;
         private static Map<String, Employee1> pool = new ConcurrentHashMap<>();
-        private Employee1() {}
+        //…
+        private String name;
+
+        private Employee1() {
+        }
 
         public synchronized static Employee1 getEmployee1(String name) {
             if (pool.get(name) == null) {
@@ -159,6 +162,47 @@ public class _04_SerializingAndDeserializingObjects {
     /*
     This method creates a new Employee if one does not exist. Otherwise, it
     returns the one stored in the memory pool.
+     */
+
+    /*
+    Applying readResolve()
+    ======================
+    Now we want to start reading/writing the employee data to disk, but we
+    have a problem. When someone reads the data from the disk, it
+    deserializes it into a new object, not the one in memory pool.
+    This could result in two users holding different versions of the Employee in memory!
+    Enter the readResolve() method. When this method is present, it is run
+    after the readObject() method and is capable of replacing the reference of the object returned by deserialization.
+   */
+    public static class Employee3 implements Serializable {
+    //…
+        private String name;
+        private String ssn;
+        public Employee3(){};
+    private static Map<String, Employee3> pool = new ConcurrentHashMap<>();
+        public synchronized Object readResolve() throws ObjectStreamException {
+            var existingEmployee = pool.get(name);
+            if (pool.get(name) == null) {
+                // New employee not in memory
+                pool.put(name, this);
+                return this;
+            } else {
+                // Existing user already in memory
+                existingEmployee.name = this.name;
+                existingEmployee.ssn = this.ssn;
+                return existingEmployee;
+            }
+        }
+    }
+    /*
+    If the object is not in memory, it is added to the pool and returned.
+    Otherwise, the version in memory is updated, and its reference is returned.
+
+    Notice that we added the synchronized modifier to this method. Java
+    allows any method modifiers (except static) for the readResolve()
+    method including any access modifier. This rule applies to
+    writeReplace(), which is up next.
+
      */
 
 
