@@ -128,7 +128,48 @@ public class _05_ConstructingSensitiveObjects {
             this.count = count;
         }
     }
+
     /*
     Now Hacker Harry can't create his malicious subclass to begin with!
+     */
+    /*
+    3. MAKING THE CONSTRUCTOR PRIVATE
+    ==============================
+    Security Sienna notes that another way of preventing or controlling
+    subclasses is to make the constructor private. This technique requires
+    static factory methods to obtain the object.
+    */
+    public class FoodOrder3 {
+        private String item;
+        private int count;
+
+        private FoodOrder3(String item, int count) {
+            setItem(item);
+            setCount(count);
+        }
+
+        public FoodOrder3 getOrder(String item, int count) {
+            return new FoodOrder3(item, count);
+        }
+
+        public String getItem() {
+            return item;
+        }
+
+        public void setItem(String item) {
+            this.item = item;
+        }
+
+        public int getCount() {
+            return count;
+        }
+
+        public void setCount(int count) {
+            this.count = count;
+        }
+    }
+    /*
+    The factory method technique gives you more control over the process of
+    object creation.
      */
 }
