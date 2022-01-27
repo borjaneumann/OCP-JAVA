@@ -31,6 +31,22 @@ public class _3_DefiningAThreadTask {
         (new ReadInventoryThread()).start();
         System.out.println("end");
     }
+    /*
+    The answer is that it is unknown until runtime. The following is just one possible output:
+    begin
+    Printing zoo inventory
+    Printing record: 0
+    end
+    Printing zoo inventory
+    Printing record: 1
+    Printing record: 2
+
+    This sample uses a total of four threads—the main() user thread and three
+    additional threads created on lines 4–6. Each thread created on these lines
+    is executed as an asynchronous task. By asynchronous, we mean that the
+    thread executing the main() method does not wait for the results of each
+    newly created thread before continuing.
+     */
 
 
 
