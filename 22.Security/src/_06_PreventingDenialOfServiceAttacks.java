@@ -1,3 +1,7 @@
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+
 public class _06_PreventingDenialOfServiceAttacks {
 
     /*
@@ -15,6 +19,26 @@ public class _06_PreventingDenialOfServiceAttacks {
     service attack that comes from many sources at once. For example, many
     machines may attack the target. In this section, we will look at some
     common sources of denial of service issues.
+
+    LEAKING RESOURCES
+    =================
+    A hacker can take advantage of poorly written code. This simple method counts the number
+    of lines in a file using NIO.2
+    */
+    public long countLines(Path path) throws IOException {
+        return Files.lines(path).count();
+    }/*
+    Hacker Harry likes this method. He can call it in a loop. Since the method
+    opens a file system resource and never closes it, there is a resource leak.
+    After Hacker Harry calls the method enough times, the program crashes
+    because there are no more file handles available.
+
+    We fix the code by using the try‐with‐resources statement.
      */
+    public long countLinesFixed (Path path) throws IOException {
+        try (var stream = Files.lines(path)) {
+            return stream.count();
+        }
+    }
 
 }
