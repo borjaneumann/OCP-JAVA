@@ -1,34 +1,49 @@
 public class _3_DefiningAThreadTask {
+    public static void main(String[] args) {
+        System.out.println("begin");
+        (new ReadInventoryThread()).start();
+        (new Thread(new PrintData())).start();
+        (new ReadInventoryThread()).start();
+        System.out.println("end");
+    }
+
     /*Defining the task that a Thread instance will execute can be done two
     ways in Java:
     1) Provide a Runnable object or lambda expression to the Thread
     constructor.
     2) Create a class that extends Thread and overrides the run() method.
     The following are examples of these techniques:*/
-
+    //NUmber 1
     static class PrintData implements Runnable {
-        @Override public void run() { // Overrides method in Runnable
-            for(int i = 0; i < 3; i++)
-                System.out.println("Printing record: "+i);
-        }
         public static void main(String[] args) {
             (new Thread(new PrintData())).start();
         }
-    }
-    static class ReadInventoryThread extends Thread { //less common practise
-        @Override public void run() { // Overrides method in Thread
-            System.out.println("Printing zoo inventory");
+
+        @Override
+        public void run() { // Overrides method in Runnable
+            for (int i = 0; i < 3; i++)
+                System.out.println("Printing record: " + i);
         }
+    }
+    //NUmber 2
+    static class ReadInventoryThread extends Thread { //less common practise
         public static void main(String[] args) {
             (new ReadInventoryThread()).start();
         }
-    }
 
-    public static void main(String[] args) {
+        @Override
+        public void run() { // Overrides method in Thread
+            System.out.println("Printing zoo inventory");
+        }
+    }
+    /*
+    Let's try this. What is the output of the following code snippet using these two classes?
+    */
+    public static void main1(String[] args) { // First used thread
         System.out.println("begin");
-        (new ReadInventoryThread()).start();
-        (new Thread(new PrintData())).start();
-        (new ReadInventoryThread()).start();
+        (new ReadInventoryThread()).start(); // Second used thread
+        (new Thread(new PrintData())).start(); // Third used thread
+        (new ReadInventoryThread()).start(); // Four used thread
         System.out.println("end");
     }
     /*
@@ -47,7 +62,6 @@ public class _3_DefiningAThreadTask {
     thread executing the main() method does not wait for the results of each
     newly created thread before continuing.
      */
-
 
 
 }
