@@ -94,4 +94,29 @@ public class _5_CreatingThreadsWithTheConcurrencyAPI {
     not required, it is considered a good practice to do so.
      */
 
+    /*
+    SUBMITTING TASKS
+    ================
+    You can submit tasks to an ExecutorService instance multiple ways. The
+    first method we presented, execute(), is inherited from the Executor
+    interface, which the ExecutorService interface extends. The execute()
+    method takes a Runnable lambda expression or instance and completes the
+    task asynchronously.Because the return type of the method is void, it
+    does not tell us anything about the result of the task. It is considered a
+    “fire‐and‐forget” method.
+    the writers of Java added submit() methods to the
+    ExecutorService interface, which, like execute(), can be used to
+    complete tasks asynchronously.
+
+    submit() returns a Future instance that can be used to determine whether the task is
+    complete. It can also be used to return a generic result object after the task
+    has been completed.
+
+    In practice, using the submit() method is quite similar to using the
+    execute() method, except that the submit() method returns a Future
+    instance that can be used to determine whether the task has completed
+    execution.
+
+     */
+
 }
