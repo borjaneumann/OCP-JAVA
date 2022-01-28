@@ -117,6 +117,30 @@ public class _5_CreatingThreadsWithTheConcurrencyAPI {
     instance that can be used to determine whether the task has completed
     execution.
 
+    ExecutorService methods(5)
+    Method name                             Description
+    ===================================================================================
+    void execute(Runnable command)          Executes a Runnable task at some point in the future
+    _________________________________________________________________________________________
+    Future<?> submit(Runnable task)         Executes a Runnable task at some point in the future
+                                            and returns a Future representing the task
+    -----------------------------------------------------------------------------------------
+    <T> Future<T> submit(Callable<T> task)  Executes a Callable task at some point in the future
+                                            and returns a Future representing the pending results of the task
+    -----------------------------------------------------------------------------------------
+    <T> List<Future<T>>invokeAll(Collection<?   Executes the given tasks and waits for all tasks to complete. Returns a
+    extends Callable<T>>tasks) throws           List of Future instances, in the same order they were in the original
+    InterruptedException                        collection
+    ------------------------------------------------------------------------------------------
+    <T> T invokeAny(Collection<?            Executes the given tasks and waits for at least one to complete. Returns a
+    extends Callable<T>> tasks) throws      Future instance for a complete task and cancels any unfinished tasks
+    InterruptedException,
+    ExecutionException
+    ----------------------------------------------------------------------------------------------
+
+
+
+
      */
 
 }
