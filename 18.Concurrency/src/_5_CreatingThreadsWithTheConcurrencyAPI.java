@@ -40,5 +40,25 @@ public class _5_CreatingThreadsWithTheConcurrencyAPI {
             }
         }
     }
+    /*
+    In this example, we use the Executors.newSingleThreadExecutor()
+    method to create the service. Unlike our earlier example, in which we had
+    three extra threads for newly created tasks, this example uses only one,
+    which means that the threads will order their results. For example, the
+    following is a possible output for this code snippet:
+
+    begin
+    Printing zoo inventory
+    Printing record: 0
+    Printing record: 1
+    end
+    Printing record: 2
+    Printing zoo inventory
+
+    With a single‐thread executor, results are guaranteed to be executed
+    sequentially. Notice that the end text is output while our thread executor
+    tasks are still running. This is because the main() method is still an
+    independent thread from the ExecutorService.
+     */
 
 }
