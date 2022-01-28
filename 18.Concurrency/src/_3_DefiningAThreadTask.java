@@ -110,8 +110,6 @@ public class _3_DefiningAThreadTask {
     also mention that you can now create and manage threads indirectly
     using an ExecutorService, which we will discuss in the next section.
 
-
-
      */
 
 
