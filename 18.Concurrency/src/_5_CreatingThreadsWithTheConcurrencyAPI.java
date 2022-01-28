@@ -154,6 +154,34 @@ public class _5_CreatingThreadsWithTheConcurrencyAPI {
     submit(), but in your own code we recommend submit() over
     execute() whenever possible.
 
+    WAITING FOR RESULTS
+    ===================
+    As mentioned in the previous section, the submit() method
+    returns a java.util.concurrent.Future<V> instance that can be used to
+    determine this result.
+
+    Future<?> future = service.submit(() -> System.out.println("Hello"));
+
+    The Future type is actually an interface. Future methods
+    Method name                     Description
+    ==============================================================================================================
+    boolean isDone()                Returns true if the task was completed, threw an exception, or was cancelled
+    --------------------------------------------------------------------------------------------------------------
+    boolean isCancelled()           Returns true if the task was cancelled before it completed normally
+    --------------------------------------------------------------------------------------------------------------
+    boolean cancel(boolean          Attempts to cancel execution of the task and returns true if it was
+    mayInterruptIfRunning)          successfully cancelled or false if it could not be cancelled or is complete
+    --------------------------------------------------------------------------------------------------------------
+    V get()                         Retrieves the result of a task, waiting endlessly if it is not yet available
+    --------------------------------------------------------------------------------------------------------------
+    V get(long timeout,             Retrieves the result of a task, waiting the specified amount of time.
+    TimeUnit unit)                  If the result is not ready by the time the timeout is reached, a checked TimeoutException
+                                    will be thrown.
+    --------------------------------------------------------------------------------------------------------------
+
+
+
+
 
      */
 
