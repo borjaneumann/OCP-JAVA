@@ -10,21 +10,22 @@ public class _4_PollingWithSleep {
     counter value and your main() thread is waiting for the thread to increase
     the value to greater than 100, as shown in the following class:
      */
-    public static  class CheckResults {
+    public static class CheckResults {
         private static int counter = 0;
 
         public static void main(String[] args) {
-            new Thread(()-> {
-                for (int i = 0; i <500; i++) {
+            new Thread(() -> {
+                for (int i = 0; i < 500; i++) {
                     CheckResults.counter++;
                 }
             }).start();
-            while(CheckResults.counter < 100) {
+            while (CheckResults.counter < 100) {
                 System.out.println("Not reached yet");
             }
             System.out.println("Reached!");
         }
     }
+
     /*
     How many times does this program print Not reached yet? The answer is, we don't know!
 
@@ -37,7 +38,7 @@ public class _4_PollingWithSleep {
         private static int counter = 0;
 
         public static void main(String[] args) throws InterruptedException {
-            new Thread(()-> {
+            new Thread(() -> {
                 for (int i = 0; i < 500; i++) {
                     CheckResults.counter++;
                 }
