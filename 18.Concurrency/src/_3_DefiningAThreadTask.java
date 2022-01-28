@@ -43,7 +43,7 @@ public class _3_DefiningAThreadTask {
         System.out.println("begin");
         (new ReadInventoryThread()).start(); // Second used thread
         (new Thread(new PrintData())).start(); // Third used thread
-        (new ReadInventoryThread()).start(); // Four used thread
+        (new ReadInventoryThread()).start(); // Fourth used thread
         System.out.println("end");
     }
     /*
@@ -61,6 +61,11 @@ public class _3_DefiningAThreadTask {
     is executed as an asynchronous task. By asynchronous, we mean that the
     thread executing the main() method does not wait for the results of each
     newly created thread before continuing.
+
+    The opposite of this behavior is a synchronous task in which the program waits (or blocks) on
+    line 4 for the thread to finish executing before moving on to the next line.
+    The vast majority of method calls used in this book have been synchronous up until now.
+
      */
 
 
