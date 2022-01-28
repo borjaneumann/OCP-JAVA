@@ -87,6 +87,19 @@ public class _3_DefiningAThreadTask {
     the run() method is complete before moving on to the next line.
     Also unlike the previous program, the output for this code sample
     will be the same each time it is executed.
+
+    In most situations, you should implement the Runnable interface rather than extend the Thread class.
+    While previous versions of the exam were quite focused on understanding the difference
+    between extending Thread and implementing Runnable, the exam now
+    strongly encourages developers to use the Concurrency API.
+
+    For the exam, you also do not need to know about other thread‐related
+    methods, such as Object.wait(), Object.notify(), Thread.join(), etc.
+    In fact, you should avoid them in general and use the Concurrency API as
+    much as possible. It takes a large amount of skill (and some luck!) to use
+    these methods correctly.
+
+
      */
 
 
