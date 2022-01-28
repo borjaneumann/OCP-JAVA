@@ -138,7 +138,21 @@ public class _5_CreatingThreadsWithTheConcurrencyAPI {
     ExecutionException
     ----------------------------------------------------------------------------------------------
 
+    SUBMITTING TASKS: EXECUTE() VS. SUBMIT()
+    ========================================
+    As you might have noticed, the execute() and submit() methods
+    are nearly identical when applied to Runnable expressions. The
+    submit() method has the obvious advantage of doing the same thing
+    execute() does, but with a return object that can be used to track
+    the result. Because of this advantage and the fact that execute()
+    does not support Callable expressions, we tend to prefer submit()
+    over execute(), even if you don't store the Future reference.
+    Therefore, we use submit() in the majority of the examples in this
+    chapter.
 
+    For the exam, you need to be familiar with both execute() and
+    submit(), but in your own code we recommend submit() over
+    execute() whenever possible.
 
 
      */
