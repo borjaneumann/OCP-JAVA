@@ -66,6 +66,27 @@ public class _3_DefiningAThreadTask {
     line 4 for the thread to finish executing before moving on to the next line.
     The vast majority of method calls used in this book have been synchronous up until now.
 
+    While the order of thread execution once the threads have been started is
+    indeterminate, the order within a single thread is still linear. In particular,
+    the for() loop in PrintData is still ordered. Also, begin appears before
+    end in the main() method.
+
+    CALLING RUN() INSTEAD OF START()
+    ================================
+    Be careful with code that attempts to start a thread by calling run() instead of start().
+    Calling run() on a Thread or a Runnable does not actually start a new thread.
+    While the following code snippets will compile, none will actually execute a task on a separate thread:
+
+    System.out.println("begin");
+    (new ReadInventoryThread()).run();
+    (new Thread(new PrintData())).run();
+    (new ReadInventoryThread()).run();
+    System.out.println("end");
+
+    Unlike the previous example, each line of this code will wait until
+    the run() method is complete before moving on to the next line.
+    Also unlike the previous program, the output for this code sample
+    will be the same each time it is executed.
      */
 
 
