@@ -99,6 +99,18 @@ public class _3_DefiningAThreadTask {
     much as possible. It takes a large amount of skill (and some luck!) to use
     these methods correctly.
 
+    FOR INTERVIEWS, BE FAMILIAR WITH THREAD‐CREATION OPTIONS
+    =========================================================
+    Despite that the exam no longer focuses on creating threads by
+    extending the Thread class and implementing the Runnable
+    interface, it is extremely common when interviewing for a Java
+    development position to be asked to explain the difference between
+    extending the Thread class and implementing Runnable.
+    If asked this question, you should answer it accurately. You should
+    also mention that you can now create and manage threads indirectly
+    using an ExecutorService, which we will discuss in the next section.
+
+
 
      */
 
