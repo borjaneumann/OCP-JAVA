@@ -1,9 +1,9 @@
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.concurrent.*;
 
 public class _5_CreatingThreadsWithTheConcurrencyAPI {
     /*
-    The Concurrency API includes the ExecutorService interface, which defines services that create and manage threads for you.
+    The Concurrency API includes the ExecutorService interface, which defines services that create and manage threads
+     for you.
 
     You first obtain an instance of an ExecutorService interface, and then
     you send the service tasks to be processed. The framework includes
@@ -175,14 +175,49 @@ public class _5_CreatingThreadsWithTheConcurrencyAPI {
     V get()                         Retrieves the result of a task, waiting endlessly if it is not yet available
     --------------------------------------------------------------------------------------------------------------
     V get(long timeout,             Retrieves the result of a task, waiting the specified amount of time.
-    TimeUnit unit)                  If the result is not ready by the time the timeout is reached, a checked TimeoutException
+    TimeUnit unit)                  If the result is not ready by the time the timeout is reached, a checked
+    TimeoutException
                                     will be thrown.
     --------------------------------------------------------------------------------------------------------------
 
+    The following is an updated version of our earlier polling example
+    CheckResults class, which uses a Future instance to wait for the results:
 
 
 
 
+
+     */
+    public static class CheckResults {
+        private static int counter = 0;
+
+        public static void main(String[] unused) throws Exception {
+            ExecutorService service = null;
+            try {
+                service = Executors.newSingleThreadExecutor();
+                Future<?> result = service.submit(() -> {
+                    for (int i = 0; i < 500; i++)
+                        CheckResults.counter++;
+                });
+                result.get(10, TimeUnit.SECONDS);
+                System.out.println("Reached!");
+            } catch (TimeoutException e) {
+                System.out.println("Not reached in time");
+            } finally {
+                if (service != null) service.shutdown();
+            }
+        }
+    }
+    /*
+    This example is similar to our earlier polling implementation, but it does
+    not use the Thread class directly. In part, this is the essence of the
+    Concurrency API: to do complex things with threads without having to
+    manage threads directly. It also waits at most 10 seconds, throwing a
+    TimeoutException on the call to result.get() if the task is not done.
+    What is the return value of this task? As Future<V> is a generic interface,
+    the type V is determined by the return type of the Runnable method. Since
+    the return type of Runnable.run() is void, the get() method always
+    returns null when working with Runnable expressions.
      */
 
 }
