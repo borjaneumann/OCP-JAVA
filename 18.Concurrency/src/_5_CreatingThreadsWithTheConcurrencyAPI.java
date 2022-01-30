@@ -218,6 +218,22 @@ public class _5_CreatingThreadsWithTheConcurrencyAPI {
     the type V is determined by the return type of the Runnable method. Since
     the return type of Runnable.run() is void, the get() method always
     returns null when working with Runnable expressions.
+
+    The Future.get() method can take an optional value and enum type
+    java.util.concurrent.TimeUnit. We present the full list of TimeUnit
+    values in the table below in increasing order of duration. Numerous methods in
+    the Concurrency API use the TimeUnit enum.
+
+    TimeUnit values
+    Enum name                   Description
+    ================================================================================
+    TimeUnit.NANOSECONDS        Time in one‐billionth of a second (1/1,000,000,000)
+    TimeUnit.MICROSECONDS       Time in one‐millionth of a second (1/1,000,000)
+    TimeUnit.MILLISECONDS       Time in one‐thousandth of a second (1/1,000)
+    TimeUnit.SECONDS            Time in seconds
+    TimeUnit.MINUTES            Time in minutes
+    TimeUnit.HOURS              Time in hours
+    TimeUnit.DAYS               Time in days
      */
 
 }
