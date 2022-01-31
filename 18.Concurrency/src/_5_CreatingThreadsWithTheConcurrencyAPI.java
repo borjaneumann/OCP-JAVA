@@ -269,4 +269,47 @@ public class _5_CreatingThreadsWithTheConcurrencyAPI {
     shared, possibly static, object, although this solution that relies on
     Callable is a lot simpler and easier to follow.
      */
+
+    /*
+    Waiting for All Tasks to Finish
+
+    After submitting a set of tasks to a thread executor, it is common to wait
+    for the results. As you saw in the previous sections, one solution is to call
+    get() on each Future object returned by the submit() method. If we don't
+    need the results of the tasks and are finished using our thread executor,
+    there is a simpler approach.
+
+    First, we shut down the thread executor using the shutdown() method.
+    Next, we use the awaitTermination() method available for all thread
+    executors. The method waits the specified time to complete all tasks,
+    returning sooner if all tasks finish or an InterruptedException is
+    detected. You can see an example of this in the following code snippet:
+
+    ExecutorService service = null;
+    try {
+        service = Executors.newSingleThreadExecutor();
+        // Add tasks to the thread executor
+        …
+    } finally {
+        if(service != null) service.shutdown();
+    }
+    if(service != null) {
+    service.awaitTermination(1, TimeUnit.MINUTES);
+    // Check whether all tasks are finished
+    if(service.isTerminated()) System.out.println("Finished!");
+    else System.out.println("At least one task is still
+    running");
+    }
+
+    In this example, we submit a number of tasks to the thread executor and
+    then shut down the thread executor and wait up to one minute for the
+    results. Notice that we can call isTerminated() after the
+    awaitTermination() method finishes to confirm that all tasks are actually
+    finished.
+
+    If awaitTermination() is called before shutdown() within the same
+    thread, then that thread will wait the full timeout value sent with
+    awaitTermination().
+
+     */
 }
