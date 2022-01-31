@@ -183,10 +183,6 @@ public class _5_CreatingThreadsWithTheConcurrencyAPI {
     The following is an updated version of our earlier polling example
     CheckResults class, which uses a Future instance to wait for the results:
 
-
-
-
-
      */
     public static class CheckResults {
         private static int counter = 0;
@@ -234,6 +230,30 @@ public class _5_CreatingThreadsWithTheConcurrencyAPI {
     TimeUnit.MINUTES            Time in minutes
     TimeUnit.HOURS              Time in hours
     TimeUnit.DAYS               Time in days
+     */
+
+    /*Introducing Callable
+    The java.util.concurrent.Callable functional interface is similar to
+    Runnable except that its call() method returns a value and can throw a
+    checked exception. The following is the definition of the Callable
+    interface:
+    @FunctionalInterface public interface Callable<V> {
+        V call() throws Exception;
+    }
+
+    The Callable interface is often preferable over Runnable, since it allows
+    more details to be retrieved easily from the task after it is completed.
+
+    That said, we use both interfaces throughout this chapter, as they are
+    interchangeable in situations where the lambda does not throw an
+    exception and there is no return type. Luckily, the ExecutorService
+    includes an overloaded version of the submit() method that takes a
+    Callable object and returns a generic Future<T> instance.
+    Unlike Runnable, in which the get() methods always return null, the
+    get() methods on a Future instance return the matching generic type
+    (which could also be a null value).
+
+
      */
 
 }
