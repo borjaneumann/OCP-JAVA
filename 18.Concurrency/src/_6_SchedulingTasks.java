@@ -27,6 +27,27 @@ public class _6_SchedulingTasks {
     long delay, TimeUnit unit)                                          and subsequently with the given delay between the termination of
                                                                         one execution and the commencement of the next
 
+    The delay and period parameters rely on the TimeUnit
+    argument to determine the format of the value, such as seconds or
+    milliseconds.
+
+    The first two schedule() methods in Table 18.4 take a Callable or
+    Runnable, respectively; perform the task after some delay; and return a
+    ScheduledFuture instance. The ScheduledFuture interface is identical to
+    the Future interface, except that it includes a getDelay() method that
+    returns the remaining delay. The following uses the schedule() method
+    with Callable and Runnable tasks:
+
+    ScheduledExecutorService service = Executors.newSingleThreadScheduledExecutor();
+    Runnable task1 = () -> System.out.println("Hello Zoo");
+    Callable<String> task2 = () -> "Monkey";
+    ScheduledFuture<?> r1 = service.schedule(task1, 10, TimeUnit.SECONDS); // Task is scheduled 10 seconds in the future
+    ScheduledFuture<?> r2 = service.schedule(task2, 8, TimeUnit.MINUTES); // Task is scheduled 8 minutes in the future
+
+    if the ScheduledExecutorService is shut down by the time
+    the scheduled task execution time is reached, then these tasks will be
+    discarded.
+
 
      */
 }
