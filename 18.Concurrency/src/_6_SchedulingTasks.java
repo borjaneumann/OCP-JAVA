@@ -69,5 +69,16 @@ public class _6_SchedulingTasks {
     The scheduleAtFixedRate() method is useful for tasks that need to be
     run at specific intervals, such as checking the health of the animals once a day
 
+    Tip:
+    Bad things can happen with scheduleAtFixedRate() if each task
+    consistently takes longer to run than the execution interval. Imagine
+    your boss came by your desk every minute and dropped off a piece
+    of paper. Now imagine it took you five minutes to read each piece of
+    paper. Before long, you would be drowning in piles of paper. This is
+    how an executor feels. Given enough time, the program would
+    submit more tasks to the executor service than could fit in memory,
+    causing the program to crash.
+
+
      */
 }
