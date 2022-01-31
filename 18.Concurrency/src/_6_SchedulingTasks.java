@@ -54,10 +54,20 @@ public class _6_SchedulingTasks {
     notifications if it is not finished or even call schedule() again to delay
     processing.
 
-    scheduleAtFixedRate() and scheduleAtFixedRate()
+    scheduleAtFixedRate() and scheduleWithFixedDelay()
     -------------------------------------------------
     They are similar as they both perform the same task repeatedly, after completing some initial delay. The
     difference is related to the timing of the process and when the next task starts.
+
+    The scheduleAtFixedRate() method creates a new task and submits it to
+    the executor every period, regardless of whether the previous task
+    finished.
+    The following example executes a Runnable task every minute, following an initial five‐minute delay:
+
+    service.scheduleAtFixedRate(command, 5, 1, TimeUnit.MINUTES);
+
+    The scheduleAtFixedRate() method is useful for tasks that need to be
+    run at specific intervals, such as checking the health of the animals once a day
 
      */
 }
