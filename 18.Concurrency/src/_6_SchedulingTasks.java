@@ -48,6 +48,16 @@ public class _6_SchedulingTasks {
     the scheduled task execution time is reached, then these tasks will be
     discarded.
 
+    Each of the ScheduledExecutorService methods is important and has
+    real‐world applications. For example, you can use the schedule()
+    command to check on the state of processing a task and send out
+    notifications if it is not finished or even call schedule() again to delay
+    processing.
+
+    scheduleAtFixedRate() and scheduleAtFixedRate()
+    -------------------------------------------------
+    They are similar as they both perform the same task repeatedly, after completing some initial delay. The
+    difference is related to the timing of the process and when the next task starts.
 
      */
 }
