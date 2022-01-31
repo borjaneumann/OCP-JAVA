@@ -79,6 +79,13 @@ public class _6_SchedulingTasks {
     submit more tasks to the executor service than could fit in memory,
     causing the program to crash.
 
+    The scheduleWithFixedDelay() method creates a new ask only after the previous task has finished.
+    For example, if a task runs at 12:00 and takes five minutes to finish, with a period between executions
+    of two minutes, then the next task will start at 12:07.
+
+    service.scheduleWithFixedDelay(command, 0, 2, TimeUnit.MINUTES);
+
+
 
      */
 }
