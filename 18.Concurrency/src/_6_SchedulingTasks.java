@@ -85,6 +85,15 @@ public class _6_SchedulingTasks {
 
     service.scheduleWithFixedDelay(command, 0, 2, TimeUnit.MINUTES);
 
+    The scheduleWithFixedDelay() is useful for processes that you want to
+    happen repeatedly but whose specific time is unimportant. For example,
+    imagine that we have a zoo cafeteria worker who periodically restocks the
+    salad bar throughout the day. The process can take 20 minutes or more,
+    since it requires the worker to haul a large number of items from the back
+    room. Once the worker has filled the salad bar with fresh food, he doesn't
+    need to check at some specific time, just after enough time has passed for
+    it to become low on stock again.
+
 
 
      */
