@@ -252,8 +252,21 @@ public class _5_CreatingThreadsWithTheConcurrencyAPI {
     Unlike Runnable, in which the get() methods always return null, the
     get() methods on a Future instance return the matching generic type
     (which could also be a null value).
-
-
      */
-
+    public static class AddData {
+        public static void main(String[] args) throws Exception {
+            ExecutorService service = null;
+            try {
+                service = Executors.newSingleThreadExecutor();
+                Future<Integer> result = service.submit(() -> 30 + 11);
+                System.out.println(result.get()); //41
+            } finally {
+                if (service != null) service.shutdown();
+            }
+        }
+    }
+    /*The results could have also been obtained using Runnable and some
+    shared, possibly static, object, although this solution that relies on
+    Callable is a lot simpler and easier to follow.
+     */
 }
