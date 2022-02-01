@@ -94,7 +94,15 @@ public class _6_SchedulingTasks {
     need to check at some specific time, just after enough time has passed for
     it to become low on stock again.
 
+    INCREASING CONCURRENCY WITH POOL
+    ================================
+    All of our examples up until now have been with single‐thread executors
+    which, while interesting, weren't particularly useful.
 
+    We now present three additional factory methods in the Executors class
+    that act on a pool of threads, rather than on a single thread. A thread pool
+    is a group of pre‐instantiated reusable threads that are available to perform
+    a set of arbitrary tasks.
 
      */
 }
