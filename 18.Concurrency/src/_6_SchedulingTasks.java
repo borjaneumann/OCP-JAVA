@@ -146,6 +146,19 @@ public class _6_SchedulingTasks {
     calling newFixedThreadPool() with a value of 1 is equivalent to calling
     newSingleThreadExecutor().
 
+    The newCachedThreadPool() method will create a thread pool of
+    unbounded size, allocating a new thread anytime one is required or all
+    existing threads are busy. This is commonly used for pools that require
+    executing many short‐lived asynchronous tasks. For long‐lived processes,
+    usage of this executor is strongly discouraged, as it could grow to
+    encompass a large number of threads over the application life cycle.
+
+    The newScheduledThreadPool() is identical to the
+    newFixedThreadPool() method, except that it returns an instance of
+    ScheduledExecutorService and is therefore compatible with scheduling
+    tasks.
+
+
 
 
      */
