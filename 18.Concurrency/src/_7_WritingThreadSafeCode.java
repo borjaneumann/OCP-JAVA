@@ -97,9 +97,20 @@ public class _7_WritingThreadSafeCode {
     private AtomicInteger sheepCount = new AtomicInteger(0);
     private void incrementAndReport() {
     System.out.print(sheepCount.incrementAndGet()+" ");
-
+    }
     Unlike our previous sample output, the numbers 1 through 10 will always be printed, although the order is still not guaranteed.
-}
+
+    Common atomic methods (7)
+    Method name                 Description
+    =====================================================================================================
+    get()                       Retrieves the current value
+    set()                       Sets the given value, equivalent to the assignment = operator
+    getAndSet()                 Atomically sets the new value and returns the old value
+    incrementAndGet()           For numeric classes, atomic pre‐increment operation equivalent to ++value
+    getAndIncrement()           For numeric classes, atomic post‐increment operation equivalent to value++
+    decrementAndGet()           For numeric classes, atomic pre‐decrement operation equivalent to ‐‐value
+    getAndDecrement()           For numeric classes, atomic post‐decrement operation equivalent to value‐‐
+
 
 
      */
