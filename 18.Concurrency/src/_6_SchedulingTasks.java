@@ -158,8 +158,21 @@ public class _6_SchedulingTasks {
     ScheduledExecutorService and is therefore compatible with scheduling
     tasks.
 
-
-
-
+    CHOOSING A POOL SIZE
+    ====================
+    In practice, choosing an appropriate pool size requires some thought.
+    In general, you want at least a handful more threads than you think
+    you will ever possibly need. On the other hand, you don't want to
+    choose so many threads that your application uses up too many
+    resources or too much CPU processing power. Oftentimes, the
+    number of CPUs available is used to determine the thread pool size
+    using this command:
+     */
+    public static void main(String[] args) {
+        int processors = Runtime.getRuntime().availableProcessors();
+        System.out.println("Available processors:" + processors); //12
+    }
+    /*
+    It is a common practice to allocate threads based on the number of CPUs.
      */
 }
