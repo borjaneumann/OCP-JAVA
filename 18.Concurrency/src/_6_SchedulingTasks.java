@@ -107,25 +107,44 @@ public class _6_SchedulingTasks {
     Executors factory methods
     Method                                      Description
     ========================================================================================================
-    ExecutorServicenewSingleThreadExecutor()    Creates a single‐threaded executor that uses a single
+    ExecutorService newSingleThreadExecutor()   Creates a single‐threaded executor that uses a single
                                                 worker thread operating off an unbounded queue.
                                                 Results are processed sequentially in the order in which
                                                 they are submitted.
     ---------------------------------------------------------------------------------------------------------
-    ScheduledExecutorServicenew                 Creates a single‐threaded executor that can schedule
-    SingleThreadScheduledExecutor()             commands to run after a given delay or to execute periodically
+    ScheduledExecutorService                    Creates a single‐threaded executor that can schedule
+    newSingleThreadScheduledExecutor()          commands to run after a given delay or to execute periodically
     ----------------------------------------------------------------------------------------------------------
-    ExecutorServicenewCachedThreadPool()        Creates a thread pool that creates new threads as needed
+    ExecutorService newCachedThreadPool()       Creates a thread pool that creates new threads as needed
                                                 but will reuse previously constructed threads when they
                                                 are available
     ----------------------------------------------------------------------------------------------------------
-    ExecutorServicenewFixedThreadPool(int)      Creates a thread pool that reuses a fixed number of
+    ExecutorService newFixedThreadPool(int)     Creates a thread pool that reuses a fixed number of
                                                 threads operating off a shared unbounded queue
     ----------------------------------------------------------------------------------------------------------
-    ScheduledExecutorServicenewSchedu           Creates a thread pool that can schedule commands to run
-    ledThreadPool(int)                          after a given delay or to execute periodically
+    ScheduledExecutorService                    Creates a thread pool that can schedule commands to run
+    newScheduledThreadPool(int)                 after a given delay or to execute periodically
     ------------------------------------------------------------------------------------------------------------
 
+    these methods return the same instance types,
+    ExecutorService and ScheduledExecutorService, that we used earlier in
+    this chapter. In other words, all of our previous examples are compatible
+    with these new pooled‐thread executors!
+
+    The difference between a single‐thread and a pooled‐thread executor is
+    what happens when a task is already running. While a single‐thread
+    executor will wait for a thread to become available before running the next
+    task, a pooled‐thread executor can execute the next task concurrently. If
+    the pool runs out of available threads, the task will be queued by the
+    thread executor and wait to be completed.
+
+    The newFixedThreadPool() takes a number of threads and allocates them
+    all upon creation. As long as our number of tasks is less than our number
+    of threads, all tasks will be executed concurrently. If at any point the
+    number of tasks exceeds the number of threads in the pool, they will wait
+    in a similar manner as you saw with a single‐thread executor. In fact,
+    calling newFixedThreadPool() with a value of 1 is equivalent to calling
+    newSingleThreadExecutor().
 
 
 
