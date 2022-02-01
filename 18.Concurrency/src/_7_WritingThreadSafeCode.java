@@ -80,6 +80,12 @@ public class _7_WritingThreadSafeCode {
     there can be only one employee in the field at a time, although they may
     not each report their result in order.
 
+    Atomic classes
+    Class Name                      Description
+    =========================================================================================
+    AtomicBoolean                   A boolean value that may be updated atomically
+    AtomicInteger                   An int value that may be updated atomically
+    AtomicLong                      A long value that may be updated atomically
 
      */
 }
