@@ -1,3 +1,6 @@
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 public class _7_WritingThreadSafeCode {
 
     /*Thread‐safety is the property of an object that guarantees safe execution
@@ -6,4 +9,57 @@ public class _7_WritingThreadSafeCode {
     interfering with each other? We must organize access to data so that we
     don't end up with invalid or unexpected results.*/
 
+    /* UNDERSTANDING THREAD‐SAFETY
+    ===============================
+    Imagine that our zoo has a program to count sheep, preferably one that
+    won't put the zoo workers to sleep! Each zoo worker runs out to a field,
+    adds a new sheep to the flock, counts the total number of sheep, and runs
+    back to us to report the results. We present the following code to represent
+    this conceptually, choosing a thread pool size so that all tasks can be run
+    concurrently:
+     */
+    public static class SheepManager {
+        private int sheepCount = 0;
+        private void incrementAndReport() {
+            System.out.print((++sheepCount) + " "); // One possible output: 3 10 1 7 9 5 8 6 4 2
+        }
+        public static void main(String[] args) {
+            ExecutorService service = null;
+            try {
+                service = Executors.newFixedThreadPool(20);
+                SheepManager manager = new SheepManager();
+                for (int i = 0; i < 10; i++) {
+                    service.submit(() -> manager.incrementAndReport());
+                }
+            } finally {
+                if(service != null)
+                    service.shutdown();
+            }
+        }
+    }
+    /*
+    What does this program output? You might think it will output numbers
+    from 1 to 10, in order, but that is far from guaranteed. It may output in a
+    different order. Worse yet, it may print some numbers twice and not print
+    some numbers at all!
+
+    So, what went wrong? In this example, we use the pre‐increment ( ++)
+    operator to update the sheepCount variable. A problem occurs when two
+    threads both execute the right side of the expression, reading the “old”
+    value before either thread writes the “new” value of the variable. The two
+    assignments become redundant; they both assign the same new value, with
+    one thread overwriting the results of the other.
+
+    both threads read and write the same
+    values, causing one of the two ++sheepCount operations to be lost.
+    Therefore, the increment operator ++ is not thread‐safe. As you will see
+    later in this chapter, the unexpected result of two tasks executing at the
+    same time is referred to as a race condition.
+
+    Conceptually, the idea here is that some zoo workers may run faster on
+    their way to the field but more slowly on their way back and report late.
+    Other workers may get to the field last but somehow be the first ones back
+    to report the results.
+
+     */
 }
