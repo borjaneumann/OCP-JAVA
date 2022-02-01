@@ -61,5 +61,25 @@ public class _7_WritingThreadSafeCode {
     Other workers may get to the field last but somehow be the first ones back
     to report the results.
 
+    PROTECTING DATA WITH ATOMIC CLASSES
+    ===================================
+    One way to improve our sheep counting example is to use the java.util.concurrent.atomic package.
+
+    The reason why the increment operator ++ is not thread‐safe is that the operation is not
+    atomic, carrying out two tasks, read and write, that can be interrupted by other threads.
+
+    Atomic is the property of an operation to be carried out as a single unit of
+    execution without any interference by another thread. A thread‐safe
+    atomic version of the increment operator would be one that performed the
+    read and write of the variable as a single operation, not allowing any other
+    threads to access the variable during the operation.
+
+    Any thread trying to access the sheepCount variable while an atomic operation
+    is in process will have to wait until the atomic operation on the variable is
+    complete. Conceptually, this is like setting a rule for our zoo workers that
+    there can be only one employee in the field at a time, although they may
+    not each report their result in order.
+
+
      */
 }
