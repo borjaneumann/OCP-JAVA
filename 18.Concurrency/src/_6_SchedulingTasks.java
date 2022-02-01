@@ -104,5 +104,30 @@ public class _6_SchedulingTasks {
     is a group of pre‐instantiated reusable threads that are available to perform
     a set of arbitrary tasks.
 
+    Executors factory methods
+    Method                                      Description
+    ========================================================================================================
+    ExecutorServicenewSingleThreadExecutor()    Creates a single‐threaded executor that uses a single
+                                                worker thread operating off an unbounded queue.
+                                                Results are processed sequentially in the order in which
+                                                they are submitted.
+    ---------------------------------------------------------------------------------------------------------
+    ScheduledExecutorServicenew                 Creates a single‐threaded executor that can schedule
+    SingleThreadScheduledExecutor()             commands to run after a given delay or to execute periodically
+    ----------------------------------------------------------------------------------------------------------
+    ExecutorServicenewCachedThreadPool()        Creates a thread pool that creates new threads as needed
+                                                but will reuse previously constructed threads when they
+                                                are available
+    ----------------------------------------------------------------------------------------------------------
+    ExecutorServicenewFixedThreadPool(int)      Creates a thread pool that reuses a fixed number of
+                                                threads operating off a shared unbounded queue
+    ----------------------------------------------------------------------------------------------------------
+    ScheduledExecutorServicenewSchedu           Creates a thread pool that can schedule commands to run
+    ledThreadPool(int)                          after a given delay or to execute periodically
+    ------------------------------------------------------------------------------------------------------------
+
+
+
+
      */
 }
