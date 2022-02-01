@@ -87,5 +87,20 @@ public class _7_WritingThreadSafeCode {
     AtomicInteger                   An int value that may be updated atomically
     AtomicLong                      A long value that may be updated atomically
 
+    How do we use an atomic class? Each class includes numerous methods
+    that are equivalent to many of the primitive built‐in operators that we use
+    on primitives, such as the assignment operator ( =) and the increment
+    operators ( ++).
+
+    In the following example, we update our SheepManager class with an AtomicInteger:
+
+    private AtomicInteger sheepCount = new AtomicInteger(0);
+    private void incrementAndReport() {
+    System.out.print(sheepCount.incrementAndGet()+" ");
+
+    Unlike our previous sample output, the numbers 1 through 10 will always be printed, although the order is still not guaranteed.
+}
+
+
      */
 }
