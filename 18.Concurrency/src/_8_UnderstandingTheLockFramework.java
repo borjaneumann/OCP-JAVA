@@ -65,6 +65,23 @@ public class _8_UnderstandingTheLockFramework {
     Lock lock = new ReentrantLock();
     lock.unlock(); // IllegalMonitorStateException
 
+    Lock methods(4)
+    Method                      Description
+    ========================================================================================
+    void lock()                 Requests a lock and blocks until lock is acquired
+    ----------------------------------------------------------------------------------------
+    void unlock()               Releases a lock
+    ----------------------------------------------------------------------------------------
+    boolean tryLock()           Requests a lock and returns immediately. Returns a
+                                boolean indicating whether the lock was successfully acquired
+    -----------------------------------------------------------------------------------------
+    boolean tryLock(long,       Requests a lock and blocks up to the specified time until
+    TimeUnit)                   lock is required. Returns a boolean indicating whether
+                                the lock was successfully acquired
+    ------------------------------------------------------------------------------------------
+
+
+
 
 
 
