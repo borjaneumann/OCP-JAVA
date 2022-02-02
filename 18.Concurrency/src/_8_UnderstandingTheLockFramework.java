@@ -11,6 +11,38 @@ public class _8_UnderstandingTheLockFramework {
     whistles. Instead of synchronizing on any Object, though, we can “lock”
     only on an object that implements the Lock interface.
 
+    Applying a ReentrantLock Interface
+    ==================================
+    When you need to protect a piece of code from multithreaded processing,
+    create an instance of Lock that all threads have access to.
+    Each thread then calls lock() before it enters the
+    protected code and calls unlock() before it exits the protected code.
+
+    For contrast, the following shows two implementations, one with a
+    synchronized block and one with a Lock instance. As we'll see in the next
+    section, the Lock solution has a number of features not available to the
+    synchronized block.
+    // Implementation #1 with a synchronized block
+    Object object = new Object();
+        synchronized(object) {
+        // Protected code
+    }
+
+    // Implementation #2 with a Lock
+    Lock lock = new ReentrantLock();
+    try {
+        lock.lock();
+        // Protected code
+    } finally {
+        lock.unlock();
+    }
+
+    While certainly not required, it is a good practice to use a try/
+    finally block with Lock instances. This ensures any acquired locks
+    are properly released.
+
+
+
      */
 
 }
