@@ -41,6 +41,24 @@ public class _8_UnderstandingTheLockFramework {
     finally block with Lock instances. This ensures any acquired locks
     are properly released.
 
+    These two implementations are conceptually equivalent. The
+    ReentrantLock class is a simple monitor that implements the Lock
+    interface and supports mutual exclusion. In other words, at most one
+    thread is allowed to hold a lock at any given time.
+
+    The ReentrantLock class ensures that once a thread has called lock() and
+    obtained the lock, all other threads that call lock() will wait until the first
+    thread calls unlock(). As far as which thread gets the lock next, that
+    depends on the parameters used to create the Lock object.
+
+    The ReentrantLock class contains a constructor that can be used to
+    send a boolean “fairness” parameter. If set to true, then the lock
+    will usually be granted to each thread in the order it was requested.
+    It is false by default when using the no‐argument constructor. In
+    practice, you should enable fairness only when ordering is
+    absolutely required, as it could lead to a significant slowdown.
+
+
 
 
      */
