@@ -58,6 +58,14 @@ public class _8_UnderstandingTheLockFramework {
     practice, you should enable fairness only when ordering is
     absolutely required, as it could lead to a significant slowdown.
 
+    Besides always making sure to release a lock, you also need to make sure
+    that you only release a lock that you actually have. If you attempt to
+    release a lock that you do not have, you will get an exception at runtime.
+
+    Lock lock = new ReentrantLock();
+    lock.unlock(); // IllegalMonitorStateException
+
+
 
 
 
