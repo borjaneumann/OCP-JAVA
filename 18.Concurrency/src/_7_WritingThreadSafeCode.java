@@ -143,6 +143,18 @@ public class _7_WritingThreadSafeCode {
     have access to the same Object. For example, synchronizing on
     different objects would not actually order the results.
 
+    Let's revisit our SheepManager example and see whether we can improve
+    the results so that each worker increments and outputs the counter in
+    order. Let's say that we replaced our for() loop with the following
+    implementation:
+
+    for(int i = 0; i < 10; i++) {
+        synchronized(manager) {
+        service.submit(() -> manager.incrementAndReport());
+        }
+    }
+
+
 
 
      */
