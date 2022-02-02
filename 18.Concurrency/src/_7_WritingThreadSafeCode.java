@@ -153,9 +153,43 @@ public class _7_WritingThreadSafeCode {
         service.submit(() -> manager.incrementAndReport());
         }
     }
+    Does this solution fix the problem? No, it does not! Can you spot the
+    problem? We've synchronized the creation of the threads but not the
+    execution of the threads. In this example, each thread would be created
+    one at a time, but they may all still execute and perform their work at the
+    same time, resulting in the same type of output that you saw earlier.
+    Diagnosing and resolving threading problems is often one of the most
+    difficult tasks in any programming language.
+
+    We now present a corrected version of the SheepManager class, which
+    does order the workers.
+    */
+
+    public static class SheepManager1 {
+        private int sheepCount = 0;
+        private void incrementAndReport() {
+            synchronized (this) {
+                System.out.print((++sheepCount) + " "); // it will consistently output the following: 1 2 3 4 5 6 7 8 9 10
+            }
+        }
+    }
+    public static void main(String[] args) {
+        ExecutorService service = null;
+        try {
+            service = Executors.newFixedThreadPool(20);
+            var manager = new SheepManager1();
+            for (int i = 0; i < 10; i++)
+                service.submit(()->manager.incrementAndReport());
+
+        } finally {
+            if (service != null) service.shutdown();
+    }
+
+}
 
 
 
 
-     */
+
+
 }
