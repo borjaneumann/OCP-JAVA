@@ -243,6 +243,9 @@ public class _7_WritingThreadSafeCode {
     public static synchronized void printDaysWork() { //uses the synchronized modifier
         System.out.print("Finished work");
     }
+    You can use static synchronization if
+    you need to order thread access across all instances, rather than a single
+    instance.
      */
 
 
