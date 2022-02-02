@@ -246,6 +246,10 @@ public class _7_WritingThreadSafeCode {
     You can use static synchronization if
     you need to order thread access across all instances, rather than a single
     instance.
+
+    AVOID SYNCHRONIZATION WHENEVER POSSIBLE
+    =======================================
+    It is complex and instead you can use many classes from he Concurrency API, atomic classes and others.
      */
 
 
