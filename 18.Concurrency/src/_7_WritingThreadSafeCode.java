@@ -229,6 +229,20 @@ public class _7_WritingThreadSafeCode {
     private synchronized void incrementAndReport() {//whereas the second uses the synchronized method modifier. Which you use is completely up to you.
         System.out.print((++sheepCount) + " ");
     }
+
+    We can also apply the synchronized modifier to static methods. What
+    object is used as the monitor when we synchronize on a static method?
+    The class object, of course! For example, the following two methods are
+    equivalent for static synchronization inside our SheepManager class:
+
+    public static void printDaysWork() { //uses a synchronized block
+        synchronized(sheepManager.class) {
+        System.out.print("Finished work");
+        }
+    }
+    public static synchronized void printDaysWork() { //uses the synchronized modifier
+        System.out.print("Finished work");
+    }
      */
 
 
