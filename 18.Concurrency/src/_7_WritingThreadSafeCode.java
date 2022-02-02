@@ -111,6 +111,38 @@ public class _7_WritingThreadSafeCode {
     decrementAndGet()           For numeric classes, atomic pre‐decrement operation equivalent to ‐‐value
     getAndDecrement()           For numeric classes, atomic post‐decrement operation equivalent to value‐‐
 
+    IMPROVING ACCESS WITH SYNCHRONIZED BLOCKS (MONITOR)
+    ===================================================
+    While atomic classes are great at protecting single variables, they aren't
+    particularly useful if you need to execute a series of commands or call a
+    method.
+    How do we improve the results so that each worker is able to
+    increment and report the results in order? The most common technique is
+    to use a monitor, also called a lock, to synchronize access. A monitor is a
+    structure that supports mutual exclusion, which is the property that at most
+    one thread is executing a particular segment of code at a given time.
+
+    In Java, any Object can be used as a monitor, along with the
+    synchronized keyword, as shown in the following example:
+
+    SheepManager manager = new SheepManager();
+    synchronized(manager) {
+        // Work to be completed by one thread at a time
+    }
+
+    This example is referred to as a synchronized block. Each thread that
+    arrives will first check if any threads are in the block. In this manner, a
+    thread “acquires the lock” for the monitor. If the lock is available, a single
+    thread will enter the block, acquiring the lock and preventing all other
+    threads from entering. While the first thread is executing the block, all
+    threads that arrive will attempt to acquire the same lock and wait for the
+    first thread to finish. Once a thread finishes executing the block, it will
+    release the lock, allowing one of the waiting threads to proceed.
+
+    To synchronize access across multiple threads, each thread must
+    have access to the same Object. For example, synchronizing on
+    different objects would not actually order the results.
+
 
 
      */
