@@ -183,9 +183,36 @@ public class _7_WritingThreadSafeCode {
 
         } finally {
             if (service != null) service.shutdown();
+        }
     }
+    /*
+    Although all threads are still created and executed at the same time, they
+    each wait at the synchronized block for the worker to increment and
+    report the result before entering. In this manner, each zoo worker waits for
+    the previous zoo worker to come back before running out on the field.
+    While it's random which zoo worker will run out next, it is guaranteed that
+    there will be at most one on the field and that the results will be reported
+    in order.
 
-}
+    We could have synchronized on any object, so long as it was the same
+    object. For example, the following code snippet would have also worked:
+
+    private final Object herd = new Object();
+    private void incrementAndReport() {
+        synchronized(herd) {
+            System.out.print((++sheepCount)+" ");
+        }
+    }
+    */
+    /*Although we didn't need to make the herd variable final, doing so
+    ensures that it is not reassigned after threads start using it.
+    We could have used an atomic variable along with the
+    synchronized block in this example, although it is unnecessary.
+    Since synchronized blocks allow only one thread to enter, we're not
+    gaining any improvement by using an atomic variable if the only
+    time that we access the variable is within a synchronized block.
+
+     */
 
 
 
