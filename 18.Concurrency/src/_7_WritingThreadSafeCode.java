@@ -203,15 +203,32 @@ public class _7_WritingThreadSafeCode {
             System.out.print((++sheepCount)+" ");
         }
     }
-    */
-    /*Although we didn't need to make the herd variable final, doing so
+
+    Although we didn't need to make the herd variable final, doing so
     ensures that it is not reassigned after threads start using it.
     We could have used an atomic variable along with the
     synchronized block in this example, although it is unnecessary.
     Since synchronized blocks allow only one thread to enter, we're not
     gaining any improvement by using an atomic variable if the only
     time that we access the variable is within a synchronized block.
+     */
+    /*
+    SYNCHRONIZING ON METHODS
+    ========================
+    In the previous example, we established our monitor using
+    synchronized(this) around the body of the method. Java actually
+    provides a more convenient compiler enhancement for doing so. We can
+    add the synchronized modifier to any instance method to synchronize
+    automatically on the object itself.
 
+    private void incrementAndReport() {
+     synchronized(this) {
+        System.out.print((++sheepCount) + " "); //The first uses a synchronized block
+        }
+    }
+    private synchronized void incrementAndReport() {//whereas the second uses the synchronized method modifier. Which you use is completely up to you.
+        System.out.print((++sheepCount) + " ");
+    }
      */
 
 
