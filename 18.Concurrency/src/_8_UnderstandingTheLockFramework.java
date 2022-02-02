@@ -1,3 +1,5 @@
+import java.util.concurrent.locks.Lock;
+
 public class _8_UnderstandingTheLockFramework {
 
     /*
@@ -79,6 +81,28 @@ public class _8_UnderstandingTheLockFramework {
     TimeUnit)                   lock is required. Returns a boolean indicating whether
                                 the lock was successfully acquired
     ------------------------------------------------------------------------------------------
+
+    Attempting to Acquire a Lock
+    ============================
+    While the ReentrantLock class allows you to wait for a lock, it so far
+    suffers from the same problem as a synchronized block. A thread could
+    end up waiting forever to obtain a lock.
+
+    boolean tryLock() and boolean tryLock(long,TimeUnit) make the Lock interface
+    a lot safer to use than a synchronized block.
+
+    For convenience, we'll be using the following printMessage() method for
+    the code in this section:
+    */
+    public static void printMessage(Lock lock) {
+        try {
+            lock.lock();
+        } finally {
+            lock.unlock();
+        }
+    }
+    /*
+
 
 
 
