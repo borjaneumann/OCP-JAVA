@@ -1,4 +1,6 @@
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class _8_UnderstandingTheLockFramework {
 
@@ -102,11 +104,40 @@ public class _8_UnderstandingTheLockFramework {
         }
     }
     /*
+/*
+    tryLock()
+    =========
+    The tryLock() method will attempt to acquire a lock and immediately
+    return a boolean result indicating whether the lock was obtained. Unlike
+    the lock() method, it does not wait if another thread already holds the
+    lock. It returns immediately, regardless of whether or not a lock is
+    available.
+    The following is a sample implementation using the tryLock() method:
+     */
+    public static void main(String[] args) {
+        Lock lock = new ReentrantLock();
+        new Thread(()-> printMessage(lock)).start();
+        if (lock.tryLock()) {
+            try {
+                System.out.println("Lock obtained, entering protected code");
+            } finally {
+                lock.unlock();
+            }
+        } else {
+            System.out.println("Unable to acquire lock, doing something else");
+        }
+    }
+     /*
+     It could produce either message, depending on the order of execution.
+    Like lock(), the tryLock() method should be used with a try/ finally
+    block. Fortunately, you need to release the lock only if it was successfully
+    acquired.
 
-
-
-
-
+    It is imperative that your program always checks the return value of
+    the tryLock() method. It tells your program whether the lock needs
+    to be released later.
+     */
+    /*
 
 
 
