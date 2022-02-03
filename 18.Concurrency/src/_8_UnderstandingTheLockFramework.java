@@ -190,7 +190,22 @@ public class _8_UnderstandingTheLockFramework {
     For calls with tryLock(), you need to call unlock() only if the method
     returned true.
 
+    Reviewing the Lock Framework
+    ============================
+    To review, the ReentrantLock class supports the same features as a
+    synchronized block, while adding a number of improvements.
+
+    - Ability to request a lock without blocking
+    - Ability to request a lock while blocking for a specified amount of time
+    - A lock can be created with a fairness property, in which the lock is granted
+    to threads in the order it was requested.
+
+    The Concurrency API includes other lock‐based classes, although
+    ReentrantLock is the only one you need to know for the exam.
 
      */
+
+
+
 
 }
