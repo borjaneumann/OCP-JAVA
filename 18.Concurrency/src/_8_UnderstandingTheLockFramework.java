@@ -219,7 +219,6 @@ public class _8_UnderstandingTheLockFramework {
     Orchestrating Tasks With A CyclicBarrier
     =======================================
      */
-     */
     public static class LionPenManager {
         private void removeLions() {
             System.out.println("Removing lions");
@@ -265,6 +264,19 @@ public class _8_UnderstandingTheLockFramework {
     Adding lions
     Cleaning the pen
     Adding lions
+
+    Although within a single thread the results are ordered, among multiple
+    workers the output is entirely random. We see that some lions are still
+    being removed while the cage is being cleaned, and other lions are added
+    before the cleaning process is finished. In our conceptual example, this
+    would be quite chaotic and would not lead to a very clean cage.
+
+    We can improve these results by using the CyclicBarrier class. The
+    CyclicBarrier takes in its constructors a limit value, indicating the
+    number of threads to wait for. As each thread finishes, it calls the await()
+    method on the cyclic barrier. Once the specified number of threads have
+    each called await(), the barrier is released, and all threads can continue.
+
      */
 
 }
