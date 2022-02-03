@@ -203,6 +203,17 @@ public class _8_UnderstandingTheLockFramework {
     The Concurrency API includes other lock‐based classes, although
     ReentrantLock is the only one you need to know for the exam.
 
+    Alternative to ReentrantLock(ReentrantReadWriteLock)
+    ====================================================
+    While not on the exam, ReentrantReadWriteLock is a really useful
+    class. It includes separate locks for reading and writing data and is
+    useful on data structures where reads are far more common than
+    writes. For example, if you have a thousand threads reading data but
+    only one thread writing data, this class can help you maximize
+    concurrent access.
+
+
+
      */
 
 
