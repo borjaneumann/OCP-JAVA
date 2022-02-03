@@ -1,3 +1,5 @@
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -103,6 +105,7 @@ public class _8_UnderstandingTheLockFramework {
             lock.unlock();
         }
     }
+
     /*
 /*
     tryLock()
@@ -116,7 +119,7 @@ public class _8_UnderstandingTheLockFramework {
      */
     public static void main(String[] args) {
         Lock lock = new ReentrantLock();
-        new Thread(()-> printMessage(lock)).start();
+        new Thread(() -> printMessage(lock)).start();
         if (lock.tryLock()) {
             try {
                 System.out.println("Lock obtained, entering protected code");
@@ -127,16 +130,17 @@ public class _8_UnderstandingTheLockFramework {
             System.out.println("Unable to acquire lock, doing something else");
         }
     }
-     /*
-     It could produce either message, depending on the order of execution.
-    Like lock(), the tryLock() method should be used with a try/ finally
-    block. Fortunately, you need to release the lock only if it was successfully
-    acquired.
 
-    It is imperative that your program always checks the return value of
-    the tryLock() method. It tells your program whether the lock needs
-    to be released later.
-     */
+    /*
+    It could produce either message, depending on the order of execution.
+   Like lock(), the tryLock() method should be used with a try/ finally
+   block. Fortunately, you need to release the lock only if it was successfully
+   acquired.
+
+   It is imperative that your program always checks the return value of
+   the tryLock() method. It tells your program whether the lock needs
+   to be released later.
+    */
     /*
     tryLock(long,TimeUnit)
     ======================
@@ -146,24 +150,23 @@ public class _8_UnderstandingTheLockFramework {
 
     The following code snippet uses the overloaded version of tryLock(long,TimeUnit):
     */
-     public static void main2(String[] args) throws InterruptedException {
-         Lock lock = new ReentrantLock();
-         new Thread(() -> printMessage(lock)).start();
-         if(lock.tryLock(10,TimeUnit.SECONDS)) {
-             try {
-                 System.out.println("Lock obtained, entering protected code");
-             } finally {
-                 lock.unlock();
-             }
-         } else {
-             System.out.println("Unable to acquire lock, doing something else");
-         }
-     }
+    public static void main2(String[] args) throws InterruptedException {
+        Lock lock = new ReentrantLock();
+        new Thread(() -> printMessage(lock)).start();
+        if (lock.tryLock(10, TimeUnit.SECONDS)) {
+            try {
+                System.out.println("Lock obtained, entering protected code");
+            } finally {
+                lock.unlock();
+            }
+        } else {
+            System.out.println("Unable to acquire lock, doing something else");
+        }
+    }
     /*
     The code is the same as before, except this time one of the threads waits
     up to 10 seconds to acquire the lock.
      */
-
 
 
     /*
@@ -213,10 +216,42 @@ public class _8_UnderstandingTheLockFramework {
     concurrent access.
 
 
-
+    Orchestrating Tasks With A CyclicBarrier
+    =======================================
      */
+     */
+    public static class LionPenManager {
+        private void removeLions() {
+            System.out.println("Removing lions");
+        }
 
+        private void cleanPen() {
+            System.out.println("Cleaning the pen");
+        }
 
+        private void addLions() {
+            System.out.println("Adding lions");
+        }
 
+        public void performTask() {
+            removeLions();
+            cleanPen();
+            addLions();
+        }
+
+        public static void main(String[] args) {
+            ExecutorService service = null;
+            try {
+                service = Executors.newFixedThreadPool(4);
+                var manager = new LionPenManager();
+                for (int i = 0; i < 4; i++)
+                    service.submit(() -> manager.performTask());
+            } finally {
+                if (service != null) service.shutdown();
+            }
+        }
+    }
 
 }
+
+
