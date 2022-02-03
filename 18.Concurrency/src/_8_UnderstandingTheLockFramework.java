@@ -138,6 +138,35 @@ public class _8_UnderstandingTheLockFramework {
     to be released later.
      */
     /*
+    tryLock(long,TimeUnit)
+    ======================
+    if a lock is available, then it will
+    immediately return with it. If a lock is unavailable, though, it will wait up
+    to the specified time limit for the lock.
+
+    The following code snippet uses the overloaded version of tryLock(long,TimeUnit):
+    */
+     public static void main2(String[] args) throws InterruptedException {
+         Lock lock = new ReentrantLock();
+         new Thread(() -> printMessage(lock)).start();
+         if(lock.tryLock(10,TimeUnit.SECONDS)) {
+             try {
+                 System.out.println("Lock obtained, entering protected code");
+             } finally {
+                 lock.unlock();
+             }
+         } else {
+             System.out.println("Unable to acquire lock, doing something else");
+         }
+     }
+    /*
+    The code is the same as before, except this time one of the threads waits
+    up to 10 seconds to acquire the lock.
+     */
+
+
+
+    /*
 
 
 
