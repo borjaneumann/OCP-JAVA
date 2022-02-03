@@ -167,7 +167,28 @@ public class _8_UnderstandingTheLockFramework {
 
 
     /*
+/*
+    Duplicate Lock Requests
+    =======================
+    The ReentrantLock class maintains a counter of the number of times a
+    lock has been given to a thread. To release the lock for other threads to
+    use, unlock() must be called the same number of times the lock was
+    granted. The following code snippet contains an error. Can you spot it?
 
+    Lock lock = new ReentrantLock();
+    if(lock.tryLock()) {    //lock once
+        try {
+            lock.lock();    //lock twice
+            System.out.println("Lock obtained, entering protected
+            code");
+    } finally {
+        lock.unlock();
+        }
+    }
+
+    It is critical that you release a lock the same number of times it is acquired.
+    For calls with tryLock(), you need to call unlock() only if the method
+    returned true.
 
 
      */
