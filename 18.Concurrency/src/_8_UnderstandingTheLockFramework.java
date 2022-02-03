@@ -309,6 +309,30 @@ public class _8_UnderstandingTheLockFramework {
             }
         }
     }
+    /*
+    In this example, we have updated performTask() to use CyclicBarrier
+    objects. Like synchronizing on the same object, coordinating a task with a
+    CyclicBarrier requires the object to be static or passed to the thread
+    performing the task. We also add a try/ catch block in the
+    performTask() method, as the await() method throws multiple checked
+    exceptions.
+    The following is sample output based on this revised implementation of our LionPenManager class:
+
+    Removing lions
+    Removing lions
+    Removing lions
+    Removing lions
+    Cleaning the pen
+    Cleaning the pen
+    Cleaning the pen
+    Cleaning the pen
+    *** Pen Cleaned!
+    Adding lions
+    Adding lions
+    Adding lions
+    Adding lions
+
+     */
 }
 
 
