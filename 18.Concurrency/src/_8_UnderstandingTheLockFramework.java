@@ -251,6 +251,21 @@ public class _8_UnderstandingTheLockFramework {
             }
         }
     }
+    /*
+    The following is sample output based on this implementation:
+    Removing lions
+    Removing lions
+    Cleaning the pen
+    Adding lions
+    Removing lions
+    Cleaning the pen
+    Adding lions
+    Removing lions
+    Cleaning the pen
+    Adding lions
+    Cleaning the pen
+    Adding lions
+     */
 
 }
 
