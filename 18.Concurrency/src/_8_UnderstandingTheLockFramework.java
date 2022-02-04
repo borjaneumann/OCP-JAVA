@@ -357,6 +357,16 @@ public class _8_UnderstandingTheLockFramework {
     finish. Since we can't start cleaning the pen while it is full of lions, though,
     this solution is about as concurrent as we can make it.
 
+    REUSING CYCLICBARRIER
+    =====================
+    After a CyclicBarrier is broken, all threads are released, and the
+    number of threads waiting on the CyclicBarrier goes back to zero.
+    At this point, the CyclicBarrier may be used again for a new set of
+    waiting threads. For example, if our CyclicBarrier limit is 5 and
+    we have 15 threads that call await(), then the CyclicBarrier will
+    be activated a total of three times.
+
+
      */
 }
 
