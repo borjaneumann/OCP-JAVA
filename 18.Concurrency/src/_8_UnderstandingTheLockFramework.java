@@ -332,6 +332,20 @@ public class _8_UnderstandingTheLockFramework {
     Adding lions
     Adding lions
 
+    THREAD POOL SIZE AND CYCLIC BARRIER LIMIT
+    =========================================
+    If you are using a thread pool, make sure that you set the number of
+    available threads to be at least as large as your CyclicBarrier limit
+    value. For example, what if we changed the code in the previous
+    example to allocate only two threads, such as in the following snippet?
+
+    ExecutorService service = Executors.newFixedThreadPool(2);
+
+    In this case, the code will hang indefinitely. The barrier would never
+    be reached as the only threads available in the pool are stuck waiting
+    for the barrier to be complete. This would result in a deadlock,
+    which will be discussed shortly.
+
      */
 }
 
