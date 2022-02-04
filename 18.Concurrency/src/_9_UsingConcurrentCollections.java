@@ -1,3 +1,9 @@
+import java.util.Map;
+import java.util.Queue;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentLinkedDeque;
+import java.util.concurrent.ConcurrentLinkedQueue;
+
 public class _9_UsingConcurrentCollections {
 
     /*
@@ -90,6 +96,29 @@ public class _9_UsingConcurrentCollections {
     ---------------------------------------------------------------------------------------------------------------------
     LinkedBlockingQueue         BlockingQueue                           Yes                     No              Yes
 
+    Based on Chapter 14, classes like
+    ConcurrentHashMap and ConcurrentLinkedQueue should be quite easy for you to learn.
+
      */
+    public static void main(String[] args) {
+        Map<String, Integer>map = new ConcurrentHashMap<>();
+        map.put("zebra", 52);
+        map.put("elephant", 10);
+        System.out.println(map.get("elephant")); //10
+
+        Queue<Integer> queue = new ConcurrentLinkedQueue<>();
+        queue.offer(31);
+        System.out.println(queue.peek()); //31
+        System.out.println(queue.poll()); //31
+    }
+    /*All of these classes implement multiple interfaces. For example,
+    ConcurrentHashMap implements Map and ConcurrentMap. When declaring
+    methods that take a concurrent collection, it is up to you to determine the
+    appropriate method parameter type. For example, a method signature may
+    require a ConcurrentMap reference to ensure that an object passed to it is
+    properly supported in a multithreaded environment.
+    */
+
+
 
 }
