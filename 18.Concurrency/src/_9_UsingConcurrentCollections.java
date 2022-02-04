@@ -65,6 +65,31 @@ public class _9_UsingConcurrentCollections {
     not require synchronization. By definition, they do not change, so
     there is no chance of a memory consistency error.
 
+    In the same way that we instantiate an ArrayList object but pass around a
+    List reference, it is considered a good practice to instantiate a concurrent
+    collection but pass it around using a nonconcurrent interface whenever
+    possible. In some cases, the callers may need to know that it is a
+    concurrent collection so that a concurrent interface or class is appropriate,
+    but for the majority of circumstances, that distinction is not necessary.
+
+    Concurrent collection classes (7)
+    Class name                  Java Collections Framework interfaces   Elements ordered?       Sorted?         Blocking?
+    =====================================================================================================================
+    ConcurrentHashMap           ConcurrentMap                           No                      No              No
+    ---------------------------------------------------------------------------------------------------------------------
+    ConcurrentLinkedQueue       Queue                                   Yes                     No              No
+    ---------------------------------------------------------------------------------------------------------------------
+    ConcurrentSkipListMap       ConcurrentMap                           Yes                     Yes             No
+                                SortedMap NavigableMap
+    ---------------------------------------------------------------------------------------------------------------------
+    ConcurrentSkipListSet       SortedSet NavigableSet                  Yes                     Yes             No
+    ---------------------------------------------------------------------------------------------------------------------
+    CopyOnWriteArrayList        List                                    Yes                     No              No
+    ---------------------------------------------------------------------------------------------------------------------
+    CopyOnWriteArraySet         Set                                     No                      No              No
+    ---------------------------------------------------------------------------------------------------------------------
+    LinkedBlockingQueue         BlockingQueue                           Yes                     No              Yes
+
      */
 
 }
