@@ -52,6 +52,19 @@ public class _9_UsingConcurrentCollections {
     which multiple threads are adding and removing objects from the same
     collections. At any given instance, all threads should have the same
     consistent view of the structure of the collection.
+
+    WORKING WITH CONCURRENT CLASSES
+    ===============================
+    You should use a concurrent collection class anytime that you are going to
+    have multiple threads modify a collections object outside a synchronized
+    block or method, even if you don't expect a concurrency problem. On the
+    other hand, immutable or read‐only objects can be accessed by any
+    number of threads without a concurrent collection.
+
+    Immutable objects can be accessed by any number of threads and do
+    not require synchronization. By definition, they do not change, so
+    there is no chance of a memory consistency error.
+
      */
 
 }
