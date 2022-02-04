@@ -1,8 +1,12 @@
 import java.util.Map;
 import java.util.Queue;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentLinkedDeque;
 import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.concurrent.ConcurrentSkipListMap;
+import java.util.concurrent.ConcurrentSkipListSet;
+import java.util.stream.Collectors;
 
 public class _9_UsingConcurrentCollections {
 
@@ -100,17 +104,20 @@ public class _9_UsingConcurrentCollections {
     ConcurrentHashMap and ConcurrentLinkedQueue should be quite easy for you to learn.
 
      */
-    public static void main(String[] args) {
-        Map<String, Integer>map = new ConcurrentHashMap<>();
-        map.put("zebra", 52);
-        map.put("elephant", 10);
-        System.out.println(map.get("elephant")); //10
+     public static class concurrentClasses1 {
+        public static void main(String[] args) {
+            Map<String, Integer>map = new ConcurrentHashMap<>();
+            map.put("zebra", 52);
+            map.put("elephant", 10);
+            System.out.println(map.get("elephant")); //10
 
-        Queue<Integer> queue = new ConcurrentLinkedQueue<>();
-        queue.offer(31);
-        System.out.println(queue.peek()); //31
-        System.out.println(queue.poll()); //31
-    }
+            Queue<Integer> queue = new ConcurrentLinkedQueue<>();
+            queue.offer(31);
+            System.out.println(queue.peek()); //31
+            System.out.println(queue.poll()); //31
+
+        }
+   }
     /*All of these classes implement multiple interfaces. For example,
     ConcurrentHashMap implements Map and ConcurrentMap. When declaring
     methods that take a concurrent collection, it is up to you to determine the
@@ -118,6 +125,27 @@ public class _9_UsingConcurrentCollections {
     require a ConcurrentMap reference to ensure that an object passed to it is
     properly supported in a multithreaded environment.
     */
+    public static class concurrentClasses2 {
+        public static void main(String[] args) {
+            Set<String> gardenAnimals = new ConcurrentSkipListSet<>();
+            gardenAnimals.add("rabbit");
+            gardenAnimals.add("gopher");
+            System.out.println(gardenAnimals.stream()
+                .collect(Collectors.joining(","))); //gopher, rabbit
+
+            Map<String, String> rainForestAnimalDiet = new ConcurrentSkipListMap<>();
+            rainForestAnimalDiet.put("koala", "bamboo");
+            rainForestAnimalDiet.entrySet()
+                    .stream()
+                    .forEach((e) -> System.out.println(
+                            e.getKey() + e.getValue() //koala-bamboo
+                    ));
+        }
+    }
+    /*
+    When you see SkipList or SkipSet on the exam, just think “sorted”
+    concurrent collections, and the rest should follow naturally.
+     */
 
 
 
