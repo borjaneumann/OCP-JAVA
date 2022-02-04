@@ -346,6 +346,17 @@ public class _8_UnderstandingTheLockFramework {
     for the barrier to be complete. This would result in a deadlock,
     which will be discussed shortly.
 
+    The CyclicBarrier class allows us to perform complex, multithreaded
+    tasks, while all threads stop and wait at logical barriers. This solution is
+    superior to a single‐threaded solution, as the individual tasks, such as
+    removing the lions, can be completed in parallel by all four zoo workers.
+
+    There is a slight loss in performance to be expected from using a
+    CyclicBarrier. For example, one worker may be incredibly slow at
+    removing lions, resulting in the other three workers waiting for him to
+    finish. Since we can't start cleaning the pen while it is full of lions, though,
+    this solution is about as concurrent as we can make it.
+
      */
 }
 
