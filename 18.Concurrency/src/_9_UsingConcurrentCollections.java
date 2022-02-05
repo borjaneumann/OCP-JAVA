@@ -195,7 +195,25 @@ public class _9_UsingConcurrentCollections {
     The CopyOnWriteArraySet is used just like a HashSet and has similar
     properties as the CopyOnWriteArrayList class.
      */
+    public static class concurrentClasses3b {
+        public static void main(String[] args) {
+            Set<Character> favLetters = new CopyOnWriteArraySet<>(List.of('a','t'));
+            for(char c: favLetters) {
+                System.out.print(c+" "); //a,t
+                favLetters.add('s');
+            }
+            System.out.println();
+            System.out.println("Size: "+ favLetters.size()); //Size: 3
+            System.out.println(favLetters); //[a, t, s]
+        }
+    }
+    /*
+    The CopyOnWrite classes can use a lot of memory, since a new collection
+    structure needs be allocated anytime the collection is modified. They are
+    commonly used in multithreaded environment situations where reads are
+    far more common than writes.
 
+     */
 
 
 
