@@ -1,3 +1,4 @@
+import java.util.List;
 import java.util.Map;
 import java.util.Queue;
 import java.util.Set;
@@ -6,6 +7,8 @@ import java.util.concurrent.ConcurrentLinkedDeque;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.ConcurrentSkipListMap;
 import java.util.concurrent.ConcurrentSkipListSet;
+import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.stream.Collectors;
 
 public class _9_UsingConcurrentCollections {
@@ -103,6 +106,8 @@ public class _9_UsingConcurrentCollections {
     Based on Chapter 14, classes like
     ConcurrentHashMap and ConcurrentLinkedQueue should be quite easy for you to learn.
 
+    Understanding SkipList Collections
+    ==================================
      */
      public static class concurrentClasses1 {
         public static void main(String[] args) {
@@ -145,7 +150,52 @@ public class _9_UsingConcurrentCollections {
     /*
     When you see SkipList or SkipSet on the exam, just think “sorted”
     concurrent collections, and the rest should follow naturally.
+
+    Understanding CopyOnWrite Collections
+    =====================================
+    These classes copy all of their elements to a new underlying structure
+    anytime an element is added, modified, or removed from the collection. By a modified element, we
+    mean that the reference in the collection is changed. Modifying the actual
+    contents of objects within the collection will not cause a new structure to be allocated.
+
+    Although the data is copied to a new underlying structure, our reference to
+    the Collection object does not change. This is particularly useful in
+    multithreaded environments that need to iterate the collection. Any iterator
+    established prior to a modification will not see the changes, but instead it
+    will iterate over the original elements prior to the modification.
+
      */
+    public static class concurrentClasses3a {
+        public static void main(String[] args) {
+            List<Integer> favNumbers = new CopyOnWriteArrayList<>(List.of(4,3,42));
+            for(var n: favNumbers) {
+                System.out.print(n + " "); //4,3,42
+                favNumbers.add(9);
+            }
+            System.out.println();
+            System.out.println("Size: " + favNumbers.size()); // Size: 6
+            System.out.println(favNumbers); // [4, 3, 42, 9, 9, 9]
+        }
+    }
+    /*
+    Despite adding elements to the array while iterating over it, the for loop
+    only iterated on the ones created when the loop started. Alternatively, if
+    we had used a regular ArrayList object, a
+    ConcurrentModificationException would have been thrown at runtime.
+    With either class, though, we avoid entering an infinite loop in which
+    elements are constantly added to the array as we iterate over them.
+
+    The CopyOnWrite classes are similar to the immutable object pattern
+    that you saw in Chapter 12, “Java Fundamentals,” as a new
+    underlying structure is created every time the collection is modified.
+    Unlike a true immutable object, though, the reference to the object
+    stays the same even while the underlying data is changed.
+
+
+    The CopyOnWriteArraySet is used just like a HashSet and has similar
+    properties as the CopyOnWriteArrayList class.
+     */
+
 
 
 
