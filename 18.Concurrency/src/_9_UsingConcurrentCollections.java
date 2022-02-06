@@ -1,7 +1,4 @@
-import java.util.List;
-import java.util.Map;
-import java.util.Queue;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentLinkedDeque;
 import java.util.concurrent.ConcurrentLinkedQueue;
@@ -212,9 +209,40 @@ public class _9_UsingConcurrentCollections {
     structure needs be allocated anytime the collection is modified. They are
     commonly used in multithreaded environment situations where reads are
     far more common than writes.
-
      */
-
-
+    /*
+    REVISISINTG DELETING WHILE LOOPING
+    ==================================
+    In Chapter 14, we showed an example where deleting from an
+    ArrayList while iterating over it triggered a
+    ConcurrentModificationException. Here we present a version that
+    does work using CopyOnWriteArrayList:
+    */
+    public void deletingWhileLooping(){
+        List<String> birds = new CopyOnWriteArrayList<>();
+            birds.add("hawk");
+            birds.add("hawk");
+            birds.add("hawk");
+        for (String bird : birds)
+                    birds.remove(bird);
+        System.out.print(birds.size()); // 0
+    }
+    /*
+    As mentioned, though, CopyOnWrite classes can use a lot of
+    memory. Another approach is to use the ArrayList class with an
+    iterator, as shown here:
+    */
+    public void deletingWhileLoopingWithIterator(){
+        List<String> birds = new ArrayList<>();
+        birds.add("hawk");
+        birds.add("hawk");
+        birds.add("hawk");
+        var iterator = birds.iterator();
+        while(iterator.hasNext()) {
+            iterator.next();
+            iterator.remove();
+        }
+        System.out.print(birds.size()); // 0
+    }
 
 }
