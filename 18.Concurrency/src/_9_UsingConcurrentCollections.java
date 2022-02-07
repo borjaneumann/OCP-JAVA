@@ -256,6 +256,16 @@ public class _9_UsingConcurrentCollections {
     Since BlockingQueue inherits all of the methods from Queue, we skip the
     inherited methods you learned in Chapter 14 and present the new methods below:
 
+    BlockingQueue waiting methods(2)
+    Method name                                 Description
+    ========================================================================================================
+    offer(E e, long timeout, TimeUnit unit)     Adds an item to the queue, waiting the specified time and
+                                                returning false if the time elapses before space is available
+    ---------------------------------------------------------------------------------------------------------
+    poll(long timeout, TimeUnit unit)           Retrieves and removes an item from the queue,
+                                                waiting the specified time and returning null if the
+                                                time elapses before the item is available
+    --------------------------------------------------------------------------------------------------------
 
      */
 
