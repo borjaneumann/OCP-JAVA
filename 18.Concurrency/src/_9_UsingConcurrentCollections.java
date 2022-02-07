@@ -300,6 +300,16 @@ public class _9_UsingConcurrentCollections {
     inputted collection and return a reference that is the same type as the
     underlying collection.
 
+    Synchronized collections methods(8)
+    ===================================
+    synchronizedCollection(Collection<T> c)
+    synchronizedList(List<T> list)
+    synchronizedMap(Map<K,V> m)
+    synchronizedNavigableMap(NavigableMap<K,V> m)
+    synchronizedNavigableSet(NavigableSet<T> s)
+    synchronizedSet(Set<T> s)
+    synchronizedSortedMap(SortedMap<K,V> m)
+    synchronizedSortedSet(SortedSet<T> s)
      */
 
 
