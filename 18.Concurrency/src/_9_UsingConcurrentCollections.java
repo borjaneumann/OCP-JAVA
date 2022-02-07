@@ -244,5 +244,19 @@ public class _9_UsingConcurrentCollections {
         }
         System.out.print(birds.size()); // 0
     }
+    /*
+    Understanding Blocking Queues
+    =============================
+    The final collection class you should know for the exam
+    is the LinkedBlockingQueue, which implements the BlockingQueue
+    interface. The BlockingQueue is just like a regular Queue, except that it
+    includes methods that will wait a specific amount of time to complete an
+    operation.
+
+    Since BlockingQueue inherits all of the methods from Queue, we skip the
+    inherited methods you learned in Chapter 14 and present the new methods below:
+
+
+     */
 
 }
