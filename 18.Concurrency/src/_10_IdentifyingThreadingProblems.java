@@ -1,3 +1,6 @@
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 public class _10_IdentifyingThreadingProblems {
     /*
     Intro
@@ -32,6 +35,77 @@ public class _10_IdentifyingThreadingProblems {
     2) starvation, and
     3) livelock.
 
+    Deadlock
+    ========
+    Deadlock occurs when two or more threads are blocked forever, each
+    waiting on the other. We can illustrate this principle with the following
+    example. Imagine that our zoo has two foxes: Foxy and Tails. Foxy likes
+    to eat first and then drink water, while Tails likes to drink water first and
+    then eat. Furthermore, neither animal likes to share, and they will finish
+    their meal only if they have exclusive access to both food and water.
+    The zookeeper places the food on one side of the environment and the
+    water on the other side. Although our foxes are fast, it still takes them 100
+    milliseconds to run from one side of the environment to the other.
+
+     */
+    static class Food{};
+    static class Water {};
+    public static class Fox {
+        public void eatAndDrink( Food food, Water water) {
+            synchronized (food) {
+                System.out.println("Got Food");
+                move();
+                synchronized (water) {
+                    System.out.println("Got water");
+                }
+            }
+        }
+        public void drinkAndEat (Food food, Water water) {
+            synchronized (water) {
+                System.out.println("Got water");
+                move();
+                synchronized (food) {
+                    System.out.println("Got food");
+                }
+            }
+        }
+        public void move() {
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e){
+                //Handle exception
+            }
+        }
+
+        public static void main(String[] args) {
+            //create participants and resources
+            Fox foxy = new Fox();
+            Fox tails = new Fox();
+            Food food = new Food();
+            Water water = new Water();
+
+            // Process data
+            ExecutorService service = null;
+            try {
+                service = Executors.newScheduledThreadPool(10);
+                service.submit(()->foxy.eatAndDrink(food, water));
+                service.submit(()->tails.drinkAndEat(food, water));
+            } finally {
+                if (service !=null) service.shutdown();
+            }
+        }
+
+    }
+    /*
+    In this example, Foxy obtains the food and then moves to the other side of
+    the environment to obtain the water. Unfortunately, Tails already drank
+    the water and is waiting for the food to become available. The result is that
+    our program outputs the following, and it hangs indefinitely:
+    Got Food!
+    Got Water!
+    This example is considered a deadlock because both participants are
+    permanently blocked, waiting on resources that will never become
+    available.
 
      */
 }
