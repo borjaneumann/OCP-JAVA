@@ -107,5 +107,18 @@ public class _10_IdentifyingThreadingProblems {
     permanently blocked, waiting on resources that will never become
     available.
 
+    PREVENTING DEADLOCKS
+    ====================
+    How do you fix a deadlock once it has occurred? The answer is that
+    you can't in most situations.
+
+    On the other hand, there are numerous strategies to help prevent deadlocks
+    from ever happening in the first place.
+    One common strategy to avoid deadlocks is for all threads to
+    order their resource requests.
+
+    For example, if both foxes have a rule
+    that they need to obtain food before water, then the previous
+    deadlock scenario will not happen again.
      */
 }
