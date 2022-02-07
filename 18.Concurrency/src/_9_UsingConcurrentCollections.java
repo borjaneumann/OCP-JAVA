@@ -310,8 +310,30 @@ public class _9_UsingConcurrentCollections {
     synchronizedSet(Set<T> s)
     synchronizedSortedMap(SortedMap<K,V> m)
     synchronizedSortedSet(SortedSet<T> s)
+
+    when to use them?
+    =================
+    If you know at the time of creation that your object requires synchronization,
+    then you should use one of the concurrent collection classes listed in Table Concurrent collection classes.
+    On the other hand, if you are given an existing collection that is not a concurrent class and need
+    to access it among multiple threads, you can wrap it using the methods in Synchronized collections methods(8).
+
+    Unlike the concurrent collections, the synchronized collections also throw
+    an exception if they are modified within an iterator by a single thread. For
+    example, take a look at the following modification of our earlier example:
+    */
+    public void synchronizedMap() {
+        var foodData = new HashMap<String,Object>();
+        foodData.put("penguin",1);
+        foodData.put("flamingo",2);
+        var syncFoodData = Collections.synchronizedMap(foodData);
+        for( String key : syncFoodData.keySet())
+            syncFoodData.remove(key);
+    }
+    /*
+    This loop throws a ConcurrentModificationException, whereas our
+    example that used ConcurrentHashMap did not. Other than iterating over
+    the collection, the objects returned by the methods in the Synchronized collections methods(8) are safe
+    from memory consistency errors and can be used among multiple threads.
      */
-
-
-
 }
