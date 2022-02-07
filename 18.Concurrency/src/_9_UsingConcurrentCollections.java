@@ -6,6 +6,8 @@ import java.util.concurrent.ConcurrentSkipListMap;
 import java.util.concurrent.ConcurrentSkipListSet;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.CopyOnWriteArraySet;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 public class _9_UsingConcurrentCollections {
@@ -267,6 +269,39 @@ public class _9_UsingConcurrentCollections {
                                                 time elapses before the item is available
     --------------------------------------------------------------------------------------------------------
 
+    The implementation class LinkedBlockingQueue, as the name implies,
+    maintains a linked list between elements. The following sample is using a
+    LinkedBlockingQueue to wait for the results of some of the operations.
+    The two BlockingQueue waiting methods can each throw a checked
+    InterruptedException, as they can be interrupted before they finish
+    waiting for a result; therefore, they must be properly caught.
      */
+    public void linkedBlockingQueue() {
+        try {
+            var blockingQueue = new LinkedBlockingQueue<Integer>();
+            blockingQueue.offer(39);
+            blockingQueue.offer(3,4, TimeUnit.SECONDS);
+            System.out.println(blockingQueue.poll()); //39
+            System.out.println(blockingQueue.poll(10, TimeUnit.MILLISECONDS)); //3
+        } catch (InterruptedException e) {
+            //handle interruption
+        }
+    }
+    /*
+    As shown in this example, since LinkedBlockingQueue implements both
+    Queue and BlockingQueue, we can use methods available to both, such as
+    those that don't take any wait arguments.
+
+    OBTAINING SYNCHRONIZED COLLECTIONS
+    ==================================
+    The Concurrency API also includes methods for obtaining synchronized
+    versions of existing nonconcurrent collection objects. These synchronized
+    methods are defined in the Collections class. They operate on the
+    inputted collection and return a reference that is the same type as the
+    underlying collection.
+
+     */
+
+
 
 }
