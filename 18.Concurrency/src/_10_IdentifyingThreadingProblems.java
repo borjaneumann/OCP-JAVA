@@ -167,4 +167,49 @@ public class _10_IdentifyingThreadingProblems {
     livelock state appear active and able to respond to requests, even when
     they are in fact stuck in an endless cycle.
      */
+
+    /*
+    MANAGING RACE CONDITIONS
+    ========================
+    A race condition is an undesirable result that occurs when two tasks,
+    which should be completed sequentially, are completed at the same time.
+
+    Imagine two zoo patrons, Olivia and Sophia, are signing up for an account on the zoo's new
+    visitor website. Both of them want to use the same username, ZooFan, and
+    they each send requests to create the account at the same time,
+
+    What result does the web server return when both users attempt to create
+    an account with the same username?
+
+    Scenario 1) Both users are able to create accounts with username ZooFan.
+                This is the worst possible outcome to this race condition, as it causes significant
+                and potentially unrecoverable data problems.
+    Scenario 2) Both users are unable to create an account with username ZooFan,
+                returning an error message to both users.
+                In this scenario, the data is protected since no two accounts with the same
+                username exist in the system. The users are free to try again with the same
+                username, ZooFan, since no one has been granted access to it.
+    Scenario 3) One user is able to create the account with the username ZooFan, while
+                the other user receives an error message.
+                It is considered the best solution to this type of race condition.
+                Like the second situation, we preserve data integrity, but unlike
+                the second situation, at least one user is able to move forward on the first
+                request, avoiding additional race condition scenarios. Also unlike the
+                previous scenario, we can provide the user who didn't win the race with a
+                clearer error message because we are now sure that the account username
+                is no longer available in the system.
+
+                For the exam, you should understand that race conditions lead to invalid
+                data if they are not properly handled.
+
+                Race conditions tend to appear in highly concurrent applications. As a
+                software system grows and more users are added, they tend to appear
+                more frequently. One solution is to use a monitor to synchronize on the
+                relevant overlapping task. In the previous example, the relevant task is the
+                method that determines whether an account username is in use and
+                reserves it in the system if it is available
+
+
+
+     */
 }
