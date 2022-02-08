@@ -35,6 +35,24 @@ public class _11_WorkingWithParallelStreams {
     original stream. For example, applying a terminal operation to s2 also
     makes s1 unavailable for further use.
 
+    2) Calling parallelStream() on a Collection Object
+
+    The second way to create a parallel stream is from a Java Collection
+    class. The Collection interface includes a method parallelStream() that
+    can be called on any collection and returns a parallel stream. The
+    following creates the parallel stream directly from the List object:
+
+    Stream<Integer> s3 = List.of(1,2).parallelStream();
+
+    The Stream interface includes a method isParallel() that can be
+    used to test if the instance of a stream supports parallel processing.
+    Some operations on streams preserve the parallel attribute, while
+    others do not. For example, the Stream.concat(Stream s1, Stream
+    s2) is parallel if either s1 or s2 is parallel. On the other hand,
+    flatMap() creates a new stream that is not parallel by default,
+    regardless of whether the underlying elements were parallel.
+
+
 
 
      */
