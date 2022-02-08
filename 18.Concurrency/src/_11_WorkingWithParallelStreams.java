@@ -110,7 +110,30 @@ public class _11_WorkingWithParallelStreams {
         computer with fewer processors, it might output 10 seconds, 15 seconds,
         or some other value. The key is that we've written our code to take
         advantage of parallel processing when available, so our job is done.
+         */
 
+        /*
+        ORDERING FOREACH RESULTS
+        ========================
+        The Stream API includes an alternate version of the forEach()
+        operation called forEachOrdered(), which forces a parallel stream
+        to process the results in order at the cost of performance. For
+        example, take a look at the following code snippet:
+
+        List.of(5,2,1,4,3)
+        .parallelStream()
+        .map(w -> doWork(w))
+        .forEachOrdered(s -> System.out.print(s + " "));
+        Like our starting example, this outputs the results in the order that
+        they are defined in the stream:
+        5 2 1 4 3
+        Time: 5 seconds
+
+        With this change, the forEachOrdered() operation forces our
+        stream into a single‐threaded process. While we've lost some of the
+        performance gains of using a parallel stream, our map() operation is
+        still able to take advantage of the parallel stream and perform a
+        parallel decomposition in 5 seconds instead of 25 seconds.
          */
 
     }
