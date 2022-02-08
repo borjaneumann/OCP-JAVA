@@ -18,11 +18,25 @@ public class _12_ProcessingParallelReductions {
         System.out.print(List.of(1,2,3,4,5,6) // 1
                 .stream()
                 .findAny().get());
+        System.out.println();
+        System.out.print(List.of(1,2,3,4,5,6)
+                .parallelStream()
+                .findAny().get()); // 4 is the task that finishes first.
     }
     /*
     This code frequently outputs the first value in the serial stream, 1,
     although this is not guaranteed. The findAny() method is free to select
     any element on either serial or parallel streams.
+
+    With a parallel stream, the JVM can create any number of threads to
+    process the stream. When you call findAny() on a parallel stream, the
+    JVM selects the first thread to finish the task and retrieves its data.
+
+    The result is that the output could be 4, 1, or really any value in the stream.
+    You can see that with parallel streams, the results of findAny() are not as
+    predictable
+
+
 
      */
 }
