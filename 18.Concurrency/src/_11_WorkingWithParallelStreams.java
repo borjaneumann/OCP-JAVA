@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class _11_WorkingWithParallelStreams {
     /*
     One of the most powerful features of the Stream API is built‐in
@@ -62,7 +64,25 @@ public class _11_WorkingWithParallelStreams {
     results. The more concurrent a decomposition, the greater the performance
     improvement of using parallel streams.
 
-
-
+    let's define a reusable function that “does work” just by waiting for five seconds.
      */
+    private static int doWork (int input) {
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+
+        }return input;
+    }
+    // Now let's use this method with a serial stream.
+    public static void main(String[] args) {
+        long start = System.currentTimeMillis();
+        List.of(1,2,3,4,5)
+                .stream()
+                .map(w->doWork(w))
+                .forEach(s-> System.out.println(s + " "));
+
+        System.out.println();
+        var timeTaken = (System.currentTimeMillis()-start)/1000;
+        System.out.println("Time: " + timeTaken + " seconds");
+    }
 }
