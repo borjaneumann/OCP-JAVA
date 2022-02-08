@@ -209,7 +209,5 @@ public class _10_IdentifyingThreadingProblems {
                 method that determines whether an account username is in use and
                 reserves it in the system if it is available
 
-
-
      */
 }
