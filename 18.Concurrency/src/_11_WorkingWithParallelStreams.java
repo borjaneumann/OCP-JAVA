@@ -52,6 +52,15 @@ public class _11_WorkingWithParallelStreams {
     flatMap() creates a new stream that is not parallel by default,
     regardless of whether the underlying elements were parallel.
 
+    PERFORMING A PARALLEL DECOMPOSITION
+    ===================================
+    As you may have noticed, creating the parallel stream is the easy part. The
+    interesting part comes in performing a parallel decomposition.
+
+    A parallel decomposition is the process of taking a task, breaking it up into smaller
+    pieces that can be performed concurrently, and then reassembling the
+    results. The more concurrent a decomposition, the greater the performance
+    improvement of using parallel streams.
 
 
 
