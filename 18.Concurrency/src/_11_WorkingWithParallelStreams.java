@@ -17,6 +17,25 @@ public class _11_WorkingWithParallelStreams {
     The number of threads available in a parallel stream is proportional
     to the number of available CPUs in your environment.
 
+    CREATING PARALLEL STREAMS
+    =========================
+
+    2 Ways:
+
+    1) Calling parallel() on an Existing Stream
+
+    The first way to create a parallel stream is from an existing stream. You
+    just call parallel() on an existing stream to convert it to one that
+    supports multithreaded processing, as shown in the following code:
+
+    Stream<Integer> s1 = List.of(1,2).stream();
+    Stream<Integer> s2 = s1.parallel();
+
+    Be aware that parallel() is an intermediate operation that operates on the
+    original stream. For example, applying a terminal operation to s2 also
+    makes s1 unavailable for further use.
+
+
 
      */
 }
