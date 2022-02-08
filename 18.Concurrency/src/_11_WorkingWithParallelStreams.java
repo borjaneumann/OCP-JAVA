@@ -75,14 +75,43 @@ public class _11_WorkingWithParallelStreams {
     }
     // Now let's use this method with a serial stream.
     public static void main(String[] args) {
-        long start = System.currentTimeMillis();
-        List.of(1,2,3,4,5)
-                .stream()
+//        long start = System.currentTimeMillis();
+//        List.of(1,2,3,4,5)
+//                .stream()
+//                .map(w->doWork(w))
+//                .forEach(s-> System.out.println(s + " ")); // 1 2 3 4 5
+//
+//        System.out.println();
+//        var timeTaken = (System.currentTimeMillis()-start)/1000;
+//        System.out.println("Time: " + timeTaken + " seconds"); // Time: 25 seconds
+
+        //Now with parallel streams
+        long parallelStart = System.currentTimeMillis();
+        List.of(6,7,8,9,10)
+                .parallelStream()
                 .map(w->doWork(w))
-                .forEach(s-> System.out.println(s + " "));
+                .forEach(s -> System.out.println(s + " ")); //9 , 7, 6, 10, 8 (the results come at the same time)
 
         System.out.println();
-        var timeTaken = (System.currentTimeMillis()-start)/1000;
-        System.out.println("Time: " + timeTaken + " seconds");
+        var parallelTimeTaken = (System.currentTimeMillis()-parallelStart)/1000;
+        System.out.println("Time: " + parallelTimeTaken + " seconds"); // Time: 5 seconds
+
+        /*
+        With a parallel stream, the map() and forEach() operations are applied
+        concurrently.
+
+        As you can see, the results are no longer ordered or predictable. The map()
+        and forEach() operations on a parallel stream are equivalent to submitting
+        multiple Runnable lambda expressions to a pooled thread executor and
+        then waiting for the results.
+
+        What about the time required? In this case, our system had enough CPUs
+        for all of the tasks to be run concurrently. If you ran this same code on a
+        computer with fewer processors, it might output 10 seconds, 15 seconds,
+        or some other value. The key is that we've written our code to take
+        advantage of parallel processing when available, so our job is done.
+
+         */
+
     }
 }
