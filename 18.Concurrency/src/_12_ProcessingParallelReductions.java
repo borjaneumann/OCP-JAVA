@@ -36,6 +36,15 @@ public class _12_ProcessingParallelReductions {
     You can see that with parallel streams, the results of findAny() are not as
     predictable
 
+    Any stream operation that is based on order, including findFirst(),
+    limit(), or skip(), may actually perform more slowly in a parallel
+    environment. This is a result of a parallel processing task being forced to
+    coordinate all of its threads in a synchronized‐like fashion.
+    On the plus side, the results of ordered operations on a parallel stream will
+    be consistent with a serial stream. For example, calling
+    skip(5).limit(2).findFirst() will return the same result on ordered
+    serial and parallel streams.
+
 
 
      */
