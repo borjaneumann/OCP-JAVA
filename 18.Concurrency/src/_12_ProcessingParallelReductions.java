@@ -45,6 +45,26 @@ public class _12_ProcessingParallelReductions {
     skip(5).limit(2).findFirst() will return the same result on ordered
     serial and parallel streams.
 
+    CREATING UNORDERED STREAMS
+    ==========================
+    All of the streams with which you have been working are considered
+    ordered by default. It is possible to create an unordered stream from
+    an ordered stream, similar to how you create a parallel stream from a
+    serial stream:
+    List.of(1,2,3,4,5,6).stream().unordered();
+    This method does not actually reorder the elements; it just tells the
+    JVM that if an order‐based stream operation is applied, the order can
+    be ignored. For example, calling skip(5) on an unordered stream
+    will skip any 5 elements, not the first 5 required on an ordered
+    stream.
+    For serial streams, using an unordered version has no effect, but on
+    parallel streams, the results can greatly improve performance.
+    List.of(1,2,3,4,5,6).stream().unordered().parallel();
+    Even though unordered streams will not be on the exam, if you are
+    developing applications with parallel streams, you should know
+    when to apply an unordered stream to improve performance.
+
+
 
 
      */
