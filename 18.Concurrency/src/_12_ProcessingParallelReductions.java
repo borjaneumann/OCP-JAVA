@@ -129,6 +129,14 @@ public class _12_ProcessingParallelReductions {
     XwXoXlXf. As part of the parallel process, the identity is applied to
     multiple elements in the stream, resulting in very unexpected data
 
+    SELECTING A REDUCE() METHOD
+    ===========================
+    Although the one‐ and two‐argument versions of reduce() do
+    support parallel processing, it is recommended that you use the
+    three‐argument version of reduce() when working with parallel
+    streams. Providing an explicit combiner method allows the JVM to
+    partition the operations in the stream more efficiently.
+
 
 
 
