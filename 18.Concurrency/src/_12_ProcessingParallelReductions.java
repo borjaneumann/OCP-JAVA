@@ -90,6 +90,24 @@ public class _12_ProcessingParallelReductions {
     time. In a parallel stream, the intermediate values wo and lf are created
     and then combined
 
+    With parallel streams, we now have to be concerned about order. What if
+    the elements of a string are combined in the wrong order to produce wlfo
+    or flwo? The Stream API prevents this problem, while still allowing
+    streams to be processed in parallel, as long as you follow one simple rule:
+    make sure that the accumulator and combiner work regardless of the order
+    they are called in. For example, if we add numbers, we can do so in any
+    order.
+
+    While the requirements for the input arguments to the reduce()
+    method hold true for both serial and parallel streams, you may not
+    have noticed any problems in serial streams because the result was
+    always ordered. With parallel streams, though, order is no longer
+    guaranteed, and any argument that violates these rules is much more
+    likely to produce side effects or unpredictable results.
+
+
+
+
 
 
 
