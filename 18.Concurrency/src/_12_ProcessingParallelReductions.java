@@ -1,7 +1,9 @@
 import java.util.List;
 import java.util.Set;
 import java.util.SortedSet;
+import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.ConcurrentSkipListSet;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class _12_ProcessingParallelReductions {
@@ -193,12 +195,40 @@ public class _12_ProcessingParallelReductions {
     * The parameter of the collect() operation has the Characteristics.CONCURRENT characteristic.
     * Either the stream is unordered or the collector has the characteristic Characteristics.UNORDERED.
 
+    For example, while Collectors.toSet() does have the UNORDERED
+    characteristic, it does not have the CONCURRENT characteristic. Therefore,
+    the following is not a parallel reduction even with a parallel stream:
 
+    stream.collect(Collectors.toSet()); // Not a parallel reduction
 
-
-
-
-
+    The Collectors class includes two sets of static methods for retrieving
+    collectors, toConcurrentMap() and groupingByConcurrent(), that are
+    both UNORDERED and CONCURRENT.
+     */
+    static class ParallelReductionWithCollect {
+       public static void main(String[] args) {
+           Stream<String> ohMy = Stream.of("lions", "tigers","bears").parallel();
+           ConcurrentMap<Integer,String> map = ohMy.collect(
+                   Collectors.toConcurrentMap(
+                           String::length,
+                           k-> k,
+                           (s1,s2) -> s1 + "," + s2)
+           );
+           System.out.println(map); // {5=bears,lions, 6=tigers}
+           System.out.println(map.getClass()); // class java.util.concurrent.ConcurrentHashMap
+       }
+    }
+    /*
+    We use a ConcurrentMap reference, although the actual class returned is
+    likely ConcurrentHashMap. The particular class is not guaranteed; it will
+    just be a class that implements the interface ConcurrentMap.
 
      */
+
+
+
+
+
+
+
 }
