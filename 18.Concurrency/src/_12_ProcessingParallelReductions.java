@@ -204,8 +204,10 @@ public class _12_ProcessingParallelReductions {
     The Collectors class includes two sets of static methods for retrieving
     collectors, toConcurrentMap() and groupingByConcurrent(), that are
     both UNORDERED and CONCURRENT.
+
+    toConcurrentMap()
      */
-    static class ParallelReductionWithCollect {
+    static class ParallelReductionWithCollectToConcurrentMap {
        public static void main(String[] args) {
            Stream<String> ohMy = Stream.of("lions", "tigers","bears").parallel();
            ConcurrentMap<Integer,String> map = ohMy.collect(
@@ -223,6 +225,19 @@ public class _12_ProcessingParallelReductions {
     likely ConcurrentHashMap. The particular class is not guaranteed; it will
     just be a class that implements the interface ConcurrentMap.
 
+    groupingByConcurrent()
+    */
+    static class ParallelReductionWithCollectGroupingByConcurrent{
+        public static void main(String[] args) {
+            var ohmy = Stream.of("lions","tigers","bears").parallel();
+            ConcurrentMap<Integer, List<String>> map = ohmy.collect(
+                    Collectors.groupingByConcurrent(String::length)
+            );
+            System.out.println(map); //{5=[bears, lions], 6=[tigers]}
+        }
+    }
+    /*
+    As before, the returned object can be assigned a ConcurrentMap reference
      */
 
 
