@@ -177,6 +177,16 @@ public class _12_ProcessingParallelReductions {
     serial or parallel stream. This may reduce performance, though, as some
     operations are unable to be completed in parallel
 
+    Performing a Parallel Reduction on a Collector
+    ==============================================
+    While we covered the Collector interface we didn't go into
+    detail about its properties. Every Collector instance defines a
+    characteristics() method that returns a set of
+    Collector.Characteristics attributes. When using a Collector to
+    perform a parallel reduction, a number of properties must hold true.
+    Otherwise, the collect() operation will execute in a single‐threaded
+    fashion.
+
 
 
 
