@@ -1,4 +1,8 @@
 import java.util.List;
+import java.util.Set;
+import java.util.SortedSet;
+import java.util.concurrent.ConcurrentSkipListSet;
+import java.util.stream.Stream;
 
 public class _12_ProcessingParallelReductions {
     /*
@@ -136,6 +140,42 @@ public class _12_ProcessingParallelReductions {
     three‐argument version of reduce() when working with parallel
     streams. Providing an explicit combiner method allows the JVM to
     partition the operations in the stream more efficiently.
+
+    Combining Results with collect()
+    ================================
+    Like reduce(), the Stream API includes a three‐argument version of
+    collect() that takes accumulator and combiner operators, along with a
+    supplier operator instead of an identity.
+    <R> R collect(Supplier<R> supplier,
+    BiConsumer<R, ? super T> accumulator,
+    BiConsumer<R, R> combiner)
+    Also, like reduce(), the accumulator and combiner operations must be
+    able to process results in any order. In this manner, the three‐argument
+    version of collect() can be performed as a parallel reduction, as shown
+    in the following example:
+    */
+    public static class CombiningResultsWithCollect{
+        public static void main(String[] args) {
+            Stream<String> stream = Stream.of("w", "o", "l", "f").parallel();
+            SortedSet<String> set =
+                    stream.collect(ConcurrentSkipListSet::new,
+                            Set::add,
+                            Set::addAll);
+            System.out.println(set); // [f, l, o, w]
+        }
+    }
+   /*
+    Recall that elements in a ConcurrentSkipListSet are sorted according to
+    their natural ordering. You should use a concurrent collection to combine
+    the results, ensuring that the results of concurrent threads do not cause a
+    ConcurrentModificationException.
+
+    Performing parallel reductions with a collector requires additional
+    considerations. For example, if the collection into which you are inserting
+    is an ordered data set, such as a List, then the elements in the resulting
+    collection must be in the same order, regardless of whether you use a
+    serial or parallel stream. This may reduce performance, though, as some
+    operations are unable to be completed in parallel
 
 
 
