@@ -187,6 +187,13 @@ public class _12_ProcessingParallelReductions {
     Otherwise, the collect() operation will execute in a single‐threaded
     fashion.
 
+    Requirements for Parallel Reduction with collect()
+    ---------------------------------------------------
+    * The stream is parallel.
+    * The parameter of the collect() operation has the Characteristics.CONCURRENT characteristic.
+    * Either the stream is unordered or the collector has the characteristic Characteristics.UNORDERED.
+
+
 
 
 
