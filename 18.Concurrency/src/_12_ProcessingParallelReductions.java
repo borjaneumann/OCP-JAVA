@@ -105,6 +105,19 @@ public class _12_ProcessingParallelReductions {
     guaranteed, and any argument that violates these rules is much more
     likely to produce side effects or unpredictable results.
 
+    Let's take a look at an example using a problematic accumulator. In
+    particular, order matters when subtracting numbers; therefore, the
+    following code can output different values depending on whether you use
+    a serial or parallel stream. We can omit a combiner parameter in these
+    examples, as the accumulator can be used when the intermediate data
+    types are the same.
+
+    System.out.println(List.of(1,2,3,4,5,6)
+    .parallelStream()
+    .reduce(0, (a,b) -> (a - b))); // PROBLEMATIC ACCUMULATOR
+
+    It may output ‐21, 3, or some other value.
+
 
 
 
