@@ -64,6 +64,32 @@ public class _12_ProcessingParallelReductions {
     developing applications with parallel streams, you should know
     when to apply an unordered stream to improve performance.
 
+    Combining results with reduce()
+    -------------------------------
+    Identity, accumulator and combiner.
+
+    <U> U reduce(U identity,
+    BiFunction<U,? super T,U> accumulator,
+    BinaryOperator<U> combiner)
+
+    We can concatenate a list of char values, using the reduce() method, as
+    shown in the following example:
+
+    System.out.println(List.of('w', 'o', 'l', 'f')
+    .parallelStream()
+    .reduce("",
+    (s1,c) -> s1 + c,
+    (s2,s3) -> s2 + s3)); // wolf
+
+    The naming of the variables in this stream example is not accidental.
+    We used c for char, whereas s1, s2, and s3 are String values.
+    On parallel streams, the reduce() method works by applying the
+    reduction to pairs of elements within the stream to create intermediate
+    values and then combining those intermediate values to produce a final
+    result. Put another way, in a serial stream, wolf is built one character at a
+    time. In a parallel stream, the intermediate values wo and lf are created
+    and then combined
+
 
 
 
