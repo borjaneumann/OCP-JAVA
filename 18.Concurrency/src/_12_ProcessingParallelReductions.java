@@ -118,6 +118,17 @@ public class _12_ProcessingParallelReductions {
 
     It may output ‐21, 3, or some other value.
 
+    You can see other problems if we use an identity parameter that is not
+    truly an identity value. For example, what do you expect the following code to output?
+
+    System.out.println(List.of("w","o","l","f")
+    .parallelStream()
+    .reduce("X", String::concat)); // XwXoXlXf
+
+    On a serial stream, it prints Xwolf, but on a parallel stream the result is
+    XwXoXlXf. As part of the parallel process, the identity is applied to
+    multiple elements in the stream, resulting in very unexpected data
+
 
 
 
