@@ -271,13 +271,18 @@ public class _12_ProcessingParallelReductions {
      */
     public static class AvoidingStatefulOperations {
 
-        public List<Integer> addValues(IntStream source) {
+        public static List<Integer> addValues(IntStream source) {
             var data = Collections.synchronizedList(
                     new ArrayList<Integer>()
             );
             source.filter(s -> s % 2 == 0)
                     .forEach(i->{data.add(i);}); //STATEFUL : DON'T DO THIS!
             return data;
+        }
+
+        public static void main(String[] args) {
+            var list = addValues(IntStream.range(1,11)); //[2, 4, 6, 8, 10]
+            System.out.println(list);
         }
     }
 
