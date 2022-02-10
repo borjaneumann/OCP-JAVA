@@ -282,7 +282,12 @@ public class _12_ProcessingParallelReductions {
 
         public static void main(String[] args) {
             var list = addValues(IntStream.range(1,11)); //[2, 4, 6, 8, 10]
-            System.out.println(list);
+            System.out.println("Non Parallel List: " + list);
+
+            //But what if someone else wrote an implementation that passed our method
+            //a parallel stream?
+            var parallelList = addValues(IntStream.range(1, 11).parallel());
+            System.out.println("Parallel List: " + parallelList); //[6, 8, 10, 2, 4] Order is not guaranteed
         }
     }
 
