@@ -281,14 +281,36 @@ public class _12_ProcessingParallelReductions {
         }
 
         public static void main(String[] args) {
+            //Serial Stream
             var list = addValues(IntStream.range(1,11)); //[2, 4, 6, 8, 10]
-            System.out.println("Non Parallel List: " + list);
+            System.out.println("Serial Stream List: " + list);
+
+            var list2 = addValuesRewritten((IntStream.range(1,11)));
+            System.out.println(("Serial Stream List Rewritten: " + list2));
+
 
             //But what if someone else wrote an implementation that passed our method
             //a parallel stream?
             var parallelList = addValues(IntStream.range(1, 11).parallel());
             System.out.println("Parallel List: " + parallelList); //[6, 8, 10, 2, 4] Order is not guaranteed
-        }
-    }
 
+            var parallelListRewritten = addValuesRewritten(IntStream.range(1, 11).parallel());
+            System.out.println("Parallel List Rewritten: " + parallelListRewritten);
+        }
+        /*
+        The problem is that our lambda expression is stateful and modifies a list
+        that is outside our stream. We could use forEachOrdered() to add
+        elements to the list, but that forces the parallel stream to be serial,
+        potentially losing concurrency enhancements. While these stream
+        operations in our example are quite simple, imagine using them alongside
+        numerous intermediate operations.
+        We can fix this solution by rewriting our stream operation to no longer
+        have a stateful lambda expression
+         */
+        public static List<Integer> addValuesRewritten (IntStream source) {
+            return source.filter(s -> s%2 == 0)
+                    .boxed()
+                    .collect(Collectors.toList());
+            }
+    }
 }
