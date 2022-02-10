@@ -313,4 +313,15 @@ public class _12_ProcessingParallelReductions {
                     .collect(Collectors.toList());
             }
     }
+    /*
+    This implementation removes the stateful operation and relies on the
+    collector to assemble the elements. We could also use a concurrent
+    collector to parallelize the building of the list. The goal is to write our
+    code to allow for parallel processing and let the JVM handle the rest.
+
+    It is strongly recommended that you avoid stateful operations when using
+    parallel streams, so as to remove any potential data side effects. In fact,
+    they should be avoided in serial streams since doing so limits the code's
+    ability to someday take advantage of parallelization.
+     */
 }
