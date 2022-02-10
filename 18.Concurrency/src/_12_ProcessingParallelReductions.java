@@ -1,9 +1,8 @@
-import java.util.List;
-import java.util.Set;
-import java.util.SortedSet;
+import java.util.*;
 import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.ConcurrentSkipListSet;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class _12_ProcessingParallelReductions {
@@ -256,8 +255,30 @@ public class _12_ProcessingParallelReductions {
     advantage of the parallel processing, we get the best possible
     performance at runtime.
      */
+    /*
+    AVOIDING STATEFUL OPERATIONS
+    ============================
+    Side effects can appear in parallel streams if your lambda expressions are
+    stateful. A stateful lambda expression is one whose result depends on any
+    state that might change during the execution of a pipeline. On the other
+    hand, a stateless lambda expression is one whose result does not depend
+    on any state that might change during the execution of a pipeline.
 
+    Let's try an example. Imagine we require a method that keeps only even
+    numbers in a stream and adds them to a list. Also, we want ordering of the
+    numbers in the stream and list to be consistent. The following
+    addValues() method accomplishes this:
+     */
+    public static class AvoidingStatefulOperations {
 
-
+        public List<Integer> addValues(IntStream source) {
+            var data = Collections.synchronizedList(
+                    new ArrayList<Integer>()
+            );
+            source.filter(s -> s % 2 == 0)
+                    .forEach(i->{data.add(i);}); //STATEFUL : DON'T DO THIS!
+            return data;
+        }
+    }
 
 }
