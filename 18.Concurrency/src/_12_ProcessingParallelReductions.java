@@ -238,10 +238,24 @@ public class _12_ProcessingParallelReductions {
     }
     /*
     As before, the returned object can be assigned a ConcurrentMap reference
+
+    ENCOURAGING PARALLEL PROCESSING
+    ===============================
+    Guaranteeing that a particular stream will perform reductions in
+    parallel, as opposed to single‐threaded, is often difficult in practice.
+    For example, the one‐argument reduce() operation on a parallel
+    stream may perform concurrently even when there is no explicit
+    combiner argument. Alternatively, you may expect some collectors
+    to perform well on a parallel stream, resorting to single‐threaded
+    processing at runtime.
+
+    The key to applying parallel reductions is to encourage the JVM to
+    take advantage of the parallel structures, such as using a
+    groupingByConcurrent() collector on a parallel stream rather than
+    a groupingBy() collector. By encouraging the JVM to take
+    advantage of the parallel processing, we get the best possible
+    performance at runtime.
      */
-
-
-
 
 
 
