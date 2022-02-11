@@ -9,3 +9,12 @@ public class Zoo {
 //javac Zoo.java
 //java Zoo
 //If the file is in package the name package/s have to be included
+
+/*
+All valid options
+=================
+String[] args
+String args[]
+String... args;
+
+ */
