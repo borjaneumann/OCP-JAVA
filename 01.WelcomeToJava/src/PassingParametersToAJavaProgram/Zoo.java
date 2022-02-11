@@ -11,3 +11,9 @@ java Zoo2 peter johnny
 peter
 johnny
  */
+
+/*when needing to pass arguments with spaces
+java Zoo2 peter "Mister Robinson"
+peter
+Mister Robinson
+ */
