@@ -6,3 +6,8 @@ public class Zoo {
         System.out.println(args[1]);
     }
 }
+/*
+java Zoo2 peter johnny
+peter
+johnny
+ */
