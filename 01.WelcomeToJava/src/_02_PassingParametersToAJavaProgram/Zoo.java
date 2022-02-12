@@ -1,4 +1,4 @@
-package PassingParametersToAJavaProgram;
+package _02_PassingParametersToAJavaProgram;
 
 public class Zoo {
     public static void main(String[] args) {
