@@ -7,3 +7,10 @@ public class SingleFileZoo {
 
 }
 //Used Command java SingleFileZoo.java Cleveland
+/*
+This feature is called launching single-file source-code programs.
+The name cleverly tells you that it can be used only if your program is one
+file. This means if your program has two .java files, you still need to use
+javac.
+
+ */
