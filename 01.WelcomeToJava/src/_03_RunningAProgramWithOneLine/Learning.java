@@ -18,5 +18,20 @@ error: compilation failed
 Notice how we said “in memory.” Even if the code compiles properly, no .class file is created.
  */
 
+/*
+Full command                Single-file source-code command
+===========================================================
+javac HelloWorld.java       java HellowWorld.java
+java HelloWorld
+-----------------------------------------------------------
+Produces a class file       Fully in memory
+-----------------------------------------------------------
+For any program             For programs with one file
+-----------------------------------------------------------
+Can import code in          Can only import code that came
+any available               with the JDK
+Java library
 
+
+ */
 
