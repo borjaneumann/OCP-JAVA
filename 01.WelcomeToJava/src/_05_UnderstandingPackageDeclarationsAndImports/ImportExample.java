@@ -12,3 +12,9 @@ public class ImportExample {
         System.out.println(r.nextInt(10)); // it prints out a random number between 0 and 9
     }
 }
+/* java.lang
+There’s one special package in the Java world
+called java.lang. This package is special in that it is automatically
+imported. You can type this package in an import statement, but you don’t
+have to.
+ */
