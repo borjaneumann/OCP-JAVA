@@ -18,3 +18,28 @@ called java.lang. This package is special in that it is automatically
 imported. You can type this package in an import statement, but you don’t
 have to.
  */
+
+/*
+Redundant imports
+=================
+
+Files and Paths are both in the package java.nio.file.
+
+What imports do you think would work to get this code to compile?
+
+    public class InputImports {
+        public void read(Files files) {
+        Paths.get("name");
+        }
+    }
+There are two possible answers.
+The shorter one is to use a wildcard to import both at the same time.
+
+import java.nio.file.*;
+
+The other answer is to import both classes explicitly.
+
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
+ */
