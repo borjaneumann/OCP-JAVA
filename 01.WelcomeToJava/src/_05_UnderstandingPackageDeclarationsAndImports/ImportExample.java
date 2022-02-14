@@ -2,6 +2,9 @@ package _05_UnderstandingPackageDeclarationsAndImports;
 
 //import java.util.Random;
 import java.util.*; //Wildcard
+/*it imports only classes. (There is a special type of import called the static
+import that imports other types, which you’ll learn more about in Chapter 7.)
+*/
 
 public class ImportExample {
     public static void main(String[] args) {
