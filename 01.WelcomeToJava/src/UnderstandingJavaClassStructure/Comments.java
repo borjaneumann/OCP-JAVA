@@ -21,5 +21,5 @@ public class Comments {
     /* elephant */
     /*
     * /* ferret */
-     */
+//     */
 }
