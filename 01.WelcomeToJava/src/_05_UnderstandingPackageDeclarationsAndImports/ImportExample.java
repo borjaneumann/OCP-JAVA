@@ -1,6 +1,7 @@
 package _05_UnderstandingPackageDeclarationsAndImports;
 
-import java.util.Random;
+//import java.util.Random;
+import java.util.*; //Wildcard
 
 public class ImportExample {
     public static void main(String[] args) {
