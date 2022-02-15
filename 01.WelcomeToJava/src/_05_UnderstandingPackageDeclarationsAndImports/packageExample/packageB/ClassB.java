@@ -15,5 +15,14 @@ Very important:
 I'm guessing that when entering the above command the path starts from C:\ to the package directory.
 3)java 05_UnderstandingPackageDeclarationsAndImports.packageExample.packageB.ClassB
 (Keep an eye on the dot between packageB and ClassB!!)
+ */
 
+/*
+Compiling and Running Code with packages
+========================================
+We could have also complied tha classes one by one separated by a space, though when Java main is compiled,
+it will also compiled the needed classes.
+
+javac 05_UnderstandingPackageDeclarationsAndImports.packageExample.packageB\ClassB.java
+05_UnderstandingPackageDeclarationsAndImports.packageExample.packageA\ClassA.java
  */
