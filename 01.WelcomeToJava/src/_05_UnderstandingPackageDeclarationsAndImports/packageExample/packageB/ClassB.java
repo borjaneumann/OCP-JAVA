@@ -42,3 +42,18 @@ However, you cannot use a wildcard to include subdirectories. If you
 were to write javac *.java, the code in the packages would not be
 picked up.
  */
+/*
+USING AN ALTERNATE DIRECTORY
+============================
+By default, the javac command places the compiled classes in the same
+directory as the source code. It also provides an option to place the class
+files into a different directory. The -d option specifies this target directory.
+
+Java options are case sensitive. This means you cannot pass -D
+instead of -d.
+
+javac -d classes packagea/ClassA.java packageb/ClassB.java
+
+creates a folder called classes. Within this folder two other folders: packagea and packageb
+with their respctive compiled classes.
+ */
