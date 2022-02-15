@@ -26,3 +26,19 @@ it will also compiled the needed classes.
 javac 05_UnderstandingPackageDeclarationsAndImports.packageExample.packageB\ClassB.java
 05_UnderstandingPackageDeclarationsAndImports.packageExample.packageA\ClassA.java
  */
+/*
+Compiling With WildCards
+=========================
+You can use an asterisk to specify that you’d like to include all Java
+files in a directory. This is convenient when you have a lot of files in
+a package. We can rewrite the previous javac command like this:
+
+packagea = 05_UnderstandingPackageDeclarationsAndImports.packageExample.packageA
+packageb = 05_UnderstandingPackageDeclarationsAndImports.packageExample.packageB
+
+javac packagea/*.java packageb/*.java
+
+However, you cannot use a wildcard to include subdirectories. If you
+were to write javac *.java, the code in the packages would not be
+picked up.
+ */
