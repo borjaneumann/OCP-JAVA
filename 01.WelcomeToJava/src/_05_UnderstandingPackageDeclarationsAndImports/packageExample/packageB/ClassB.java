@@ -56,4 +56,19 @@ javac -d classes packagea/ClassA.java packageb/ClassB.java
 
 creates a folder called classes. Within this folder two other folders: packagea and packageb
 with their respctive compiled classes.
+
+how to run it
+-------------
+To run the program, you specify the classpath so Java knows where to find
+the classes. There are three options you can use. All three of these do the
+same thing:
+
+java -cp classes packageb.ClassB
+java -classpath classes packageb.ClassB
+java --class-path classes packageb.ClassB
+
+Notice that the last one requires two dashes (--), while the first two
+require one dash (-). If you have the wrong number of dashes, the program
+will not run.
+
  */
