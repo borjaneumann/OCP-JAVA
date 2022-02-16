@@ -105,4 +105,20 @@ classes in the java.sql package?
 import java.util.Date;
 import java.sql.*;
 
+One more example. What does Java do with “ties” for precedence?
+
+import java.util.Date;
+import java.sql.Date;
+
+Java is smart enough to detect that this code is no good. As a programmer,
+you’ve claimed to explicitly want the default to be both the
+java.util.Date and java.sql.Date implementations. Because there
+can’t be two defaults, the compiler tells you the following:
+
+error: reference to Date is ambiguous
+Date date;
+^
+both class java.util.Date in java.util and class
+java.sql.Date in java.sql match
+
  */
