@@ -100,4 +100,9 @@ error: reference to Date is ambiguous
 Date date;
 ^
 
+But what do we do if we need a whole pile of other
+classes in the java.sql package?
+import java.util.Date;
+import java.sql.*;
+
  */
