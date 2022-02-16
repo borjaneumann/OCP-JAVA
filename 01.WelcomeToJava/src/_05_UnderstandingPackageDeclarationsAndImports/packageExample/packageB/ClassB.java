@@ -2,6 +2,8 @@ package _05_UnderstandingPackageDeclarationsAndImports.packageExample.packageB;
 
 import _05_UnderstandingPackageDeclarationsAndImports.packageExample.packageA.ClassA;
 
+import java.util.Date;
+
 public class ClassB {
     public static void main(String[] args) {
         ClassA a;
@@ -121,4 +123,24 @@ Date date;
 both class java.util.Date in java.util and class
 java.sql.Date in java.sql match
 
+If You really need to use two classes with the same name
+========================================================
+Sometimes you really do want to use Date from two different
+packages. When this happens, you can pick one to use in the import
+and use the other’s fully qualified class name [the package name, a
+period (.), and the class name] to specify that it’s special. Here’s an
+example:
+import java.util.Date;
+*/
+class Conflicts {
+    Date date;
+    java.sql.Date sqlDate;
+}
+/*
+Or you could have neither with an import and always use the fully qualified class name.*/
+class Conflicts1 {
+    java.util.Date date;
+    java.sql.Date sqlDate;
+}
+/*
  */
