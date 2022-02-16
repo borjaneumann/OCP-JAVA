@@ -70,5 +70,34 @@ java --class-path classes packageb.ClassB
 Notice that the last one requires two dashes (--), while the first two
 require one dash (-). If you have the wrong number of dashes, the program
 will not run.
+ */
+
+/*
+Naming Conflicts
+================
+One of the reasons for using packages is so that class names don’t have to
+be unique across all of Java. This means you’ll sometimes want to import
+a class that can be found in multiple places. A common example of this is
+the Date class. Java provides implementations of java.util.Date and
+java.sql.Date.
+
+What import could we use if we want the java.util.Date version?
+
+public class Conflicts {
+Date date;
+// some more code
+}
+
+The answer should be easy by now. You can write either import
+java.util.*; or import java.util.Date;. The tricky cases come about
+when other imports are present.
+
+import java.util.*;
+import java.sql.*; // causes Date declaration to not compile
+
+When the class is found in multiple packages, Java gives you a compiler error.
+error: reference to Date is ambiguous
+Date date;
+^
 
  */
