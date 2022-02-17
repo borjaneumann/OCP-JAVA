@@ -190,4 +190,16 @@ adding: jarTest/SingleFileZoo.java(in = 187) (out= 152)(deflated 18%)
 adding: jarTest/Zoo.java(in = 121) (out= 100)(deflated 17%)
 adding: jarTest/Zoo2.java(in = 157) (out= 99)(deflated 36%)
 
+Entry Point and Classpath
+===========================
+If our JAR contains a runnable application then we can specify the entry point. Similarly, we can provide the classpath.
+By doing so, we avoid having to specify it when we want to run it.
+
+Main-Class: the package and name of the class with a main method (no .class extension)
+Class-Path: a space separated list of relative paths to libraries or resources
+For example, if our application entry point is in Application.class and it uses libraries and resources then we can add the needed headers:
+
+Main-Class: com.baeldung.Application
+Class-Path: core.jar lib/ properties/
+
  */
