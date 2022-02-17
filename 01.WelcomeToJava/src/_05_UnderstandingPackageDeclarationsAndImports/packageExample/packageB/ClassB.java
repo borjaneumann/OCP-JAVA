@@ -167,4 +167,27 @@ Creating a Jar File
 jar -cvf myNewFile.jar .
 jar --create --verbose --file myNewFile.jar .
 
+Alternatively, you can specify a directory instead of using the current
+directory.
+jar -cvf myNewFile.jar -C dir .
+There is no long form of the -C option. Table 1.5 lists the options you need
+to use the jar command to create a jar file. In Chapter 11, you will learn
+another option specific to modules.
+
+jar -cvf MyJar.jar manifest.txt
+added manifest
+adding: manifest.txt(in = 76) (out= 74)(deflated 2%)
+
+The manifest must be outside the classes folder
+
+jar -cvf MyJar.jar Manifest.txt jarTest\
+added manifest
+adding: Manifest.txt(in = 76) (out= 74)(deflated 2%)
+adding: jarTest/(in = 0) (out= 0)(stored 0%)
+adding: jarTest/Manifest.txt(in = 76) (out= 74)(deflated 2%)
+adding: jarTest/MyJar.jar(in = 530) (out= 279)(deflated 47%)
+adding: jarTest/SingleFileZoo.java(in = 187) (out= 152)(deflated 18%)
+adding: jarTest/Zoo.java(in = 121) (out= 100)(deflated 17%)
+adding: jarTest/Zoo2.java(in = 157) (out= 99)(deflated 36%)
+
  */
