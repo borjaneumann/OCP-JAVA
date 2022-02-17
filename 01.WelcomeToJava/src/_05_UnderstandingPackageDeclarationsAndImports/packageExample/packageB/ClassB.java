@@ -162,4 +162,9 @@ This command will add all the JARs to the classpath that are in
 directoryWithJars. It won’t include any JARs in the classpath that are in
 a subdirectory of directoryWithJars.
 
+Creating a Jar File
+===================
+jar -cvf myNewFile.jar .
+jar --create --verbose --file myNewFile.jar .
+
  */
