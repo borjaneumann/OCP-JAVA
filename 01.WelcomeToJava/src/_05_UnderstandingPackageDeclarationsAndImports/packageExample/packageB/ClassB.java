@@ -1,6 +1,7 @@
 package _05_UnderstandingPackageDeclarationsAndImports.packageExample.packageB;
 
-import _05_UnderstandingPackageDeclarationsAndImports.packageExample.packageA.ClassA;
+import _05_UnderstandingPackageDeclarationsAndImports.packageExample.packageA.*;
+
 
 import java.util.Date;
 
@@ -201,5 +202,22 @@ For example, if our application entry point is in Application.class and it uses 
 
 Main-Class: com.baeldung.Application
 Class-Path: core.jar lib/ properties/
+
+Options you need to know for the exam: jar
+Option                  Description
+ ================================================================
+-c                      Creates a new JAR file
+--create
+------------------------------------------------------------------
+-v                      Prints details when working with JAR files
+--verbose
+------------------------------------------------------------------
+-f <fileName>           JAR filename
+--file <fileName>
+------------------------------------------------------------------
+-C <directory>          Directory containing files to be used to create the JAR
+
+
+
 
  */
