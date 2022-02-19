@@ -218,6 +218,27 @@ Option                  Description
 -C <directory>          Directory containing files to be used to create the JAR
 
 
+Running a Program in One line With Packages
+===========================================
+You can use single-file source-code programs from within a package as
+long as they rely only on classes supplied by the JDK. This code meets the
+criteria.
+
+package singleFile;
+import java.util.*;
+
+public class Learning {
+    private ArrayList list;
+    public static void main(String[] args) {
+        System.out.println("This works!");
+    }
+}
+
+You can run either of these commands:
+java Learning.java // from within the singleFile directory
+java singleFile/Learning.java // from the directory above singleFile
+
+
 
 
  */
