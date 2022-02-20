@@ -1,6 +1,6 @@
-package _05_UnderstandingPackageDeclarationsAndImports.packageExample.packageB;
+package _04_UnderstandingPackageDeclarationsAndImports.packageExample.packageB;
 
-import _05_UnderstandingPackageDeclarationsAndImports.packageExample.packageA.*;
+import _04_UnderstandingPackageDeclarationsAndImports.packageExample.packageA.*;
 
 
 import java.util.Date;
@@ -235,6 +235,7 @@ public class Learning {
 }
 
 You can run either of these commands:
+
 java Learning.java // from within the singleFile directory
 java singleFile/Learning.java // from the directory above singleFile
 
