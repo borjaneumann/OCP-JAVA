@@ -1,6 +1,13 @@
 package _01_creating_And_Manipulating_Strings;
 
 public class _01_Concatenation {
+    /*
+    There aren’t a lot of rules to know for this, but you have to know them well:
+
+    1. If both operands are numeric, + means numeric addition.
+    2. If either operand is a String, + means concatenation.
+    3. The expression is evaluated left to right.
+     */
     public static void main(String[] args) {
         //Both below are slightly different
         String nameA = "Alexander";
