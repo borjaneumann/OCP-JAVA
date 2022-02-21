@@ -1,11 +1,16 @@
-public class StringMethods {
+package _01_creating_And_Manipulating_Strings;
+
+public class _03_StringMethods {
     public static void main(String[] args) {
+
         String word = "animals";
 
         //length
-        System.out.println(word.length());
+        System.out.println("Word length: " + word.length());
+
         //chartAt(index 0)
-        System.out.println(word.charAt(5));
+        System.out.println("Word chartAt: " + word.charAt(5));
+
         //indexOf()
         System.out.println("IndexOf: " + word.indexOf("a"));
         System.out.println("IndexOf: " + word.indexOf("al"));
@@ -24,6 +29,7 @@ public class StringMethods {
         //Equals
         System.out.println("Equals (aminals) :" + word.equals("aminals"));
         System.out.println("Equals (animals) :" + word.equals("aminals"));
+
         //EqualsIgnoreCase
         System.out.println("EqualsIgnoreCase (ANIMALS) :" + word.equalsIgnoreCase("ANIMALS"));
 
@@ -33,7 +39,7 @@ public class StringMethods {
 
         //replace()
         System.out.println("replace: " + word.replace('a','c'));
-        System.out.println(word );
+        System.out.println("Word: " + word ); // The original did not change
 
         //contains (boolean)
         System.out.println("Contains ani: " + word.contains("ani"));
