@@ -26,7 +26,7 @@ public class _01_Concatenation {
         System.out.println(1 + 2 + three + four); // It becomes a string 64
 
         String s = "1";
-        s += 2;
+        s += "2";
         s += 3;
         System.out.println("concatenation with += : " + s); //123
     }
