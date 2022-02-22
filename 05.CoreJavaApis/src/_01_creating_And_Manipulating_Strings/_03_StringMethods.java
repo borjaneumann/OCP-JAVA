@@ -19,7 +19,7 @@ public class _03_StringMethods {
 
         //Substring()
         System.out.println("Substring of animals: " + word.substring(3));
-//        System.out.println(word.substring(-3));//does not compile
+        //System.out.println(word.substring(-3));//does not compile
         System.out.println("Substring of animals: " + word.substring(2,5));
 
         //ToLowerCase() and toUpperCase()
@@ -38,7 +38,10 @@ public class _03_StringMethods {
         System.out.println("endsWith a: " + word.endsWith("a"));
 
         //replace()
-        System.out.println("replace: " + word.replace('a','c'));
+        System.out.println("replace word(before): " + word); // animals
+        System.out.println("replace: " + word.replace('a','c')); //cnimcls
+        System.out.println("replace with target: " + word.replace("ani","c"));//cmals
+
         System.out.println("Word: " + word ); // The original did not change
 
         //contains (boolean)
@@ -46,15 +49,16 @@ public class _03_StringMethods {
 
         //trim, strip, stripLeading, StripTrailing
         String text = " abc\t ";
-        System.out.println("Length :" + text.length());
-        System.out.println(text.strip().length());
-        System.out.println(text.strip());
-        System.out.println(text.trim().length());
-        System.out.println(text.trim());
-        System.out.println(text.stripLeading().length());
-        System.out.println(text.stripLeading());
-        System.out.println(text.stripTrailing().length());
-        System.out.println(text.stripTrailing());
+        System.out.println("text: " + text);
+        System.out.println("text.length(): " + text.length());
+        System.out.println("text.strip().length(): " + text.strip().length());
+        System.out.println("text.strip(): " + text.strip());
+        System.out.println("text.trim().length(): " + text.trim().length());
+        System.out.println("text.trim(): " + text.trim());
+        System.out.println("text.stripLeading().length(): " + text.stripLeading().length());
+        System.out.println("text.stripLeading(): " + text.stripLeading());
+        System.out.println("text.stripTrailing().length(): " + text.stripTrailing().length());
+        System.out.println("text.stripTrailing(): " + text.stripTrailing());
 
         String spaces = "   ";
         System.out.println("Empty spaces: " + spaces.length());
