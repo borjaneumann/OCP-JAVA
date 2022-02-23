@@ -6,36 +6,35 @@ public class _03_StringMethods {
         String word = "animals";
 
         //length
-        System.out.println("Word length: " + word.length());
+        System.out.println("Word length: " + word.length()); //7
 
         //chartAt(index 0)
-        System.out.println("Word chartAt: " + word.charAt(5));
+        System.out.println("Word chartAt: " + word.charAt(5)); // l
 
         //indexOf()
-        System.out.println("IndexOf: " + word.indexOf("a"));
-        System.out.println("IndexOf: " + word.indexOf("al"));
-        System.out.println("IndexOf: " + word.indexOf("a", 4));
-        System.out.println("IndexOf: " + word.indexOf("al", 5));
+        System.out.println("IndexOf: " + word.indexOf("a")); // 0
+        System.out.println("IndexOf: " + word.indexOf("al")); // 4
+        System.out.println("IndexOf: " + word.indexOf("a", 4)); // 4
+        System.out.println("IndexOf: " + word.indexOf("al", 5)); // -1
 
         //Substring()
-        System.out.println("Substring of animals: " + word.substring(3));
+        System.out.println("Substring of animals: " + word.substring(3)); // mals
         //System.out.println(word.substring(-3));//does not compile
-        System.out.println("Substring of animals: " + word.substring(2,5));
+        System.out.println("Substring of animals: " + word.substring(2,5)); // ima
 
         //ToLowerCase() and toUpperCase()
-        System.out.println("ToUpperCase:" + word.toLowerCase());
-        System.out.println("ToLowerCase:" +word.toUpperCase());
+        System.out.println("ToUpperCase:" + word.toLowerCase()); // animals
+        System.out.println("ToLowerCase:" +word.toUpperCase()); //ANIMALS
 
         //Equals
-        System.out.println("Equals (aminals) :" + word.equals("aminals"));
-        System.out.println("Equals (animals) :" + word.equals("aminals"));
+        System.out.println("Equals (aminals) :" + word.equals("aminals")); // false
 
         //EqualsIgnoreCase
-        System.out.println("EqualsIgnoreCase (ANIMALS) :" + word.equalsIgnoreCase("ANIMALS"));
+        System.out.println("EqualsIgnoreCase (ANIMALS) :" + word.equalsIgnoreCase("ANIMALS")); // true
 
         //startsWith() and endsWith()
-        System.out.println("startsWith a: " + word.startsWith("a"));
-        System.out.println("endsWith a: " + word.endsWith("a"));
+        System.out.println("startsWith a: " + word.startsWith("a")); // true
+        System.out.println("endsWith a: " + word.endsWith("a")); // false
 
         //replace()
         System.out.println("replace word(before): " + word); // animals
@@ -45,23 +44,23 @@ public class _03_StringMethods {
         System.out.println("Word: " + word ); // The original did not change
 
         //contains (boolean)
-        System.out.println("Contains ani: " + word.contains("ani"));
+        System.out.println("Contains ani: " + word.contains("ani")); // true
 
         //trim, strip, stripLeading, StripTrailing
         String text = " abc\t ";
-        System.out.println("text: " + text);
-        System.out.println("text.length(): " + text.length());
-        System.out.println("text.strip().length(): " + text.strip().length());
-        System.out.println("text.strip(): " + text.strip());
-        System.out.println("text.trim().length(): " + text.trim().length());
-        System.out.println("text.trim(): " + text.trim());
-        System.out.println("text.stripLeading().length(): " + text.stripLeading().length());
-        System.out.println("text.stripLeading(): " + text.stripLeading());
-        System.out.println("text.stripTrailing().length(): " + text.stripTrailing().length());
-        System.out.println("text.stripTrailing(): " + text.stripTrailing());
+        System.out.println("text: " + text); //  abc
+        System.out.println("text.length(): " + text.length()); // 6
+        System.out.println("text.strip().length(): " + text.strip().length());//3
+        System.out.println("text.strip(): " + text.strip()); //abc
+        System.out.println("text.trim().length(): " + text.trim().length()); //3
+        System.out.println("text.trim(): " + text.trim()); //abc
+        System.out.println("text.stripLeading().length(): " + text.stripLeading().length()); //5
+        System.out.println("text.stripLeading(): " + text.stripLeading()); // abc
+        System.out.println("text.stripTrailing().length(): " + text.stripTrailing().length()); //4
+        System.out.println("text.stripTrailing(): " + text.stripTrailing());//  abc
 
         String spaces = "   ";
-        System.out.println("Empty spaces: " + spaces.length());
+        System.out.println("Empty spaces: " + spaces.length());//3
 
         //intern()
 //        String JapaneseCity = new String("Nagasaki");
@@ -78,11 +77,10 @@ public class _03_StringMethods {
 
         //Method chaining
         String result = "AniMaL  ".trim().toLowerCase().replace('a','A');
-        System.out.println(result);
-        System.out.println(result.length());
-
-        System.out.println("   ghj   ".length());
-        System.out.println("   ghj   ".trim().length());
+        System.out.println(result);//AnimAl
+        System.out.println(result.length()); //6
+        System.out.println("   ghj   ".length());//9
+        System.out.println("   ghj   ".trim().length());//3
 
     }
 }
