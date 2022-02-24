@@ -62,12 +62,20 @@ public class _03_StringMethods {
         String spaces = "   ";
         System.out.println("Empty spaces: " + spaces.length());//3
 
-        //intern()
-//        String JapaneseCity = new String("Nagasaki");
-//        String germanCity = "Frankfurt";
-//        String s3=JapaneseCity.intern();//returns string from pool, now it will be same as s2
-//        System.out.println(JapaneseCity==germanCity);//false because reference variables are pointing to different instance
-//        System.out.println(germanCity==s3);//true because reference variables are pointing to same instance
+        /*intern()
+        The intern() method returns the value from the string pool if it is there.
+        Otherwise, it adds the value to the string pool. We will explain about the
+        string pool and give examples for intern() later in the chapter.
+
+        The method signature is as follows:
+        String intern()
+
+        String JapaneseCity = new String("Nagasaki");
+        String germanCity = "Frankfurt";
+        String s3=JapaneseCity.intern();//returns string from pool, now it will be same as s2
+        System.out.println(JapaneseCity==germanCity);//false because reference variables are pointing to different instance
+        System.out.println(germanCity==s3);//true because reference variables are pointing to same instance
+         */
 
         String s1=new String("hello");
         String s2="hello";
