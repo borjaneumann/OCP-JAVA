@@ -50,13 +50,16 @@ public class _03_StringMethods {
         String text = " abc\t ";
         System.out.println("text: " + text); //  abc
         System.out.println("text.length(): " + text.length()); // 6
-        System.out.println("text.strip().length(): " + text.strip().length());//3
+        System.out.println("text.strip().length(): " + text.strip().length());//3 remove all blank spaces at the
+        // beginning and at the end.
         System.out.println("text.strip(): " + text.strip()); //abc
-        System.out.println("text.trim().length(): " + text.trim().length()); //3
+        System.out.println("text.trim().length(): " + text.trim().length()); //3 same as trim
         System.out.println("text.trim(): " + text.trim()); //abc
-        System.out.println("text.stripLeading().length(): " + text.stripLeading().length()); //5
+        System.out.println("text.stripLeading().length(): " + text.stripLeading().length()); //5 the blacn space at
+        // the beginning is removed
         System.out.println("text.stripLeading(): " + text.stripLeading()); // abc
-        System.out.println("text.stripTrailing().length(): " + text.stripTrailing().length()); //4
+        System.out.println("text.stripTrailing().length(): " + text.stripTrailing().length()); //4 the two black spaces
+        //at the back are removed.
         System.out.println("text.stripTrailing(): " + text.stripTrailing());//  abc
 
         String spaces = "   ";
