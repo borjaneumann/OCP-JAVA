@@ -83,12 +83,6 @@ public class _03_StringMethods {
         System.out.println(s1==s2);//false because reference variables are pointing to different instance
         System.out.println(s2==s3);//true because reference variables are pointing to same instance
 
-        //Method chaining
-        String result = "AniMaL  ".trim().toLowerCase().replace('a','A');
-        System.out.println(result);//AnimAl
-        System.out.println(result.length()); //6
-        System.out.println("   ghj   ".length());//9
-        System.out.println("   ghj   ".trim().length());//3
 
     }
 }
