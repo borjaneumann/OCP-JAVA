@@ -1,7 +1,7 @@
 package _02_UsingTheStringBuilderClass;
 
 public class StringBuilderClass {
-    public static void main(String[] args) {git comm
+    public static void main(String[] args) {
 
         String alpha = "";
         for (char current = 'a'; current <= 'z'; current++){

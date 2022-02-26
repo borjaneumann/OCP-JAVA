@@ -14,6 +14,12 @@ public class _02_StringImmutable {
         String s2 = s1.concat("2");
         s2.concat("3");//it doesnt add. It is immutable. It is ont the same as +=
         System.out.println(s2);
+
+        String str = "Winnie"; // Winnie is now a candidate to the garbage collection.
+        str+=" de bear";
+        str.concat(" does not add this");
+        System.out.println("str: " + str);
+
     }
 
 
