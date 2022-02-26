@@ -1,11 +1,15 @@
+package _02_UsingTheStringBuilderClass;
+
 public class StringBuilderClass {
-    public static void main(String[] args) {
+    public static void main(String[] args) {git comm
+
         String alpha = "";
         for (char current = 'a'; current <= 'z'; current++){
             alpha += current;
+            System.out.println(" ");
         }
-        System.out.println("Alpha: " + alpha);//from a to z
-
+        System.out.print("Alphabet: " + alpha);//from a to z
+        System.out.println();
         StringBuilder beta = new StringBuilder();
         for (char current = 'a'; current <= 'z' ; current++)
             beta.append(current);
