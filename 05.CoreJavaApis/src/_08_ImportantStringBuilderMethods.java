@@ -1,4 +1,4 @@
-public class StringBuiderMethods {
+public class _08_ImportantStringBuilderMethods {
     public static void main(String[] args) {
         //charAt(), indexOf, length() and subString() like with String
         StringBuilder sb1 = new StringBuilder("papaya");
