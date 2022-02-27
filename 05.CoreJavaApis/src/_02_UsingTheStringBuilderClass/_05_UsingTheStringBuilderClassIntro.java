@@ -15,13 +15,5 @@ public class _05_UsingTheStringBuilderClassIntro {
         for (char current = 'a'; current <= 'z' ; current++)
             beta.append(current);
         System.out.println("Alphabet (StringBuilder): " + beta);
-
-        StringBuilder sb = new StringBuilder("start");
-        sb.append("+middle");
-        StringBuilder same = sb.append("+end");
-
-        System.out.println("sb:" + sb);
-        System.out.println("Same: "+ same);//sb and same are pointing at the same object.
-
     }
 }
