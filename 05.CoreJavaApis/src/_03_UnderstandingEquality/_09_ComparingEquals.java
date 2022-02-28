@@ -45,6 +45,15 @@ public class _09_ComparingEquals {
             System.out.println(t1 == t3); // true
             System.out.println(t1 == t2); // false
             System.out.println(t1.equals(t2)); // false, Tiger doesn't implement equal like String.
+
+            //The exam will try to trick you!
+            String string = "a";
+            StringBuilder builder = new StringBuilder("a");
+//            System.out.println(string == builder); //DOES NOT COMPILE
+            /*
+            The compiler is smart enough to know that two references can’t possibly point to the
+            same object when they are completely different types.
+             */
         }
     }
 }
