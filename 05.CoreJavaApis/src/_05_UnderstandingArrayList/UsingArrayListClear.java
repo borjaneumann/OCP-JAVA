@@ -1,21 +1,18 @@
-package UnderstandingArrayList;
+package _05_UnderstandingArrayList;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class UsingArrayListIsEmptyAndSize {
+public class UsingArrayListClear {
+    //void clear()
     public static void main(String[] args) {
-        //boolean isEmpty;
-        //int size();
         List<String> birds = new ArrayList<>();
-        System.out.println(birds.isEmpty());//true
-        System.out.println(birds.size());//0
-        birds.add("hawk");//[hawk]
+        birds.add("hawk"); //[hawk]
         birds.add("hawk");//[hawk, hawk]
         System.out.println(birds.isEmpty());//false
         System.out.println(birds.size());//2
-
-        //isEmpty -> size() == 0;
-
+        birds.clear();//clear all elements
+        System.out.println(birds.isEmpty());//true
+        System.out.println(birds.size());//0
     }
 }

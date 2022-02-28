@@ -1,4 +1,4 @@
-package understandingJavaArrays;
+package _04_UnderstandingJavaArrays;
 
 public class CastingArrays {
     public static void main(String[] args) {

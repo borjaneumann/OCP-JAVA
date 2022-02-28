@@ -1,4 +1,4 @@
-package understandingJavaArrays;
+package _04_UnderstandingJavaArrays;
 
 public class ArraysMultidimensional2D {
     public static void main(String[] args) {

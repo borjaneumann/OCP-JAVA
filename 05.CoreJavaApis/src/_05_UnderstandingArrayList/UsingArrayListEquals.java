@@ -1,4 +1,4 @@
-package UnderstandingArrayList;
+package _05_UnderstandingArrayList;
 
 import java.util.ArrayList;
 import java.util.List;

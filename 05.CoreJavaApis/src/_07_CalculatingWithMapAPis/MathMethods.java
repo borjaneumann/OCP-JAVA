@@ -1,4 +1,4 @@
-package CalculatingWithMapAPis;
+package _07_CalculatingWithMapAPis;
 
 public class MathMethods {
     public static void main(String[] args) {

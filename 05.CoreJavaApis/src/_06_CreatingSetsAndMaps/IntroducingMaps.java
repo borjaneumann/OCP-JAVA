@@ -1,4 +1,4 @@
-package SetsAndMaps;
+package _06_CreatingSetsAndMaps;
 
 import java.util.HashMap;
 import java.util.Map;

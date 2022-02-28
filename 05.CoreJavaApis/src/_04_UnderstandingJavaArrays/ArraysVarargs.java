@@ -1,4 +1,4 @@
-package understandingJavaArrays;
+package _04_UnderstandingJavaArrays;
 
 public class ArraysVarargs {
 //    public static void main(String[] args);

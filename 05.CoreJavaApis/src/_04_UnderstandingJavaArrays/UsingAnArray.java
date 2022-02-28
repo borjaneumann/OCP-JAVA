@@ -1,4 +1,4 @@
-package understandingJavaArrays;
+package _04_UnderstandingJavaArrays;
 
 public class UsingAnArray {
     public static void main(String[] args) {

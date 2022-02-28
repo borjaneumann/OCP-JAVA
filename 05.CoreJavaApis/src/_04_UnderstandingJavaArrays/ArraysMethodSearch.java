@@ -1,4 +1,4 @@
-package understandingJavaArrays;
+package _04_UnderstandingJavaArrays;
 
 import java.util.Arrays;
 
