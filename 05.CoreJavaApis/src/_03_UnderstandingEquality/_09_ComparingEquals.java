@@ -35,4 +35,16 @@ public class _09_ComparingEquals {
         StringBuilder to get a String to check for equality instead.
          */
     }
+    //The exam will try to trick you!
+    static class Tiger {
+        String name;
+        public static void main(String[] args) {
+            _09_ComparingEquals.Tiger t1 = new _09_ComparingEquals.Tiger();
+            _09_ComparingEquals.Tiger t2 = new _09_ComparingEquals.Tiger();
+            _09_ComparingEquals.Tiger t3 = t1;
+            System.out.println(t1 == t3); // true
+            System.out.println(t1 == t2); // false
+            System.out.println(t1.equals(t2)); // false, Tiger doesn't implement equal like String.
+        }
+    }
 }
