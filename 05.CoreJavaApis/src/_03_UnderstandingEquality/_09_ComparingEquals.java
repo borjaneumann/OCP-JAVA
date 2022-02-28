@@ -22,5 +22,17 @@ public class _09_ComparingEquals {
         String x = "Hello World";
         String z = " Hello World".trim();
         System.out.println("Are x and z equal?: " + x.equals(z)); // true
+
+        /*This works because the authors of the String class implemented a
+        standard method called equals to check the values inside the String
+        rather than the string reference itself. If a class doesn’t have an equals
+        method, Java determines whether the references point to the same object
+        —which is exactly what == does.
+
+        In case you are wondering, the authors of StringBuilder did not
+        implement equals(). If you call equals() on two StringBuilder
+        instances, it will check reference equality. You can call toString() on
+        StringBuilder to get a String to check for equality instead.
+         */
     }
 }
