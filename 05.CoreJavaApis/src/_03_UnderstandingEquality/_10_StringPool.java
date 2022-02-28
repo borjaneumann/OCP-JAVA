@@ -1,6 +1,6 @@
-package understandingEquality;
+package _03_UnderstandingEquality;
 
-public class StringPool {
+public class _10_StringPool {
     public static void main(String[] args) {
         String x = "Hello World";
         String y = "Hello World";
