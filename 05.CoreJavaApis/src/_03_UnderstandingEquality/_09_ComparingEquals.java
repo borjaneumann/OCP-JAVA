@@ -17,5 +17,10 @@ public class _09_ComparingEquals {
         //current reference for chaining
         System.out.println("One: " + one);
         System.out.println("Three: " + three);
+
+        // equals()  logical equality rather than object equality for String objects:
+        String x = "Hello World";
+        String z = " Hello World".trim();
+        System.out.println("Are x and z equal?: " + x.equals(z)); // true
     }
 }
