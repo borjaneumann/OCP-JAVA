@@ -2,7 +2,7 @@ package _04_UnderstandingJavaArrays;
 
 import java.util.Arrays;
 
-public class ArraysMethodComparing {
+public class _17_Comparing {
     public static void main(String[] args) {
         int[] numbers1 = {1,2,3};
         int[] numbers2 = {1,2,4};

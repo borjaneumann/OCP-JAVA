@@ -2,7 +2,7 @@ package _04_UnderstandingJavaArrays;
 
 import java.util.Arrays;
 
-public class ArraysMethodsSort {
+public class _15_Sorting {
     public static void main(String[] args) {
         //Sorting
         int[] numbers = {6,9,1};

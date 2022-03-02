@@ -2,7 +2,7 @@ package _04_UnderstandingJavaArrays;
 
 import java.util.Arrays;
 
-public class ArraysMethodSearch {
+public class _16_Searching {
     public static void main(String[] args) {
         int[] numbers = {2,4,6,8};
         System.out.println(Arrays.binarySearch(numbers,2));

@@ -1,6 +1,6 @@
 package _04_UnderstandingJavaArrays;
 
-public class ArraysVarargs {
+public class _18_Varargs {
 //    public static void main(String[] args);
 //    public static void main(String args[]);
 //    public static void main(String...args);

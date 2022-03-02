@@ -1,4 +1,4 @@
-package _04_UnderstandingJavaArrays;
+package _05_UnderstandingArrayList;
 
 import java.util.ArrayList;
 import java.util.Arrays;
