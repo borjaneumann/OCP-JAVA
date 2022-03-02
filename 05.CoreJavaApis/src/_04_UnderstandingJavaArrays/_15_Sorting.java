@@ -42,6 +42,15 @@ public class _15_Sorting {
         for (int i = words.length - 1; i >= 0; i--){
             System.out.print(words[i] + " ");
         }
+        //To keep an eye on!!
+        String[] strings = { "10", "9", "100" };
+        Arrays.sort(strings);
+        for (String string : strings)
+            System.out.println(string + " "); //10 100 9
+        /*The problem is that String sorts in alphabetic order, and 1 sorts
+        before 9. (Numbers sort before letters, and uppercase sorts before
+        lowercase, in case you were wondering.)
+         */
     }
 }
 
