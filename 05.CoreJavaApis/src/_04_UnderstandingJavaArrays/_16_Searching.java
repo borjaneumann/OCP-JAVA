@@ -26,14 +26,15 @@ public class _16_Searching {
         repeats this process until only one element is left.
          */
         int[] numbers = {2,4,6,8};
-        System.out.println(Arrays.binarySearch(numbers,2));
-        System.out.println(Arrays.binarySearch(numbers,4));
-        System.out.println(Arrays.binarySearch(numbers,1));//0-1
-        System.out.println(Arrays.binarySearch(numbers,3));//-1-1
-        System.out.println(Arrays.binarySearch(numbers,9));//-1-4
+        System.out.println(Arrays.binarySearch(numbers,2));//2 is index 0
+        System.out.println(Arrays.binarySearch(numbers,4));//4 is index 1
+        System.out.println(Arrays.binarySearch(numbers,1));//1 is index -1
+        System.out.println(Arrays.binarySearch(numbers,3));//3 is index -2
+        System.out.println(Arrays.binarySearch(numbers,9));//9 is NOT index -5
 
         //only with sorted arrays, otherwise we get surprises
         int[] unsortedArray = { 3, 12, 5, 4};
-        System.out.println(Arrays.binarySearch(unsortedArray,12));
+        System.out.println("Unsorted array: " + Arrays.binarySearch(unsortedArray,12));// 1
+        System.out.println("Unsorted array: " + Arrays.binarySearch(unsortedArray,5)); // -2 (Surprise!)
     }
 }
