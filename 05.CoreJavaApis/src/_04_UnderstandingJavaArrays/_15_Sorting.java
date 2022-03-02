@@ -15,15 +15,18 @@ public class _15_Sorting {
 
         //Sorting
         int[] numbers = {6,9,1};
+        System.out.println(Arrays.toString(numbers)); //[6, 9, 1]
+
         System.out.print("Sort ascending: ");
         Arrays.sort(numbers);
         for (int i = 0; i < numbers.length; i++){
             System.out.print(numbers[i] + " ");
         }
         System.out.println();
+
         System.out.print("Sort descending: ");
         Arrays.sort(numbers);
-        for (int i = numbers.length-1; i >= 0; i--){
+        for (int i = numbers.length-1; i >= 0; i--){ // This way is reversed.
             System.out.print(numbers[i] + " ");
         }
         System.out.println();
