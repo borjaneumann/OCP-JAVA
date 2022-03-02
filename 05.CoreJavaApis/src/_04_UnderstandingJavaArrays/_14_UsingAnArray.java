@@ -25,6 +25,8 @@ public class _14_UsingAnArray {
         for (int i = 0; i < numbers.length;i++){
             System.out.print((numbers[i]=i+5) + " ");// 5 6 7 8 9 10 11 12 13 14
         }
-
+        numbers[10] = 3; //ArrayIndexOutOfBoundsException
+        numbers[numbers.length] = 5; //ArrayIndexOutOfBoundsException
+        for (int i = 0; i <= numbers.length; i++) numbers[i] = i + 5;//ArrayIndexOutOfBoundsException <=
     }
 }
