@@ -4,6 +4,15 @@ import java.util.Arrays;
 
 public class _15_Sorting {
     public static void main(String[] args) {
+        /*
+        Arrays is the first class provided by Java we have used that requires an
+        import. To use it, you must have either of the following two statements in
+        your class:
+
+        import java.util.*; // import whole package including Arrays
+        import java.util.Arrays; // import just Arrays
+         */
+
         //Sorting
         int[] numbers = {6,9,1};
         System.out.print("Sort ascending: ");
