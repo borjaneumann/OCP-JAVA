@@ -30,6 +30,13 @@ public class _17_Comparing {
         System.out.println("First Array larger than second one: " + Arrays.compare(numbers5, numbers3)); // 1
 
         System.out.println("---------------------------------------------");
+        /*
+        - If both arrays are the same length and have the same values in each spot in the same order, return zero.
+        - If all the elements are the same but the second array has extra elements at the end, return a negative number.
+        - If all the elements are the same but the first array has extra elements at the end, return a positive number.
+        - If the first element that differs is smaller in the first array, return a negative number.
+        - If the first element that differs is larger in the first array, return a positive number.
+         */
         System.out.println("Now Arrays of different length");
         int[] numbers6 = {1,2,3,4};
         int[] numbers7 = {1,2,3,4};
