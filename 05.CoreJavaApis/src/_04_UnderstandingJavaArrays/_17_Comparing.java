@@ -54,6 +54,20 @@ public class _17_Comparing {
                 + Arrays.compare(numbers9, numbers10)); //-1
         System.out.println("First element that differs is larger in the first Array: "
                 + Arrays.compare(numbers10, numbers9));// 1
+        /*
+        Finally, what does smaller mean?
+        - null is smaller than any other value.
+        - For numbers, normal numeric order applies.
+        - For strings, one is smaller if it is a prefix of another.
+        - For strings/characters, numbers are smaller than letters.
+        - For strings/characters, uppercase is smaller than lowercase.
+
+         */
+        System.out.println(Arrays.compare(new int[]{1,2},new int[]{1})); // 1
+        System.out.println(Arrays.compare(new int[]{1,2},new int[]{1,2})); // 0
+        System.out.println(Arrays.compare(new String[]{"a"},new String[]{"aa"}));// -1
+        System.out.println(Arrays.compare(new String[]{"a"},new String[]{"A"}));//32
+        System.out.println(Arrays.compare(new String[]{"a"},new String[]{null}));// 1
 
     }
 }
