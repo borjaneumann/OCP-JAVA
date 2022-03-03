@@ -45,20 +45,15 @@ public class _17_Comparing {
         int[] numbers10= {1,2,3,4,5};
 
 
-        System.out.println("Same length, same values: " + Arrays.compare(numbers6,
-                numbers7));
+        System.out.println("Same length, same values: " + Arrays.compare(numbers6, numbers7)); //0
         System.out.println("Elements are the same but the second array has extra elements at the end: "
-                + Arrays.compare(numbers7,
-                numbers8));
+                + Arrays.compare(numbers7, numbers8)); // -1
         System.out.println("Elements are the same but the first array has extra elements at the end: "
-                + Arrays.compare(numbers8,
-                numbers7));
+                + Arrays.compare(numbers8, numbers7)); // 1
         System.out.println("First element that differs is smaller in the first Array: "
-                + Arrays.compare(numbers9,
-                numbers10));
+                + Arrays.compare(numbers9, numbers10)); //-1
         System.out.println("First element that differs is larger in the first Array: "
-                + Arrays.compare(numbers10,
-                numbers9));
+                + Arrays.compare(numbers10, numbers9));// 1
 
     }
 }
