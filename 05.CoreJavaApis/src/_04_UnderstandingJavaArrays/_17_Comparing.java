@@ -3,7 +3,23 @@ package _04_UnderstandingJavaArrays;
 import java.util.Arrays;
 
 public class _17_Comparing {
+
     public static void main(String[] args) {
+        /*
+        Java also provides methods to compare two arrays to determine which is
+        “smaller.” First we will cover the compare() method and then go on to
+        mismatch().
+
+        There are a bunch of rules you need to know before calling compare().
+
+        First you need to learn what the return value means. You do not need to
+        know the exact return values, but you do need to know the following:
+        - A negative number means the first array is smaller than the second.
+        - A zero means the arrays are equal.
+        - A positive number means the first array is larger than the second.
+
+
+         */
         int[] numbers1 = {1,2,3};
         int[] numbers2 = {1,2,4};
         int[] numbers3 = {1,2,3};
