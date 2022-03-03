@@ -37,13 +37,13 @@ public class _17_Comparing {
         - If the first element that differs is smaller in the first array, return a negative number.
         - If the first element that differs is larger in the first array, return a positive number.
          */
+
         System.out.println("Now Arrays of different length");
         int[] numbers6 = {1,2,3,4};
         int[] numbers7 = {1,2,3,4};
         int[] numbers8 = {1,2,3,4,5};
         int[] numbers9 = {1,2,2,4,5};
         int[] numbers10= {1,2,3,4,5};
-
 
         System.out.println("Same length, same values: " + Arrays.compare(numbers6, numbers7)); //0
         System.out.println("Elements are the same but the second array has extra elements at the end: "
@@ -68,6 +68,7 @@ public class _17_Comparing {
         System.out.println(Arrays.compare(new String[]{"a"},new String[]{"aa"}));// -1
         System.out.println(Arrays.compare(new String[]{"a"},new String[]{"A"}));//32
         System.out.println(Arrays.compare(new String[]{"a"},new String[]{null}));// 1
+        System.out.println(Arrays.compare(new String[]{"a"},new String[]{"1"}));// 48
 
     }
 }
