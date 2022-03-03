@@ -12,14 +12,12 @@ public class _17_Comparing {
 
         There are a bunch of rules you need to know before calling compare().
 
-        First you need to learn what the return value means. You do not need to
-        know the exact return values, but you do need to know the following:
         - A negative number means the first array is smaller than the second.
         - A zero means the arrays are equal.
         - A positive number means the first array is larger than the second.
-
-
          */
+        System.out.println("Single value comparison: " + Arrays.compare(new int[]{1},new int[]{2}));// -1
+
         int[] numbers1 = {1,2,3};
         int[] numbers2 = {1,2,4};
         int[] numbers3 = {1,2,3};
@@ -27,12 +25,9 @@ public class _17_Comparing {
         int[] numbers5 = {5,2,3};
 
         //--------------------------------------------
-        System.out.println("First Array smaller than second one: " + Arrays.compare(numbers1,
-                        numbers2));
-        System.out.println("Arrays are equal: " + Arrays.compare(numbers1,
-                numbers3));
-        System.out.println("First Array larger than second one: " + Arrays.compare(numbers5,
-                numbers3));
+        System.out.println("First Array smaller than second one: " + Arrays.compare(numbers1, numbers2));// -1
+        System.out.println("Arrays are equal: " + Arrays.compare(numbers1, numbers3)); // 0
+        System.out.println("First Array larger than second one: " + Arrays.compare(numbers5, numbers3)); // 1
 
         System.out.println("---------------------------------------------");
         System.out.println("Now Arrays of different length");
