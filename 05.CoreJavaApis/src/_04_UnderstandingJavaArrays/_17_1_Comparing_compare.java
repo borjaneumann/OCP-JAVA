@@ -2,7 +2,7 @@ package _04_UnderstandingJavaArrays;
 
 import java.util.Arrays;
 
-public class _17_Comparing {
+public class _17_1_Comparing_compare {
 
     public static void main(String[] args) {
         /*
