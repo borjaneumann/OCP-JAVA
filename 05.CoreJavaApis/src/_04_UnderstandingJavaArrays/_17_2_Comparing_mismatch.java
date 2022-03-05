@@ -23,14 +23,13 @@ public class _17_2_Comparing_mismatch {
         System.out.println(Arrays.mismatch(new String[] {"a"}, new String[] {"A"}));//index 0
         System.out.println(Arrays.mismatch(new int[] {1, 2}, new int[]{1})); //index 1
 
-        /*Equality vs. comparison vs. mismatch
+        /*
+        Equality vs. comparison vs. mismatch
         Method          When arrays are the same        When arrays are different
         --------------------------------------------------------------------------
         equals()        true                            false
         compare()       0                               Positive or negative number
         mismatch()      -1                              Zero or positive index
-
          */
-
     }
 }
