@@ -4,7 +4,6 @@ public class _19_MultidimensionalArrays {
     /*Arrays are objects, and of course array components can be objects.
     arrays can hold other arrays, and of course they can.
      */
-
     public static void main(String[] args) {
 
         //CREATING A MULTIDIMENSIONAL ARRAY
@@ -24,7 +23,8 @@ public class _19_MultidimensionalArrays {
         rectangle[1][1]="This is ";
         rectangle[2][0]="a 2D";
         rectangle[2][1]=" Array!!!";
-
+        // The most common operation on a multidimensional array is to loop
+        //through it. This example prints out a 2D array:
         for (int i = 0; i < rectangle.length; i++){
             for (int j = 0; j < rectangle[i].length; j++) {
                 System.out.print(rectangle[i][j]); //Hello there!!!This is a 2D Array!!!
@@ -33,6 +33,15 @@ public class _19_MultidimensionalArrays {
         //While that array happens to be rectangular in shape, an array doesn’t need
         //to be. Consider this one:
         int[][] differentSizes = {{1, 4}, {3}, {9,8,7}};
+
+        /*Another way to create an asymmetric array is to initialize just an array’s
+        first dimension and define the size of each array component in a separate
+        statement:*/
+        int [][] args1 = new int[4][];
+        args1[0] = new int[5];
+        args1[1] = new int[3];
+        /*This technique reveals what you really get with Java: arrays of arrays that,
+        properly managed, offer a multidimensional effect.*/
 
         //3 DIMENSIONAL ARRAYS
         int[][][] arr = new int[2][3][2];
@@ -48,7 +57,7 @@ public class _19_MultidimensionalArrays {
         arr[1][1][1] = 1;
         arr[1][2][0] = 2;
         arr[1][2][1] = 3;
-
+        System.out.println();
         for (int i = 0; i < arr.length; i++){
             for (int j = 0; j < arr[i].length; j++) {
                 for (int k = 0; k < arr[i][j].length; k++) {
@@ -58,8 +67,5 @@ public class _19_MultidimensionalArrays {
             }
             System.out.println();
         }
-
     }
-
-
 }
