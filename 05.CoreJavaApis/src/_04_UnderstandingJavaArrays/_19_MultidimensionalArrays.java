@@ -30,6 +30,34 @@ public class _19_MultidimensionalArrays {
                 System.out.print(rectangle[i][j]); //Hello there!!!This is a 2D Array!!!
             }
         }
+        //While that array happens to be rectangular in shape, an array doesn’t need
+        //to be. Consider this one:
+        int[][] differentSizes = {{1, 4}, {3}, {9,8,7}};
+
+        //3 DIMENSIONAL ARRAYS
+        int[][][] arr = new int[2][3][2];
+        arr[0][0][0] = 1;
+        arr[0][0][1] = 2;
+        arr[0][1][0] = 3;
+        arr[0][1][1] = 4;
+        arr[0][2][0] = 5;
+        arr[0][2][1] = 6;
+        arr[1][0][0] = 7;
+        arr[1][0][1] = 8;
+        arr[1][1][0] = 9;
+        arr[1][1][1] = 1;
+        arr[1][2][0] = 2;
+        arr[1][2][1] = 3;
+
+        for (int i = 0; i < arr.length; i++){
+            for (int j = 0; j < arr[i].length; j++) {
+                for (int k = 0; k < arr[i][j].length; k++) {
+                    System.out.print(arr[i][j][k]);
+                }
+                System.out.println();
+            }
+            System.out.println();
+        }
 
     }
 
