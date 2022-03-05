@@ -3,7 +3,7 @@ package _05_UnderstandingArrayList;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ArrayListCreation {
+public class _21_CreatingAnArrayList {
     public static void main(String[] args) {
 
         //Java 5
