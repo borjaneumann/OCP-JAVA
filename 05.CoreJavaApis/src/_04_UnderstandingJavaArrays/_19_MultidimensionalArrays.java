@@ -1,13 +1,23 @@
 package _04_UnderstandingJavaArrays;
 
-public class ArraysMultidimensional2D {
+public class _19_MultidimensionalArrays {
+    /*Arrays are objects, and of course array components can be objects.
+    arrays can hold other arrays, and of course they can.
+     */
+
     public static void main(String[] args) {
+
+        //CREATING A MULTIDIMENSIONAL ARRAY
+
         int[][] vars1; //2D Array
         int vars2 [][]; //2D Array
         int[] vars3 []; //2D Array. Confusing style.
 
         int[] vars4 [], space [][]; // 2D Array and 3D Array. Confusing style
-        String [][] rectangle = new String[3][2];
+
+        //You can specify the size of your multidimensional array in the declaration if you like:
+        String [][] rectangle = new String[3][2]; //Indexes are describing the arrau.
+        //Three elements and each element contains 2 elements.
         rectangle[0][0]="Hello";
         rectangle[0][1]=" there";
         rectangle[1][0]="!!!";
@@ -17,7 +27,7 @@ public class ArraysMultidimensional2D {
 
         for (int i = 0; i < rectangle.length; i++){
             for (int j = 0; j < rectangle[i].length; j++) {
-                System.out.print(rectangle[i][j]);
+                System.out.print(rectangle[i][j]); //Hello there!!!This is a 2D Array!!!
             }
         }
 
