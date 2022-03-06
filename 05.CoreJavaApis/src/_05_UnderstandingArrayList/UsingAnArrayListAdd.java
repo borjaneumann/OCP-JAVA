@@ -5,7 +5,7 @@ import java.util.List;
 
 public class UsingAnArrayListAdd {
     public static void main(String[] args) {
-        //ArrayList implements TpString
+        //ArrayList implements ToString
 
         //add
         //Signature
