@@ -5,8 +5,11 @@ import java.util.List;
 
 public class _22_4_UsingArrayListIsEmptyAndSize {
     public static void main(String[] args) {
+
         //boolean isEmpty;
         //int size();
+
+        //The isEmpty() and size() methods look at how many of the slots are in use.
         List<String> birds = new ArrayList<>();
         System.out.println(birds.isEmpty());//true
         System.out.println(birds.size());//0
@@ -16,6 +19,5 @@ public class _22_4_UsingArrayListIsEmptyAndSize {
         System.out.println(birds.size());//2
 
         //isEmpty -> size() == 0;
-
     }
 }
