@@ -4,8 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class _22_5_UsingArrayListClear {
-    //void clear()
+
     public static void main(String[] args) {
+
+        //void clear() -> discard all elements of the ArrayList
+
         List<String> birds = new ArrayList<>();
         birds.add("hawk"); //[hawk]
         birds.add("hawk");//[hawk, hawk]
