@@ -17,10 +17,6 @@ public class _21_CreatingAnArrayList {
         ArrayList<String> list4 = new ArrayList<String>();
         ArrayList<String> list5 = new ArrayList<>();//diamond operator empty, also ok
 
-        //List
-        List<String> list6 = new ArrayList<>();
-        //ArrayList <String> list7 = new List<String>();//cannot be instantiated.ArrayList cannot contain a list
-
         //Using VAR with ArrayList
         var strings = new ArrayList<String>();
         strings.add("a");
@@ -38,5 +34,11 @@ public class _21_CreatingAnArrayList {
         //See how to output values below
         System.out.println(strings.toString());
         System.out.println(strings);
+
+        /*List (ArrayList implements an interface called List.)
+        An ArrayList is a List.you can store an ArrayList in a List reference variable but not vice versa.
+        The reason is that List is an interface and interfaces can’t be instantiated.*/
+        List<String> list6 = new ArrayList<>();
+        //ArrayList <String> list7 = new List<String>();//cannot be instantiated.ArrayList cannot contain a list
     }
 }
