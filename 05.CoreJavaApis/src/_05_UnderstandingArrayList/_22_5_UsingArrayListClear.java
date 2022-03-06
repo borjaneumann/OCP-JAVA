@@ -3,7 +3,7 @@ package _05_UnderstandingArrayList;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UsingArrayListClear {
+public class _22_5_UsingArrayListClear {
     //void clear()
     public static void main(String[] args) {
         List<String> birds = new ArrayList<>();

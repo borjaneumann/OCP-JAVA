@@ -3,7 +3,7 @@ package _05_UnderstandingArrayList;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UsingArrayListContains {
+public class _22_6_UsingArrayListContains {
 
     public static void main(String[] args) {
         //boolean contains(Object object);

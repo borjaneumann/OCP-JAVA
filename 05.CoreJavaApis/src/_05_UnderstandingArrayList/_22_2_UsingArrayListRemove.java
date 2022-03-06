@@ -3,7 +3,7 @@ package _05_UnderstandingArrayList;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UsingArrayListRemove {
+public class _22_2_UsingArrayListRemove {
     public static void main(String[] args) {
         //boolean remove (Object object)
         //E remove (int index)

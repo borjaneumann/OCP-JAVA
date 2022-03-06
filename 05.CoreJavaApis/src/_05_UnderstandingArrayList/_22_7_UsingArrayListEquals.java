@@ -3,7 +3,7 @@ package _05_UnderstandingArrayList;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UsingArrayListEquals {
+public class _22_7_UsingArrayListEquals {
     public static void main(String[] args) {
 
         //boolean equals(Object object);
