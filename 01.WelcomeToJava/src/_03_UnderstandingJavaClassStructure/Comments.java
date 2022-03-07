@@ -1,4 +1,4 @@
-package UnderstandingJavaClassStructure;
+package _03_UnderstandingJavaClassStructure;
 
 public class Comments {
     //comment until the end of line

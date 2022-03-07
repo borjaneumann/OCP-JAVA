@@ -1,4 +1,4 @@
-package _01_WritingAMainMethod;
+package _04_WritingAMainMethod;
 
 public class Zoo {
     public static void main(String[] args) {

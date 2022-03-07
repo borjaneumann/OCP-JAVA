@@ -1,4 +1,4 @@
-package _04_UnderstandingPackageDeclarationsAndImports;
+package _05_UnderstandingPackageDeclarationsAndImports;
 
 //import java.util.Random;
 import java.util.*; //Wildcard

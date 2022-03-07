@@ -1,4 +1,4 @@
-package _05_OrderingElementsInAClass;
+package _06_OrderingElementsInAClass;
 
 public class OrderingElementsInAClass {
     /*

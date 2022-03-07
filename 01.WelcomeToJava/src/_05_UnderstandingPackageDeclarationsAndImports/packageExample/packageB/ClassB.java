@@ -1,6 +1,6 @@
-package _04_UnderstandingPackageDeclarationsAndImports.packageExample.packageB;
+package _05_UnderstandingPackageDeclarationsAndImports.packageExample.packageB;
 
-import _04_UnderstandingPackageDeclarationsAndImports.packageExample.packageA.*;
+import _05_UnderstandingPackageDeclarationsAndImports.packageExample.packageA.*;
 
 
 import java.util.Date;

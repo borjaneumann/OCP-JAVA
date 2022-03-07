@@ -1,4 +1,4 @@
-package _01_WritingAMainMethod;
+package _04_WritingAMainMethod;
 
 public class _01_JRE {
     /*

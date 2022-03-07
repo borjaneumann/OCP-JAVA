@@ -1,4 +1,4 @@
-package UnderstandingJavaClassStructure;
+package _03_UnderstandingJavaClassStructure;
 
 public class ClassesVSFiles {
 
