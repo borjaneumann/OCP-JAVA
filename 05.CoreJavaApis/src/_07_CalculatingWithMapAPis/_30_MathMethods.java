@@ -1,6 +1,6 @@
 package _07_CalculatingWithMapAPis;
 
-public class MathMethods {
+public class _30_MathMethods {
     public static void main(String[] args) {
         //min() and max()
         int first = Math.min(7,9); //7
