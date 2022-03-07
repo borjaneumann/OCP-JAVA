@@ -1,6 +1,6 @@
 package _03_UnderstandingJavaClassStructure;
 
-public class Comments {
+public class _05_Comments {
     //comment until the end of line
 
     /*Multiple

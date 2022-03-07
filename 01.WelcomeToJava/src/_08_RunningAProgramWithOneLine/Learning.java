@@ -1,4 +1,4 @@
-package _03_RunningAProgramWithOneLine;
+package _08_RunningAProgramWithOneLine;
 
 public class Learning {
     public static void main(String[] args) {
