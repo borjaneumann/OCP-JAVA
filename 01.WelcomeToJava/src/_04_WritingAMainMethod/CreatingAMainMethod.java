@@ -1,4 +1,4 @@
-package _03_UnderstandingJavaClassStructure;
+package _04_WritingAMainMethod;
 
 public class CreatingAMainMethod {
 
