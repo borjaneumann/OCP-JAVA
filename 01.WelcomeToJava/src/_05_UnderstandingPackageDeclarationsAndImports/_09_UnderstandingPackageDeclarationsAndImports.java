@@ -15,5 +15,10 @@ public class _09_UnderstandingPackageDeclarationsAndImports {
     example, com.amazon.javabook tells us the code came from
     Amazon.com.
 
+    Child package
+    -------------
+    The package com.amazon.javabook is a child package of com.amazon. You can tell
+    because it’s longer and thus more specific.
+
      */
 }
