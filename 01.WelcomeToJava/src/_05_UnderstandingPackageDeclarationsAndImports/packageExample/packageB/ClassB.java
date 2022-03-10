@@ -1,6 +1,6 @@
 package _05_UnderstandingPackageDeclarationsAndImports.packageExample.packageB;
 
-import _05_UnderstandingPackageDeclarationsAndImports.packageExample.packageA.*;
+import _05_UnderstandingPackageDeclarationsAndImports.packageExample.packageA.ClassA;
 
 
 import java.util.Date;
@@ -75,74 +75,6 @@ require one dash (-). If you have the wrong number of dashes, the program
 will not run.
  */
 
-/*
-Naming Conflicts
-================
-One of the reasons for using packages is so that class names don’t have to
-be unique across all of Java. This means you’ll sometimes want to import
-a class that can be found in multiple places. A common example of this is
-the Date class. Java provides implementations of java.util.Date and
-java.sql.Date.
-
-What import could we use if we want the java.util.Date version?
-
-public class Conflicts {
-Date date;
-// some more code
-}
-
-The answer should be easy by now. You can write either import
-java.util.*; or import java.util.Date;. The tricky cases come about
-when other imports are present.
-
-import java.util.*;
-import java.sql.*; // causes Date declaration to not compile
-
-When the class is found in multiple packages, Java gives you a compiler error.
-error: reference to Date is ambiguous
-Date date;
-^
-
-But what do we do if we need a whole pile of other
-classes in the java.sql package?
-import java.util.Date;
-import java.sql.*;
-
-One more example. What does Java do with “ties” for precedence?
-
-import java.util.Date;
-import java.sql.Date;
-
-Java is smart enough to detect that this code is no good. As a programmer,
-you’ve claimed to explicitly want the default to be both the
-java.util.Date and java.sql.Date implementations. Because there
-can’t be two defaults, the compiler tells you the following:
-
-error: reference to Date is ambiguous
-Date date;
-^
-both class java.util.Date in java.util and class
-java.sql.Date in java.sql match
-
-If You really need to use two classes with the same name
-========================================================
-Sometimes you really do want to use Date from two different
-packages. When this happens, you can pick one to use in the import
-and use the other’s fully qualified class name [the package name, a
-period (.), and the class name] to specify that it’s special. Here’s an
-example:
-import java.util.Date;
-*/
-class Conflicts {
-    Date date;
-    java.sql.Date sqlDate;
-}
-/*
-Or you could have neither with an import and always use the fully qualified class name.*/
-class Conflicts1 {
-    java.util.Date date;
-    java.sql.Date sqlDate;
-}
 /*
 Compiling With JAR files
 ========================

@@ -9,6 +9,14 @@ public class _14_CompilingAndRunningCodeWithPackages {
     2. Create second class. C:\temp\packageb\ClassB.java    /tmp/packageb/ClassB.java
     3. Go to directory.     cd C:\temp                      cd /tmp
 
+    We will follow the classes from creatingANewPackage
+
+    javac packagea/ClassA.java packageb/ClassB.java -> all existing classes get compiled. The new class files
+    will be saved in the directories where the java files are.
+    javac packageb.ClassB.java -> Only the class with the main. We use a dot instead of the bar
+
+
+
      */
 
 }
