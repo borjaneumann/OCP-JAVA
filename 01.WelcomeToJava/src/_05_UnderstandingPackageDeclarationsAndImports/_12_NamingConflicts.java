@@ -51,9 +51,6 @@ public class _12_NamingConflicts {
         java.util.Date date;
         java.sql.Date sqlDate;
     }
-
-
-
      */
 }
 
