@@ -22,6 +22,7 @@ public class _15_UsingAnAlternateDirectory {
     with the two packages folder compiled
 
     java -cp ..\..\classes packageB.ClassB
+    to avoid writing the path you can set it: set classpath= c:\..\classes;.
 
     To run the program we have three options:
     java -cp classes packageb.ClassB --> java -cp classes packageB.ClassB
