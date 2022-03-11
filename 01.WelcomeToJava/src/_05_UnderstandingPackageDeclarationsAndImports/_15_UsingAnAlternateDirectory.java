@@ -21,6 +21,8 @@ public class _15_UsingAnAlternateDirectory {
     javac packageb\ClassB.java -d ..\..\classes ->This will create a new folder classes (if doesnt exist)
     with the two packages folder compiled
 
+    java -cp ..\..\classes packageB.ClassB
+
     To run the program we have three options:
     java -cp classes packageb.ClassB --> java -cp classes packageB.ClassB
     java -classpath classes packageb.ClassB
