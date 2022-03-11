@@ -15,8 +15,11 @@ public class _15_UsingAnAlternateDirectory {
 
     This commands create a folder named class and creates inside the same structure with the two packages.
 
-    javac packageB/ClassB.java -d ../../ -> This will not create a new folder named class
+    javac packageB/ClassB.java -d ..\..\ -> This will not create a new folder named class
     name but a compiled packagea and packageb
+
+    javac packageb\ClassB.java -d ..\..\classes ->This will create a new folder classes (if doesnt exist)
+    with the two packages folder compiled
 
     To run the program we have three options:
     java -cp classes packageb.ClassB --> java -cp classes packageB.ClassB
