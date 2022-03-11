@@ -24,6 +24,15 @@ public class _15_UsingAnAlternateDirectory {
     java -cp ..\..\classes packageB.ClassB
     to avoid writing the path you can set it: set classpath= c:\..\classes;.
 
+    C:\>javac -d . c:\Users\ABC\Desktop\javaConsoleCommands\packageB\ClassB.java c:\Users\
+    AMS\Desktop\javaConsoleCommands\packageA\ClassA.java
+    C:\>java packageB.ClassB
+    Got it
+
+    C:\>javac -d \Users\ABC\classes c:\Users\AMS\Desktop\javaConsoleCommands\packageB\
+    ClassB.java c:\Users\ABC\Desktop\javaConsoleCommands\packageA\ClassA.java
+    java -cp c:\Users\ABC\classes packageB.ClassB
+
     To run the program we have three options:
     java -cp classes packageb.ClassB --> java -cp classes packageB.ClassB
     java -classpath classes packageb.ClassB
