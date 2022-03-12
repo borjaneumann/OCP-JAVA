@@ -38,5 +38,20 @@ public class _15_UsingAnAlternateDirectory {
     java -classpath classes packageb.ClassB
     java --class-path classes packageb.ClassB
 
+    Options you need to know for the exam: javac
+    Option                                  Description
+    ============================================================
+    -cp <classpath>                         Location of classes needed to compile the program
+    -classpath <classpath>
+    --class-path <classpath>
+    -------------------------------------------------------------
+    -d <dir>                                Directory to place generated class files
+
+    Options you need to know for the exam: java
+    Option                                  Description
+    =====================================================================================
+    -cp <classpath>                         Location of classes needed to run the program
+    -classpath <classpath>
+    --class-path <classpath>
      */
 }
