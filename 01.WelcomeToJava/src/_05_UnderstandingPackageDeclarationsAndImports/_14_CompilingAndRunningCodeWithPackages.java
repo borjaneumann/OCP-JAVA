@@ -15,8 +15,17 @@ public class _14_CompilingAndRunningCodeWithPackages {
     will be saved in the directories where the java files are.
     javac packageb.ClassB.java -> Only the class with the main. We use a dot instead of the bar
 
+    COMPILING WITH WILDCARDS
+    You can use an asterisk to specify that you’d like to include all Java
+    files in a directory. This is convenient when you have a lot of files in
+    a package. We can rewrite the previous javac command like this:
+
+    javac packagea/*.java packageb/*.java
 
 
+    However, you cannot use a wildcard to include subdirectories. If you
+    were to write javac *.java, the code in the packages would not be
+    picked up.
      */
 
 }
