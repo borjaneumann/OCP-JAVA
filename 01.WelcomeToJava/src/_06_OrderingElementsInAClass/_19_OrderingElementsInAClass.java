@@ -1,8 +1,14 @@
 package _06_OrderingElementsInAClass;
 
-public class OrderingElementsInAClass {
+public class _19_OrderingElementsInAClass {
     /*
     let’s take a look at the correct order to type them into a file.
+    Fields and methods must be within a class.
+    multiple classes can be defined in the same file, but only one of
+    them is allowed to be public. The public class matches the name of the
+    file.
+    A file is also allowed to have neither class be public. As long as there isn’t
+    more than one public class in a file, it is okay.
 
     Element         Example                 Required?  Where does it go?
     =================================================================
