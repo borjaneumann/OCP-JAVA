@@ -10,7 +10,7 @@ public class _16_CompilingWithJARFiles {
 
     The period (.) indicates you want to include the current directory in the
     classpath. The rest of the command says to look for loose class files (or
-    packages) in someOtherLocation and within myJar.jar. Windows uses
+    packages) in some other Location and within myJar.jar. Windows uses
     semicolons (;) to separate parts of the classpath; other operating systems
     use colons.
 
