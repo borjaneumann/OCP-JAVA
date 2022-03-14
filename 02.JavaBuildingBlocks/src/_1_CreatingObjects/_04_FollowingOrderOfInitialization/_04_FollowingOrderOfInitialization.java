@@ -33,6 +33,7 @@ public class _04_FollowingOrderOfInitialization {
 
     Order matters for the fields and blocks of code. You can’t refer to a
     variable before it has been defined:
+
     { System.out.println(name); } // DOES NOT COMPILE
     private String name = "Fluffy";
 
