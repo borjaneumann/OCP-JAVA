@@ -21,6 +21,36 @@ public class _05_UsingPrimitveTypes {
     double          64-bit floating-point value 123.456
     char            16-bit Unicode value        'a'
 
+    SIGNED AND UNSIGNED: SHORT AND CHAR
+
+    You should be aware that short and char are closely
+    related, as both are stored as integral types with the same 16-bit
+    length.
+    The primary difference is that short is signed, which means
+    it splits its range across the positive and negative integers.
+    Alternatively, char is unsigned, which means range is strictly
+    positive including 0. Therefore, char can hold a higher positive
+    numeric value than short, but cannot hold any negative numbers.
+    The compiler allows them to be used interchangeably in some cases,
+    as shown here:
+    */
+    public static void main(String[] args) {
+        short bird = 'd';
+        char mammal = (short)83;
+        //Printing each variable displays the value associated with their type.
+        System.out.println(bird); // Prints 100
+        System.out.println(mammal); // Prints S
+    }
+
+    /*
+    This usage is not without restriction, though. If you try to set a value
+    outside the range of short or char, the compiler will report an error.
+
+    short reptile = 65535; // DOES NOT COMPILE
+    char fish = (short)-1; // DOES NOT COMPILE
+
+
+
      */
 
 }
