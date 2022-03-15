@@ -37,6 +37,5 @@ public class _04_FollowingOrderOfInitialization {
     { System.out.println(name); } // DOES NOT COMPILE
     private String name = "Fluffy";
 
-
      */
 }
