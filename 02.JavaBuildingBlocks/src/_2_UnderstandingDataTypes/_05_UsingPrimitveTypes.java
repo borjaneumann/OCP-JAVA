@@ -73,7 +73,16 @@ public class _05_UsingPrimitveTypes {
     * Binary (digits 0–1), which uses the number 0 followed by b or B as a prefix
         —for example, 0b10, 0B10
 
+    Underscore character
+    You can have underscores in numbers to make them easier to read:
 
+    int million1 = 1000000;
+    int million2 = 1_000_000;
+
+    You can add underscores anywhere except at the beginning of a literal, the
+    end of a literal, right before a decimal point, or right after a decimal point.
+    You can even place multiple underscore characters next to each other,
+    although we don’t recommend it.
 
 
 
