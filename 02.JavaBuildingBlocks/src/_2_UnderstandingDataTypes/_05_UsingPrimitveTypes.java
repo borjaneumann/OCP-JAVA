@@ -49,6 +49,10 @@ public class _05_UsingPrimitveTypes {
     short reptile = 65535; // DOES NOT COMPILE
     char fish = (short)-1; // DOES NOT COMPILE
 
+    A byte is 8 bits. A bit has two possible values.
+    Thus a byte can hold 2*8(power) = 256 numbers because it is signed -128 to 127
+    including 0.
+
 
 
      */
