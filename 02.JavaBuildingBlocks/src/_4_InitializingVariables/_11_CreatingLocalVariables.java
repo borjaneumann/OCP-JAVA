@@ -28,6 +28,10 @@ public class _11_CreatingLocalVariables {
         System.out.println(answer);
 //        System.out.println(onlyOneBranch); // DOES NOT COMPILE. The compiler knows there is the possibility for check to be false,
         // resulting in uninitialized code, and gives a compiler error.
+
+        /*On the exam, be wary of any local variable that is declared but not
+        initialized in a single line. This is a common place on the exam that
+        could result in a “Does not compile” answer.*/
     }
 
 
