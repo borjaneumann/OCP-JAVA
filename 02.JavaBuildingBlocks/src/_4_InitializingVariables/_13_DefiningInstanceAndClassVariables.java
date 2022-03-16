@@ -20,6 +20,23 @@ public class _13_DefiningInstanceAndClassVariables {
     the class without requiring an instance to use.
     You can tell a variable is a class variable because it has the keyword static before it.
 
+    Default Value
+    -------------
+    Instance and class variables do not require you to initialize them. As soon
+    as you declare these variables, they are given a default value. You’ll need
+    to memorize everything in the table below except the default value of char.
+    To make this easier, remember that the compiler doesn’t know what value to
+    use and so wants the simplest value it can give the type: null for an object
+    and 0/false for a primitive.
+
+    Default initialization values by type
+    Variable type                           Default initialization value
+    -------------------------------------------------------------
+    boolean                                 false
+    byte, short, int, long                  0
+    float, double                           0.0
+    char                                    '\u0000' (NUL)
+    All object references (everything else) null
 
      */
 }
