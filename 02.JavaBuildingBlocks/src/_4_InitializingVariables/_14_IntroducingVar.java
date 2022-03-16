@@ -57,5 +57,45 @@ public class _14_IntroducingVar {
     6:      var n = null; // DOES NOT COMPILE
     7: }
 
+    VAR and NULL
+    ------------
+    While a var cannot be initialized with a null value without a type, it
+    can be assigned a null value after it is declared, provided that the
+    underlying data type of the var is an object. Take a look at the
+    following code snippet:
+
+    13: var n = "myData";
+    14: n = null;
+    15: var m = 4;
+    16: m = null; // DOES NOT COMPILE
+
+    It might surprise you to learn that a var can be initialized to a null
+    value if the type is specified:
+    17: var o = (String)null;
+
+    package var;
+    public class Var {
+        public void var() {
+            var var = "var"; //naming a var var is legal!
+        }
+        public void Var() {
+            Var var = new Var(); // this is not a var but reference type called var
+        }
+    }
+
+    There’s one last rule you should be aware of. While var is not a reserved
+    word and allowed to be used as an identifier, it is considered a reserved
+    type name. A reserved type name means it cannot be used to define a type,
+    such as a class, interface, or enum. For example, the following code snippet
+    does not compile because of the class name:
+
+    public class var { // DOES NOT COMPILE
+        public var() {
+        }
+    }
+
+
+
+
     */
 }
