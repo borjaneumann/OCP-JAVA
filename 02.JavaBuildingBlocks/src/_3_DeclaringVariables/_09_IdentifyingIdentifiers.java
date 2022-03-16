@@ -30,12 +30,19 @@ public class _09_IdentifyingIdentifiers {
     Tip: When you see a nonstandard identifier, be sure to check if it is legal. If it’s not, you
     get to mark the answer “does not compile” and skip analyzing everything else in the question.
 
-    Style: camelCase : In camelCase, the first letter of each word is capitalized.
+    Style:
+
+    camelCase : In camelCase, the first letter of each word is capitalized.
         - Method and variable names are written in camelCase with the first
         letter being lowercase.
         - Class and interface names are written in camelCase with the first
         letter being uppercase. Also, don’t start any class name with $, as
         the compiler uses this symbol for some files.
+
+     snake_case : It simply uses an underscore (_) to separate words, often
+        entirely in lowercase. Constant static final values are often written
+        in snake_case, such as THIS_IS_A_CONSTANT. In addition, enum values
+        tend to be written with snake_case, as in Color.RED, Color.DARK_GRAY, and so on.
 
      */
 
