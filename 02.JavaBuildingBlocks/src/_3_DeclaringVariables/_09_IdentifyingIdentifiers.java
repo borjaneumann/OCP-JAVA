@@ -43,7 +43,6 @@ public class _09_IdentifyingIdentifiers {
         entirely in lowercase. Constant static final values are often written
         in snake_case, such as THIS_IS_A_CONSTANT. In addition, enum values
         tend to be written with snake_case, as in Color.RED, Color.DARK_GRAY, and so on.
-
      */
 
 }
