@@ -27,6 +27,16 @@ public class _09_IdentifyingIdentifiers {
     ** true/false/null are not actually reserved words, but literal values. Since they cannot be used as
     identifier names, we include them in this table.
 
+    Tip: When you see a nonstandard identifier, be sure to check if it is legal. If it’s not, you
+    get to mark the answer “does not compile” and skip analyzing everything else in the question.
+
+    Style: camelCase : In camelCase, the first letter of each word is capitalized.
+        - Method and variable names are written in camelCase with the first
+        letter being lowercase.
+        - Class and interface names are written in camelCase with the first
+        letter being uppercase. Also, don’t start any class name with $, as
+        the compiler uses this symbol for some files.
+
      */
 
 }
