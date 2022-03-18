@@ -66,8 +66,6 @@ public class _15_RelationalOperators {
     System.out.print(noObjectHere instanceof String);
 
     System.out.print(null instanceof null); // DOES NOT COMPILE
-
-
      */
 
 }
