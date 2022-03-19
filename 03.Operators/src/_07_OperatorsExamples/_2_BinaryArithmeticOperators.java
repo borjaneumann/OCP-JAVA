@@ -1,3 +1,5 @@
+package _07_OperatorsExamples;
+
 public class _2_BinaryArithmeticOperators {
     public static void main(String[] args) {
         int price = 2 * 5 + 3 * 4 -8;

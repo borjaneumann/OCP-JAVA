@@ -1,6 +1,6 @@
 package _04_WritingAMainMethod;
 
-public class _07_WritngAMainMethodIntro {
+public class _07_WritingAMainMethodIntro {
     /*
     A main() method is the gateway between the startup of a Java process, which is
     managed by the Java Virtual Machine (JVM), and the beginning of the programmer’s code.

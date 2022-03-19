@@ -1,3 +1,5 @@
+package _07_OperatorsExamples;
+
 public class _1_IncrementDecrementOperator {
     public static void main(String[] args) {
         int guests = 0;

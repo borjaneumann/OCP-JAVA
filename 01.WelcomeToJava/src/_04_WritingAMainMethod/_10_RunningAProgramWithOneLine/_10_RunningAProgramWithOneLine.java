@@ -35,7 +35,7 @@ Notice how we said “in memory.” Even if the code compiles properly, no .clas
 /*
 Full command                Single-file source-code command
 ===========================================================
-javac HelloWorld.java       java HellowWorld.java
+javac HelloWorld.java       java HelloWorld.java
 java HelloWorld
 -----------------------------------------------------------
 Produces a class file       Fully in memory
