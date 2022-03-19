@@ -13,7 +13,7 @@ public class _14_CompilingAndRunningCodeWithPackages {
 
     javac packagea/ClassA.java packageb/ClassB.java -> all existing classes get compiled. The new class files
     will be saved in the directories where the java files are.
-    javac packageb.ClassB.java -> Only the class with the main. We use a dot instead of the bar
+    java packageb.ClassB -> Only the class with the main. We use a dot instead of the bar
 
     COMPILING WITH WILDCARDS
     You can use an asterisk to specify that you’d like to include all Java

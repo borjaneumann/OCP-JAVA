@@ -13,7 +13,7 @@ public class _15_UsingAnAlternateDirectory {
 
     javac -d classes packagea/ClassA.java packageb/ClassB.java
 
-    This commands create a folder named class and creates inside the same structure with the two packages.
+    This command creates a folder named class and creates inside the same structure with the two packages.
 
     javac packageB/ClassB.java -d ..\..\ -> This will not create a new folder named class
     name but a compiled packagea and packageb

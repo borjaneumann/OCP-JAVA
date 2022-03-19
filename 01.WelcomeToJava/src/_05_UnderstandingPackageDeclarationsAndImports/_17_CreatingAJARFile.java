@@ -16,6 +16,7 @@ public class _17_CreatingAJARFile {
     directory. The Jar file will be saved wherever you execute the command.
 
     jar -cvf myNewFile.jar -C dir .
+    C:\Users\ABC\Desktop>jar -cvf desktop.jar -C javaConsoleCommands\jartest .
 
     There is no long form of the -C option. Table 1.5 lists the options you need
     to use the jar command to create a jar file. In Chapter 11, you will learn
