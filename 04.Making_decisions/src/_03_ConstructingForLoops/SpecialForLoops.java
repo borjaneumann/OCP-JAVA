@@ -1,3 +1,5 @@
+package _03_ConstructingForLoops;
+
 public class SpecialForLoops {
     public static void main(String[] args) {
         //1.Creating an infinite loop
@@ -32,7 +34,7 @@ public class SpecialForLoops {
         for (long i = 0, j =4; j < 5 && i < 10 ; i++, j++) {
             System.out.println("Example number 5: " + i + " ");
         }
-        System.out.println(j) // DOES NOT COMPILE;
+//        System.out.println(j) // DOES NOT COMPILE;
     }
 }
 

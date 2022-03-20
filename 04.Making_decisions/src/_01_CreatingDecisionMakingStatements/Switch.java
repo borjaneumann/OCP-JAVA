@@ -1,3 +1,5 @@
+package _01_CreatingDecisionMakingStatements;
+
 public class Switch {
     public static void main(String[] args) {
         int daysOfTheWeek = 6;

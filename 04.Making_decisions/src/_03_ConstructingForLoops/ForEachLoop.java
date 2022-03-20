@@ -1,3 +1,5 @@
+package _03_ConstructingForLoops;
+
 public class  ForEachLoop {
     public static void main(String[] args) {
         final String [] names = new String[4];

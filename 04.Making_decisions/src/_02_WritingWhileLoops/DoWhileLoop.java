@@ -1,3 +1,5 @@
+package _02_WritingWhileLoops;
+
 public class DoWhileLoop {
     public static void main(String[] args) {
         int llama = 16;

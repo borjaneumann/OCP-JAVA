@@ -1,3 +1,5 @@
+package _02_WritingWhileLoops;
+
 public class WhileLoopsInfiniteLoops {
     public static void main(String[] args) {
         int a = 5;
