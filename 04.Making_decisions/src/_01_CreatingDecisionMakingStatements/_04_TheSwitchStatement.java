@@ -37,11 +37,18 @@ public class _04_TheSwitchStatement {
         case 1: 2: System.out.print("January"); // DOES NOT COMPILE mixing cases
     }
     switch (month) {
-        case 1 || 2: System.out.print("January"); // DOES NOTCOMPILE || doest operate with numbers
+        case 1 || 2: System.out.print("January"); // DOES NOT COMPILE || doest operate with numbers
             //but | could have worked!
-     */
+
+    BREAK STATEMENTS
+    ----------------
+    if you leave out the break statement, flow will continue to the next proceeding case or default
+    block automatically.
+    */
+
     public static void main(String[] args) {
 
+        //Classic switch use case
         int daysOfTheWeek = 6;
         switch(daysOfTheWeek){
             case 1:
@@ -68,5 +75,20 @@ public class _04_TheSwitchStatement {
             default:
                 System.out.println("Please enter a number between 1 and 7");
         }
+        var dayOfWeek = 5;
+        switch(dayOfWeek) {
+            case 0:
+                System.out.println("Sunday");
+            default:
+                System.out.println("Weekday");
+
+            case 6:
+                System.out.println("Saturday");
+                break;
+        }
+        /*
+        This prints out Weekday and Saturday. it jumps directly to the default case and executed the cases with a break.
+        The order of the default case is important!
+         */
     }
 }
