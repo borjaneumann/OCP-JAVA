@@ -1,6 +1,6 @@
 package _03_ConstructingForLoops;
 
-public class SpecialForLoops {
+public class _10_SpecialForLoops {
     public static void main(String[] args) {
         //1.Creating an infinite loop
 //        for(;;) {
@@ -35,6 +35,20 @@ public class SpecialForLoops {
             System.out.println("Example number 5: " + i + " ");
         }
 //        System.out.println(j) // DOES NOT COMPILE;
+
+        //6. PRINTING ELEMENTS IN REVERSE
+        for (int i = 5; i > -3; i--) {
+            System.out.println("Reverse loop 1" + i);
+        }
+        String name = "Alexander";
+        for (int i = name.length() - 1; i >= 0; i--) {
+            System.out.println("Reverse loop 2" + name.charAt(i));
+        }
+        for (int i = 8 - 1; i >= 0; i--) {
+            System.out.println(name.charAt(i));
+        }
+        System.out.println("Letter at index 5: " + name.charAt(5));
+
     }
 }
 

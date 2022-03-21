@@ -1,6 +1,6 @@
 package _03_ConstructingForLoops;
 
-public class  ForEachLoop {
+public class _11_TheForEachLoop {
     public static void main(String[] args) {
         final String [] names = new String[4];
         names[0] = "Tony";
