@@ -24,6 +24,4 @@ public class _13_AddingOptionalLabels {
             System.out.println();
         }
     }
-
-
 }
