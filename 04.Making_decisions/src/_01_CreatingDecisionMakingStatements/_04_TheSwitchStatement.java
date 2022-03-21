@@ -13,21 +13,21 @@ public class _04_TheSwitchStatement {
     =============
     switch (variableToTest) { curly brace required
 
-        case constantExpression1 :   switch statement may contain 0 or more case branches
-            ///branch for case1:
-            break;
-            case constantExpression2 :   switch statement may contain 0 or more case branches
-            ///branch for case2:
-            break; // they terminate the switch statement and return flow control to the
-                        enclosing statement.
-            ...
-            default; //can be at any location
-            //branch for default
+    case constantExpression1 :   switch statement may contain 0 or more case branches
+        ///branch for case1:
+        break;
+        case constantExpression2 :   switch statement may contain 0 or more case branches
+        ///branch for case2:
+        break; // they terminate the switch statement and return flow control to the
+                    enclosing statement.
+        ...
+        default; //can be at any location
+        //branch for default
 
-       }curly brace required
+   }curly brace required
 
-       Switch Data Types: all primitive numeric types(int,byte, short,char),
-       their wrapper classes, String, ENUMS and var if refer to the already mentioned ones.
+   Switch Data Types: all primitive numeric types(int,byte, short,char),
+   their wrapper classes, String, ENUMS and var if refer to the already mentioned ones.
 
     Pay attention to this!!!
     int month = 5;
