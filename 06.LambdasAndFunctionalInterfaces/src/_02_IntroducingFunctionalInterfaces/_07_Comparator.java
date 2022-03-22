@@ -1,4 +1,4 @@
-package _02_IntroducingFunctionalInterfaces._06_Comparator;
+package _02_IntroducingFunctionalInterfaces;
 
 import java.util.ArrayList;
 import java.util.Comparator;

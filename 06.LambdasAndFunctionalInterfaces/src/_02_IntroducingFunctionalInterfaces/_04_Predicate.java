@@ -1,4 +1,4 @@
-package _02_IntroducingFunctionalInterfaces._03_Predicate;
+package _02_IntroducingFunctionalInterfaces;
 
 import java.util.function.Predicate;
 

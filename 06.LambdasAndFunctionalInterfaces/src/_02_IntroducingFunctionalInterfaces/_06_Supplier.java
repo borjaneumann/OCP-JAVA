@@ -1,4 +1,4 @@
-package _02_IntroducingFunctionalInterfaces._05_Supplier;
+package _02_IntroducingFunctionalInterfaces;
 
 import java.util.Random;
 import java.util.function.Supplier;
