@@ -26,14 +26,6 @@ public class _07_Comparator {
         Comparator<String> strings = (s1, s2) -> s2.compareTo(s1); // sort in descending order
         Comparator<String> moreStrings = (d1, d2) -> -d1.compareTo(d2); // sort in descending order
 
-        System.out.println(compareInt(ints));
-
-        String nameA = "Anthony";
-        String nameB = "Robert";
-
-        Comparator<String> compareString = (a,b) -> a.compareTo(b);
-        System.out.println("String comparator: " + compareString.compare(nameA, nameB));
-
         ArrayList<Integer> list = new ArrayList<Integer>();
         list.add(10);
         list.add(50);
@@ -46,8 +38,16 @@ public class _07_Comparator {
         list1.add(23);
         list1.add(23);
         list1.add(23);
+        String nameA = "Anthony";
+        String nameB = "Robert";
 
+        list.sort((a,b)-> a.compareTo(b));
+        System.out.println("Ascending list: " + list); // Ascending list: [10, 20, 30, 40, 50, 60]
+        list.sort((a,b)->-a.compareTo(b));
+        System.out.println("Descending list: " + list); // Descending list: [60, 50, 40, 30, 20, 10]
 
+        Comparator<String> compareString = (a,b) -> a.compareTo(b);
+        System.out.println("String comparator: " + compareString.compare(nameA, nameB)); // -17
         Comparator<Integer> c = (i1, i2) -> i1 - i2;
         c.compare(list.size(),list1.size());
         System.out.println(c.compare(list.size(),list1.size())); // 3
