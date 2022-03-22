@@ -1,4 +1,4 @@
-package _0_calculatorExample;
+package _00_calculatorExample;
 
 public class Operations {
     public static void main(String[] args) {

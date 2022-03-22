@@ -1,4 +1,4 @@
-package _0_calculatorExample;
+package _00_calculatorExample;
 
 @FunctionalInterface
 public interface ICalculator {

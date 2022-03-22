@@ -1,4 +1,4 @@
-package _3_functionalInterface.consumer;
+package _02_IntroducingFunctionalInterfaces._04_Consumer;
 
 import java.util.function.Consumer;
 

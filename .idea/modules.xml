@@ -10,7 +10,9 @@
       <module fileurl="file://$PROJECT_DIR$/06.LambdasAndFunctionalInterfaces/06.LambdasAndFunctionalInterfaces.iml" filepath="$PROJECT_DIR$/06.LambdasAndFunctionalInterfaces/06.LambdasAndFunctionalInterfaces.iml" />
       <module fileurl="file://$PROJECT_DIR$/07.MethodsAndEncapsulation/07.MethodsAndEncapsulation.iml" filepath="$PROJECT_DIR$/07.MethodsAndEncapsulation/07.MethodsAndEncapsulation.iml" />
       <module fileurl="file://$PROJECT_DIR$/08.ClassDesign/08.ClassDesign.iml" filepath="$PROJECT_DIR$/08.ClassDesign/08.ClassDesign.iml" />
+      <module fileurl="file://$PROJECT_DIR$/09.AdvancedClassDesign/09.AdvancedClassDesign.iml" filepath="$PROJECT_DIR$/09.AdvancedClassDesign/09.AdvancedClassDesign.iml" />
       <module fileurl="file://$PROJECT_DIR$/10.Exceptions/10.Exceptions.iml" filepath="$PROJECT_DIR$/10.Exceptions/10.Exceptions.iml" />
+      <module fileurl="file://$PROJECT_DIR$/11.Modules/11.Modules.iml" filepath="$PROJECT_DIR$/11.Modules/11.Modules.iml" />
       <module fileurl="file://$PROJECT_DIR$/12.JavaFundamentals/12.JavaFundamentals.iml" filepath="$PROJECT_DIR$/12.JavaFundamentals/12.JavaFundamentals.iml" />
       <module fileurl="file://$PROJECT_DIR$/13.Annotations/13.Annotations.iml" filepath="$PROJECT_DIR$/13.Annotations/13.Annotations.iml" />
       <module fileurl="file://$PROJECT_DIR$/14.GenericsAndCollections/14.GenericsAndCollections.iml" filepath="$PROJECT_DIR$/14.GenericsAndCollections/14.GenericsAndCollections.iml" />

@@ -1,6 +1,6 @@
-package _3_functionalInterface.predicate;
+package _02_IntroducingFunctionalInterfaces._03_Predicate;
 
-import _1_lambdaExample.Animal;
+import _01_WritingSimpleLamdas._01_LambdaExamples.Animal;
 
 import java.util.*;
 import java.util.function.Predicate;
