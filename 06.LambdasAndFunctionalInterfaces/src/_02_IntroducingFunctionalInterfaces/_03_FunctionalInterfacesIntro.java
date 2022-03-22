@@ -13,6 +13,5 @@ public class _03_FunctionalInterfacesIntro {
     it’s not a functional interface. Remember that having exactly one
     abstract method is what makes it a functional interface, not the
     annotation.
-
      */
 }
