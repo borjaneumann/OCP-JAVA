@@ -1,4 +1,4 @@
-package _1_lambdaExample;
+package _01_WritingSimpleLamdas._01_LambdaExamples;
 
 import java.util.ArrayList;
 import java.util.List;
