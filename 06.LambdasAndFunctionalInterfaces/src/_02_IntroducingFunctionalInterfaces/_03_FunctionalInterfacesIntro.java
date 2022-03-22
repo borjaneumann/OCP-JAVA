@@ -13,5 +13,13 @@ public class _03_FunctionalInterfacesIntro {
     it’s not a functional interface. Remember that having exactly one
     abstract method is what makes it a functional interface, not the
     annotation.
+
+    Functional interface        # parameters        Return type
+    =================================================================
+    Comparator                  2                   int
+    Consumer                    1                   void
+    Predicate                   0                   boolean
+    Supplier                    None                One (type varies)
+
      */
 }
