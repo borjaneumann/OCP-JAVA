@@ -1,0 +1,2 @@
+package _03_workingWithVariablesInLambdas;public class _11_VariablesReferencesFromTheLambdaBody {
+}
