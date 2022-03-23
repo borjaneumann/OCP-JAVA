@@ -1,4 +1,4 @@
-package defaultAccess;
+package _03_ApplyingAccessModifiers._03_02_DefaultAccess;
 
 public class GoodDuckling {
     public void makeNoise (){

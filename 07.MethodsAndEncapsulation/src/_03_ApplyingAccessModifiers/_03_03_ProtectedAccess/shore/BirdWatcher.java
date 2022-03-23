@@ -1,4 +1,6 @@
-package _03_ApplyingAccessModifiers._03_03_ProtectedAccess;
+package _03_ApplyingAccessModifiers._03_03_ProtectedAccess.shore;
+
+import _03_ApplyingAccessModifiers._03_03_ProtectedAccess.shore.Bird;
 
 public class BirdWatcher {
     public void watchBird(){

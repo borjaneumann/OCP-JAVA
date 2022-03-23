@@ -4,8 +4,8 @@ import java.util.*;
 
 public class _14_ForEach {
     /*
-    Our final method is forEach(). It takes a Consumer and calls that lambda
-    for each element encountered.
+    Our final method is forEach().
+    It takes a Consumer and calls that lambda for each element encountered.
      */
     public static void main(String[] args) {
         //List

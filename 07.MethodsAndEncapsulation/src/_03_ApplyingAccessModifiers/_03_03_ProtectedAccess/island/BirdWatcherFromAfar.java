@@ -1,6 +1,6 @@
-package _03_ApplyingAccessModifiers._03_02_DefaultAccess;
+package _03_ApplyingAccessModifiers._03_03_ProtectedAccess.island;
 
-import _03_ApplyingAccessModifiers._03_03_ProtectedAccess.Bird;
+import _03_ApplyingAccessModifiers._03_03_ProtectedAccess.shore.Bird;
 
 public class BirdWatcherFromAfar {
     public void watchBird() {

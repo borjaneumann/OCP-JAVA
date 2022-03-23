@@ -2,6 +2,7 @@ package _01_DesigningMethods;
 
 public class _01_AccessModifiers {
     /*
+
     * private -> The private modifier means the method can be called only from
     within the same class.
 
@@ -11,8 +12,11 @@ public class _01_AccessModifiers {
     access modifier.
 
     * protected The protected modifier means the method can be called only
-    from classes in the same package or subclasses. You’ll learn about
-    subclasses in Chapter 8, “Class Design.”
+    from classes in the same package or subclasses.
+        - Looking at it a different way, the protected rules apply under two scenarios:
+            1) A member is used without referring to a variable. This is the case on lines.
+               In this case, we are taking advantage of inheritance and protected access is allowed.
+            2) A member is used through a variable.
 
     * public The public modifier means the method can be called from any class.
 
@@ -22,6 +26,7 @@ public class _01_AccessModifiers {
     void walk4() {}
 
     Examples
+    ========
     PRIVATE
     private String greeting ( String name){
         return "my name is " + name;
