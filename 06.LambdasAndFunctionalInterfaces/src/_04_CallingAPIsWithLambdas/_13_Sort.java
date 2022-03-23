@@ -7,6 +7,9 @@ public class _13_Sort {
     /*
     While you can call Collections.sort(list), you can now sort directly
     on the list object.
+
+    There is not a sort method on Set or Map. Neither of those types has
+    indexing, so it wouldn’t make sense to sort them.
     */
     public static void main(String[] args) {
 
