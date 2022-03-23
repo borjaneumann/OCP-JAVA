@@ -20,5 +20,25 @@ public class _01_AccessModifiers {
     default void walk2() {} // DOES NOT COMPILE
     void public walk3() {} // DOES NOT COMPILE
     void walk4() {}
+
+    Examples
+    PRIVATE
+    private String greeting ( String name){
+        return "my name is " + name;
+    }
+    DEFAULT
+    void farewell (){
+        System.out.println("Farewell!!");
+    }
+    PROTECTED
+    protected String greeting  (){
+        return null;
+    }
+    PUBLIC
+    public int number (){
+        return 0;
+    }
+    public static void main(String[] args) {
+
      */
 }
