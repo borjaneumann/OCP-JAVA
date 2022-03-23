@@ -1,10 +1,7 @@
 package _01_CreatingDecisionMakingStatements;
 
 public class _03_TheElseStatement {
-    /*The if statement, as shown in Figure 4.1, accomplishes this
-    by allowing our application to execute a particular block of code if and
-    only if a boolean expression evaluates to true at runtime.
-
+    /*
     if (boolean expression) {   Curly braces required for block of multiple statements,
           //Branch if true
     } else {                    -> Optional else statement

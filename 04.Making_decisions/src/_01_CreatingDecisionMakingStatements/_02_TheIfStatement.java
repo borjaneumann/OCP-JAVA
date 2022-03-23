@@ -1,8 +1,7 @@
 package _01_CreatingDecisionMakingStatements;
 
 public class _02_TheIfStatement {
-    /*The if statement, as shown in Figure 4.1, accomplishes this
-    by allowing our application to execute a particular block of code if and
+    /*The if statement executes a particular block of code if and
     only if a boolean expression evaluates to true at runtime.
 
     if (boolean expression) {   Curly braces required for block of multiple statements,
@@ -26,8 +25,7 @@ public class _02_TheIfStatement {
         System.out.println("Morning Greeting Count: " + morningGreetingCount);
         /*WATCH INDENTATION AND BRACES
         One area where the exam writers will try to trip you up is on if
-        statements without braces ({}). For example, take a look at this
-        slightly modified form of our example:
+        statements without braces ({}).
          */
     }
 }

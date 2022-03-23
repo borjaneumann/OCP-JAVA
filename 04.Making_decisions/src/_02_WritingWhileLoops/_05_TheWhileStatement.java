@@ -23,7 +23,7 @@ public class _05_TheWhileStatement {
     }
 
     One thing to remember is that a while loop may terminate after its first
-    evaluation of the boolean expression. How many times is ot full! printed in the following example?
+    evaluation of the boolean expression. How many times is Not full! printed in the following example?
     int full = 5;
     while(full < 5) {
         System.out.println("Not full!");

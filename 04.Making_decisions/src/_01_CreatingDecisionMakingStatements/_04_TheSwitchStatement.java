@@ -100,18 +100,21 @@ public class _04_TheSwitchStatement {
         switch(dayOfWeek) {
             case 0:
                 System.out.println("Sunday");
-            default:
-                System.out.println("Weekday");
             case 10:
                 System.out.println("Imaginary day");
+                break;
+            default:
+                System.out.println("Weekday");
+
             case 6:
                 System.out.println("Saturday");
                 break;
+
         }
         /*
         This prints out Weekday and Saturday. it jumps directly to the default case and executed the cases until it finds a break.
         The default is executed because there was no break in the preceeding statement.
-        If there is no break statement, executes all of them.
+        If there is no break statement, executes all of them till a break statement is found.
         The order of the case and default statements is now important since
         placing the default statement at the end of the switch statement would
         cause only one word to be output.
