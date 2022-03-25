@@ -1,4 +1,4 @@
-package ThisReference.uses;
+package _02_CreatingClasses.ThisReference.uses;
 
 public class ToPassAnArgumentInTheConstructorCall {
 

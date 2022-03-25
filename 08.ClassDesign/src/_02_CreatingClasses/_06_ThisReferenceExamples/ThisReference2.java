@@ -1,4 +1,4 @@
-package ThisReference;
+package _02_CreatingClasses.ThisReference;
 
 public class ThisReference2 {
     private String color;
