@@ -31,7 +31,31 @@ public class _16_0_InheritingMethods {
     Overriding Methods rules
     ========================
     1. The method in the child class must have the same signature as the method
-    in the parent class.
+    in the parent class. The first rule of overriding a method is somewhat self-explanatory. If two
+    methods have the same name but different signatures, the methods are
+    overloaded, not overridden. Overloaded methods are considered
+    independent and do not share the same polymorphic properties as
+    overridden methods.
+        public class Bird {
+            public void fly() {
+                System.out.println("Bird is flying");
+            }
+            public void eat(int food) {
+            System.out.println("Bird is eating "+food+" units of food");
+            }
+        }
+        public class Eagle extends Bird {
+            public int fly(int height) { //overloading, different parameter list
+                System.out.println("Bird is flying at "+height+" meters");
+                return height;
+            }
+            public int eat(int food) { // DOES NOT COMPILE overriding , same name and parameter list. type
+                                        must be compatible.
+                System.out.println("Bird is eating "+food+" units of food");
+                return food;
+            }
+        }
+
     2. The method in the child class must be at least as accessible as the method
     in the parent class.
     3. The method in the child class may not declare a checked exception that is
@@ -42,9 +66,17 @@ public class _16_0_InheritingMethods {
 
      Defining Subtype and Supertype
      ==============================
-     A
-subtype is the relationship between two types where one type
-inherits the other. I
+     A subtype is the relationship between two types where one type
+    inherits the other. If we define X to be a subtype of Y, then one of
+    the following is true:
+    - X and Y are classes, and X is a subclass of Y.
+    - X and Y are interfaces, and X is a subinterface of Y.
+    - X is a class and Y is an interface, and X implements Y (either
+        directly or through an inherited class).
+
+    Likewise, a supertype is the reciprocal relationship between two
+    types where one type is the ancestor of the other. Remember,
+    a subclass is a subtype, but not all subtypes are subclasses.
      */
 
 }
