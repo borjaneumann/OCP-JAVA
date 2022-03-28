@@ -1,6 +1,6 @@
 package _04_InheritingMembers;
 
-public class _15_CallingInheritedMembers {
+public class _15_InheritingMembersIntro {
     /*
     To reference a member in a parent class, you can just call it directly, as in
     the following example with the output function displaySharkDetails():
@@ -28,7 +28,7 @@ public class _15_CallingInheritedMembers {
     }
     In the child class, we use the public method getAge() and protected
     member size to access values in the parent class. Remember, you can use
-this to access visible members of the current or a parent class, and you
+    this to access visible members of the current or a parent class, and you
     can use super to access visible members of a parent class.
     public void displaySharkDetails() {
         System.out.print("Shark with age: "+super.getAge());
@@ -39,5 +39,4 @@ this to access visible members of the current or a parent class, and you
     since they are defined in the parent class, while numberOfFins can only be
     accessed with this and not super since it is not an inherited property.
      */
-
 }
