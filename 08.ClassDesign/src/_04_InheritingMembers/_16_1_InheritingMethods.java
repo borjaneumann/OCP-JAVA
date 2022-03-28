@@ -1,111 +1,94 @@
 package _04_InheritingMembers;
 
-public class _16_0_InheritingMethods {
+public class _16_1_InheritingMethods {
     /*
-    Inheriting a class not only grants access to inherited methods in the parent
-    class but also sets the stage for collisions between methods defined in both
-    the parent class and the subclass. In this section, we’ll review the rules for
-    method inheritance and how Java handles such scenarios.
+    Overriding a Generic Method
+    ===========================
+    You cannot overload methods by changing the generic type due to type erasure.
+    To review, only one of the two methods is allowed in a class because type erasure
+    will reduce both sets of arguments to (List input).
 
-    Overriding a Method
-    ===================
-    In Java, overriding a method occurs when a subclass declares a new
-    implementation for an inherited method with the same signature and
-    compatible return type. Remember that a method signature includes the name of
-    the method and method parameters.
-
-    public class Canine {
-        public double getAverageWeight() {
-            return 50;
+    public class LongTailAnimal {
+        protected void chew(List<Object> input) {}
+        protected void chew(List<Double> input) {} // DOES NOT COMPILE
         }
+    For the same reason, you also can’t overload a generic method in a parent
+    class.
+    public class LongTailAnimal {
+        protected void chew(List<Object> input) {}
+        }
+    public class Anteater extends LongTailAnimal {
+        protected void chew(List<Double> input) {} // DOES NOT COMPILE
     }
-    public class Wolf extends Canine {
-    public double getAverageWeight() {
-        return super.getAverageWeight()+20; //if syper keyword is removed, it turns into a recursive call.
-    }
-    public static void main(String[] args) {
-        System.out.println(new Canine().getAverageWeight()); // 50.0
-        System.out.println(new Wolf().getAverageWeight()); // 70.0
-        }
-    }
-    Overriding Methods rules
-    ========================
-    1. The method in the child class must have the same signature as the method
-    in the parent class. The first rule of overriding a method is somewhat self-explanatory. If two
-    methods have the same name but different signatures, the methods are
-    overloaded, not overridden. Overloaded methods are considered
-    independent and do not share the same polymorphic properties as
-    overridden methods.
-        public class Bird {
-            public void fly() {
-                System.out.println("Bird is flying");
-            }
-            public void eat(int food) {
-            System.out.println("Bird is eating "+food+" units of food");
-            }
-        }
-        public class Eagle extends Bird {
-            public int fly(int height) { //overloading, different parameter list
-                System.out.println("Bird is flying at "+height+" meters");
-                return height;
-            }
-            public int eat(int food) { // DOES NOT COMPILE overriding , same name and parameter list. type
-                                        must be compatible.
-                System.out.println("Bird is eating "+food+" units of food");
-                return food;
-            }
-        }
+    Both of these examples fail to compile because of type erasure. In the
+    compiled form, the generic type is dropped, and it appears as an invalid
+    overloaded method.
 
-    2. The method in the child class must be at least as accessible as the method
-    in the parent class. This is to avoid ambiguities.
-    3. The method in the child class may not declare a checked exception that is
-    new or broader than the class of any exception declared in the parent class
-    method. This is done for similar polymorphic reasons as limiting access modifiers.
-    4. If the method returns a value, it must be the same or a subtype of the
-    method in the parent class, known as covariant return types.
-
-    public class Rhino {
-        protected CharSequence getName() {
-            return "rhino";
-        }
-        protected String getColor() {
-            return "grey, black, or white";
-        }
+    Generic Method Parameters
+    =========================
+    On the other hand, you can override a method with generic parameters, but
+    you must match the signature including the generic type exactly. For
+    example, this version of the Anteater class does compile because it uses
+    the same generic type in the overridden method as the one defined in the
+    parent class:
+    public class LongTailAnimal {
+        protected void chew(List<String> input) {}
     }
-    class JavanRhino extends Rhino {
-        public String getName() { //String implements the CharSequence interface, making String a subtype of CharSequence.
-            return "javan rhino";
-        }
-        public CharSequence getColor() { // DOES NOT COMPILE
-            return "grey";
-        }
-        //To put it another way,
-        //all String values are CharSequence values, but not all CharSequence
-        //values are String values. For example, a StringBuilder is a
-        //CharSequence but not a String.
+    public class Anteater extends LongTailAnimal {
+        protected void chew(List<String> input) {}
     }
-     Defining Subtype and Supertype
-     ==============================
-     A subtype is the relationship between two types where one type
-    inherits the other. If we define X to be a subtype of Y, then one of
-    the following is true:
-    - X and Y are classes, and X is a subclass of Y.
-    - X and Y are interfaces, and X is a subinterface of Y.
-    - X is a class and Y is an interface, and X implements Y (either
-        directly or through an inherited class).
+    GENERICS AND WILDCARDS
+    ======================
+    Java includes support for generic wildcards using the question mark
+    (?) character. It even supports bounded wildcards.
+    void sing1(List<?> v) {} // unbounded wildcard
+    void sing2(List<? super String> v) {} // lower bounded wildcard
+    void sing3(List<? extends String> v) {} // upper bounded wildcard
 
-    Likewise, a supertype is the reciprocal relationship between two
-    types where one type is the ancestor of the other. Remember,
-    a subclass is a subtype, but not all subtypes are subclasses.
+    Generic Return Types
+    ====================
+    When you’re working with overridden methods that return generics, the
+    return values must be covariant. In terms of generics, this means that the
+    return type of the class or interface declared in the overriding method must
+    be a subtype of the class defined in the parent class. The generic parameter
+    type must match its parent’s type exactly.
 
-    Tip:
-    ===
-    A simple test for covariance is the following: Given an inherited
-    return type A and an overriding return type B, can you assign an
-    instance of B to a reference variable for A without a cast? If so, then
-    they are covariant. This rule applies to primitive types and object
-    types alike. If one of the return types is void, then they both must be
-    void, as nothing is covariant with void except itself.
+    public class Mammal {
+        public List<CharSequence> play() { ... }
+        public CharSequence sleep() { ... }
+    }
+    public class Monkey extends Mammal {
+        public ArrayList<CharSequence> play() { ... }
+    }
+    public class Goat extends Mammal {
+        public List<String> play() { ... } // DOES NOT COMPILE
+        public String sleep() { ... }
+    }
+    The Monkey class compiles because ArrayList is a subtype of List.
+    The sleep() method in the Goat class does compile since
+    String is a subtype of CharSequence. This example shows that covariance
+    applies to the return type, just not the generic parameter type.
+
+    For the exam, it might be helpful for you to apply type erasure to
+    questions involving generics to ensure that they compile properly. Once
+    you’ve determined which methods are overridden and which are being
+    overloaded, work backward, making sure the generic types match for
+    overridden methods. And remember, generic methods cannot be
+    overloaded by changing the generic parameter type only.
+
+    Redeclaring private Methods
+    ===========================
+    What happens if you try to override a private method? In Java, you can’t
+    override private methods since they are not inherited. Just because a
+    child class doesn’t have access to the parent method doesn’t mean the
+    child class can’t define its own version of the method. It just means,
+    strictly speaking, that the new method is not an overridden version of the
+    parent class’s method.
+    Java permits you to redeclare a new method in the child class with the
+    same or modified signature as the method in the parent class. This method
+    in the child class is a separate and independent method, unrelated to the
+    parent version’s method, so none of the rules for overriding methods is
+    invoked.
      */
 
 }

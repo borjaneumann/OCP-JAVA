@@ -1,94 +1,58 @@
 package _04_InheritingMembers;
 
-public class _16_1_InheritingMethods {
+public class _16_2_InheritingMethods {
     /*
-    Overriding a Generic Method
-    ===========================
-    You cannot overload methods by changing the generic type due to type erasure.
-    To review, only one of the two methods is allowed in a class because type erasure
-    will reduce both sets of arguments to (List input).
+    Hiding Static Methods
+    =====================
+    A hidden method occurs when a child class defines a static method with
+    the same name and signature as an inherited static method defined in a
+    parent class. Method hiding is similar but not exactly the same as method
+    overriding. The previous four rules for overriding a method must be
+    followed when a method is hidden. In addition, a new rule is added for
+    hiding a method:
+    5. The method defined in the child class must be marked as static if it is
+    marked as static in a parent class.
+    Put simply, it is method hiding if the two methods are marked static, and
+    method overriding if they are not marked static. If one is marked static
+    and the other is not, the class will not compile.
 
-    public class LongTailAnimal {
-        protected void chew(List<Object> input) {}
-        protected void chew(List<Double> input) {} // DOES NOT COMPILE
+    public class Bear {
+        public static void eat() {
+            System.out.println("Bear is eating");
         }
-    For the same reason, you also can’t overload a generic method in a parent
-    class.
-    public class LongTailAnimal {
-        protected void chew(List<Object> input) {}
-        }
-    public class Anteater extends LongTailAnimal {
-        protected void chew(List<Double> input) {} // DOES NOT COMPILE
     }
-    Both of these examples fail to compile because of type erasure. In the
-    compiled form, the generic type is dropped, and it appears as an invalid
-    overloaded method.
+    public class Panda extends Bear {
+        public static void eat() {
+            System.out.println("Panda is chewing");
+        }
+        public static void main(String[] args) {
+            eat();
+        }
+    }
+    In this example, the code compiles and runs. The eat() method in the
+    Panda class hides the eat() method in the Bear class, printing "Panda is
+    chewing" at runtime. Because they are both marked as static, this is not
+    considered an overridden method. That said, there is still some inheritance
+    going on. If you remove the eat() method in the Panda class, then the
+    program prints "Bear is eating" at runtime.
 
-    Generic Method Parameters
-    =========================
-    On the other hand, you can override a method with generic parameters, but
-    you must match the signature including the generic type exactly. For
-    example, this version of the Anteater class does compile because it uses
-    the same generic type in the overridden method as the one defined in the
-    parent class:
-    public class LongTailAnimal {
-        protected void chew(List<String> input) {}
-    }
-    public class Anteater extends LongTailAnimal {
-        protected void chew(List<String> input) {}
-    }
-    GENERICS AND WILDCARDS
+    Creating final Methods
     ======================
-    Java includes support for generic wildcards using the question mark
-    (?) character. It even supports bounded wildcards.
-    void sing1(List<?> v) {} // unbounded wildcard
-    void sing2(List<? super String> v) {} // lower bounded wildcard
-    void sing3(List<? extends String> v) {} // upper bounded wildcard
+    By marking a method final, you forbid a child class from replacing this
+    method. This rule is in place both when you override a method and when
+    you hide a method. In other words, you cannot hide a static method in a
+    child class if it is marked final in the parent class.
 
-    Generic Return Types
-    ====================
-    When you’re working with overridden methods that return generics, the
-    return values must be covariant. In terms of generics, this means that the
-    return type of the class or interface declared in the overriding method must
-    be a subtype of the class defined in the parent class. The generic parameter
-    type must match its parent’s type exactly.
-
-    public class Mammal {
-        public List<CharSequence> play() { ... }
-        public CharSequence sleep() { ... }
-    }
-    public class Monkey extends Mammal {
-        public ArrayList<CharSequence> play() { ... }
-    }
-    public class Goat extends Mammal {
-        public List<String> play() { ... } // DOES NOT COMPILE
-        public String sleep() { ... }
-    }
-    The Monkey class compiles because ArrayList is a subtype of List.
-    The sleep() method in the Goat class does compile since
-    String is a subtype of CharSequence. This example shows that covariance
-    applies to the return type, just not the generic parameter type.
-
-    For the exam, it might be helpful for you to apply type erasure to
-    questions involving generics to ensure that they compile properly. Once
-    you’ve determined which methods are overridden and which are being
-    overloaded, work backward, making sure the generic types match for
-    overridden methods. And remember, generic methods cannot be
-    overloaded by changing the generic parameter type only.
-
-    Redeclaring private Methods
-    ===========================
-    What happens if you try to override a private method? In Java, you can’t
-    override private methods since they are not inherited. Just because a
-    child class doesn’t have access to the parent method doesn’t mean the
-    child class can’t define its own version of the method. It just means,
-    strictly speaking, that the new method is not an overridden version of the
-    parent class’s method.
-    Java permits you to redeclare a new method in the child class with the
-    same or modified signature as the method in the parent class. This method
-    in the child class is a separate and independent method, unrelated to the
-    parent version’s method, so none of the rules for overriding methods is
-    invoked.
+    Why mark a method as final?
+    For example, you’d mark a method as final when you’re defining a parent class and
+    want to guarantee certain behavior of a method in the parent class,
+    regardless of which child is invoking the method.
+    The reason methods are not commonly marked as final in practice,
+    though, is that it may be difficult for the author of a parent class
+    method to consider all of the possible ways her child class may be
+    used.
+    The final modifier is often used when the author of the parent class wants to guarantee
+    certain behavior at the cost of limiting polymorphism.
      */
 
 }

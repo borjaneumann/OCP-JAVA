@@ -1,6 +1,6 @@
 package _04_InheritingMembers;
 
-public class _15_InheritingMembersIntro {
+public class _15_CallingInheritedMethods {
     /*
     To reference a member in a parent class, you can just call it directly, as in
     the following example with the output function displaySharkDetails():
