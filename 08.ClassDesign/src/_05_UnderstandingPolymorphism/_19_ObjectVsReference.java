@@ -18,5 +18,37 @@ public class _19_ObjectVsReference {
     2. The type of the reference to the object determines which methods and variables
         are accessible to the Java program.
 
+    public class Primate {
+        public boolean hasHair() {
+            return true;
+        }
+    }
+    public interface HasTail {
+        public abstract boolean isTailStriped();
+    }
+    public class Lemur extends Primate implements HasTail {
+        public boolean isTailStriped() {
+            return false;
+        }
+        public int age = 10;
+        public static void main(String[] args) {
+            Lemur lemur = new Lemur();
+            System.out.println(lemur.age); // 10
+            HasTail hasTail = lemur;
+            System.out.println(hasTail.isTailStriped()); // false
+            Primate primate = lemur;
+            System.out.println(primate.hasHair()); // true
+        }
+    }
+    It therefore follows that successfully changing a reference of an object to a
+    new reference type may give you access to new properties of the object,
+    but remember, those properties existed before the reference change
+    occurred.
+
+    The same object exists in memory regardless of which reference is pointing to it.
+    Depending on the type of the reference, we may only have access to certain methods.
+    For example, the hasTail reference has access to the method isTailStriped() but doesn’t
+    have access to the variable age defined in the Lemur class.
+
      */
 }
