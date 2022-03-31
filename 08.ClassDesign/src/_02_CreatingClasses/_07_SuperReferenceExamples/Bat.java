@@ -1,4 +1,4 @@
-package SuperReference;
+package _02_CreatingClasses._07_SuperReferenceExamples;
 
 public class Bat extends Mammal{
     String type = "Bat";

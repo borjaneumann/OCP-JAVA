@@ -1,4 +1,4 @@
-package _02_CreatingClasses.Inheritance_02;
+package _02_CreatingClasses._04_InheritanceExamples;
 
 public class Animal {
     private int age;

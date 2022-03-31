@@ -1,4 +1,4 @@
-package _02_CreatingClasses.Inheritance_02;
+package _02_CreatingClasses._04_InheritanceExamples;
 
 public class Lion extends Animal{
     public void setProperties(int age, String n){

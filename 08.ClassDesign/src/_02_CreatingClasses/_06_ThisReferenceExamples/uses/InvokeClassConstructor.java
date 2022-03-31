@@ -1,4 +1,4 @@
-package _02_CreatingClasses.ThisReference.uses;
+package _02_CreatingClasses._06_ThisReferenceExamples.uses;
 
 //Chaining constructors
 //Calling default constructor from parameterized constructor:

@@ -40,6 +40,25 @@ public class _01_IntroducingAbstractClasses {
     inherit properties of a particular class, but you want the subclass to fill in
     some of the implementation details.
 
+    OVERRIDE VS. IMPLEMENT
+    ======================
+    Oftentimes, when an abstract method is overridden in a subclass, it
+    is referred to as implementing the method. It is described this way
+    because the subclass is providing an implementation for a method
+    that does not yet have one. While we tend to use the terms
+    implement and override interchangeably for abstract methods, the
+    term override is more accurate.
+
+    The method override rules apply whether the abstract method is
+    declared in an abstract class or, as we shall see later in this chapter,
+    an interface. We will continue to use override and implement
+    interchangeably in this chapter, as this is common in software
+    development. Just remember that providing an implementation for
+    an abstract method is considered a method override and all of the
+    associated rules for overriding methods apply.
+
+    An abstract class can be initialized, but only as part of the instantiation of
+    a nonabstract subclass.
 
      */
 }

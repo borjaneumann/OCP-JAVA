@@ -1,4 +1,4 @@
-package SuperReference2;
+package _02_CreatingClasses._07_SuperReferenceExamples2;
 
 public class Insect {
     protected int numberOfLegs = 4;

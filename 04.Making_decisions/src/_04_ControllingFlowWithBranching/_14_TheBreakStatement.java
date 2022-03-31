@@ -38,7 +38,7 @@ public class _14_TheBreakStatement {
                     positionX = i;
                     positionY = j;
 //                     break; // Value 2 found at: (2,0) Break escapes the loop before it is executed and
-                            // in this case the outer loops keeps executing!!
+                            // in this case the outer loops keeps executing till it finds another match!!
 //                     break PARENT_LOOP; //Value 2 found at: (1,1) it breaks to the label parent loop.
                     // If we remove the break goes to the last matching value // Value 2 found at: (2,1) As there are
                     //no breaks the program runs till the last matching value is found.
@@ -71,7 +71,7 @@ public class _14_TheBreakStatement {
 
         hello: for (int i = 0; i < 5; i++) {
             for (int j = 0; j <5 ; j++) {
-                System.out.println("i: " + i + ":" + "j: " + j);
+                System.out.println("i:" + i + " : " + "j:" + j);
                 if (i==1 && j == 4) {
                     break hello;
                 }

@@ -1,7 +1,5 @@
 package _03_ConstructingForLoops;
 
-import jdk.swing.interop.SwingInterOpUtils;
-
 public class _10_WorkingWithForLoops {
     public static void main(String[] args) {
 
@@ -29,7 +27,7 @@ public class _10_WorkingWithForLoops {
         }
 
         /* 4. USING INCOMPATIBLE DATA TYPES IN THE INITIALIZING BLOCK
-        The variables is the initializing block must be of the same type.
+        The variables in the initializing block must be of the same type.
         int b = 0;
         for(int y = 0, long z = 4; b < 5; b++){//DOES NOT COMPILE
             System.out.println( y + " ");

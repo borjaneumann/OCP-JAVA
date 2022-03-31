@@ -21,7 +21,7 @@ public class _09_TheForLoop {
     =========================
     Syntax(paranthesis and semicolons required):
 
-    for (initialization; looleanExpression; updateStatement) { Curly brackets required for block of multiple statements,
+    for (initialization; booleanExpression; updateStatement) { Curly brackets required for block of multiple statements,
      //body                                                    optional for single statement
     }
 
