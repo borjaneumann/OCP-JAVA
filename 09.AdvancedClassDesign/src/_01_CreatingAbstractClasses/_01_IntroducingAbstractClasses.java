@@ -32,6 +32,13 @@ public class _01_IntroducingAbstractClasses {
             new Stork().printName();
         }
     }
+    While it may look the same, though, the rules around how the class must be
+    implemented have changed. In particular, the Stork class must now
+    override the abstract getName() method.
+
+    An abstract class is most commonly used when you want another class to
+    inherit properties of a particular class, but you want the subclass to fill in
+    some of the implementation details.
 
 
      */
