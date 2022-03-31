@@ -1,6 +1,6 @@
 package _01_CreatingAbstractClasses;
 
-public class _02_DefiningAbstractMethods {
+public class _02_1_DefiningAbstractMethods {
     /*
     An abstract class may include nonabstract methods and constructors.
     One of the most important features of an abstract class is that it is not
