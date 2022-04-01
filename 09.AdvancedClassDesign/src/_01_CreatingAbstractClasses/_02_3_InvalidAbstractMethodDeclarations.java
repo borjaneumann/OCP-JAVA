@@ -25,6 +25,7 @@ public class _02_3_InvalidAbstractMethodDeclarations {
     goInShell(), does not compile because it is not marked abstract and
     therefore must provide a body enclosed in braces.
 
+    INVALID MODIFIERS
     Abstract and final Modifiers
     ============================
     What would happen if you marked a class or method both abstract and
@@ -39,6 +40,32 @@ public class _02_3_InvalidAbstractMethodDeclarations {
         public abstract final class Tortoise { // DOES NOT COMPILE
         public abstract final void walk(); // DOES NOT COMPILE
     }
+
+    Abstract and private Modifiers
+    ==============================
+    A method cannot be marked as both abstract and private.
+    public abstract class Whale {
+        private abstract void sing(); // DOES NOT COMPILE
+        }
+    public class HumpbackWhale extends Whale {
+        private void sing() {
+            System.out.println("Humpback whale is singing");
+        }
+    }
+    Note: While it is not possible to declare a method abstract and private,
+    it is possible (albeit redundant) to declare a method final and
+    private.
+
+    Why does not compile?
+    public abstract class Whale {
+        protected abstract void sing();
+    }
+    public   class HumpbackWhale extends Whale {
+            private void sing() { // DOES NOT COMPILE
+            System.out.println("Humpback whale is singing");
+        }
+    }
+
 
 
      */
