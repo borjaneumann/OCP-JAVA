@@ -25,6 +25,21 @@ public class _02_3_InvalidAbstractMethodDeclarations {
     goInShell(), does not compile because it is not marked abstract and
     therefore must provide a body enclosed in braces.
 
+    Abstract and final Modifiers
+    ============================
+    What would happen if you marked a class or method both abstract and
+    final? If you mark something abstract, you are intending for someone
+    else to extend or implement it. But, if you mark something final, you are
+    preventing anyone from extending or implementing it. These concepts are
+    in direct conflict with each other.
+
+    Due to this incompatibility, Java does not permit a class or method to be
+    marked both abstract and final. For example, the following code
+    snippet will not compile:
+        public abstract final class Tortoise { // DOES NOT COMPILE
+        public abstract final void walk(); // DOES NOT COMPILE
+    }
+
 
      */
 }
