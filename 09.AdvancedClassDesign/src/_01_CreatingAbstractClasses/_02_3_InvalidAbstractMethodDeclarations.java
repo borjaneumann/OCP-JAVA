@@ -65,8 +65,17 @@ public class _02_3_InvalidAbstractMethodDeclarations {
             System.out.println("Humpback whale is singing");
         }
     }
+    Abstract and static Modifiers
+    =============================
+    A static method cannot be overridden.
+    It is defined as belonging to the class, not an instance of the class.
+    If a static method cannot be overridden, then it follows that it also cannot be marked
+    abstract since it can never be implemented. For example, the following
+    class does not compile:
 
-
+    abstract class Hippopotamus {
+        abstract static void swim(); // DOES NOT COMPILE
+    }
 
      */
 }
