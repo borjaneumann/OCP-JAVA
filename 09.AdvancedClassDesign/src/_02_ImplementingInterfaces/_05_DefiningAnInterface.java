@@ -69,5 +69,37 @@ public class _05_DefiningAnInterface {
     A class can implement multiple interfaces, each
     separated by a comma (,). If any of the interfaces define abstract methods,
     then the concrete class is required to override them.
+
+    An interface can extend another interface
+    =========================================
+    Unlike a class, which can extend only one class, an interface can extend
+    multiple interfaces.
+    interface Nocturnal {
+        public int hunt();
+    }
+    interface CanFly {
+        public void flap();
+    }
+    interface HasBigEyes extends Nocturnal, CanFly {}
+        public class Owl implements Nocturnal, CanFly {
+        public int hunt() { return 5; }
+        public void flap() { System.out.println("Flap!"); }
+    }
+    Extending two interfaces is permitted because interfaces are
+    not initialized as part of a class hierarchy. Unlike abstract classes,
+    they do not contain constructors and are not part of instance initialization.
+
+    Interfaces simply define a set of rules that a class implementing them must follow.
+    They also include various static members, including constants that do not require an
+    instance of the class to use.
+
+    Many of the rules for class declarations also apply to interfaces including
+    the following:
+    - A Java file may have at most one public top-level class or interface, and it
+    must match the name of the file.
+    - A top-level class or interface can only be declared with public or
+    package-private access.
+
+
      */
 }
