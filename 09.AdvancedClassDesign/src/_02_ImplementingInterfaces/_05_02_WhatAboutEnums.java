@@ -1,6 +1,6 @@
 package _02_ImplementingInterfaces;
 
-public class _06_WhatAboutEnums {
+public class _05_02_WhatAboutEnums {
     /*
     A Java class can have at most one public top-level element, a class or interface.
     This public top-level element could also be an enumeration, or enum for short.

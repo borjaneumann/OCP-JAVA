@@ -1,6 +1,6 @@
 package _02_ImplementingInterfaces;
 
-public class _05_DefiningAnInterface {
+public class _05_01_DefiningAnInterface {
     /*
     Intro and Definition
     =======================
