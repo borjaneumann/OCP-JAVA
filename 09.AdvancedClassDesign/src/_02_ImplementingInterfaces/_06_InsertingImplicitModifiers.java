@@ -46,6 +46,36 @@ public class _06_InsertingImplicitModifiers {
     6:  protected abstract double depth();
     7:  public final void surface(); }
 
+    Differences between Interfaces and Abstract Classes
+    ===================================================
+    Even though abstract classes and interfaces are both considered abstract
+    types, only interfaces make use of implicit modifiers. This means that an
+    abstract class and interface with similar declarations may have very
+    different properties. For example, how do the play() methods differ in the
+    following two definitions?
+
+    abstract class Husky {
+        abstract void play();
+    }
+    interface Poodle {
+        void play();
+    }
+    Both of these method definitions are considered abstract. That said, the
+    Husky class will not compile if the play() method is not marked
+    abstract, whereas the method in the Poodle interface will compile with
+    or without the abstract modifier.
+    Access level. Even though neither has an access modifier, they do not have
+    the same access level. The play() method in Husky class is considered default (package-private).
+    Can you spot anything wrong with the following class definitions that use our abstract types?
+
+    class Webby extends Husky {
+        void play() {}
+    }
+    class Georgette implements Poodle {
+        void play() {} //here
+    }
+
+
 
 
 
