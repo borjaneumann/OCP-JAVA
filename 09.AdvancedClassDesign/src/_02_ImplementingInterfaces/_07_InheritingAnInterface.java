@@ -45,6 +45,44 @@ public class _07_InheritingAnInterface {
     interface1 extends interface2, interface3, ...
     class1 implements interface2, interface3, ...
 
+    Duplicate Interface Method Declarations
+    =======================================
+    Since Java allows for multiple inheritance via interfaces, you might be
+    wondering what will happen if you define a class that inherits from two
+    interfaces that contain the same abstract method.
+
+    public interface Herbivore {
+        public void eatPlants();
+    }
+    public interface Omnivore {
+        public void eatPlants();
+        public void eatMeat();
+    }
+    As they have identical method declarations, they are also
+    considered compatible. By compatibility, we mean that the compiler can
+    resolve the differences between the two declarations without finding any
+    conflicts. You can define a class that fulfills both interfaces
+    simultaneously.
+
+    public class Bear implements Herbivore, Omnivore {
+        public void eatMeat() {
+            System.out.println("Eating meat");
+        }
+        public void eatPlants() {
+            System.out.println("Eating plants");
+        }
+    }
+    As we said earlier, interfaces simply define a set of rules that a class
+    implementing them must follow. If two abstract interface methods have
+    identical behaviors—or in this case the same method declaration—you
+    just need to be able to create a single method that overrides both inherited
+    abstract methods at the same time.
+    What if the duplicate methods have different signatures? If the method
+    name is the same but the input parameters are different, there is no conflict
+    because this is considered a method overload.
+
+
+
 
 
      */
