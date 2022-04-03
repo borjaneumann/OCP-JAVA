@@ -32,6 +32,20 @@ public class _07_InheritingAnInterface {
     this example, CommonSeal doesn’t provide an implementation for the
     inherited abstract interface methods, so CommonSeal doesn’t compile.
 
+    Mixing Class and Interface Keywords
+    ===================================
+    public interface CanRun {}
+    public class Cheetah extends CanRun {} // DOES NOT COMPILE
+    public class Hyena {}
+    public interface HasFur extends Hyena {} // DOES NOT COMPILE
+
+    The following is the only valid syntax for
+    relating classes and interfaces in their declarations:
+    class1 extends class2
+    interface1 extends interface2, interface3, ...
+    class1 implements interface2, interface3, ...
+
+
 
      */
 }
