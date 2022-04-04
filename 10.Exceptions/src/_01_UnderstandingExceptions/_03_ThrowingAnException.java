@@ -61,7 +61,16 @@ public class _03_ThrowingAnException {
 
     You should not catch Throwable directly in your code, or Exception or Error.
 
-
+    Types of exceptions and errors
+    Type                How to recognize    Okay for program to catch?     Is program required to handle or declare?
+    ================================================================================================================
+    Runtime             Subclass of             Yes                             No
+    exception           RuntimeException
+    ----------------------------------------------------------------------------------------------------------------
+    Checked             Subclass of Exception   Yes                             Yes
+    exception           but not subclass of
+                        RuntimeException
+    ----------------------------------------------------------------------------------------------------------------
+    Error               Subclass of Error       No                              No
      */
-
 }
