@@ -72,9 +72,36 @@ public class _02_UnderstandingExceptionTypes {
     IOException is a subclass of Exception, the catch block is allowed to
     catch it.
 
+    Unchecked Exceptions
+    ====================
+    An unchecked exception is any exception that does not need to be declared
+    or handled by the application code where it is thrown. Unchecked
+    exceptions are often referred to as runtime exceptions, although in Java,
+    unchecked exceptions include any class that inherits RuntimeException or
+    Error.
 
+    A runtime exception is defined as the RuntimeException class and its
+    subclasses. Runtime exceptions tend to be unexpected but not necessarily
+    fatal. For example, accessing an invalid array index is unexpected. Even
+    though they do inherit the Exception class, they are not checked
+    exceptions.
 
+    When you see runtime, it means unchecked.
 
+    An unchecked exception can often occur on nearly any line of code, as it
+    is not required to be handled or declared. For example, a
+    NullPointerException can be thrown in the body of the following
+    method if the input reference is null:
+    void fall(String input) {
+        System.out.println(input.toLowerCase());
+    }
+    We work with objects in Java so frequently, a NullPointerException can
+    happen almost anywhere. If you had to declare unchecked exceptions
+    everywhere, every single method would have that clutter!
 
+    For the exam, you need to know the rules for how checked versus
+    unchecked exceptions function. You don’t have to decide
+    philosophically whether an exception should be checked or
+    unchecked.
      */
 }
