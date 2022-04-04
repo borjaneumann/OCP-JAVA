@@ -97,6 +97,42 @@ public class _07_InheritingAnInterface {
         }
     }
 
+    Let’s take a look at a sample where the return types are not covariant:
+    interface Dances {
+        int countMoves();
+    }
+    interface EatsFish {
+        boolean countMoves();
+    }
+    public class Penguin implements Dances, EatsFish { // DOES NOT
+        COMPILE
+        ...
+    }
+    Since it is not possible to define a version of countMoves() that returns
+    both int and boolean, there is no implementation of the Penguin that will
+    allow this declaration to compile. It is the equivalent of trying to define
+    two methods in the same class with the same signature and different return
+    types.
+
+    Also an issue for the compiler:
+
+    interface LongEars {
+        int softSkin();
+    }
+    interface LongNose {
+        void softSkin();
+    }
+    interface Donkey extends LongEars, LongNose {} // DOES NOT COMPILE
+    abstract class Aardvark implements LongEars, LongNose {} // DOES NOT COMPILE
+
+    All of the types in this example are abstract, with none being concrete.
+    Despite the fact they are all abstract, the compiler detects that Donkey and
+    Aardvark contain incompatible methods and prevents them from
+    compiling.
+
+
+
+
 
 
 
