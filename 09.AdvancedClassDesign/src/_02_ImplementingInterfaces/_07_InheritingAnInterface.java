@@ -81,6 +81,22 @@ public class _07_InheritingAnInterface {
     name is the same but the input parameters are different, there is no conflict
     because this is considered a method overload.
 
+    The the same signature but different return types?
+    In that case, you need to review the rules for overriding methods.
+
+    interface Dances {
+        String swingArms();
+    }
+    interface EatsFish {
+        CharSequence swingArms();
+    }
+    public class Penguin implements Dances, EatsFish {
+        public String swingArms() {
+            return "swing!"; //The EatsFish version of swingArms() is also overridden as String and
+                            CharSequence are covariant return types.
+        }
+    }
+
 
 
 
