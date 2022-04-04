@@ -49,9 +49,36 @@ public class _08_PolymorphismAndInterfaces {
     Since String does not implement Canine, the compiler recognizes that
     this cast is not possible.
 
+    Interfaces and the instanceof Operator
+    ======================================
+    In Chapter 3, “Operators,” we showed that the compiler will report an
+    error if you attempt to use the instanceof operator with two unrelated
+    classes, as follows:
+    Number tickets = 4;
+    if(tickets instanceof String) {} // DOES NOT COMPILE
 
+    With interfaces, the compiler has limited ability to enforce this rule
+    because even though a reference type may not implement an interface, one
+    of its subclasses could. For example, the following does compile:
 
+    Number tickets = 5;
+    if(tickets instanceof List) {}
 
+    Even though Number does not inherit List, it’s possible the tickets
+    variable may be a reference to a subclass of Number that does inherit List.
+    As an example, the tickets variable could be assigned to an instance of
+    the following MyNumber class (assuming all inherited methods were implemented):
 
+    public class MyNumber extends Number implements List
+
+    That said, the compiler can check for unrelated interfaces if the reference
+    is a class that is marked final.
+
+    Integer tickets = 6;
+    if(tickets instanceof List) {} // DOES NOT COMPILE
+
+    The compiler rejects this code because the Integer class is marked final
+    and does not inherit List. Therefore, it is not possible to create a subclass
+    of Integer that inherits the List interface.
      */
 }
