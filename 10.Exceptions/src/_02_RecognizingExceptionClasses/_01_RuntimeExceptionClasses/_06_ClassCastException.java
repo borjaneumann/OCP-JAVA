@@ -1,8 +1,11 @@
 package _02_RecognizingExceptionClasses._01_RuntimeExceptionClasses;
 
-//Java protects you from impossible casts!!
+/*Java protects you from impossible casts!!
+Thrown when an attempt is made to cast an object
+to a class of which it is not an instance
+*/
 
-public class ClassCastException {
+public class _06_ClassCastException {
     public static void main(String[] args) {
 //        String type = "Moose";
 //        Integer number = (Integer) type;

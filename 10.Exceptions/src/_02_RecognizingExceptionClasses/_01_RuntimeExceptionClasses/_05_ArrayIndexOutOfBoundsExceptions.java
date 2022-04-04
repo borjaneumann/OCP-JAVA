@@ -1,6 +1,8 @@
 package _02_RecognizingExceptionClasses._01_RuntimeExceptionClasses;
 
-public class ArrayIndexOutOfBoundsExceptions {
+public class _05_ArrayIndexOutOfBoundsExceptions {
+
+    //Thrown when code uses an illegal index to access an array
     public static int array[]={0,2,4,6};
 
     public static void main(String[] args) {

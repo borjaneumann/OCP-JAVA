@@ -1,9 +1,9 @@
-package _02_RecognizingExceptionClasses._02_CheckedExceptionClass;
+package _02_RecognizingExceptionClasses._02_CheckedExceptionClasses;
 
 import java.io.File;
 import java.io.FileInputStream;
 
-public class FileNotFoundException {
+public class _11_FileNotFoundException {
 
     public static void main(String[] args) throws java.io.FileNotFoundException {
         File file = new File("anyFile");
