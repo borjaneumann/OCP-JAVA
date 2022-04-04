@@ -1,4 +1,4 @@
-package RunTimeExceptionClasses;
+package _02_RecognizingExceptionClasses._01_RuntimeExceptionClasses;
 
 public class IllegalArgumentException extends Throwable {
     //it's a way for your program to protect itself

@@ -1,4 +1,4 @@
-package RunTimeExceptionClasses;
+package _02_RecognizingExceptionClasses._01_RuntimeExceptionClasses;
 
 public class ArithmeticException {
     int divisionByZero(int a, int b){

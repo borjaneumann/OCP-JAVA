@@ -1,4 +1,4 @@
-package RunTimeExceptionClasses;
+package _02_RecognizingExceptionClasses._01_RuntimeExceptionClasses;
 
 //this is a subclass of IllegalArgumentExceptiopn
 //when methods to convert string to number have a wrong argument

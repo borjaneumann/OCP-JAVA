@@ -1,4 +1,4 @@
-package RunTimeExceptionClasses;
+package _02_RecognizingExceptionClasses._01_RuntimeExceptionClasses;
 
 //Java protects you from impossible casts!!
 

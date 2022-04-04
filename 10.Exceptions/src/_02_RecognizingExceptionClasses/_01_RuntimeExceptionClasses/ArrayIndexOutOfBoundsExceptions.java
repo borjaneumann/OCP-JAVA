@@ -1,4 +1,4 @@
-package RunTimeExceptionClasses;
+package _02_RecognizingExceptionClasses._01_RuntimeExceptionClasses;
 
 public class ArrayIndexOutOfBoundsExceptions {
     public static int array[]={0,2,4,6};

@@ -1,4 +1,4 @@
-package ErrorClasses;
+package _02_RecognizingExceptionClasses._03_ErrorClasses;
 
 public class StackOverflowError {
     public static void doNotCodeThis(int num){

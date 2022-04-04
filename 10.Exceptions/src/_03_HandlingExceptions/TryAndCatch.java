@@ -1,4 +1,4 @@
-package HandlingExceptions;
+package _03_HandlingExceptions;
 
 public class TryAndCatch {
     public static void main(String[] args) {

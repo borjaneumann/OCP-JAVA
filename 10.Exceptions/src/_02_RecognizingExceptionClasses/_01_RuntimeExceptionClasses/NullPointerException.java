@@ -1,4 +1,4 @@
-package RunTimeExceptionClasses;
+package _02_RecognizingExceptionClasses._01_RuntimeExceptionClasses;
 
 public class NullPointerException {
     //Instance variables and methods must be called on a non-null reference

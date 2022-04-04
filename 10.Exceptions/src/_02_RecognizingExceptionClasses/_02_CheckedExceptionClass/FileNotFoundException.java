@@ -1,4 +1,4 @@
-package CheckedExceptionClass;
+package _02_RecognizingExceptionClasses._02_CheckedExceptionClass;
 
 import java.io.File;
 import java.io.FileInputStream;

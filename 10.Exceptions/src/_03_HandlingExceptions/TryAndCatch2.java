@@ -1,4 +1,4 @@
-package HandlingExceptions;
+package _03_HandlingExceptions;
 
 import javax.management.RuntimeMBeanException;
 
