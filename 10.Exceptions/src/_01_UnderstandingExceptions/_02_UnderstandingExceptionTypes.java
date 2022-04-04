@@ -55,6 +55,23 @@ public class _02_UnderstandingExceptionTypes {
     tells Java that you want to throw an Exception, while the throws keyword
     simply declares that the method might throw an Exception.
 
+    Handling the exception
+    ======================
+    The following alternate version of the fall() method handles
+    the exception:
+    void fall(int distance) {
+        try {
+            if(distance > 10) {
+            throw new IOException();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    Notice that the catch statement uses Exception, not IOException. Since
+    IOException is a subclass of Exception, the catch block is allowed to
+    catch it.
+
 
 
 
