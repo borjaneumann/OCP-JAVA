@@ -6,17 +6,23 @@ public class _09_ComparingEquals {
         /* COMPARING EQUALS() AND ==
         Since this example isn’t dealing with primitives, we know to look for
         whether the references are referring to the same object.
-         */
 
+        Primitives can use only == as they dont have methods.
+        Objects can use 1) == to compare the object reference
+                        2) equals() to compare objects value.
+                        if the class does not have an equal method, then == is applied.
+         */
         // == (checking the reference)
         StringBuilder one = new StringBuilder("one");
         StringBuilder two = new StringBuilder("one");
         StringBuilder three = one.append("three");
+        System.out.println("StringBuilder, comparing one and two: ");
         System.out.println(one == two); //false
+        System.out.println("StringBuilder, comparing one and three: ");
         System.out.println(one == three); //true -> StringBuilder methods like to return the
         //current reference for chaining
-        System.out.println("One: " + one);
-        System.out.println("Three: " + three);
+        System.out.println("One: " + one); // One: onethree
+        System.out.println("Three: " + three); // three: onethree
 
         // equals()  logical equality rather than object equality for String objects:
         String x = "Hello World";
@@ -33,6 +39,9 @@ public class _09_ComparingEquals {
         implement equals(). If you call equals() on two StringBuilder
         instances, it will check reference equality. You can call toString() on
         StringBuilder to get a String to check for equality instead.
+
+        Two references can’t possibly point to the same object when
+        they are completely different types.
          */
     }
     //The exam will try to trick you!
@@ -54,6 +63,10 @@ public class _09_ComparingEquals {
             The compiler is smart enough to know that two references can’t possibly point to the
             same object when they are completely different types.
              */
+            int number1 = 8, number2 = 8;
+            if (number1==number2){
+                System.out.println("We are equal!");
+            }
         }
     }
 }
