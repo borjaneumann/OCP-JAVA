@@ -1,4 +1,4 @@
-package ThrowingAdditionalExceptions;
+package _03_HandlingExceptions;
 
 public class ThrowingAdditionalExceptionsToughExample {
     public String exceptions() {
