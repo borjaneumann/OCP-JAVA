@@ -1,7 +1,6 @@
-package HandlingExceptions;
+package _03_HandlingExceptions;
 
-
-import static HandlingExceptions.TryAndCatch.seeAnimals;
+import static _03_HandlingExceptions._15_UsingTryAndCatchStatements.seeAnimals;
 
 public class _16_ChainingCatchBlocks {
     /*what happens when different types of exceptions can be thrown from the
@@ -77,5 +76,20 @@ public class _16_ChainingCatchBlocks {
         ccb.visitPorcupine();
         ccb.visitMonkeys();
     }
+    /*To review multiple catch blocks, remember that at most one catch block
+    will run, and it will be the first catch block that can handle it. Also,
+    remember that an exception defined by the catch statement is only in
+    scope for that catch block. For example, the following causes a compiler
+    error since it tries to use the exception class outside the block for which
+    it was defined:
 
+     */
+    public void visitManatees() {
+        try {
+        } catch (NumberFormatException e1) {
+            System.out.println(e1);
+        } catch (IllegalArgumentException e2) {
+//            System.out.println(e1); // DOES NOT COMPILE
+        }
+    }
 }
