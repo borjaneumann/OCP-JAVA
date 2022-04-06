@@ -2,7 +2,7 @@ package _03_HandlingExceptions;
 
 import java.util.Scanner;
 
-public class _19_ScopeOfTryWithResources {
+public class _19_2_ScopeOfTryWithResources {
     public void scanResourcesOutOfScope(){
         /*
         The resources created in the try clause are in scope only within the try
