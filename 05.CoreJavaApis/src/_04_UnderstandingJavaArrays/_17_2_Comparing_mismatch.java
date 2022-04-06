@@ -15,8 +15,8 @@ public class _17_2_Comparing_mismatch {
         int[] numbers9 = {1,2,3,4,5};
 
         System.out.println("Mismatch at index: " + Arrays.mismatch(numbers6,
-                numbers7));//returns the index where the mismatch occurs.
-        System.out.println("No mismatch: " + Arrays.mismatch(numbers8,
+                numbers7));//returns the index where the mismatch occurs.//3
+        System.out.println("No mismatch: " + Arrays.mismatch(numbers8,//-1
                 numbers9));//No mismatch returns negative value
 
         System.out.println(Arrays.mismatch(new int[] {1}, new int[]{1})); //-1

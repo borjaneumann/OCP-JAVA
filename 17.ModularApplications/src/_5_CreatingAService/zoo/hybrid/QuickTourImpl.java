@@ -1,7 +1,7 @@
-package _6_CreatingAService.zoo.hybrid;
+package _5_CreatingAService.zoo.hybrid;
 
-import _6_CreatingAService.zoo.tours.api.Souvenir;
-import _6_CreatingAService.zoo.tours.api.Tour;
+import _5_CreatingAService.zoo.tours.api.Tour;
+import _5_CreatingAService.zoo.tours.api.Souvenir;
 //import zoo.tours.api.*;
 
 public class QuickTourImpl implements Tour {

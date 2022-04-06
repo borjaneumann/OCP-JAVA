@@ -1,4 +1,4 @@
-package enums;
+package _02_WorkingWithEnums;
 
 public enum OnlyOne {
     ONCE(true);

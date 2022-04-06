@@ -1,4 +1,4 @@
-package HandlingExceptions;
+package _03_HandlingExceptions;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;

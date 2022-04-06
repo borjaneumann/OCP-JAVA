@@ -1,4 +1,4 @@
-package javaFundamentals;
+package _01_ApplyingTheFinalModifier;
 
 public class MarkingClassesFinal {
     //A final class cannot be extended

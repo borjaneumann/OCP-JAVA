@@ -1,4 +1,4 @@
-package creatingNestedClasses;
+package _03_CreatingNestedClasses;
 
 public class Outer {
     private String greeting = "Hi";

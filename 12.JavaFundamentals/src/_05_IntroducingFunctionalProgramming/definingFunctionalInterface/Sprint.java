@@ -1,4 +1,4 @@
-package introducingFunctionalProgramming.definingFunctionalInterface;
+package _05_IntroducingFunctionalProgramming.definingFunctionalInterface;
 
 @FunctionalInterface //optional
 public interface Sprint {

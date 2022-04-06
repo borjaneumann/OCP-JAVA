@@ -1,3 +1,5 @@
+package _01_WorkingWithBuiltinFunctionalInterfaces;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.function.Supplier;
@@ -34,7 +36,7 @@ public class _1_ImplementingSupplier {
 
         //what do we print here out?
         System.out.println(s5);
-        //_1_ImplementingSupplier$$Lambda$20/0x00000008000a8440@68837a77
+        //_01_WorkingWithBuiltinFunctionalInterfaces._1_ImplementingSupplier$$Lambda$20/0x00000008000a8440@68837a77
         //That's the result of calling toString() on a lambda. Yuck. This actually
         //does mean something. Our test class is named BuiltIns, and it is in a
         //package that we created named functionalinterface. Then comes $$,

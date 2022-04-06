@@ -1,6 +1,6 @@
 package _03_HandlingExceptions;
 
-public class ThrowingAdditionalExceptionsToughExample {
+public class _20_1_ThrowingAdditionalExceptionsToughExample {
     public String exceptions() {
         StringBuilder result =  new StringBuilder();
         String v = null;
@@ -23,7 +23,7 @@ public class ThrowingAdditionalExceptionsToughExample {
     }
 
     public static void main(String[] args) {
-        ThrowingAdditionalExceptionsToughExample a1 = new ThrowingAdditionalExceptionsToughExample();
+        _20_1_ThrowingAdditionalExceptionsToughExample a1 = new _20_1_ThrowingAdditionalExceptionsToughExample();
         a1.exceptions();
     }
 }

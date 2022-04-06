@@ -26,7 +26,9 @@ public class _30_MathMethods {
 
         //pow
         double squared = Math.pow(5,2);//25
+        double root = Math.pow(16,0.5);//4
         System.out.println("Square power: " + squared);
+        System.out.println("Root: " + root);
 
         //random
         //The random() method returns a value greater than or equal to 0 and less

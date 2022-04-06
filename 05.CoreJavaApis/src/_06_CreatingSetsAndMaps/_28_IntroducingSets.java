@@ -2,6 +2,7 @@ package _06_CreatingSetsAndMaps;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class _28_IntroducingSets {
     public static void main(String[] args) {
@@ -19,6 +20,7 @@ public class _28_IntroducingSets {
         important.
          */
         Set<Integer> set = new HashSet<>();
+        Set<Integer> treeSet = new TreeSet<>();
         System.out.println(set.add(66));//true
         System.out.println(set.add(66));//false
         System.out.println(set.size());//1

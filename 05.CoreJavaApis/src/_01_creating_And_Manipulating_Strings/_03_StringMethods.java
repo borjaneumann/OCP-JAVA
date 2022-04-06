@@ -8,8 +8,8 @@ public class _03_StringMethods {
         //length
         System.out.println("Word length: " + word.length()); //7
 
-        //chartAt(index 0)
-        System.out.println("Word chartAt: " + word.charAt(5)); // l
+        //charAt(index 0)
+        System.out.println("Word charAt: " + word.charAt(5)); // l
 
         //indexOf()
         System.out.println("IndexOf: " + word.indexOf("a")); // 0

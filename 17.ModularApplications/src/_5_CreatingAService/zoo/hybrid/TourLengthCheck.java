@@ -1,9 +1,9 @@
-package _6_CreatingAService.zoo.hybrid;
+package _5_CreatingAService.zoo.hybrid;
 
 import java.util.OptionalInt;
 import java.util.ServiceLoader;
 
-import _6_CreatingAService.zoo.tours.api.Tour;
+import _5_CreatingAService.zoo.tours.api.Tour;
 
 public class TourLengthCheck {
 

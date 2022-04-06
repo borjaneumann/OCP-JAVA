@@ -6,7 +6,7 @@ public class _16_Searching {
     public static void main(String[] args) {
 
         /*
-        Java also provides a convenient way to search—but only if the array is
+        Java also provides a convenient way to search but only if the array is
         already sorted.
 
         Scenario            Result

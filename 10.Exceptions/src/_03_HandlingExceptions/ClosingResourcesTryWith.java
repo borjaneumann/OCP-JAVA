@@ -1,4 +1,4 @@
-package HandlingExceptions;
+package _03_HandlingExceptions;
 
 import java.io.FileInputStream;
 import java.io.IOException;

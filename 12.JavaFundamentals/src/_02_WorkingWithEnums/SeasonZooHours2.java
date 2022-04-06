@@ -1,4 +1,4 @@
-package enums;
+package _02_WorkingWithEnums;
 
 //If we don't want each and every enum value to have a method, we can
 //create a default implementation and override it only for the special cases.

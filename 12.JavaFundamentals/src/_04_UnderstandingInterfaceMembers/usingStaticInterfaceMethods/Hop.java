@@ -1,4 +1,4 @@
-package understandingInterfaceMembers.usingStaticInterfaceMethods;
+package _04_UnderstandingInterfaceMembers.usingStaticInterfaceMethods;
 
 public interface Hop {
     static int getJumpHeight() {

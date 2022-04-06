@@ -1,4 +1,4 @@
-package javaFundamentals;
+package _01_ApplyingTheFinalModifier;
 
 //As shown with the lemur variable, we don't need to assign a value when a
 //final variable is declared. The rule is only that it must be assigned a value

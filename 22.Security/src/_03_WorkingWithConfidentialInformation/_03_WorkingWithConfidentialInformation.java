@@ -1,3 +1,5 @@
+package _03_WorkingWithConfidentialInformation;
+
 public class _03_WorkingWithConfidentialInformation {
     /*
     Types of confidential data

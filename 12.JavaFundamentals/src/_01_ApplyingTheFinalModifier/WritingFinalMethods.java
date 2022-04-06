@@ -1,4 +1,4 @@
-package javaFundamentals;
+package _01_ApplyingTheFinalModifier;
 
 public class WritingFinalMethods {
     public abstract class Animal {

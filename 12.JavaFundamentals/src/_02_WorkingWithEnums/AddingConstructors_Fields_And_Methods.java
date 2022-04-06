@@ -1,4 +1,4 @@
-package enums;
+package _02_WorkingWithEnums;
 
 public enum AddingConstructors_Fields_And_Methods {
         WINTER("Low"), SPRING("Medium"), SUMMER("High"), FALL("Medium");

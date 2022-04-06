@@ -1,4 +1,4 @@
-package creatingNestedClasses.declaringInnerClass.staticNestedClass;
+package _03_CreatingNestedClasses.declaringInnerClass.staticNestedClass;
 
 //Since the class is static, you do not
 //need an instance of Enclosing to use it. You are allowed to access

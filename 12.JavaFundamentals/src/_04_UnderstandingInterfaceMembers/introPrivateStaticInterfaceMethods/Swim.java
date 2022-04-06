@@ -1,4 +1,4 @@
-package understandingInterfaceMembers.introPrivateStaticInterfaceMethods;
+package _04_UnderstandingInterfaceMembers.introPrivateStaticInterfaceMethods;
 
 public interface Swim {
     private static void breathe(String type) {

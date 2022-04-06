@@ -1,7 +1,4 @@
-package creatingNestedClasses.declaringInnerClass.anonymousClass;
-
-import java.awt.*;
-import java.beans.EventHandler;
+package _03_CreatingNestedClasses.declaringInnerClass.anonymousClass;
 
 
 //public class AnonymousClassesAndLambdaExpressions {

@@ -1,4 +1,4 @@
-package _1_ReviewingModules;
+package _1_ReviewingModulesDirectives;
 
 public class _1_ReviewingModuleDirectives {
 

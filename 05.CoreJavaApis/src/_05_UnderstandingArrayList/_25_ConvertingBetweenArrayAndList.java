@@ -13,8 +13,8 @@ public class _25_ConvertingBetweenArrayAndList {
         list.add("robin");
         Object[] objectArray = list.toArray();//We don't want of type Object
         String[] stringArray = list.toArray(new String[0]);//String is the type we are after!
-        // we can suggest another size. if
-        //it is not big enough. A new Array with the correct size will be created.
+        // we can suggest another size. if it is not big enough,
+        // a new Array with the correct size will be created.
         list.clear(); // this doesnt affect the new created arrays
         System.out.println("objectArray size: " + objectArray.length); //2
         System.out.println("stringArray size: " + stringArray.length); //2

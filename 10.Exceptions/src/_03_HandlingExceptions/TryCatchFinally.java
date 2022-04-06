@@ -1,4 +1,4 @@
-package HandlingExceptions;
+package _03_HandlingExceptions;
 
 import static _03_HandlingExceptions._15_UsingTryAndCatchStatements.fall;
 import static _03_HandlingExceptions._15_UsingTryAndCatchStatements.seeAnimals;

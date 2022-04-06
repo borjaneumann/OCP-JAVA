@@ -1,9 +1,9 @@
-package _6_CreatingAService.zoo.visitor;
+package _5_CreatingAService.zoo.visitor;
 
 import java.util.List;
 
-import _6_CreatingAService.zoo.tours.api.Tour;
-import _6_CreatingAService.zoo.tours.api.TourFinder;
+import _5_CreatingAService.zoo.tours.api.Tour;
+import _5_CreatingAService.zoo.tours.api.TourFinder;
 
 //Consumer
 public class Tourist {

@@ -1,4 +1,4 @@
-package enums;
+package _02_WorkingWithEnums;
 
 public enum SeasonZooHours {
     WINTER {

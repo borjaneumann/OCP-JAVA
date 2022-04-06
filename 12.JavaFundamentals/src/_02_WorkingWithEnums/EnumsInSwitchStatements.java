@@ -1,4 +1,4 @@
-package enums;
+package _02_WorkingWithEnums;
 
 public class EnumsInSwitchStatements {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package introducingFunctionalProgramming.workingWithLambdaVariables;
+package _05_IntroducingFunctionalProgramming.workingWithLambdaVariables;
 
 //import java.util.function.Predicate;
 //

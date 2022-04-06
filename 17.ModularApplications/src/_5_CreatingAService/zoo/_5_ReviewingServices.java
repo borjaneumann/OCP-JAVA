@@ -1,4 +1,4 @@
-package _6_CreatingAService.zoo;
+package _5_CreatingAService.zoo;
 
 public class _5_ReviewingServices {
 

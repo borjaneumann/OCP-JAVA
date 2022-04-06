@@ -1,4 +1,4 @@
-package _2_ComparingModules;
+package _2_ComparingTypesOfModules;
 
 public class _3_ComparingModuleTypes {
 

@@ -20,7 +20,7 @@ public class _15_Sorting {
         System.out.print("Sort ascending: ");
         Arrays.sort(numbers);
         for (int i = 0; i < numbers.length; i++){
-            System.out.print(numbers[i] + " ");
+            System.out.print(numbers[i] + " "); // Sort ascending: 1 6 9
         }
         System.out.println();
 

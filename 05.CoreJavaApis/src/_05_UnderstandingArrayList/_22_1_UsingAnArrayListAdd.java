@@ -33,9 +33,5 @@ public class _22_1_UsingAnArrayListAdd {
         System.out.println("birds: " + birds);//birds: [blue jay, cardinal, hawk, robin]
         //Pay attention to how it pushes elements when they are added. It does not replace them.
 
-
-
     }
-
-
 }

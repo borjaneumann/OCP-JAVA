@@ -2,7 +2,7 @@ package _03_UnderstandingEquality;
 
 public class _10_StringPool {
 
-    //The string pooll is also known as the intern pool
+    //The string pool is also known as the intern pool
     public static void main(String[] args) {
 
         //Let’s now visit the more complex and confusing scenario, String

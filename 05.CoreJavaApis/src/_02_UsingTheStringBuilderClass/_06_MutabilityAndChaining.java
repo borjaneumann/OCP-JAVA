@@ -6,8 +6,8 @@ public class _06_MutabilityAndChaining {
         sb.append("+middle"); //It returns a reference to sb which is ingnored as it is not stored in any variable.
         StringBuilder same = sb.append("+end");
 
-        System.out.println("sb:" + sb); //sb is mutable!!
-        System.out.println("Same: "+ same);//sb and same are pointing to the same object.
+        System.out.println("sb:" + sb); //sb:start+middle+end -> sb is mutable!!
+        System.out.println("Same: "+ same);//Same: start+middle+end -> sb and same are pointing to the same object.
 
         /*There’s only one StringBuilder object here. We know that because new StringBuilder()
         was called only once.

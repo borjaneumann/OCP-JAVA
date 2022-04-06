@@ -41,17 +41,15 @@ public class _17_ApplyingAMultiCatchBlock {
     To review multi-catch, see how many errors you can find in this try statement:
 
     11: public void doesNotCompile() { // METHOD DOES NOT COMPILE
-    12: try {
-    13: mightThrow();
-    14: } catch (FileNotFoundException | IllegalStateException
+    12:     try {
+    13:         mightThrow();
+    14:     } catch (FileNotFoundException | IllegalStateException
     e) {
-    15: } catch (InputMismatchException e |
-    MissingResourceException e) {
-    16: } catch (FileNotFoundException |
-    IllegalArgumentException e) {
-    17: } catch (Exception e) {
-    18: } catch (IOException e) {
-    19: }
+    15:     } catch (InputMismatchException e | MissingResourceException e) {
+    16:     } catch (FileNotFoundException | IllegalArgumentException e) {
+    17:     } catch (Exception e) {
+    18:     } catch (IOException e) {
+    19:     }
     20: }
     21: private void mightThrow() throws DateTimeParseException, IOException { }
 

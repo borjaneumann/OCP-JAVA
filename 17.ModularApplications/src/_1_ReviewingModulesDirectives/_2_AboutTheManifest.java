@@ -1,4 +1,4 @@
-package _1_ReviewingModules;
+package _1_ReviewingModulesDirectives;
 
 public class _2_AboutTheManifest {
     /*A JAR file is a zip file with a special directory named META‐INF.

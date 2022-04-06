@@ -45,6 +45,8 @@ public class _07_Comparator {
         System.out.println("Ascending list: " + list); // Ascending list: [10, 20, 30, 40, 50, 60]
         list.sort((a,b)->-a.compareTo(b));
         System.out.println("Descending list: " + list); // Descending list: [60, 50, 40, 30, 20, 10]
+        list.sort((a,b)->b.compareTo(a));
+        System.out.println("Descending list: " + list); // Descending list: [60, 50, 40, 30, 20, 10]
 
         Comparator<String> compareString = (a,b) -> a.compareTo(b);
         System.out.println("String comparator: " + compareString.compare(nameA, nameB)); // -17

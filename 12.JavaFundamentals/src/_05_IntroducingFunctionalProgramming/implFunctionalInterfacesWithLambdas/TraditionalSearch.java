@@ -1,4 +1,4 @@
-package introducingFunctionalProgramming.implFunctionalInterfacesWithLambdas;
+package _05_IntroducingFunctionalProgramming.implFunctionalInterfacesWithLambdas;
 
 //import java.util.ArrayList;
 //import java.util.List;

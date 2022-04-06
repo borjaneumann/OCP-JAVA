@@ -10,7 +10,7 @@ public class _18_Varargs {
 
         public static void main (String[]args){};
         public static void main (String args[]);
-        public static void main (String...args); //varargs
+        public static void main (String...args); //varargs = variable arguments
      */
     display(500, "hello"); //The number is: 500 //hello
     display(25, "Hello", "there");//The number is: 25 //Hello //there

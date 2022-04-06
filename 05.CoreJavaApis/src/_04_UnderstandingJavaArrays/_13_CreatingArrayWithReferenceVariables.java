@@ -37,6 +37,6 @@ public class _13_CreatingArrayWithReferenceVariables {
         String[] againStrings = (String[]) objects;
 //        againStrings[0] = new StringBuilder(); // DOES NOT COMPILE, it only allows String
         objects[0] = new StringBuilder(); // ArrayStoreException! objects is referencing String not
-        //SteingBuilder!!
+        //StringBuilder!!
     }
 }

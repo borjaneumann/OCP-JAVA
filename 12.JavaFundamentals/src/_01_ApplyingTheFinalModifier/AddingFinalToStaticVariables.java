@@ -1,4 +1,4 @@
-package javaFundamentals;
+package _01_ApplyingTheFinalModifier;
 
 //The height
 //variable is not assigned a value anywhere in the class definition, so that

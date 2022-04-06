@@ -11,7 +11,6 @@ public class _19_MultidimensionalArrays {
         int[][] vars1; //2D Array
         int vars2 [][]; //2D Array
         int[] vars3 []; //2D Array. Confusing style.
-
         int[] vars4 [], space [][]; // 2D Array and 3D Array. Confusing style
 
         //You can specify the size of your multidimensional array in the declaration if you like:
@@ -38,6 +37,12 @@ public class _19_MultidimensionalArrays {
         first dimension and define the size of each array component in a separate
         statement:*/
         int [][] args1 = new int[4][];
+        for (int i = 0; i < args1.length; i++) {
+            for (int j = 0; j < args1[i].length; j++) {
+                System.out.println(args1[i][j]);
+            }
+
+        }
         args1[0] = new int[5];
         args1[1] = new int[3];
         /*This technique reveals what you really get with Java: arrays of arrays that,

@@ -1,7 +1,8 @@
-package _6_CreatingAService.zoo.tours.agency;
+package _5_CreatingAService.zoo.tours.agency;
 
-import _6_CreatingAService.zoo.tours.api.Souvenir;
-import _6_CreatingAService.zoo.tours.api.Tour;
+import _5_CreatingAService.zoo.tours.api.Souvenir;
+import _5_CreatingAService.zoo.tours.api.Tour;
+
 //import zoo.tours.api.*;
 public class TourImpl implements Tour {
     public String name() {

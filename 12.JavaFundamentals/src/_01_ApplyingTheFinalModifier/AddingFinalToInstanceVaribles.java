@@ -1,4 +1,4 @@
-package javaFundamentals;
+package _01_ApplyingTheFinalModifier;
 
 public class AddingFinalToInstanceVaribles {
     final int age = 10;
