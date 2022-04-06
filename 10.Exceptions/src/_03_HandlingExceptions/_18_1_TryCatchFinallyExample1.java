@@ -3,7 +3,7 @@ package _03_HandlingExceptions;
 import static _03_HandlingExceptions._15_UsingTryAndCatchStatements.fall;
 import static _03_HandlingExceptions._15_UsingTryAndCatchStatements.seeAnimals;
 
-public class TryCatchFinally {
+public class _18_1_TryCatchFinallyExample1 {
     void explore(){
         try{
             seeAnimals();
@@ -25,7 +25,7 @@ public class TryCatchFinally {
         System.out.println("it is time to go home!");
     }
     public static void main(String[] args) {
-        TryCatchFinally tcf = new TryCatchFinally();
+        _18_1_TryCatchFinallyExample1 tcf = new _18_1_TryCatchFinallyExample1();
         tcf.explore();
     }
 }

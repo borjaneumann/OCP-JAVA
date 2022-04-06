@@ -1,6 +1,6 @@
 package _04_CallingMethodsThatThrowExceptions;
 
-public class ClassAllowedDeclareSubclassExceptionType extends Exception {
+public class _22_1_ClassAllowedDeclareSubclassExceptionTypeExample extends Exception {
     class Hopper {
         public void hop() throws Exception {}
     }

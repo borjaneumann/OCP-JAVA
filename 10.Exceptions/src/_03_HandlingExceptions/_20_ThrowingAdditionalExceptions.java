@@ -3,7 +3,7 @@ package _03_HandlingExceptions;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class _20_0_ThrowingAdditionalExceptions {
+public class _20_ThrowingAdditionalExceptions {
     //What happens when an exception is thrown inside of a catch or finally block?
     public static void main(String[] args) {
         FileReader reader = null;
@@ -16,7 +16,7 @@ public class _20_0_ThrowingAdditionalExceptions {
             }
         }
         //second example (Tough example)
-        _20_0_ThrowingAdditionalExceptions a1 = new _20_0_ThrowingAdditionalExceptions();
+        _20_ThrowingAdditionalExceptions a1 = new _20_ThrowingAdditionalExceptions();
         a1.exceptions();
     }
 

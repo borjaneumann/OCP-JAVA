@@ -1,6 +1,6 @@
 package _03_HandlingExceptions;
 
-public class SystemExit {
+public class _18_3_SystemExitExample {
     public static void main(String[] args) {
         try {
             System.exit(23);

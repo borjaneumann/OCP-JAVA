@@ -8,7 +8,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.StringWriter;
 
-public class TryWithResources {
+public class _19_4_TryWithResourcesExample {
     /*it turns out a catch block is optional with a try-with-resources statement
     The finally clause exists implicitly. You just don’t have to type it.
      */

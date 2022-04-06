@@ -1,6 +1,6 @@
 package _04_CallingMethodsThatThrowExceptions;
 
-public class _22_DeclaringAndOverridingMethodsWithExceptions {
+public class _22_0_DeclaringAndOverridingMethodsWithExceptions {
     /*
     When a class overrides a method from a superclass or implements a method from
     an interface, it’s not allowed to add new checked exceptions to the method

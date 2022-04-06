@@ -1,13 +1,12 @@
 package _03_HandlingExceptions;
 
-public class TryCatchFinally2 {
+public class _18_2_TryCatchFinallyExample2 {
     public static void main(String[] args) {
-        TryCatchFinally2 tac2 = new TryCatchFinally2();
+        _18_2_TryCatchFinallyExample2 tac2 = new _18_2_TryCatchFinallyExample2();
         System.out.println(tac2.goHome());
     }
 
     int goHome() {
-
         try {
             //optionally throw an exception here
             System.out.println("1");
@@ -18,6 +17,6 @@ public class TryCatchFinally2 {
         } finally {
             System.out.println("3");
             return -3;
-        }
+        } // 1, 3 , -3
     }
 }

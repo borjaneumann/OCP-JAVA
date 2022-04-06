@@ -1,6 +1,6 @@
 package _04_CallingMethodsThatThrowExceptions;
 
-public class NotAllowedToAddNewCheckedExceptions extends Exception{
+public class _22_2_NotAllowedToAddNewCheckedExceptionsExample extends Exception{
     class Hopper {
         public void hop(){}
     }
