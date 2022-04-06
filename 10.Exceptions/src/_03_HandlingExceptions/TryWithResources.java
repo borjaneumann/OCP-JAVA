@@ -1,4 +1,4 @@
-package TryAndCatch;
+package HandlingExceptions;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;

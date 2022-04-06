@@ -1,4 +1,4 @@
-package TryAndCatch;
+package HandlingExceptions;
 
 public class TryCatchFinally2 {
     public static void main(String[] args) {

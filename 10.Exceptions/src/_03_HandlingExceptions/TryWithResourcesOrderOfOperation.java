@@ -1,4 +1,4 @@
-package TryAndCatch;
+package HandlingExceptions;
 
 public class TryWithResourcesOrderOfOperation implements AutoCloseable{
     // # Resources are closed after the try clause ends and before any catch/finally clauses.

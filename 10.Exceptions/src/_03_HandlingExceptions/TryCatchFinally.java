@@ -1,7 +1,7 @@
-package TryAndCatch;
+package HandlingExceptions;
 
-import static tryAndCatch.TryAndCatch.fall;
-import static tryAndCatch.TryAndCatch.seeAnimals;
+import static _03_HandlingExceptions._15_UsingTryAndCatchStatements.fall;
+import static _03_HandlingExceptions._15_UsingTryAndCatchStatements.seeAnimals;
 
 public class TryCatchFinally {
     void explore(){
