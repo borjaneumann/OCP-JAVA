@@ -1,4 +1,4 @@
-package DeclaringAndOverridingMethodsWithExceptions;
+package _04_CallingMethodsThatThrowExceptions;
 
 public class PrintingAnException {
     //three ways to do it

@@ -1,4 +1,4 @@
-package DeclaringAndOverridingMethodsWithExceptions;
+package _04_CallingMethodsThatThrowExceptions;
 
 public class NotAllowedToAddNewCheckedExceptions extends Exception{
     class Hopper {
