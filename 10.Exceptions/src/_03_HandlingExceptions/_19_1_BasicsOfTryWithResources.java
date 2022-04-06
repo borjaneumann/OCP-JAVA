@@ -56,8 +56,20 @@ public class _19_1_BasicsOfTryWithResources {
     Java requires classes used in a try-with-resources implement the AutoCloseable interface,
     which includes a void close() method.
 
+    Declaring Resources
+    ===================
+    While try-with-resources does support declaring multiple variables, each
+    variable must be declared in a separate statement.Each resource must
+    include the data type and be separated by a semicolon (;).
 
+    You can declare a resource using var as the data type in a try-with-resources statement,
+    since resources are local variables.
 
-
+    try (var f = new BufferedInputStream(new
+    FileInputStream("it.txt"))) {
+        // Process file
+    }
+    Declaring resources is a common situation where using var is quite
+    helpful, as it shortens the already long line of code.
      */
 }
