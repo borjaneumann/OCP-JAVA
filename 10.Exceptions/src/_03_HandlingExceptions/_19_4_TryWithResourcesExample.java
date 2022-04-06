@@ -9,9 +9,9 @@ import java.io.IOException;
 import java.io.StringWriter;
 
 public class TryWithResources {
-    //it turns out a
-    //catch block is optional with a try-with-resources statement
-    //The finally clause exists implicitly. You just don’t have to type it
+    /*it turns out a catch block is optional with a try-with-resources statement
+    The finally clause exists implicitly. You just don’t have to type it.
+     */
     public static void main(String[] args) {
     }
     public void readFile (String file) throws IOException {
@@ -43,6 +43,3 @@ public class TryWithResources {
     }
 }
 
-//Earlier in the chapter, you learned that a try statement must have one or
-//more catch blocks or a finally block. This is still true. The finally
-//clause exists implicitly. You just don’t have to type it.
