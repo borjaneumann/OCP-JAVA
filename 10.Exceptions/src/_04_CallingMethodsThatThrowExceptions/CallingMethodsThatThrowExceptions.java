@@ -1,4 +1,4 @@
-package ThrowingAdditionalExceptions;
+package _03_HandlingExceptions;
 
 public class CallingMethodsThatThrowExceptions extends Exception{
     // When you’re calling a method that throws an exception, the rules are the
