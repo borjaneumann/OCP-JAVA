@@ -63,10 +63,21 @@ public class _09_ComparingEquals {
             The compiler is smart enough to know that two references can’t possibly point to the
             same object when they are completely different types.
              */
+            System.out.println();
             int number1 = 8, number2 = 8;
-            if (number1==number2){
-                System.out.println("We are equal!");
-            }
+            String a = "Hello";
+            String b = "Hello";
+            Integer i1 = 1;
+            Integer i2 = new Integer(1);
+            Integer i3 = i1;
+            System.out.println(number1==number2);
+            System.out.println(a==b);
+            System.out.println(a.equals(b));
+            System.out.println(i1.equals(i2));
+            System.out.println(i1==i2);
+            System.out.println(i1==i3);
+
+
         }
     }
 }

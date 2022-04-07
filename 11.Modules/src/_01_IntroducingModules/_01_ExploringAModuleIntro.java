@@ -25,5 +25,10 @@ public class _01_ExploringAModuleIntro {
     to offer a particular set of functionality to developers.
     It’s like a JAR file except a developer chooses which packages are
     accessible outside the module.
+
+    The Java Platform Module System includes the following:
+    - A format for module JAR files
+    - Partitioning of the JDK into modules
+    - Additional command-line options for Java tools
      */
 }
