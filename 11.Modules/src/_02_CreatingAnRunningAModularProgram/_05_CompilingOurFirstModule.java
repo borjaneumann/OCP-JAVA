@@ -59,6 +59,20 @@ public class _05_CompilingOurFirstModule {
     Directory for class files   -d <dir>                    n/a
     Module path                 -p <path>                   --module-path <path>
 
-
+    BUILDING MODULES
+    ================
+    Even before modules, it was rare to run javac and java commands
+    manually on a real project. They get long and complicated very
+    quickly. Most developers use a build tool such as Maven or Gradle.
+    These build tools suggest directories to place the class files like
+    target/classes.
+    With modules, there is even more typing to run these commands by
+    hand. After all, with modules, you are using more directories by
+    definition. This means that it is likely the only time you need to
+    know the syntax of these commands is when you take the exam. The
+    concepts themselves are useful regardless.
+    Do be sure to memorize the module command syntax. You will be
+    tested on it on the exam. We will be sure to give you lots of practice
+    questions on the syntax to reinforce it.
      */
 }
