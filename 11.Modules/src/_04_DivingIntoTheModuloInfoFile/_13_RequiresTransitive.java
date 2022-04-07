@@ -28,5 +28,20 @@ public class _13_RequiresTransitive {
     would have to explicitly use requires in order to reference any packages
     in the zoo.animal.feeding module.
 
+    Duplicate requires Statements
+    =============================
+    One place the exam might try to trick you is mixing requires and
+    requires transitive together. Can you think of a reason this code
+    doesn’t compile?
+
+        module bad.module {
+            requires zoo.animal.talks;
+            requires transitive zoo.animal.talks;
+        }
+
+    Java doesn’t allow you to repeat the same module in a requires clause. It
+    is redundant and most like an error in coding. Keep in mind that requires
+    transitive is like requires plus some extra behavior.
+
      */
 }
