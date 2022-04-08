@@ -9,7 +9,7 @@ public enum Season {
     public static void main(String[] args) {
         Season s = Season.FALL;
         Season t = Season.valueOf("SUMMER");
-        Season e = Season.valueOf("summer"); // Throws an exception at runtime
+//        Season e = Season.valueOf("summer"); // Throws an exception at runtime
 
         System.out.println(Season.SUMMER);
         System.out.println(s== Season.SUMMER);
