@@ -1,4 +1,4 @@
-package _03_CreatingNestedClasses.declaringInnerClass;
+package _03_CreatingNestedClasses;
 
 public class _08_CreatingNestedClassesIntro {
     /*
