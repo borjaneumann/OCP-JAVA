@@ -1,6 +1,6 @@
 package _03_CreatingNestedClasses.declaringInnerClass;
 
-public class _08_CreatingNestedClassesInttro {
+public class _08_CreatingNestedClassesIntro {
     /*
     A nested class is a class that is defined within another class.
 
