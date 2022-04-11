@@ -1,4 +1,4 @@
-package _03_CreatingNestedClasses.declaringInnerClass;
+package _03_CreatingNestedClasses;
 
 public class _10_CreatingAnStaticNestedClass {
     /*
@@ -29,5 +29,25 @@ public class _10_CreatingAnStaticNestedClass {
     Line 6 instantiates the nested class. Since the class is static, you do not
     need an instance of Enclosing to use it. You are allowed to access
     private instance variables, which is shown on line 7.
+
+    IMPORTING A STATIC NESTED CLASS
+    Importing a static nested class is interesting. You can import it
+    using a regular import.
+    // Toucan.java
+    package bird;
+    public class Toucan {
+        public static class Beak {}
+    }
+    // BirdWatcher.java
+    package watcher;
+    import bird.Toucan.Beak; // regular import ok
+    public class BirdWatcher {
+        Beak beak;
+    }
+    Since it is static, you can also use a static import.
+    import static bird.Toucan.Beak;
+
+    Either one will compile. Surprising, isn't it? Remember, Java treats
+    the enclosing class as if it were a namespace.
      */
 }
