@@ -1,4 +1,4 @@
-package introFunctionalProgramming.definingFunctionalInterface;
+package _05_IntroducingFunctionalProgramming.definingFunctionalInterface;
 
 public class Tiger implements Sprint {
     public void sprint(int speed) {

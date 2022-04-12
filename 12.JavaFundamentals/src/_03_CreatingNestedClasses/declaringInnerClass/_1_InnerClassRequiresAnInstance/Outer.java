@@ -21,8 +21,8 @@ public class Outer {
         outer.callInner();
 
         //Another way to instantiate inner
-        Outer outer2 =  new Outer();
-        Inner inner = outer2.new Inner(); // Create the inner class
-        inner.go();
+//        Outer outer2 =  new Outer();
+//        Inner inner = outer2.new Inner(); // Create the inner class
+//        inner.go();
     }
 }
