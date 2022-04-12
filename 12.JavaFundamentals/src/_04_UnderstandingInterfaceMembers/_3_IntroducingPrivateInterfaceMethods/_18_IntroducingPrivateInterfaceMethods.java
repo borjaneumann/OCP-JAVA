@@ -1,0 +1,2 @@
+package _04_UnderstandingInterfaceMembers._3_IntroducingPrivateInterfaceMethods;public class _18_IntroducingPrivateInterfaceMethods {
+}
