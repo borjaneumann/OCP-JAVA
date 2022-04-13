@@ -1,11 +1,21 @@
-public class _1_IntroducingRelationalDatabasesAndSQL {
+package _01_IntroducingRelationalDataBasesAndSQL;
+
+public class _01_IntroducingRelationalDatabasesAndSQL {
 
     /*
+
+    - Database Applications with JDBC
+    - Connect to databases using JDBC URLs and DriverManager
+    - Use PreparedStatement to perform CRUD operations
+    - Use PreparedStatement and CallableStatement APIs to perform database
+    operations
+
     JDBC stands for Java Database Connectivity.
 
     If you are new to JDBC, note that this chapter covers only the basics of
     JDBC and working with databases. What we cover is enough for the
-    exam. To be ready to use JDBC on the job, we recommend that you read
+    exam.
+    To be ready to use JDBC on the job, we recommend that you read
     books on SQL along with Java and databases. For example, you might try
     SQL for Dummies, 9th edition, Allen G. Taylor (Wiley, 2018) and
     Practical Database Programming with Java, Ying Bai (Wiley‐IEEE
@@ -31,6 +41,7 @@ public class _1_IntroducingRelationalDatabasesAndSQL {
     (SQL). SQL is a programming language used to interact with database
     records. JDBC works by sending a SQL command to the database and
     then processing the response.
+
     In addition to relational databases, there is another type of database called
     a NoSQL database. This is for databases that store their data in a format
     other than tables, such as key/value, document stores, and graph‐based
