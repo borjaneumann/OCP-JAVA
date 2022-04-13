@@ -1,4 +1,6 @@
-public class _2_IdentifyingTheStructureOfARelationalDatabase {
+package _01_IntroducingRelationalDataBasesAndSQL;
+
+public class _02_IdentifyingTheStructureOfARelationalDatabase {
     /*
     Our sample database has two tables. One has a row for each species that is
     in our zoo. The other has a row for each animal. These two relate to each

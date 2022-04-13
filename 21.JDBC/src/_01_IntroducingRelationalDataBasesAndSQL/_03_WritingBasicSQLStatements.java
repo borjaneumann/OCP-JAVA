@@ -1,4 +1,6 @@
-public class _3_WritingBasicSQLStatements {
+package _01_IntroducingRelationalDataBasesAndSQL;
+
+public class _03_WritingBasicSQLStatements {
 
     /*
     They are referred to as CRUD (Create, Read, Update, Delete).
