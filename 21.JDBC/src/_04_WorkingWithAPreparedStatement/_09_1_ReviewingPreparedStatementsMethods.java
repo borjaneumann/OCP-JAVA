@@ -1,4 +1,6 @@
-public class _12_ReviewingPreparedStatementsMethods {
+package _04_WorkingWithAPreparedStatement;
+
+public class _09_1_ReviewingPreparedStatementsMethods {
     //Important!!!
     /*
     SQL runnable by the execute method
