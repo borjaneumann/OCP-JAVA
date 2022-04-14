@@ -1,8 +1,10 @@
+package _03_ConnectingToADatabase;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class _7_GettingADatabaseConnection {
+public class _06_0_GettingADatabaseConnection {
 
     /*
     GETTING A DATABASE CONNECTION
@@ -46,16 +48,19 @@ calling the method. The good news is that the method has an easy‐to‐
             System.out.println(conn);
         }
     /*
+    If not suitable driver it wil throw this message:
     Exception in thread "main" java.sql.SQLException: No suitable driver found for jdbc:derby:zoo
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:702)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:251)
-	at _7_GettingADatabaseConnection$TestConnect.main(_7_GettingADatabaseConnection.java:46)
+	at _03_ConnectingToADatabase._7_GettingADatabaseConnection$TestConnect.main(_03_ConnectingToADatabase._7_GettingADatabaseConnection.java:46)
 
-	 SQLException is a checked exception.
+    Otherwise:
+    it will return: org.apache.derby.impl.jdbc.EmbedConnection@1979080261 (XID = 210), (SESSIONID = 1), (DATABASE = zoo), (DRDAID = null)
 
-	 java -cp "C:\db-derby-10.15.2.0-bin\db-derby-10.15.2.0-bin\lib\derby.jar" _7_GettingADatabaseConnection.java
+	SQLException is a checked exception.
 
-     it will return: org.apache.derby.impl.jdbc.EmbedConnection@1979080261 (XID = 210), (SESSIONID = 1), (DATABASE = zoo), (DRDAID = null)
+	java -cp "C:\db-derby-10.15.2.0-bin\db-derby-10.15.2.0-bin\lib\derby.jar" _03_ConnectingToADatabase
+	._7_GettingADatabaseConnection.java
 
     There is also a signature that takes a username and password.
     */

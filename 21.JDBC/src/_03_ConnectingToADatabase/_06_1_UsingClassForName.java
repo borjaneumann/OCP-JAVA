@@ -9,11 +9,11 @@ public class _8_UsingClassForName {
     getting a Connection. It looks like this:
     */
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
-    Class.forName("org.postgresql.Driver");
-    Connection conn = DriverManager.getConnection(
-    "jdbc:postgresql://localhost:5432/ocp-book",
-    "username",
-    "password");
+        Class.forName("org.postgresql.Driver");
+        Connection conn = DriverManager.getConnection(
+        "jdbc:postgresql://localhost:5432/ocp-book",
+        "username",
+        "password");
     }
     /*
     Class.forName() loads a class before it is used. With newer drivers,
