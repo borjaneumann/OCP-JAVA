@@ -1,12 +1,15 @@
+package _03_ConnectingToADatabase;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class _8_UsingClassForName {
+public class _06_1_UsingClassForName {
     /*
-    You might see Class.forName() in code. It was required with older
-    drivers (that were designed for older versions of JDBC) before
-    getting a Connection. It looks like this:
+    You might see Class.forName() in code.
+    It was required with older drivers (that were designed for older versions of JDBC) before
+    getting a Connection.
+    It looks like this:
     */
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
         Class.forName("org.postgresql.Driver");
@@ -16,8 +19,8 @@ public class _8_UsingClassForName {
         "password");
     }
     /*
-    Class.forName() loads a class before it is used. With newer drivers,
-    Class.forName() is no longer required.
+    Class.forName() loads a class before it is used.
+    With newer drivers, Class.forName() is no longer required.
 
      */
 
