@@ -1,0 +1,12 @@
+1. To run SetupDerbyDatabase, download derby.jar which acn be found https://db.apache.org/derby/derby_downloads.html
+2. Download the binary version.
+3. Unzip it in C and copy the path to the lib folder where the .jar is
+4. In the terminal run java -cp "C:\db-derby-10.15.1.3-bin\lib\derby.jar" SetupDerbyDatabase.java
+5. Number 5 should show on the terminal.
+
+Adding the JAR path in Intellij
+===============================
+1. Go to project Structure>Modules>
+2. Click on the dependencies tab, next to the Paths and Source tabs.
+3. Click on the plus symbol and select the path of the derby where the /jar files are.
+4. Now you should be able to run SetupDerbyDatabase from intellij.
