@@ -1,4 +1,6 @@
-public class _5_CompilingWithModules {
+package _02_IntroducingTheInterfacesOfJDBC;
+
+public class _4_1_CompilingWithModules {
     /*
     COMPILING WITH MODULES
     =======================

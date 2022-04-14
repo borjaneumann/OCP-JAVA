@@ -1,4 +1,4 @@
-package _04_UnderstandingInterfaceMembers.usingStaticInterfaceMethods;
+package _04_UnderstandingInterfaceMembers._2_usingStaticInterfaceMethods;
 
 public class Bunny implements Hop{
     public void printDetails() {

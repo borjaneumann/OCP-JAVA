@@ -1,4 +1,4 @@
-package _04_UnderstandingInterfaceMembers.CallingHiddenDefaultMethod;
+package _04_UnderstandingInterfaceMembers._1_RelayingOnADefaultIntefaceMethod.CallingHiddenDefaultMethod;
 
 public class Cat implements Walk, Run {
     public int getSpeed() {return 1;}

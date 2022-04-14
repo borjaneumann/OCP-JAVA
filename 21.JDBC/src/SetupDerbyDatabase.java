@@ -1,7 +1,7 @@
 import java.sql.*;
 
 //Code used in console to obtain 5
-//java -cp "C:\db-derby-10.15.2.0-bin\db-derby-10.15.2.0-bin\lib\derby.jar" SetupDerbyDatabase.java
+//java -cp "C:\db-derby-10.15.2.0-bin\db-derby-10.15.1.3-bin\lib\derby.jar" SetupDerbyDatabase.java
 public class SetupDerbyDatabase {
 
     public static void main(String[] args) throws Exception {

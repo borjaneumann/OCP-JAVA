@@ -1,4 +1,4 @@
-package _03_CreatingNestedClasses.declaringInnerClass.anonymousClass;
+package _03_CreatingNestedClasses.declaringInnerClass._4_AnonymousClass;
 
 //In this example, writing an anonymous
 //class is equivalent to writing a local class with an unspecified name that

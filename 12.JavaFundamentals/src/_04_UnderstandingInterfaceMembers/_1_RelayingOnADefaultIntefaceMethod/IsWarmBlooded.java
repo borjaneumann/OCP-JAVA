@@ -1,4 +1,4 @@
-package _04_UnderstandingInterfaceMembers;
+package _04_UnderstandingInterfaceMembers._1_RelayingOnADefaultIntefaceMethod;
 
 //The class has the option of overriding the default method, but if it does not, then the
 //default implementation will be used

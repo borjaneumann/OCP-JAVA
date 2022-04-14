@@ -1,8 +1,8 @@
 package _02_WorkingWithEnums;
 
-public enum OnlyOne {
+public enum _07_OnlyOne {
     ONCE(true);
-    private OnlyOne(boolean b) {
+    private _07_OnlyOne(boolean b) {
         System.out.println("constructing,");
     }
 }

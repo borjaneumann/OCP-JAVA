@@ -1,4 +1,4 @@
-package _03_CreatingNestedClasses;
+package _03_CreatingNestedClasses.declaringInnerClass._1_InnerClassRequiresAnInstance;
 
 //This is something you might see on the exam
 //but ideally not in the real world. Please never do this in

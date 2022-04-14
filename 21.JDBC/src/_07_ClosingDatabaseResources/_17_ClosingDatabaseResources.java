@@ -1,3 +1,5 @@
+package _07_ClosingDatabaseResources;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -87,7 +89,7 @@ public class _17_ClosingDatabaseResources {
             System.out.println(e.getErrorCode());
         }
     }
-    //Console command: java -cp "C:\db-derby-10.15.2.0-bin\db-derby-10.15.2.0-bin\lib\derby.jar" _17_ClosingDatabaseResources.java
+    //Console command: java -cp "C:\db-derby-10.15.2.0-bin\db-derby-10.15.2.0-bin\lib\derby.jar" _07_ClosingDatabaseResources._17_ClosingDatabaseResources.java
     public static void main(String[] args) {
         var sql = "SELECT not_a_column FROM names";
         var url = "jdbc:derby:zoo";
@@ -105,7 +107,7 @@ public class _17_ClosingDatabaseResources {
         }
     }
     /*
-    java -cp C:\db-derby-10.15.2.0-bin\db-derby-10.15.2.0-bin\lib\derby.jar" _17_ClosingDatabaseResources
+    java -cp C:\db-derby-10.15.2.0-bin\db-derby-10.15.2.0-bin\lib\derby.jar" _07_ClosingDatabaseResources._17_ClosingDatabaseResources
     Output:
     getMessage() --> Column 'NOT_A_COLUMN' is either not in any table in the FROM list or appears within a join specification and is outside the scope of the
     getSQLState() --> 42X04

@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class _4_IntroducingTheInterfacesOfJDBC {
+public class _4_0_IntroducingTheInterfacesOfJDBC {
     /*
     For the exam you need to know five key interfaces of JDBC.
     With JDBC, the concrete classes come from the JDBC driver. Each

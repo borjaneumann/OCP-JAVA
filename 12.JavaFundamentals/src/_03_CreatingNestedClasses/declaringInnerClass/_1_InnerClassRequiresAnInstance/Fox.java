@@ -1,4 +1,4 @@
-package _03_CreatingNestedClasses.declaringInnerClass.innerClassRequiresAnInstance;
+package _03_CreatingNestedClasses.declaringInnerClass._1_InnerClassRequiresAnInstance;
 
 public class Fox {
     private class Den {}

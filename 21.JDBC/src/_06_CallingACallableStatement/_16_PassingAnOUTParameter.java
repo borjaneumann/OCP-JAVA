@@ -1,2 +1,4 @@
-package _06_CallingACallableStatement;public class _16_PassingAnOUTParameter {
+package _06_CallingACallableStatement;
+
+public class _16_PassingAnOUTParameter {
 }

@@ -1,4 +1,4 @@
-package _03_CreatingNestedClasses.declaringInnerClass.localClass;
+package _03_CreatingNestedClasses.declaringInnerClass._3_localClass;
 
 //Here's a complicated way to multiply two
 //numbers:

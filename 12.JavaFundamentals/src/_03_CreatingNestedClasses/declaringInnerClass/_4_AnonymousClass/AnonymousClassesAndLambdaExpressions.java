@@ -1,4 +1,4 @@
-package _03_CreatingNestedClasses.declaringInnerClass.anonymousClass;
+package _03_CreatingNestedClasses.declaringInnerClass._4_AnonymousClass;
 
 
 //public class AnonymousClassesAndLambdaExpressions {

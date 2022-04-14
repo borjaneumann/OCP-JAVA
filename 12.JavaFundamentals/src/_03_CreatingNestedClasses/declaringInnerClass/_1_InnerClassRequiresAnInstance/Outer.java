@@ -1,4 +1,4 @@
-package _03_CreatingNestedClasses;
+package _03_CreatingNestedClasses.declaringInnerClass._1_InnerClassRequiresAnInstance;
 
 public class Outer {
     private String greeting = "Hi";

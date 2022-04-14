@@ -38,24 +38,24 @@ public enum _07_AddingConstructorsFieldsAndMethods {
     the already constructed enum values. Given that explanation, you can see
     why this calls the constructor only once:
 
-    public enum OnlyOne {
+    public enum _07_OnlyOne {
         ONCE(true);
-        private OnlyOne(boolean b) {
+        private _07_OnlyOne(boolean b) {
             System.out.print("constructing,");
         }
     }
     public class PrintTheOne {
         public static void main(String[] args) {
             System.out.print("begin,");
-            OnlyOne firstCall = OnlyOne.ONCE; // prints constructing,
-            OnlyOne secondCall = OnlyOne.ONCE; // doesn't print anything
+            _07_OnlyOne firstCall = _07_OnlyOne.ONCE; // prints constructing,
+            _07_OnlyOne secondCall = _07_OnlyOne.ONCE; // doesn't print anything
             System.out.print("end");
         }
     }
 
     This class prints the following: begin,constructing,end
 
-    If the OnlyOne enum was used earlier, and therefore initialized sooner,
+    If the _07_OnlyOne enum was used earlier, and therefore initialized sooner,
     then the line that declares the firstCall variable would not print
     anything.
     This technique of a constructor and state allows you to combine logic with

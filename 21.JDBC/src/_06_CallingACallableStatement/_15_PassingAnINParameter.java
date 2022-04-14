@@ -1,2 +1,4 @@
-package _06_CallingACallableStatement;public class _15_PassingAnINParameter {
+package _06_CallingACallableStatement;
+
+public class _15_PassingAnINParameter {
 }

@@ -1,4 +1,4 @@
-package _05_IntroducingFunctionalProgramming.workingWithLambdaVariables;
+package _05_IntroducingFunctionalProgramming._05_WorkingWithLambdaVariables;
 
 public class RestrictionsVarParameterList {
 

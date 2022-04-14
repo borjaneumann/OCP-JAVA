@@ -1,4 +1,4 @@
-package _03_CreatingNestedClasses.declaringInnerClass.staticNestedClass.importing.bird;
+package _03_CreatingNestedClasses.declaringInnerClass._2_StaticNestedClass.importing.bird;
 
 public class Toucan {
     public static class Beak {}

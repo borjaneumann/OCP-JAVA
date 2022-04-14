@@ -1,4 +1,4 @@
-package _04_UnderstandingInterfaceMembers.introducingPrivateInterfaceMethods;
+package _04_UnderstandingInterfaceMembers._3_IntroducingPrivateInterfaceMethods;
 
 public interface Schedule {
     default void wakeup()           {checkTime(7);}

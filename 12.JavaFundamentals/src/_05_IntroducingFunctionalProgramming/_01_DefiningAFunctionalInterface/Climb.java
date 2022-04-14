@@ -1,4 +1,4 @@
-package _05_IntroducingFunctionalProgramming.definingFunctionalInterface;
+package _05_IntroducingFunctionalProgramming._01_DefiningAFunctionalInterface;
 
 public interface Climb {
     void reach(); //This is a functional interface as it has reach() as one abstract method.
