@@ -1,3 +1,5 @@
+package _02_IntroducingTheInterfacesOfJDBC;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -42,7 +44,7 @@ public class _4_IntroducingTheInterfacesOfJDBC {
             String url = "jdbc:derby:zoo";
             try (Connection conn = DriverManager.getConnection(url);
                  PreparedStatement ps = conn.prepareStatement(
-            "SELECT name FROM animal");
+            "SELECT name FROM exhibits");
                  ResultSet rs = ps.executeQuery()) {
             while (rs.next())
             System.out.println(rs.getString(1));
