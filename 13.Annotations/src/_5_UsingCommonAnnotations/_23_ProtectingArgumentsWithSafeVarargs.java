@@ -1,0 +1,2 @@
+package _5_UsingCommonAnnotations;public class _23_ProtectingArgumentsWithSafeVarargs {
+}
