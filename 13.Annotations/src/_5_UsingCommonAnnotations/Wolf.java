@@ -1,4 +1,4 @@
-package _5_UsingCommonAnnotations.MarkingMethodsWIthOverride;
+package _5_UsingCommonAnnotations;
 
 public class Wolf  extends Canine{
     @Override

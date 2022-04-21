@@ -1,4 +1,4 @@
-package _5_UsingCommonAnnotations.MarkingMethodsWIthOverride;
+package _5_UsingCommonAnnotations;
 
 public class Dog  extends Canine {
 //    @Override does not compile because it is new method

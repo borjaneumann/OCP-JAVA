@@ -1,4 +1,4 @@
-package _1_UsingMethodReferences._03_CallingInstanceMethodsOnAParameter;
+package _1_UsingMethodReferences._3_CallingInstanceMethodsOnAParameter;
 
 
 import java.util.function.BiPredicate;
@@ -8,11 +8,16 @@ import java.util.function.Predicate;
 //parameters
 public class Example {
 
-    Predicate<String> methodRef = String::isEmpty;
-    Predicate<String> lambda = s -> s.isEmpty();
+    public static void main(String[] args) {
+        Predicate<String> methodRef = String::isEmpty;
+        Predicate<String> lambda = s -> s.isEmpty();
 
-    BiPredicate<String, String> methodRef1 = String::startsWith;
-    BiPredicate<String, String> lambda1 = (s, p) -> s.startsWith(p);
+        BiPredicate<String, String> methodRef1 = String::startsWith;
+        BiPredicate<String, String> lambda1 = (s, p) -> s.startsWith(p);
+
+        System.out.println(methodRef1.test("Hola", "H")); //true
+    }
+
 
 
 

@@ -1,4 +1,4 @@
-package _2_CreatingCustomAnnotations.SpecifyingARequiredElement;
+package _2_CreatingCustomAnnotations;
 
 public class _07_ApplyingElementModifiers {
     /*

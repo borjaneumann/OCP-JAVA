@@ -6,6 +6,7 @@ public class _18_ComparingCallableStatementParameters {
     =======================================
     Stored procedure parameter types
                                                     IN      OUT         INOUT
+    -------------------------------------------------------------------------
     Used for input                                  Yes     No          Yes
     Used for output                                 No      Yes         Yes
     Must set parameter value                        Yes     No          Yes

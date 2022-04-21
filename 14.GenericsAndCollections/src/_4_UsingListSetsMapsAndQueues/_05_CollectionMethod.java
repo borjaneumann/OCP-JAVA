@@ -1,4 +1,4 @@
-package _2_UsingWrapperClasses;
+package _4_UsingListSetsMapsAndQueues;
 
 import java.util.ArrayList;
 import java.util.Arrays;

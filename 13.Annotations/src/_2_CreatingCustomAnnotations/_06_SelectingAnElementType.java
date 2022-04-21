@@ -1,6 +1,7 @@
-package _2_CreatingCustomAnnotations.SpecifyingARequiredElement;
+package _2_CreatingCustomAnnotations;
 
 import _2_CreatingCustomAnnotations.Exercise;
+import _2_CreatingCustomAnnotations.SpecifyingARequiredElement.Exercise2;
 
 public class _06_SelectingAnElementType {
     /*

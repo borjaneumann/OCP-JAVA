@@ -1,4 +1,4 @@
-package _1_UsingMethodReferences._00_Intro;
+package _1_UsingMethodReferences._0_Intro;
 
 public class Duckling {
     public static void makeSound(String sound) {

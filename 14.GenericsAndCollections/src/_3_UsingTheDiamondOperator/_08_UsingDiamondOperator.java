@@ -1,11 +1,11 @@
-package _2_UsingWrapperClasses;
+package _3_UsingTheDiamondOperator;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class _03_UsingDiamondOperator {
+public class _08_UsingDiamondOperator {
     public static void main(String[] args) {
 
         //In the past we would write a lot of duplicate code

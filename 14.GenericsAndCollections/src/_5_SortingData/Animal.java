@@ -1,4 +1,4 @@
-package _3_SortingData;
+package _5_SortingData;
 
 public class Animal implements Comparable<Animal>{
     private int id;

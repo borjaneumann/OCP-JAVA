@@ -76,7 +76,5 @@ public class _13_LimitingUsageWithTarget {
     used, nor what applying it to these locations actually does, but you do
     need to recognize that they can be applied in this manner if TYPE_USE is
     one of the @Target options.
-
-
      */
 }
