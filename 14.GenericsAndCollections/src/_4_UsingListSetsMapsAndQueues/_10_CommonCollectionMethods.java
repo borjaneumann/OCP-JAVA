@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
 
-public class _05_CollectionMethod {
+public class _10_CommonCollectionMethods {
     public static void main(String[] args) {
 
         //add()

@@ -5,7 +5,7 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.LinkedList;
 
-public class _04_UsingListsSetsMapsQueues {
+public class _09_UsingListsSetsMapsQueues {
 
     //List: A list is an ordered collection of elements that allows duplicate entries. Elements in a list can be accessed by an int index.
 
