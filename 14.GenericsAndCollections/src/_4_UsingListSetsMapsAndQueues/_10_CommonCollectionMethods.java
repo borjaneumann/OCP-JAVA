@@ -10,7 +10,6 @@ public class _10_CommonCollectionMethods {
 
         //add()
         //boolean add(E element)
-
         Collection<String> list = new ArrayList<>();
         System.out.println("Add: " + list.add("Sparrow")); // true
         System.out.println("Add: " + list.add("Sparrow")); // true
@@ -91,7 +90,6 @@ public class _10_CommonCollectionMethods {
 
         //forEach()
         //void forEach(Consumer<? super T> action)
-
         Collection<String> cats = Arrays.asList("Annie", "Ripley");
         cats.forEach(System.out::println); //method reference
         cats.forEach(c -> System.out.println("forEach method: " + c)); //streams

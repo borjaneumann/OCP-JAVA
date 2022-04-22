@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.TreeSet;
 
-public class _10_UsingTheSetInterface {
+public class _12_UsingTheSetInterface {
 
     public static void main(String[] args) {
 
@@ -23,6 +23,7 @@ public class _10_UsingTheSetInterface {
         setOfNumbers.forEach(System.out::println);
 
         System.out.println();
+
         //TreeSet
         Set<Integer> set = new TreeSet<>();
         boolean b5 = set.add(66); // true
@@ -30,8 +31,6 @@ public class _10_UsingTheSetInterface {
         boolean b7 = set.add(66); // false
         boolean b8 = set.add(8); // true
         set.forEach(System.out::println); // they get printed in their natural sorted order
-
-
 
     }
 }

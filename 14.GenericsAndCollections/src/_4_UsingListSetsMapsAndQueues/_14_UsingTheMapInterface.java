@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.TreeMap;
 import java.util.function.BiFunction;
 
-public class _12_UsingTheMapInterface {
+public class _14_UsingTheMapInterface {
     public static void main(String[] args) {
         Map<Integer, String> map = Map.of(101, "PP", 102, "QQ", 103, "RR");
 

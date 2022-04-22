@@ -3,7 +3,7 @@ package _4_UsingListSetsMapsAndQueues;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class _11_UsingTheQueueInterface {
+public class _13_UsingTheQueueInterface {
 
     public static void main(String[] args) {
         //The queue interface has six methods
@@ -23,9 +23,14 @@ public class _11_UsingTheQueueInterface {
         Queue<Integer> queue = new LinkedList<>();
         System.out.println(queue.offer(10)); // true
         System.out.println(queue.offer(4)); // true
+        System.out.println(queue.offer(21)); // true
+        System.out.println(queue.offer(37)); // true
+        System.out.println(queue);
         System.out.println(queue.peek()); // 10
         System.out.println(queue.poll()); // 10
         System.out.println(queue.poll()); // 4
+        System.out.println(queue);
+        System.out.println(queue.element());
         System.out.println(queue.peek()); // null
 
     }
