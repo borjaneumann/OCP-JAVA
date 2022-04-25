@@ -1,6 +1,6 @@
 import java.util.Optional;
 
-public class _8_DealingWithAnEmptyOptional {
+public class _9_DealingWithAnEmptyOptional {
 
     //The remaining methods allow you to specify what to do if a value isn't
     //present.

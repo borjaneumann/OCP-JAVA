@@ -1,3 +1,5 @@
+package _01_WorkingWithBuiltinFunctionalInterfaces;
+
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;

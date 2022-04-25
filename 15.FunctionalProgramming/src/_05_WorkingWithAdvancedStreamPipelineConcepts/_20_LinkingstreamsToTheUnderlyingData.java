@@ -1,0 +1,2 @@
+package _05_WorkingWithAdvancedStreamPipelineConcepts;public interface _20_LinkingstreamsToTheUnderlyingData {
+}

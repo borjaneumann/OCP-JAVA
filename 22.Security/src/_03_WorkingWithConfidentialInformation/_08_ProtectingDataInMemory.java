@@ -1,0 +1,2 @@
+package _03_WorkingWithConfidentialInformation;public class _08_ProtectingDataInMemory {
+}

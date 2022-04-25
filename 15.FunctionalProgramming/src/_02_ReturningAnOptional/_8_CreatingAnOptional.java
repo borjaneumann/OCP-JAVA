@@ -1,7 +1,7 @@
 import java.util.Calendar;
 import java.util.Optional;
 
-public class _7_ReturningAnOptional {
+public class _7_CreatingAnOptional {
 
     //How do we express this “we don't know” or “not applicable” answer in
     //Java? We use the Optional type.

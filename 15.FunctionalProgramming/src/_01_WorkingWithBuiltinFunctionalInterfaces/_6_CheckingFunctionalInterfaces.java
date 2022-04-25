@@ -1,0 +1,2 @@
+package _01_WorkingWithBuiltinFunctionalInterfaces._6;public class CheckingFunctionalInterfaces {
+}

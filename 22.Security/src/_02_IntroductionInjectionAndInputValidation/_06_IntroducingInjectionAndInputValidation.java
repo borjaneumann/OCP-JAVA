@@ -3,7 +3,7 @@ package _02_IntroductionInjectionAndInputValidation;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-public class _02_IntroducingInjectionAndInputValidation {
+public class _06_IntroducingInjectionAndInputValidation {
     /*
     Concepts:
     ========
