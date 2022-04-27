@@ -1,30 +1,49 @@
 package _01_DesigningASecureObject;
 
-public class _02_RestrictingExtensibility {
+import java.util.Map;
 
+public class _02_RestrictingExtensibility {
     /*
-    RESTRICTING EXTENSIBILITY
-    =========================
-    Marking a sensitive class as final.
     Suppose you are working on a class that uses ComboLocks.
-    */
-    public static class GrasshopperCage {
-        public static void openLock(_01_LimitingAccessibility.ComboLocks comboLocks, String
+     */
+    public class GrasshopperCage {
+        public  void openLock(_01_LimitingAccessibility.ComboLocks comboLocks, String
                 combo) {
             if (comboLocks.isComboValid("grasshopper", combo))
                 System.out.println("Open!");
         }
     }
     /*
-    This is far better; we don't expose the combinations map to any classes
-    outside the ComboLocks class. For example, package‐private is better than
-    public, and private is better than package‐private.
-
-    If your application is using modules, you can do even better by only exporting
-    the security packages to the specific modules that should have access. Here's an example:
-
-    exports animals.security to zoo.staff;
-
-    In this example, only the zoo.staff module can access the public classes in the animals.security package.
+    Ideally, the first variable passed to this method is an instance of the
+    ComboLocks class. However, Hacker Harry is hard at work and has created
+    this subclass of ComboLocks.
+     */
+//    public class EvilComboLocks extends ComboLocks {
+//        public boolean isComboValid(String animal, String combo) {
+//            var valid = super.isComboValid(animal, combo);
+//            if (valid) {
+//                // email the password to Hacker Harry
+//            }
+//            return valid;
+//        }
+//    }
+    /*
+    This is great. Hacker Harry can check whether the password is valid and
+    email himself all the valid passwords. Mayhem ensues! Luckily, there is
+    an easy way to prevent this problem. Marking a sensitive class as final
+    prevents any subclasses.
+     */
+    public final class ComboLocks {
+        private Map<String, String> combos;
+        // instantiate combos object
+        public boolean isComboValid(String animal, String combo) {
+            var correctCombo = combos.get(animal);
+            return combo.equals(correctCombo);
+        }
+    }
+    /*
+    Hacker Harry can't create his evil class, and users of the GrasshopperCage
+    have the assurance that only the expected ComboLocks class can make an
+    appearance.
      */
 }
