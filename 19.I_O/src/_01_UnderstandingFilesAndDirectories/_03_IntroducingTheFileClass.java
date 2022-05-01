@@ -1,7 +1,7 @@
 import java.io.File;
 import java.io.IOException;
 
-public class _1_IntroducingTheFileClass {
+public class _03_IntroducingTheFileClass {
 
     /*
     The File class is used to read information about existing files and directories,

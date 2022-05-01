@@ -2,8 +2,6 @@ package _6_WorkingWithGenerics;
 
 public class _25_2_UpperBoundedWildCards {
     /*
-    Upper‐Bounded Wildcards
-
     Let's try to write a method that adds up the total of a list of numbers.
     We've established that a generic type can't just use a subclass.
     ArrayList<Number> list = new ArrayList<Integer>(); // DOES NOT COMPILE
