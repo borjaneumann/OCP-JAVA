@@ -4,7 +4,7 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
 
-public class _6_ConvenienceMethodsOnFunctionalInterfaces {
+public class _7_ConvenienceMethodsOnFunctionalInterfaces {
 
     /*By definition, all functional interfaces have a single abstract method. This
     doesn't mean they can have only one method, though. Several of the

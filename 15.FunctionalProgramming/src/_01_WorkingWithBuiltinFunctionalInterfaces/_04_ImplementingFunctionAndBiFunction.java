@@ -1,3 +1,5 @@
+package _01_WorkingWithBuiltinFunctionalInterfaces;
+
 import java.util.function.BiFunction;
 import java.util.function.Function;
 
