@@ -4,8 +4,16 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.function.Supplier;
 
-public class _1_ImplementingSupplier {
+public class _01_ImplementingSupplier {
     public static void main(String[] args) {
+        /*A Supplier is used when you want to generate or supply values without
+        taking any input. The Supplier interface is defined as follows:
+
+        @FunctionalInterface
+        public interface Supplier<T> {
+            T get();
+        }
+        */
 
         Supplier<LocalDate> s1 = LocalDate::now;
         Supplier<LocalDate> s2 = () -> LocalDate.now();
