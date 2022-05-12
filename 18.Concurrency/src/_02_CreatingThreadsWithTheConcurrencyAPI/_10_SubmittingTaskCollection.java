@@ -1,0 +1,2 @@
+package _02_CreatingThreadsWithTheConcurrencyAPI;public class _10_SubmittingTaskCollection {
+}
