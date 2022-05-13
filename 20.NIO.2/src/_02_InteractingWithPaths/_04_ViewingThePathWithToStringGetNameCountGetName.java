@@ -29,6 +29,7 @@ public class _6_ViewingThePathWithToStringGetNameCountGetName {
     public static void getNameCountAndGetName() {
         Path path = Paths.get("/land/hippo/harry.happy");
         System.out.println("The Path Name is: " + path);
+        System.out.println("The getNameCount is: " +path.getNameCount());
         for(int i=0; i<path.getNameCount(); i++) {
             System.out.println(" Element " + i + " is: " +
                     path.getName(i));
