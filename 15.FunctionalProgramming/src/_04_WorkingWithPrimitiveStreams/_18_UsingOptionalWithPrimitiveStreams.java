@@ -1,3 +1,5 @@
+package _04_WorkingWithPrimitiveStreams;
+
 import java.util.OptionalDouble;
 import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;

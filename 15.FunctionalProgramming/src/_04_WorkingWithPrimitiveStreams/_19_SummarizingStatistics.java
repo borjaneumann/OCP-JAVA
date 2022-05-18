@@ -1,3 +1,5 @@
+package _04_WorkingWithPrimitiveStreams;
+
 import java.util.IntSummaryStatistics;
 import java.util.OptionalInt;
 import java.util.stream.IntStream;

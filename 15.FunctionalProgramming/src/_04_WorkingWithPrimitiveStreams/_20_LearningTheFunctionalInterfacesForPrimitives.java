@@ -1,3 +1,5 @@
+package _04_WorkingWithPrimitiveStreams;
+
 import java.util.function.BooleanSupplier;
 
 public class _22_LearningTheFunctionalInterfacesForPrimitives {
