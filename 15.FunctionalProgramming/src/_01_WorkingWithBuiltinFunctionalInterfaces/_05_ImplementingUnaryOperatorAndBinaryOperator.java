@@ -3,7 +3,7 @@ package _01_WorkingWithBuiltinFunctionalInterfaces;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 
-public class _5_ImplementingUnaryOperatorAndBinaryOperator {
+public class _05_ImplementingUnaryOperatorAndBinaryOperator {
 
     @FunctionalInterface
     public interface UnaryOperator<T> extends Function<T, T> { }

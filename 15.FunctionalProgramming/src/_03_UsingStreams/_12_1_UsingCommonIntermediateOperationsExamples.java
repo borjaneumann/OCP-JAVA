@@ -1,3 +1,5 @@
+package _03_UsingStreams;
+
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
@@ -7,7 +9,7 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class _12_TerminalStreamOperationsExamples {
+public class _12_1_UsingCommonIntermediateOperationsExamples {
 
     public static void main(String[] args) {
         //Count()

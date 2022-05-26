@@ -1,8 +1,10 @@
+package _04_WorkingWithPrimitiveStreams;
+
 import java.util.OptionalDouble;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-public class _16_WorkingWithPrimitiveStreams {
+public class _15_WorkingWithPrimitiveStreamsIntro {
 
     //Java actually includes other stream classes besides Stream that you can
     //use to work with select primitives: int, double, and long. Let's take a

@@ -1,6 +1,6 @@
 package _01_WorkingWithBuiltinFunctionalInterfaces;
 
-public class _6_CheckingFunctionalInterfaces {
+public class _06_CheckingFunctionalInterfaces {
     /*
     It's really important to know the number of parameters, types, return value,
     and method name for each of the functional interfaces. Now would be a
