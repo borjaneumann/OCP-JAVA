@@ -5,9 +5,7 @@ import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
 import java.util.stream.LongStream;
 
-import javax.crypto.spec.PSource;
-
-public class _20_UsingOptionalWithPrimitiveStreams {
+public class _18_UsingOptionalWithPrimitiveStreams {
 
     public static void main(String[] args) {
         var stream = IntStream.rangeClosed(1,10);
@@ -26,6 +24,7 @@ public class _20_UsingOptionalWithPrimitiveStreams {
         // Optional types for primitives
         /*
                                             OptionalDouble      OptionalInt     OptionalLong
+        =====================================================================================
         - Getting as a primitive            getAsDouble()       getAsInt()      getAsLong()
         - orElseGet() parameter type        DoubleSupplier      IntSupplier     LongSupplier
         - Return type of max() and min()    OptionalDouble      OptionalInt     OptionalLong

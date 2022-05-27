@@ -12,7 +12,7 @@ public class _16_CreatingPrimitiveStreams {
 
     public static void main(String[] args) {
 
-    /*Method                      Primitive stream        Description
+    /*Method                    Primitive stream        Description
     - OptionalDouble            IntStream               The arithmetic mean of the elements
     average()                   LongStream
                                 DoubleStream

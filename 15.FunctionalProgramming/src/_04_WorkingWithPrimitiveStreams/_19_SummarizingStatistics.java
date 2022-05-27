@@ -4,7 +4,7 @@ import java.util.IntSummaryStatistics;
 import java.util.OptionalInt;
 import java.util.stream.IntStream;
 
-public class _21_SummarizingStatistics {
+public class _19_SummarizingStatistics {
     //You've learned enough to be able to get the maximum value from a stream
     //of int primitives. If the stream is empty, we want to throw an exception.
     //See max example above.
@@ -21,7 +21,9 @@ public class _21_SummarizingStatistics {
         return stats.getMax()-stats.getMin();//this is the range
     }
 
-    /*Summary statistics include the following:
+    /*
+    Summary statistics include the following:
+    =========================================
     * Smallest number (minimum): getMin()
     * Largest number (maximum): getMax()
     * Average: getAverage()
