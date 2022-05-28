@@ -3,11 +3,16 @@ package _1_ReviewingExceptions;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.sql.SQLData;
 
-public class _1_TryStatements {
+public class _1_HandlingExceptions {
 
     public static void main(String[] args) {
+        /*
+        A try statement is used to handle exceptions. It consists of a try clause,
+        zero or more catch clauses to handle the exceptions that are thrown, and
+        an optional finally clause, which runs regardless of whether an exception
+        is thrown.
+         */
         //Try statement
         try {
             //protected code
@@ -20,8 +25,11 @@ public class _1_TryStatements {
         }
 
         //try-with-resources
-        //A try‐with‐resources statement looks a lot like a try statement, except that it
-        //includes a list of resources inside a set of parentheses, ().
+        /*A try‐with‐resources statement looks a lot like a try statement, except that it
+        includes a list of resources inside a set of parentheses, ().
+        These resources are automatically closed in the reverse order that they are declared at the
+        conclusion of the try clause.
+        */
         try (var in = new FileInputStream("data.txt");//required semicolon between resources
             var out = new FileOutputStream("output.txt");){ //Optional semicolon
             //Protected code
@@ -30,6 +38,11 @@ public class _1_TryStatements {
         }finally{
             //finally block
         }
+        /*
+        Did you notice we used var for the resource type? While var is not
+        required, it is convenient when working with streams, database objects,
+        and especially generics, whose declarations can be lengthy.
+         */
     }
 
 }
