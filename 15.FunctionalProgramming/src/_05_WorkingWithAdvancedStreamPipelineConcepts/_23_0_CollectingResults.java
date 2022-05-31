@@ -1,168 +1,59 @@
 package _05_WorkingWithAdvancedStreamPipelineConcepts;
 
-public class _23_CollectingResults {
+public class _23_0_CollectingResults {
     /*
     Examples of grouping/partitioning collectors
-    Collector Description Return value when
-    Collector Description
-    passed to collect
-    averagingDoubl
-    e(ToDoubleFunc
-    tion f)
-    averagingInt(
-    ToIntFunction
-    f)
-    averagingLong
-    (ToLongFunctio
-    n f)
-    Calculates the average for our
-    three core primitive types Double
-    counting()
-    Counts the number of
-    elements Long
-    groupingBy(Fun
-    ction f)
-    groupingBy(Fu
-    nction f,
-    Collector dc)
-    groupingBy(Fu
-    nction f,
-    Supplier s,
-    Collector dc)
-    Creates a map grouping by
-    the specified function with
-    the optional map type
-    supplier and optional
-    downstream collector
-    Map<K, List<T>>
-    joining(CharSe
-    quence cs)
-    Creates a single String using
-    cs as a delimiter between
-    elements if one is specified
-    String
-    maxBy(Comparat
-    or c)
-    minBy(Compara
-    tor c)
-    Finds the largest/smallest
-    elements Optional<T>
-    mapping(Functi
-    on f,
-    Collector dc)
-    Adds another level of
-    collectors Collector
-    partitioningBy
-    (Predicate p)
-    partitioningB
-    y(Predicate p,
-    Collector dc)
-    Creates a map grouping by
-    the specified predicate with
-    the optional further
-    downstream collector
-    Map<Boolean,
-    List<T>>
-    summarizingDou
-    ble(ToDoubleFu
-    nction f)
-    summarizingIn
-    t(ToIntFunctio
-    n f)
-    summarizingLo
-    ng(ToLongFunct
-    ion f)
-    Calculates average, min, max,
-    and so on DoubleSummarySta
-    tistics
-    IntSummaryStatis
-    tics
-    LongSummaryStati
-    stics
-    summingDouble(
-    ToDoubleFuncti
-    on f)
-    summingInt(To
-    IntFunction f)
-    summingLong(T
-    oLongFunction
-    f)
-    Calculates the sum for our
-    three core primitive types Double
-    Integer
-    Long
-    toList()
-    toSet()
-    Creates an arbitrary type of
-    list or set List
-    Set
-    toCollection(S
-    upplier s)
-    Creates a Collection of the
-    specified type Collection
-    toMap(Function
-    k, Function v)
-    toMap(Functio
-    n k, Function
-    Creates a map using functions
-    to map the keys, values, an
-    optional merge function, and
-    an optional map type supplier
-    Map
-    n k, Function
-    v,
-    BinaryOperator
-    m)
-    toMap(Functio
-    n k, Function
-    v,
-    BinaryOperator
-    m, Supplier s)
-    an optional map type supplier
-    Collecting Using Basic Collectors
-    Luckily, many of these collectors work in the same way. Let's look at an
-    example.
-    var ohMy = Stream.of("lions", "tigers", "bears");
-    String result = ohMy.collect(Collectors.joining(", "));
-    System.out.println(result); // lions, tigers, bears
-    Notice how the predefined collectors are in the Collectors class rather
-    than the Collector interface. This is a common theme, which you saw
-    with Collection versus Collections. In fact, you'll see this pattern again
-    in Chapter 20, “NIO.2,” when working with Paths and Path, and other
-    related types.
-    We pass the predefined joining() collector to the collect() method. All
-    elements of the stream are then merged into a String with the specified
-    delimiter between each element. It is important to pass the Collector to
-    the collect method. It exists to help collect elements. A Collector
-    doesn't do anything on its own.
-    Let's try another one. What is the average length of the three animal
-    names?
-    var ohMy = Stream.of("lions", "tigers", "bears");
-    Double result =
-    ohMy.collect(Collectors.averagingInt(String::length));
-    System.out.println(result); // 5.333333333333333
-    The pattern is the same. We pass a collector to collect(), and it performs
-    the average for us. This time, we needed to pass a function to tell the
-    collector what to average. We used a method reference, which returns an
-    int upon execution. With primitive streams, the result of an average was
-    always a double, regardless of what type is being averaged. For collectors,
-    it is a Double since those need an Object.
-    Often, you'll find yourself interacting with code that was written without
-    streams. This means that it will expect a Collection type rather than a
-    Stream type. No problem. You can still express yourself using a Stream
-    and then convert to a Collection at the end, for example:
-    var ohMy = Stream.of("lions", "tigers", "bears");
-    TreeSet<String> result = ohMy
-    .filter(s -> s.startsWith("t"))
-    .collect(Collectors.toCollection(TreeSet::new));
-    System.out.println(result); // [tigers]
-    This time we have all three parts of the stream pipeline. Stream.of() is
-    the source for the stream. The intermediate operation is filter(). Finally,
-    the terminal operation is collect(), which creates a TreeSet. If we didn't
-    care which implementation of Set we got, we could have written
-    Collectors.toSet() instead.
-    At this point, you should be able to use all of the Collectors in Table
-    15.13 except groupingBy(), mapping(), partitioningBy(), and toMap().
+
+    Collector                           Description               Return value when passed to collect
+    =============================================================================================
+    averagingDouble(ToDoubleFunction f) Calculates the average
+    averagingInt(ToIntFunction f)       for our three core                  Double
+    averagingLong(ToLongFunction f)     primitive types
+    --------------------------------------------------------------------------------------------------
+    counting()                          Counts the number of                Long
+                                        elements
+    --------------------------------------------------------------------------------------------------
+    groupingBy(Function f)              Creates a map grouping by
+    groupingBy(Function f,              the specified function with
+        Collector dc)                   the optional map type               Map<K, List<T>>
+    groupingBy(Function f,              supplier and optional
+    Supplier s,Collector dc)            downstream collector
+    --------------------------------------------------------------------------------------------------
+    joining(CharSequence cs)            Creates a single String using
+                                        cs as a delimiter between           String
+                                        elements if one is specified
+    --------------------------------------------------------------------------------------------------
+    maxBy(Comparator c)                 Finds the largest/smallest          Optional<T>
+    minBy(Comparator c)                 elements
+    --------------------------------------------------------------------------------------------------
+    mapping(Function f,Collector dc)    Adds another level of collectors    Collector
+    --------------------------------------------------------------------------------------------------
+    partitioningBy(Predicate p)         Creates a map grouping by
+    partitioningBy(Predicate p,         the specified predicate with        Map<Boolean,List<T>>
+        Collector dc)                   the optional further
+                                        downstream collector
+    --------------------------------------------------------------------------------------------------
+    summarizingDouble(ToDoubleFunction f)   Calculates average, min, max,   DoubleSummaryStatistics
+    summarizingInt(ToIntFunction f)         and so on                       IntSummaryStatistics
+    summarizingLong(ToLongFunction f)                                       LongSummaryStatistics
+    --------------------------------------------------------------------------------------------------
+    summingDouble(ToDoubleFunction f)   Calculates the sum for our          Double
+    summingInt(To IntFunction f)        three core primitive types          Integer
+    summingLong(ToLongFunction f)                                           Long
+    --------------------------------------------------------------------------------------------------
+    toList()                            Creates an arbitrary type of        List
+    toSet()                             list or set                         Set
+    --------------------------------------------------------------------------------------------------
+    toCollection(Supplier s)            Creates a Collection of the         Collection
+                                        specified type
+    --------------------------------------------------------------------------------------------------
+    toMap(Function k, Function v)       Creates a map using functions
+    toMap(Function k, Function v,       to map the keys, values, an         Map
+        BinaryOperator m)               optional merge function, and
+    toMap(Function k, Function v,       an optional map type supplier
+    BinaryOperator m, Supplier s)
+
+
     Collecting into Maps
     Code using Collectors involving maps can get quite long. We will build
     it up slowly. Make sure that you understand each example before going on
