@@ -1,0 +1,2 @@
+package _06_WorkingWithParallelStreams;public class _25_PerformingAParallelDecomposition {
+}
