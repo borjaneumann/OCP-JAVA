@@ -1,3 +1,5 @@
+package _03_OperatingOnFilesAndDirectories;
+
 public class _24_ReviewingFilesMethods {
     /*
     Below the static methods in the Files class for the exam.

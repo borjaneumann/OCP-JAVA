@@ -1,9 +1,11 @@
+package _04_WorkingWithIOStreamClasses;
+
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class _9_ReadingAndWritingCharacterData {
+public class _11_ReadingAndWritingCharacterData {
 
     /*
     The FileReader and FileWriter classes, along with their associated
