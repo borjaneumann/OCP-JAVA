@@ -1,3 +1,5 @@
+package _06_ComparingLegacyJavaIoFileAndNIO2Methods;
+
 public class _32_ComparingLegacyJavaIOFile_And_NIO2Methods {
 
     /*
