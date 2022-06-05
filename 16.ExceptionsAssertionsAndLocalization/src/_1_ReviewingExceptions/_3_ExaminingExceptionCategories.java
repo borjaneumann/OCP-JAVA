@@ -2,10 +2,10 @@ package _1_ReviewingExceptions;
 
 public class _3_ExaminingExceptionCategories {
 
-    //all exceptions inherit from Throwable
-    //the only ones you should be handling or declaring extend from the Exception class.
+    /*All exceptions inherit from Throwable.
+    The only ones you should be handling or
+    declaring extend from the Exception class.
 
-    /*
     A checked exception must be handled or declared by the
     application code where it is thrown. The handle or declare rule dictates
     that a checked exception must be either caught in a catch block or thrown
@@ -34,7 +34,7 @@ public class _3_ExaminingExceptionCategories {
     considered a poor practice to catch it
      */
 
-    //Uncheched exceptions
+    //Unchecked exceptions
     /*ArithmeticException       ArrayIndexOutOfBoundsException
     ----------------------      -------------------------------
     ArrayStoreException         ClassCastException
