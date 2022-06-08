@@ -1,4 +1,4 @@
-package _05_IntroducingFunctionalProgramming._03_ImplFunctionalInterfacesWithLambdas;
+package _05_IntroducingFunctionalProgramming._04_WritingLambdaExpressions;
 
 public class _24_WritingLambdaExpressions {
     /*

@@ -10,7 +10,7 @@ public class _08_CreatingNestedClassesIntro {
     - Local class: A class defined within a method body
     - Anonymous class: A special case of a local class that does not have a name
 
-    USes:
+    Uses:
     There are many benefits of using nested classes. They can encapsulate
     helper classes by restricting them to the containing class. They can make it
     easy to create a class that will be used in only one place. They can make
