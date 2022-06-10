@@ -9,15 +9,14 @@ import java.util.Scanner;
 public class _9_ConstructingTryWithCatchResourcesManagement {
 
     /*The first rule you should know is: try‐with‐resources statements require
-    resources that implement the AutoCloseable interface.*/
+    resources that implement the AutoCloseable interface.
 
-    /*The second rule you should be familiar with is: a try‐with‐resources
+    The second rule you should be familiar with is: a try‐with‐resources
     statement can include multiple resources, which are closed in the reverse
     order in which they are declared. Resources are terminated by a
-    semicolon ( ;), with the last one being optional.*/
+    semicolon ( ;), with the last one being optional.
 
-    /*resources declared within a try‐with‐
-    resources statement are in scope only within the try block.*/
+    resources declared within a try‐with‐resources statement are in scope only within the try block.*/
 
     public static void main(String[] args) {
 //        try (String reptile = "lizard"){ //does not implement theAutoCloseable interface
@@ -95,10 +94,4 @@ public class _9_ConstructingTryWithCatchResourcesManagement {
             out.write(in.readLine());
         }
     }
-
-
-
-
-
-
 }
