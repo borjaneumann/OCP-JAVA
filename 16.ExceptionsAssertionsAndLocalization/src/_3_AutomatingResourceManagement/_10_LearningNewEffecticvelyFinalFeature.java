@@ -36,11 +36,12 @@ public class _10_LearningNewEffecticvelyFinalFeature {
 //            writer.append("Welcome to the zoo!");
 //        }
 //        writer.append("This write will fail!"); // IOException
+
     /*This code compiles but throws an exception on line 46 with the message
     Stream closed. While it was possible to write to the resource before the
     try‐with‐resources statement, it is not afterward.*/
 
-        //dont do this
+        //dont do this!!!
         //var reader = Files.newBufferedReader(path1);
         //var writer = Files.newBufferedWriter(path2); //Don’t do this! what if there is an exception?
         //try (reader; writer) {}

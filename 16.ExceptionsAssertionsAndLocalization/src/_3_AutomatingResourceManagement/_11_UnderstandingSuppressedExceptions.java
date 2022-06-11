@@ -1,7 +1,8 @@
 package _3_AutomatingResourceManagement;
 
 public class _11_UnderstandingSuppressedExceptions {
-    //What happens if the close() method throws an exception? Let's try an illustrative example:
+    //What happens if the close() method throws an exception?
+    // Let's try an illustrative example:
 
     static class TurkeyCage implements AutoCloseable {
         public void close() {
@@ -26,11 +27,11 @@ public class _11_UnderstandingSuppressedExceptions {
         }
     }
 
-    //What happens if the try block also throws
-    //an exception? When multiple exceptions are thrown, all but the first are
-    //called suppressed exceptions. The idea is that Java treats the first
-    //exception as the primary one and tacks on any that come up while
-    //automatically closing.
+    /*What happens if the try block also throws
+    an exception? When multiple exceptions are thrown, all but the first are
+    called suppressed exceptions. The idea is that Java treats the first
+    exception as the primary one and tacks on any that come up while
+    automatically closing.*/
     public static void main(String[] args) {
        try (JammedTurkeyCage t = new JammedTurkeyCage()) {
            throw new IllegalStateException("Turkeys ran off");
