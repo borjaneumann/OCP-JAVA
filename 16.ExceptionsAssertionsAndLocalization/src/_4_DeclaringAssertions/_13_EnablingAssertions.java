@@ -4,7 +4,7 @@ public class _13_EnablingAssertions {
 
     /*
     ENABLING ASSERTIONS
-
+    ===================
     By default, assert statements are ignored by the JVM at runtime. To
     enable assertions, use the ‐enableassertions flag on the command line.
     java -enableassertions Rectangle
@@ -19,6 +19,7 @@ public class _13_EnablingAssertions {
     java -ea:com.demos.TestColors my.programs.Main
 
     DISABLING ASSERTIONS
+    ====================
     Sometimes you want to enable assertions for the entire application but
     disable it for select packages or classes. Java offers the
     ‐disableassertions or ‐da flag for just such an occasion.
