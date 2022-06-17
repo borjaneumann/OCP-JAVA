@@ -1,13 +1,14 @@
 package _1_ReviewingModulesDirectives;
 
-public class _1_ReviewingModuleDirectives {
+public class _01_ReviewingModuleDirectives {
 
     /*Derivative                        Description
     ----------------------------------------------------------------------------------------
     exports <package>                   Allows all modules to access the package
     exports <package> to <module>       Allows a specific module to access the package
     requires <module>                   Indicates module is dependent on another module
-    requires transitive <module>        Indicates the module and that all modules that use this module are dependent on another module
+    requires transitive <module>        Indicates the module and that all modules that use this
+                                        module are dependent on another module
     uses <interface>                    Indicates that a module uses a service
     provides<interface> with <class>    Indicates that a module provides an implementation of a service */
 
@@ -45,6 +46,20 @@ public class _1_ReviewingModuleDirectives {
     the way Java worked before modules. Yes, we know it is confusing to
     have something that isn't really a module having the word module in its
     name.
+
+    CLASSPATH VS. MODULE PATH
+    =========================
+    Before we get started, a brief reminder that the Java runtime is
+    capable of using class and interface types from both the classpath
+    and the module path, although the rules for each are a bit different.
+
+    An application can access any type in the classpath that is exposed
+    via standard Java access modifiers, such as a public class.
+    On the other hand, public types in the module path are not
+    automatically available. While Java access modifiers must still be
+    used, the type must also be in a package that is exported by the
+    module in which it is defined. In addition, the module making use of
+    the type must contain a dependency on the module.
     */
 
 
