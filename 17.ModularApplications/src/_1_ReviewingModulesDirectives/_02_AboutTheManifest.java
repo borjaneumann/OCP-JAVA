@@ -1,6 +1,6 @@
 package _1_ReviewingModulesDirectives;
 
-public class _2_AboutTheManifest {
+public class _02_AboutTheManifest {
     /*A JAR file is a zip file with a special directory named META‐INF.
     This directory contains one or more files. The MANIFEST.MF file is
     always present.
@@ -47,7 +47,7 @@ public class _2_AboutTheManifest {
 
     /*
     Since that's a number of rules, let's review the algorithm in a list for
-determining the name of an automatic module.
+    determining the name of an automatic module.
 
     * If the MANIFEST.MF specifies an Automatic‐Module‐Name, use that. Otherwise, proceed with the remaining rules.
     * Remove the file extension from the JAR name.

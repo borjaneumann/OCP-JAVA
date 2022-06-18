@@ -1,6 +1,6 @@
 package _2_ComparingTypesOfModules;
 
-public class NamedModules {
+public class _03_NamedModules {
     /*
     A named module is one containing a module‐info file. To review, this file
     appears in the root of the JAR alongside one or more packages. Unless
