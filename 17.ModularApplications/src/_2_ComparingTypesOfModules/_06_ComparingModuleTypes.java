@@ -1,6 +1,6 @@
 package _2_ComparingTypesOfModules;
 
-public class _3_ComparingModuleTypes {
+public class _06_ComparingModuleTypes {
 
     //A key point to remember is that:
     // 1. code on the classpath can access the module path.
@@ -8,19 +8,20 @@ public class _3_ComparingModuleTypes {
 
     /*
     Properties of modules types
-    Property                                                            Named           Automatic           Unnamed
-    =========================================================================================================================
-    - A ______ module contains a module‐info file?                      Yes             No                  Ignored if present
-    ---------------------------------------------------------------------------------------------------------------------------
-    - A ______ module exports which packages                            Those in the    All packages        No packages
-        to other modules?                                               module‐info file
-    ---------------------------------------------------------------------------------------------------------------------------
-    - A ______ module is readable by other modules on                   Yes             Yes                 No
-    the module path?
-    ---------------------------------------------------------------------------------------------------------------------------
-    - A ______ module is readable by other JARs on the classpath?       Yes             Yes                 Yes
-
-    ==========================================================================================================================
+    Property                                        Named           Automatic           Unnamed
+    =================================================================================================
+    - A ______ module contains                       Yes             No                  Ignored
+        a module‐info file?                                                              if present
+    -------------------------------------------------------------------------------------------------
+    - A ______ module exports which packages      Those in the       All packages        No packages
+        to other modules?                         module‐info file
+    -------------------------------------------------------------------------------------------------
+    - A ______ module is readable by other           Yes             Yes                 No
+    modules on the module path?
+    -------------------------------------------------------------------------------------------------
+    - A ______ module is readable by                 Yes             Yes                 Yes
+    other JARs on the classpath?
+    =================================================================================================
      */
 
 }
