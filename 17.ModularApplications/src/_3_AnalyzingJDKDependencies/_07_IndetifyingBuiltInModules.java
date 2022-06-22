@@ -1,6 +1,6 @@
 package _3_AnalyzingJDKDependencies;
 
-public class _4_IndetifyingBuiltInModules {
+public class _07_IndetifyingBuiltInModules {
 
     /*
     Prior to Java 9, developers could use any package in the JDK by merely
@@ -23,13 +23,13 @@ public class _4_IndetifyingBuiltInModules {
     so it's better to omit it.
 
     Common modules
-    Module name             What it contains                                    Coverage in book
+    Module name         What it contains                                    Coverage in book
     =================================================================================================================
-    java.base               Collections, Math, IO, NIO.2, Concurrency, etc.     Most of this book
-    java.desktop            Abstract Windows Toolkit(AWT) and Swing             Not on the exam beyond the module name
-    java.logging            Logging                                             Not on the exam beyond the module name
-    java.sql                JDBC                                                Chapter 21, “JDBC”
-    java.xml                Extensible Markup Language (XML)                    Not on the exam beyond the module name
+    java.base           Collections, Math, IO, NIO.2, Concurrency, etc.     Most of this book
+    java.desktop        Abstract Windows Toolkit(AWT) and Swing             Not on the exam beyond the module name
+    java.logging        Logging                                             Not on the exam beyond the module name
+    java.sql            JDBC                                                Chapter 21, “JDBC”
+    java.xml            Extensible Markup Language (XML)                    Not on the exam beyond the module name
 
 
     Java modules prefixed with java
