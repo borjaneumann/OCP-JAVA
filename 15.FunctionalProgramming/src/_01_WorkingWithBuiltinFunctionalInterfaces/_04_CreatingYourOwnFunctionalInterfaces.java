@@ -2,7 +2,7 @@ package _01_WorkingWithBuiltinFunctionalInterfaces;
 
 //CREATING YOUR OWN FUNCTIONAL INTERFACES
 @FunctionalInterface
-public interface _4_CreatingYourOwnFunctionalInterfaces <T,U,V,R> {
+public interface TriFunction <T,U,V,R> {
     R apply(T t, U u, V v);
     //The first three supply the types of
     //the three wheel speeds. The fourth is the return type
