@@ -22,6 +22,12 @@ public class _04_CreatingAThread {
         (new Thread(new PrintData())).start();
         (new ReadInventoryThread()).start();
         System.out.println("end");
+
+        System.out.println("begin");
+        (new ReadInventoryThread()).run();
+        (new Thread(new PrintData())).run();
+        (new ReadInventoryThread()).run();
+        System.out.println("end");
     }
 
     /*Defining the task that a Thread instance will execute can be done two
