@@ -1,48 +1,33 @@
 package _04_WorkingWithIOStreamClasses;
 
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 
-public class _11_ReadingAndWritingCharacterData {
-
+public class _11_ReadingAndWritingBinaryData {
     /*
-    The FileReader and FileWriter classes, along with their associated
-    buffer classes, are among the most convenient I/O classes because of their
-    built‐in support for text data. They include constructors that take the same
-    input as the binary file classes.
+    Some of the techniques for accessing streams may seem a bit new to you, but as you
+    will see, they are similar among different stream classes. The I/O stream classes
+    include numerous overloaded constructors and methods. Hundreds in fact.
 
-    public FileReader(File file) throws FileNotFoundException
-    public FileReader(String name) throws FileNotFoundException
-    public FileWriter(File file) throws FileNotFoundException
-    public FileWriter(String name) throws FileNotFoundException
+    READING AND WRITING BINARY DATA
+    ===============================
+    FileInputStream and FileOutputStream
+
+    public FileInputStream(File file) throws FileNotFoundException
+    public FileInputStream(String name) throws FileNotFoundException
+    public FileOutputStream(File file) throws FileNotFoundException
+    public FileOutputStream(String name) throws FileNotFoundException
      */
-    void copyTextFile(File src, File dest) throws IOException {
-        try (var reader = new FileReader(src);
-             var writer = new FileWriter(dest)) {
+
+    void copyFile(File src, File dest) throws IOException {
+        try (var in = new FileInputStream(src);
+             var out = new FileOutputStream(dest)) {
             int b;
-            while ((b = reader.read()) != -1) {
-                writer.write(b);
+            while ((b = in.read()) != -1) {
+                out.write(b);
             }
         }
     }
-
-    /*
-    Wait a second, this looks identical to our copyFile() method with byte
-    stream! Since we're copying one character at a time, rather than one byte,
-    it is.
-     */
-
-    /*
-    The FileReader class doesn't contain any new methods you haven't seen
-    before. The FileWriter inherits a method from the Writer class that
-    allows it to write String values.
-    // Writer
-    public void write(String str) throws IOException
-    For example, the following is supported in FileWriter but not
-    FileOutputStream:
-    writer.write("Hello World");
-     */
-
+    //If the destination file already exists, this
+    //implementation will overwrite it, since the append flag was not sent. The
+    //copy() method copies one byte at a time until it reads a value of ‐1.
 }
