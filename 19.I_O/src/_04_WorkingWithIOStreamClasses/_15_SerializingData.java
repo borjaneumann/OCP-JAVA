@@ -1,6 +1,8 @@
+package _04_WorkingWithIOStreamClasses;
+
 import java.io.Serializable;
 
-public class _11_SerializingData {
+public class _15_SerializingData {
 
     /*To serialize an object using the I/O API, the object must implement the
     java.io.Serializable interface.
@@ -40,10 +42,9 @@ public class _11_SerializingData {
     class is encountered during deserialization, a
     java.io.InvalidClassException may be thrown. Alternatively,
     some APIs support converting data between versions.
-     */
 
-    /*
     Marking Data transient
+    ======================
     Oftentimes, the transient modifier is used for sensitive data of the class,
     like a password.
     There are other objects it does not make sense to serialize, like
@@ -56,5 +57,41 @@ public class _11_SerializingData {
     Marking static fields transient has little effect on serialization.
     Other than the serialVersionUID, only the instance members of a
     class are serialized.
+
+    Ensuring a Class Is Serializable
+    ==================================
+    Any process attempting to serialize an object
+    will throw a NotSerializableException if the class does not implement
+    the Serializable interface properly.
+
+    How to Make a Class Serializable
+    - The class must be marked Serializable.
+    - Every instance member of the class is serializable, marked transient, or
+    has a null value at the time of serialization.
+    Be careful with the second rule. For a class to be serializable, we must
+    apply the second rule recursively. Do you see why the following Cat class
+    is not serializable?
+     */
+    public class Cat implements Serializable {
+        private Tail tail = new Tail();
+    }
+    public class Tail implements Serializable {
+        private Fur fur = new Fur();
+    }
+    public class Fur {} //Fur is not marked serializable
+
+    /*
+    Either of the following changes fixes the problem and allows Cat to be serialized:
+
+    public class Tail implements Serializable {
+    private transient Fur fur = new Fur();
+    }
+    public class Fur implements Serializable {}
+
+    We could also make our tail or fur instance members null, although this
+    would make Cat serializable only for particular instances, rather than all
+    instances.
      */
 }
+
+
