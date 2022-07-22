@@ -1,4 +1,6 @@
-public class _15_PrintingData {
+package _04_WorkingWithIOStreamClasses;
+
+public class _16_PrintingData {
 
     /*
     PrintStream and PrintWriter are high‐level output print streams classes
@@ -120,14 +122,47 @@ public class _15_PrintingData {
     placing a single zero before the decimal symbol. The following
     examples use brackets, [], to show the start/end of the formatted
     value:
-    var pi = 3.14159265359;
+    */
+    public static void main(String[] args) {
+        var pi = 3.14159265359;
+        System.out.format("[%f]",pi);     // [3,141593]
+        System.out.format("[%12.8f]",pi); // [  3,14159265]
+        System.out.format("[%012f]",pi);  // [00003,141593]
+        System.out.format("[%12.2f]",pi); // [        3,14]
+        System.out.format("[%012.2f]",pi);// [000000003,14]
+        System.out.format("[%.3f]",pi);   // [3.142]
+    }
 
-    System.out.format("[%f]",pi); // [3.141593]
-    System.out.format("[%12.8f]",pi); // [ 3.14159265]
-    System.out.format("[%012f]",pi); // [00003.141593]
-    System.out.format("[%12.2f]",pi); // [ 3.14]
-    System.out.format("[%.3f]",pi); // [3.142]
 
+
+
+    /*
+    Sample PrintWriter Program
+    ==========================
+    Let's put it altogether. The following sample code shows the PrintWriter
+    class in action:
+    File source = new File("zoo.log");
+    try (var out = new PrintWriter(
+        new BufferedWriter(new FileWriter(source)))) {
+        out.print("Today's weather is: ");
+        out.println("Sunny");
+        out.print("Today's temperature at the zoo is: ");
+        out.print(1 / 3.0);
+        out.println('C');
+        out.format("It has rained %5.2f inches this year %d", 10.2,2021);
+        out.println();
+        out.printf("It may rain %s more inches this year", 1.2);
+    }
+    After the program runs, zoo.log contains the following:
+    Today's weather is: Sunny
+    Today's temperature at the zoo is: 0.3333333333333333C
+    It has rained 10.20 inches this year 2021
+    It may rain 1.2 more inches this year
+    You should pay close attention to the line breaks in the sample. For
+    example, we called println() after our format(), since format() does
+    not automatically insert a line break after the text. One of the most
+    common bugs with printing data in practice is failing to account for line
+    breaks properly.
      */
 
 }
