@@ -133,9 +133,6 @@ public class _16_PrintingData {
         System.out.format("[%.3f]",pi);   // [3.142]
     }
 
-
-
-
     /*
     Sample PrintWriter Program
     ==========================
@@ -164,5 +161,4 @@ public class _16_PrintingData {
     common bugs with printing data in practice is failing to account for line
     breaks properly.
      */
-
 }
