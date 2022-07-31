@@ -1,6 +1,8 @@
+package _02_InteractingWithPaths;
+
 import java.nio.file.Paths;
 
-public class _7_CreatingANewPathWithSubpath {
+public class _05_CreatingANewPathWithSubpath {
 
     /*The Path interface includes a method to select portions of a path.
     public Path subpath(int beginIndex, int endIndex)*/
