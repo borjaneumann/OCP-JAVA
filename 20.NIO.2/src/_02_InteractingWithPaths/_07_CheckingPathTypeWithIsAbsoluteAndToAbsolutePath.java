@@ -1,12 +1,17 @@
+package _02_InteractingWithPaths;
+
 import java.nio.file.Paths;
 
-public class _9_CheckingPathTypeWithIsAbsoluteAndToAbsolutePath {
+public class _07_CheckingPathTypeWithIsAbsoluteAndToAbsolutePath {
 
     /*
     The Path interface contains two methods for assisting with relative and absolute paths:
 
-    public boolean isAbsolute() // returns true if the path the object references is absolute and false if the path the object references is relative.
-    public Path toAbsolutePath() // converts a relative Path object to an absolute Path object by joining it to the current working directory.
+    public boolean isAbsolute() // returns true if the path the object references is absolute and
+    false if the path the object references is relative.
+
+    public Path toAbsolutePath() // converts a relative Path object to an absolute Path object
+    by joining it to the current working directory.
 
     The current working directory can be selected from System.getProperty("user.dir"). This is the value that
     toAbsolutePath() will use when applied to a relative path.
