@@ -1,8 +1,9 @@
+package _05_InteractingWithUsers;
+
 import java.io.Console;
 import java.util.Arrays;
-import java.util.Locale;
 
-public class _19_AcquiringInputWithConsole {
+public class _21_AcquiringInputWithConsole {
 
     /*
     The Console class is a singleton because it is accessible only from a

@@ -1,8 +1,10 @@
+package _05_InteractingWithUsers;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-public class _18_InteractingWithUsers {
+public class _18_PrintingDataToTheUser {
     public static void main(String[] args) throws IOException {
         /*
         Java includes two PrintStream instances for providing information to the
