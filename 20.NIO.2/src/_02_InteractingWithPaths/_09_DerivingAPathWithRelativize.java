@@ -1,7 +1,9 @@
+package _02_InteractingWithPaths;
+
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-public class _11_DerivingAPathWithRelativize {
+public class _09_DerivingAPathWithRelativize {
 
     /*The Path interface includes a method for constructing the relative path
     from one Path to another, often using path symbols.

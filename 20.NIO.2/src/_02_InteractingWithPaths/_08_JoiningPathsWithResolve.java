@@ -1,6 +1,8 @@
+package _02_InteractingWithPaths;
+
 import java.nio.file.Path;
 
-public class _10_JoiningPathsWithResolve {
+public class _08_JoiningPathsWithResolve {
 
     /*
     Suppose you want to concatenate paths in a similar manner as we
@@ -13,7 +15,7 @@ public class _10_JoiningPathsWithResolve {
     public static void main(String[] args) {
         Path path1 = Path.of("/cats/../panther");
         Path path2 = Path.of("food");
-        System.out.println(path1.resolve(path2)); //\cats\..\panther\food
+        System.out.println(path1.resolve(path2)); //  \cats\..\panther\food
 
         /*
         Like the other methods we've seen up to now, resolve() does not clean
@@ -21,7 +23,7 @@ public class _10_JoiningPathsWithResolve {
         method was a relative path, but what if it had been an absolute path?
          */
         Path path3 = Path.of("/turkey/food");
-        System.out.println(path3.resolve("/tiger/cage")); //\tiger\cage
+        System.out.println(path3.resolve("/tiger/cage")); //  \tiger\cage
         /*Since the input parameter path3 is an absolute path, the output would be
         the following: /tiger/cage
 
