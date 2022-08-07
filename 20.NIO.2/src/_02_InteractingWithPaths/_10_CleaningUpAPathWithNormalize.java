@@ -1,7 +1,9 @@
+package _02_InteractingWithPaths;
+
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-public class _12_CleaningUpAPathWithNormalize {
+public class _10_CleaningUpAPathWithNormalize {
 
     /*
     So far, we've presented a number of examples that included path symbols that were unnecessary.

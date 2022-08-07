@@ -1,7 +1,9 @@
+package _02_InteractingWithPaths;
+
 import java.io.IOException;
 import java.nio.file.Paths;
 
-public class _13_RetrievingTheFileSystemPathWithToRealPath {
+public class _11_RetrievingTheFileSystemPathWithToRealPath {
 
     /*
     While working with theoretical paths is useful, sometimes you want to
